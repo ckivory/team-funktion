@@ -18,11 +18,11 @@ public class scr_orbitControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        xSpread = 10;
-        zSpread = 10;
-        ySpread = 10;
+        xSpread = 3;
+        zSpread = 3;
+        ySpread = 3;
         rotSpeed = 0.5f;
-        captured = true;
+        captured = false;
     }
 
     // Update is called once per frame
