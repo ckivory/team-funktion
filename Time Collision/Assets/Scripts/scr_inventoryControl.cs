@@ -7,7 +7,6 @@ public class scr_inventoryControl : MonoBehaviour
 
     public GameObject cube;
     public GameObject oCube;
-
     Dictionary<string, int> inventory;
     GameObject item;
     List<GameObject> itemList;  //created for future convenience
@@ -16,6 +15,7 @@ public class scr_inventoryControl : MonoBehaviour
     void Start()
     {
         inventory = new Dictionary<string, int>();
+
     }
 
     // Update is called once per frame
