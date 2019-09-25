@@ -10,7 +10,7 @@ public class scr_orbitControl : MonoBehaviour
     public bool captured;
     public float xSpread;
     public float zSpread;
-    public float yOffset;
+    public float ySpread;
     public float rotSpeed;
     float timer = 0;
     Transform centerPoint;
@@ -20,7 +20,7 @@ public class scr_orbitControl : MonoBehaviour
     {
         xSpread = 10;
         zSpread = 10;
-        yOffset = 0;
+        ySpread = 10;
         rotSpeed = 0.5f;
         captured = true;
     }
@@ -41,7 +41,8 @@ public class scr_orbitControl : MonoBehaviour
     {
         float x = -Mathf.Cos(timer) * xSpread;
         float z = Mathf.Sin(timer) * zSpread;
-        Vector3 pos = new Vector3(x, yOffset, z);
+        float y = Mathf.Sin(timer) * ySpread;
+        Vector3 pos = new Vector3(x, y, z);
         transform.position = pos + centerPoint.position;
     }
 }
