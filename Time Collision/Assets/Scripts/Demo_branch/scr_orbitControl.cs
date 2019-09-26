@@ -6,23 +6,20 @@ using UnityEngine;
 public class scr_orbitControl : MonoBehaviour
 {
     public GameObject Controller;
-    public GameObject Player;
+    public GameObject playerToFollow;
     public bool captured;
     public float xSpread;
     public float zSpread;
     public float ySpread;
     public float rotSpeed;
+    public string type;
     float timer = 0;
     Transform centerPoint;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        //xSpread = 3;
-        //zSpread = 3;
-        //ySpread = 3;
-        //rotSpeed = 0.5f;
-        //captured = false;
     }
 
     // Update is called once per frame
@@ -30,7 +27,8 @@ public class scr_orbitControl : MonoBehaviour
     {
         if (captured)
         {
-            centerPoint = Player.transform;
+            GetComponent<BoxCollider>().enabled = false;
+            centerPoint = playerToFollow.transform;
             timer += Time.deltaTime * rotSpeed;
             Rotate();
         }
@@ -44,5 +42,17 @@ public class scr_orbitControl : MonoBehaviour
         float y = Mathf.Sin(timer) * ySpread;
         Vector3 pos = new Vector3(x, y, z);
         transform.position = pos + centerPoint.position;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            playerToFollow = collision.gameObject;
+            captured = true;
+
+        }
+
+
     }
 }
