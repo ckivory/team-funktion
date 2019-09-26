@@ -45,18 +45,31 @@ public class scr_orbitControl : MonoBehaviour
         transform.position = pos + centerPoint.position;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    if (collision.gameObject.tag == "Player")
+    //    {
+    //        playerToFollow = collision.gameObject;
+    //        captured = true;
+    //        xSpread = 1;
+    //        ySpread = 1;
+    //        zSpread = ;
+    //        rotSpeed = 1;
+    //    }
+
+
+    //}
+
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "Player")
+        if (other.tag == "Player")
         {
-            playerToFollow = collision.gameObject;
+            playerToFollow = other.gameObject;
             captured = true;
             xSpread = 1;
             ySpread = 1;
             zSpread = 1;
             rotSpeed = 1;
         }
-
-
     }
 }
