@@ -28,6 +28,7 @@ public class scr_orbitControl : MonoBehaviour
         if (captured)
         {
             GetComponent<BoxCollider>().enabled = false;
+            
             centerPoint = playerToFollow.transform;
             timer += Time.deltaTime * rotSpeed;
             Rotate();
@@ -50,6 +51,10 @@ public class scr_orbitControl : MonoBehaviour
         {
             playerToFollow = collision.gameObject;
             captured = true;
+            xSpread = 2;
+            ySpread = 2;
+            zSpread = 2;
+            rotSpeed = 1;
         }
 
 
