@@ -467,7 +467,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
+  orthographic: 1
   orthographic size: 5
   m_Depth: -1
   m_CullingMask:
@@ -513,9 +513,10 @@ MonoBehaviour:
   players:
   - {fileID: 296627555}
   - {fileID: 1001157530}
-  baseOffset: {x: 0, y: 15, z: -10}
-  scalingFactor: 10
-  cameraMin: 10
+  baseOffset: {x: 0, y: 30, z: -20}
+  cameraSpeed: 0.5
+  cameraPadding: 0.125
+  cameraMin: 5
 --- !u!1 &1001157530 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7290349700844560241, guid: 8bc49503a82e53d4891ed2443e0efd79,

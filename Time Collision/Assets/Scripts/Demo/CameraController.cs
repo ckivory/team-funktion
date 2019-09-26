@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+    private Camera cam;
     public List<GameObject> players;
     
     private Vector3 playerCenter;
     public Vector3 baseOffset;
     private float scale;
-    public float scalingFactor;
+    private float currentSpeed;
+    public float cameraSpeed;
+    public float cameraPadding;
 
     public float cameraMin;
 
@@ -24,26 +27,24 @@ public class CameraController : MonoBehaviour
             }
             playerCenter /= players.Count;
         }
+        
     }
 
     private void updateScale()
     {
-        scale = 0;
+        float maxDisplacement = 0f;
         float displacement;
         foreach (GameObject player in players)
         {
             displacement = (player.transform.position - playerCenter).magnitude;
-            if (displacement > scale)
+            if (displacement > maxDisplacement)
             {
-                scale = displacement;
+                maxDisplacement = displacement;
             }
         }
-        print(scale);
-    }
-
-    private void updatePosition()
-    {
-        this.transform.position = playerCenter + (baseOffset * ((scale / scalingFactor))) + (baseOffset.normalized * cameraMin);   // The further away the players are, the further out the camera will go.
+        scale = Mathf.SmoothDamp(scale, Mathf.Max(maxDisplacement, cameraMin), ref currentSpeed, cameraSpeed) + cameraPadding;
+        cam.orthographicSize = scale;
+        this.transform.position = playerCenter + (baseOffset.normalized * scale);
     }
 
     private void updateRotation()
@@ -56,9 +57,9 @@ public class CameraController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        cam = this.GetComponent<Camera>();
         updateFocus();
         updateScale();
-        updatePosition();
         updateRotation();
     }
 
@@ -67,7 +68,6 @@ public class CameraController : MonoBehaviour
     {
         updateFocus();
         updateScale();
-        updatePosition();
         updateRotation();
     }
 }
