@@ -5,54 +5,79 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float speed;
-    public List<KeyCode> controls;
+    public int controllerNum;
+    public bool usingController;
+
+    public List<KeyCode> controlKeys;
     private Vector3 inputVector;
     private List<int> inventory;
 
-    private void getInput()
+    private Rigidbody rb;
+
+    private void getControllerInput()
     {
         inputVector = Vector3.zero;
+        if(controllerNum > 0)
+        {
+            inputVector.x = Input.GetAxis("J" + controllerNum + "Horizontal");
+            inputVector.z = Input.GetAxis("J" + controllerNum + "Vertical");
+        }
+        else
+        {
+            throw new System.Exception("Make sure to set the controller number in the Unity editor");
+        }
 
-        if (Input.GetKey(controls[0]))      // UP
+        print("Input magnitude: " + inputVector.magnitude);
+        if(inputVector.magnitude > 1)
+        {
+            inputVector = inputVector.normalized;
+        }
+    }
+
+    private void getKeyboardInput()
+    {
+        inputVector = Vector3.zero;
+        if(Input.GetKey(controlKeys[0]))       // UP
         {
             inputVector.z += 1;
         }
-        if (Input.GetKey(controls[1]))      // LEFT
+        if (Input.GetKey(controlKeys[1]))       // LEFT
         {
             inputVector.x -= 1;
         }
-        if (Input.GetKey(controls[2]))      // DOWN
+        if (Input.GetKey(controlKeys[2]))       // DOWN
         {
             inputVector.z -= 1;
         }
-        if (Input.GetKey(controls[3]))      // RIGHT
+        if (Input.GetKey(controlKeys[3]))       // RIGHT
         {
             inputVector.x += 1;
         }
-
-        inputVector = inputVector.normalized;
     }
-
-    private Rigidbody rb;
 
     private void updateMovement()
     {
-        getInput();
-
-        if(inputVector != Vector3.zero)
+        if(usingController)
         {
-            rb.velocity += inputVector;     // Additive controls, so it will intentionally feel a little floaty.
-            if(rb.velocity.magnitude > speed)
-            {
-                rb.velocity = rb.velocity.normalized * speed;
-            }
+            getControllerInput();
         }
-        // Otherwise, they will slowly drift to a stop with a drag of 1.
+        else
+        {
+            getKeyboardInput();
+        }
+
+        rb.velocity += inputVector;         // Additive controls, so it will intentionally feel a little floaty.
+        if(rb.velocity.magnitude > speed)
+        {
+            rb.velocity = rb.velocity.normalized * speed;
+        }
+        // If inputVector is zero, they will slowly drift to a stop with a drag of 1.
     }
 
     private void updateRotation()
     {
         this.transform.LookAt(new Vector3(0f, this.transform.position.y, 0f));
+        // TODO: Implement twin-stick controls
     }
 
     public void OnTriggerEnter(Collider other)
@@ -64,14 +89,12 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         rb = this.GetComponent<Rigidbody>();
         inventory = new List<int>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         updateMovement();

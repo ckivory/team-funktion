@@ -199,7 +199,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  controls: 77000000610000007300000064000000
+  controllerNum: 0
+  usingController: 1
+  controlKeys: 00000000000000000000000000000000
 --- !u!54 &7290349700844560251
 Rigidbody:
   m_ObjectHideFlags: 0
