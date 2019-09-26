@@ -50,7 +50,6 @@ public class scr_orbitControl : MonoBehaviour
         {
             playerToFollow = collision.gameObject;
             captured = true;
-
         }
 
 
