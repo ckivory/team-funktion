@@ -51,9 +51,9 @@ public class scr_orbitControl : MonoBehaviour
         {
             playerToFollow = collision.gameObject;
             captured = true;
-            xSpread = 2;
-            ySpread = 2;
-            zSpread = 2;
+            xSpread = 1;
+            ySpread = 1;
+            zSpread = 1;
             rotSpeed = 1;
         }
 

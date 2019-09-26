@@ -27,12 +27,9 @@ public class scr_inventoryControl : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         item = collision.gameObject;
-        if (item.GetComponent<scr_item>().type == "cube")
+        if (item.GetComponent<scr_orbitControl>().type == "cube")
         {
             inventory.Add("cube", 1);
-            oCube.GetComponent<scr_orbitControl>().captured = true;
         }
-        Object.Destroy(item);
-
     }
 }
