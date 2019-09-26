@@ -6,8 +6,8 @@ public class PlayerController : MonoBehaviour
 {
     public float speed;
     public List<KeyCode> controls;
-
     private Vector3 inputVector;
+    private List<int> inventory;
 
     private void getInput()
     {
@@ -50,15 +50,31 @@ public class PlayerController : MonoBehaviour
         // Otherwise, they will slowly drift to a stop with a drag of 1.
     }
 
+    private void updateRotation()
+    {
+        this.transform.LookAt(new Vector3(0f, this.transform.position.y, 0f));
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Prop")
+        {
+            inventory.Add(other.gameObject.GetComponent<PropController>().propNum);
+            Destroy(other.gameObject);
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         rb = this.GetComponent<Rigidbody>();
+        inventory = new List<int>();
     }
 
     // Update is called once per frame
     void Update()
     {
         updateMovement();
+        updateRotation();
     }
 }

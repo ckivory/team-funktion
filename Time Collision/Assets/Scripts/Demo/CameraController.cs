@@ -58,9 +58,6 @@ public class CameraController : MonoBehaviour
     void Start()
     {
         cam = this.GetComponent<Camera>();
-        updateFocus();
-        updateScale();
-        updateRotation();
     }
 
     // Update is called once per frame
