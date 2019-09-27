@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -613,6 +613,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1351052642}
     m_Modifications:
+    - target: {fileID: 7290349700844560241, guid: 8bc49503a82e53d4891ed2443e0efd79,
+        type: 3}
+      propertyPath: m_Name
+      value: Player2
+      objectReference: {fileID: 0}
     - target: {fileID: 7290349700844560245, guid: 8bc49503a82e53d4891ed2443e0efd79,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -667,11 +672,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7290349700844560241, guid: 8bc49503a82e53d4891ed2443e0efd79,
-        type: 3}
-      propertyPath: m_Name
-      value: Player2
       objectReference: {fileID: 0}
     - target: {fileID: 7290349700844560246, guid: 8bc49503a82e53d4891ed2443e0efd79,
         type: 3}
@@ -1078,6 +1078,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1351052642}
     m_Modifications:
+    - target: {fileID: 7290349700844560241, guid: 8bc49503a82e53d4891ed2443e0efd79,
+        type: 3}
+      propertyPath: m_Name
+      value: Player1
+      objectReference: {fileID: 0}
     - target: {fileID: 7290349700844560245, guid: 8bc49503a82e53d4891ed2443e0efd79,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1132,11 +1137,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7290349700844560241, guid: 8bc49503a82e53d4891ed2443e0efd79,
-        type: 3}
-      propertyPath: m_Name
-      value: Player1
       objectReference: {fileID: 0}
     - target: {fileID: 7290349700844560250, guid: 8bc49503a82e53d4891ed2443e0efd79,
         type: 3}
@@ -1233,15 +1233,15 @@ PrefabInstance:
       propertyPath: controllerNum
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4949026919272321253, guid: 8bc49503a82e53d4891ed2443e0efd79,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7119722086304685230, guid: 8bc49503a82e53d4891ed2443e0efd79,
         type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 296627555}
+    - target: {fileID: 4949026919272321253, guid: 8bc49503a82e53d4891ed2443e0efd79,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bc49503a82e53d4891ed2443e0efd79, type: 3}
