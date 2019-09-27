@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class scr_inventoryControl : MonoBehaviour
 {
+    [HideInInspector]
     public float itemDynamicVar;
     Dictionary<string, int> inventory;
     GameObject item;
@@ -26,15 +27,15 @@ public class scr_inventoryControl : MonoBehaviour
     {
 
         //just an example to manipulate the orbiting items
-        if(itemList.Count>0)
-        {
-            foreach (GameObject obj in itemList)
-            {
-                obj.GetComponent<scr_orbitControl>().xSpread += itemDynamicVar;
-                obj.GetComponent<scr_orbitControl>().zSpread += itemDynamicVar;
-                //obj.GetComponent<scr_orbitControl>().rotSpeed += itemDynamicVar;
-            }
-        }
+        //if (itemList.Count > 0)
+        //{
+        //    foreach (GameObject obj in itemList)
+        //    {
+        //        obj.GetComponent<scr_orbitControl>().xSpread += itemDynamicVar;
+        //        obj.GetComponent<scr_orbitControl>().zSpread += itemDynamicVar;
+        //        obj.GetComponent<scr_orbitControl>().ySpread += itemDynamicVar;
+        //    }
+        //}
 
 
         item = other.gameObject;

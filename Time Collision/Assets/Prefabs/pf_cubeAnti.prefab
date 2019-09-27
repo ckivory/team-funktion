@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 328240274581039935, guid: 5921d293492b46d498a2ed4d90af4556,
         type: 3}
       propertyPath: m_Name
-      value: pf_Cube
+      value: pf_cubeAnti
       objectReference: {fileID: 0}
     - target: {fileID: 3641704365198609655, guid: 5921d293492b46d498a2ed4d90af4556,
         type: 3}
@@ -86,6 +86,11 @@ PrefabInstance:
         type: 3}
       propertyPath: xSpread
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8608654846981425248, guid: 5921d293492b46d498a2ed4d90af4556,
+        type: 3}
+      propertyPath: centerOffset
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5921d293492b46d498a2ed4d90af4556, type: 3}
