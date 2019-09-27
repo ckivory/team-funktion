@@ -4,61 +4,140 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed;
-    public List<KeyCode> controls;
+    public float maxSpeed;
+    public float accel;
+    public float rotAccel;
+    public int controllerNum;
+    public bool usingController;
+    public List<KeyCode> controlKeys;
+    
+    private Vector3 movementInput;
+    private Vector3 rotationInput;
+    private List<int> inventory;
+    private Rigidbody rb;
 
-    private Vector3 inputVector;
-
-    private void getInput()
+    private void getJoystickMovement()
     {
-        inputVector = Vector3.zero;
-
-        if (Input.GetKey(controls[0]))      // UP
+        movementInput = Vector3.zero;
+        if(controllerNum > 0)
         {
-            inputVector.z += 1;
+            movementInput.x = Input.GetAxis("J" + controllerNum + "Horizontal");
+            movementInput.z = Input.GetAxis("J" + controllerNum + "Vertical");
         }
-        if (Input.GetKey(controls[1]))      // LEFT
+        else
         {
-            inputVector.x -= 1;
-        }
-        if (Input.GetKey(controls[2]))      // DOWN
-        {
-            inputVector.z -= 1;
-        }
-        if (Input.GetKey(controls[3]))      // RIGHT
-        {
-            inputVector.x += 1;
+            throw new System.Exception("Make sure to set the controller number in the Unity editor");
         }
 
-        inputVector = inputVector.normalized;
+        if(movementInput.magnitude > 1)
+        {
+            movementInput = movementInput.normalized;
+        }
     }
 
-    private Rigidbody rb;
+    private void getKeyboardMovement()
+    {
+        movementInput = Vector3.zero;
+        if(Input.GetKey(controlKeys[0]))       // UP
+        {
+            movementInput.z += 1;
+        }
+        if (Input.GetKey(controlKeys[1]))       // LEFT
+        {
+            movementInput.x -= 1;
+        }
+        if (Input.GetKey(controlKeys[2]))       // DOWN
+        {
+            movementInput.z -= 1;
+        }
+        if (Input.GetKey(controlKeys[3]))       // RIGHT
+        {
+            movementInput.x += 1;
+        }
+    }
 
     private void updateMovement()
     {
-        getInput();
-
-        if(inputVector != Vector3.zero)
+        if(usingController)
         {
-            rb.velocity += inputVector;     // Additive controls, so it will intentionally feel a little floaty.
-            if(rb.velocity.magnitude > speed)
-            {
-                rb.velocity = rb.velocity.normalized * speed;
-            }
+            getJoystickMovement();
         }
-        // Otherwise, they will slowly drift to a stop with a drag of 1.
+        else
+        {
+            getKeyboardMovement();
+        }
+
+        rb.velocity += movementInput * accel;         // Additive controls, so it will intentionally feel a little floaty.
+        if(rb.velocity.magnitude > maxSpeed)
+        {
+            rb.velocity = rb.velocity.normalized * maxSpeed;
+        }
+        // If movementInput is zero, they will slowly drift to a stop with a drag of 1.
     }
 
-    // Start is called before the first frame update
+    private void getJoystickRotation()
+    {
+        rotationInput = Vector3.zero;
+        rotationInput.x = Input.GetAxis("J" + controllerNum + "XRot");
+        rotationInput.z = Input.GetAxis("J" + controllerNum + "YRot");
+    }
+
+    private void getKeyboardRotation()
+    {
+        rotationInput = Vector3.zero;
+        if (Input.GetKey(controlKeys[4]))       // UP
+        {
+            rotationInput.z += 1;
+        }
+        if (Input.GetKey(controlKeys[5]))       // LEFT
+        {
+            rotationInput.x -= 1;
+        }
+        if (Input.GetKey(controlKeys[6]))       // DOWN
+        {
+            rotationInput.z -= 1;
+        }
+        if (Input.GetKey(controlKeys[7]))       // RIGHT
+        {
+            rotationInput.x += 1;
+        }
+    }
+    
+    private void updateRotation()
+    {
+        if(usingController)
+        {
+            getJoystickRotation();
+        }
+        else
+        {
+            getKeyboardRotation();
+        }
+
+        this.transform.forward += rotationInput * rotAccel;
+        if(this.transform.forward.magnitude > 1)
+        {
+            this.transform.forward = this.transform.forward.normalized;
+        }
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Prop")
+        {
+            inventory.Add(other.gameObject.GetComponent<PropController>().propNum);
+            Destroy(other.gameObject);
+        }
+    }
+    
     void Start()
     {
         rb = this.GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         updateMovement();
+        updateRotation();
     }
 }

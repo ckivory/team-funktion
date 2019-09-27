@@ -4,17 +4,15 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    private Camera cam;
     public List<GameObject> players;
-    
-    private Vector3 playerCenter;
     public Vector3 baseOffset;
+    public float cameraSpeed;
+    public float cameraMin;
+
+    private Camera cam;
+    private Vector3 playerCenter;
     private float scale;
     private float currentSpeed;
-    public float cameraSpeed;
-    public float cameraPadding;
-
-    public float cameraMin;
 
     private void updateFocus()
     {
@@ -32,8 +30,8 @@ public class CameraController : MonoBehaviour
 
     private void updateScale()
     {
-        float maxDisplacement = 0f;
         float displacement;
+        float maxDisplacement = 0f;
         foreach (GameObject player in players)
         {
             displacement = (player.transform.position - playerCenter).magnitude;
@@ -42,7 +40,7 @@ public class CameraController : MonoBehaviour
                 maxDisplacement = displacement;
             }
         }
-        scale = Mathf.SmoothDamp(scale, Mathf.Max(maxDisplacement, cameraMin), ref currentSpeed, cameraSpeed) + cameraPadding;
+        scale = Mathf.SmoothDamp(scale, Mathf.Max(maxDisplacement, cameraMin), ref currentSpeed, cameraSpeed);
         cam.orthographicSize = scale;
         this.transform.position = playerCenter + (baseOffset.normalized * scale);
     }
@@ -52,18 +50,11 @@ public class CameraController : MonoBehaviour
         this.transform.LookAt(playerCenter);
     }
 
-    
-
-    // Start is called before the first frame update
     void Start()
     {
         cam = this.GetComponent<Camera>();
-        updateFocus();
-        updateScale();
-        updateRotation();
     }
 
-    // Update is called once per frame
     void Update()
     {
         updateFocus();

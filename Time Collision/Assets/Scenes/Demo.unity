@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -514,8 +514,7 @@ MonoBehaviour:
   - {fileID: 296627555}
   - {fileID: 1001157530}
   baseOffset: {x: 0, y: 30, z: -20}
-  cameraSpeed: 0.5
-  cameraPadding: 0.125
+  cameraSpeed: 0.25
   cameraMin: 5
 --- !u!1 &1001157530 stripped
 GameObject:
@@ -688,6 +687,56 @@ PrefabInstance:
     - target: {fileID: 7290349700844560250, guid: 8bc49503a82e53d4891ed2443e0efd79,
         type: 3}
       propertyPath: controls.Array.data[3]
+      value: 275
+      objectReference: {fileID: 0}
+    - target: {fileID: 7290349700844560250, guid: 8bc49503a82e53d4891ed2443e0efd79,
+        type: 3}
+      propertyPath: controllerNumber
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7290349700844560250, guid: 8bc49503a82e53d4891ed2443e0efd79,
+        type: 3}
+      propertyPath: controllerNum
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7290349700844560250, guid: 8bc49503a82e53d4891ed2443e0efd79,
+        type: 3}
+      propertyPath: controlKeys.Array.data[0]
+      value: 105
+      objectReference: {fileID: 0}
+    - target: {fileID: 7290349700844560250, guid: 8bc49503a82e53d4891ed2443e0efd79,
+        type: 3}
+      propertyPath: controlKeys.Array.data[1]
+      value: 106
+      objectReference: {fileID: 0}
+    - target: {fileID: 7290349700844560250, guid: 8bc49503a82e53d4891ed2443e0efd79,
+        type: 3}
+      propertyPath: controlKeys.Array.data[2]
+      value: 107
+      objectReference: {fileID: 0}
+    - target: {fileID: 7290349700844560250, guid: 8bc49503a82e53d4891ed2443e0efd79,
+        type: 3}
+      propertyPath: controlKeys.Array.data[3]
+      value: 108
+      objectReference: {fileID: 0}
+    - target: {fileID: 7290349700844560250, guid: 8bc49503a82e53d4891ed2443e0efd79,
+        type: 3}
+      propertyPath: controlKeys.Array.data[4]
+      value: 273
+      objectReference: {fileID: 0}
+    - target: {fileID: 7290349700844560250, guid: 8bc49503a82e53d4891ed2443e0efd79,
+        type: 3}
+      propertyPath: controlKeys.Array.data[5]
+      value: 276
+      objectReference: {fileID: 0}
+    - target: {fileID: 7290349700844560250, guid: 8bc49503a82e53d4891ed2443e0efd79,
+        type: 3}
+      propertyPath: controlKeys.Array.data[6]
+      value: 274
+      objectReference: {fileID: 0}
+    - target: {fileID: 7290349700844560250, guid: 8bc49503a82e53d4891ed2443e0efd79,
+        type: 3}
+      propertyPath: controlKeys.Array.data[7]
       value: 275
       objectReference: {fileID: 0}
     - target: {fileID: 7290349700844560251, guid: 8bc49503a82e53d4891ed2443e0efd79,
@@ -1018,10 +1067,55 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7290349700844560246, guid: 8bc49503a82e53d4891ed2443e0efd79,
+    - target: {fileID: 7290349700844560250, guid: 8bc49503a82e53d4891ed2443e0efd79,
         type: 3}
-      propertyPath: m_IsTrigger
+      propertyPath: controllerNumber
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7290349700844560250, guid: 8bc49503a82e53d4891ed2443e0efd79,
+        type: 3}
+      propertyPath: controllerNum
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7290349700844560250, guid: 8bc49503a82e53d4891ed2443e0efd79,
+        type: 3}
+      propertyPath: controlKeys.Array.data[0]
+      value: 119
+      objectReference: {fileID: 0}
+    - target: {fileID: 7290349700844560250, guid: 8bc49503a82e53d4891ed2443e0efd79,
+        type: 3}
+      propertyPath: controlKeys.Array.data[1]
+      value: 97
+      objectReference: {fileID: 0}
+    - target: {fileID: 7290349700844560250, guid: 8bc49503a82e53d4891ed2443e0efd79,
+        type: 3}
+      propertyPath: controlKeys.Array.data[2]
+      value: 115
+      objectReference: {fileID: 0}
+    - target: {fileID: 7290349700844560250, guid: 8bc49503a82e53d4891ed2443e0efd79,
+        type: 3}
+      propertyPath: controlKeys.Array.data[3]
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7290349700844560250, guid: 8bc49503a82e53d4891ed2443e0efd79,
+        type: 3}
+      propertyPath: controlKeys.Array.data[4]
+      value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 7290349700844560250, guid: 8bc49503a82e53d4891ed2443e0efd79,
+        type: 3}
+      propertyPath: controlKeys.Array.data[5]
+      value: 102
+      objectReference: {fileID: 0}
+    - target: {fileID: 7290349700844560250, guid: 8bc49503a82e53d4891ed2443e0efd79,
+        type: 3}
+      propertyPath: controlKeys.Array.data[6]
+      value: 103
+      objectReference: {fileID: 0}
+    - target: {fileID: 7290349700844560250, guid: 8bc49503a82e53d4891ed2443e0efd79,
+        type: 3}
+      propertyPath: controlKeys.Array.data[7]
+      value: 104
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bc49503a82e53d4891ed2443e0efd79, type: 3}
