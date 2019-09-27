@@ -4,54 +4,57 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed;
+    public float maxSpeed;
+    public float accel;
+    public float rotAccel;
     public int controllerNum;
     public bool usingController;
 
     public List<KeyCode> controlKeys;
-    private Vector3 inputVector;
+    private Vector3 movementInput;
+    private Vector3 rotationInput;
+
     private List<int> inventory;
 
     private Rigidbody rb;
 
-    private void getControllerInput()
+    private void getJoystickMovement()
     {
-        inputVector = Vector3.zero;
+        movementInput = Vector3.zero;
         if(controllerNum > 0)
         {
-            inputVector.x = Input.GetAxis("J" + controllerNum + "Horizontal");
-            inputVector.z = Input.GetAxis("J" + controllerNum + "Vertical");
+            movementInput.x = Input.GetAxis("J" + controllerNum + "Horizontal");
+            movementInput.z = Input.GetAxis("J" + controllerNum + "Vertical");
         }
         else
         {
             throw new System.Exception("Make sure to set the controller number in the Unity editor");
         }
 
-        print("Input magnitude: " + inputVector.magnitude);
-        if(inputVector.magnitude > 1)
+        if(movementInput.magnitude > 1)
         {
-            inputVector = inputVector.normalized;
+            movementInput = movementInput.normalized;
         }
     }
 
-    private void getKeyboardInput()
+    private void getKeyboardMovement()
     {
-        inputVector = Vector3.zero;
+        movementInput = Vector3.zero;
         if(Input.GetKey(controlKeys[0]))       // UP
         {
-            inputVector.z += 1;
+            movementInput.z += 1;
         }
         if (Input.GetKey(controlKeys[1]))       // LEFT
         {
-            inputVector.x -= 1;
+            movementInput.x -= 1;
         }
         if (Input.GetKey(controlKeys[2]))       // DOWN
         {
-            inputVector.z -= 1;
+            movementInput.z -= 1;
         }
         if (Input.GetKey(controlKeys[3]))       // RIGHT
         {
-            inputVector.x += 1;
+            movementInput.x += 1;
         }
     }
 
@@ -59,25 +62,65 @@ public class PlayerController : MonoBehaviour
     {
         if(usingController)
         {
-            getControllerInput();
+            getJoystickMovement();
         }
         else
         {
-            getKeyboardInput();
+            getKeyboardMovement();
         }
 
-        rb.velocity += inputVector;         // Additive controls, so it will intentionally feel a little floaty.
-        if(rb.velocity.magnitude > speed)
+        rb.velocity += movementInput * accel;         // Additive controls, so it will intentionally feel a little floaty.
+        if(rb.velocity.magnitude > maxSpeed)
         {
-            rb.velocity = rb.velocity.normalized * speed;
+            rb.velocity = rb.velocity.normalized * maxSpeed;
         }
-        // If inputVector is zero, they will slowly drift to a stop with a drag of 1.
+        // If movementInput is zero, they will slowly drift to a stop with a drag of 1.
+    }
+
+    private void getJoystickRotation()
+    {
+        rotationInput = Vector3.zero;
+        rotationInput.x = Input.GetAxis("J" + controllerNum + "XRot");
+        rotationInput.z = Input.GetAxis("J" + controllerNum + "YRot");
+    }
+
+    private void getKeyboardRotation()
+    {
+        rotationInput = Vector3.zero;
+        if (Input.GetKey(controlKeys[4]))       // UP
+        {
+            rotationInput.z += 1;
+        }
+        if (Input.GetKey(controlKeys[5]))       // LEFT
+        {
+            rotationInput.x -= 1;
+        }
+        if (Input.GetKey(controlKeys[6]))       // DOWN
+        {
+            rotationInput.z -= 1;
+        }
+        if (Input.GetKey(controlKeys[7]))       // RIGHT
+        {
+            rotationInput.x += 1;
+        }
     }
 
     private void updateRotation()
     {
-        this.transform.LookAt(new Vector3(0f, this.transform.position.y, 0f));
-        // TODO: Implement twin-stick controls
+        if(usingController)
+        {
+            getJoystickRotation();
+        }
+        else
+        {
+            getKeyboardRotation();
+        }
+
+        this.transform.forward += rotationInput * rotAccel;
+        if(this.transform.forward.magnitude > 1)
+        {
+            this.transform.forward = this.transform.forward.normalized;
+        }
     }
 
     public void OnTriggerEnter(Collider other)

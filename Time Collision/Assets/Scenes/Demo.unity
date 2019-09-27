@@ -547,8 +547,7 @@ MonoBehaviour:
   - {fileID: 296627555}
   - {fileID: 1001157530}
   baseOffset: {x: 0, y: 30, z: -20}
-  cameraSpeed: 0.3
-  cameraPadding: 0.125
+  cameraSpeed: 0.25
   cameraMin: 5
 --- !u!1 &1001157530 stripped
 GameObject:
@@ -642,21 +641,41 @@ PrefabInstance:
     - target: {fileID: 7290349700844560250, guid: 8bc49503a82e53d4891ed2443e0efd79,
         type: 3}
       propertyPath: controlKeys.Array.data[0]
-      value: 273
+      value: 105
       objectReference: {fileID: 0}
     - target: {fileID: 7290349700844560250, guid: 8bc49503a82e53d4891ed2443e0efd79,
         type: 3}
       propertyPath: controlKeys.Array.data[1]
-      value: 276
+      value: 106
       objectReference: {fileID: 0}
     - target: {fileID: 7290349700844560250, guid: 8bc49503a82e53d4891ed2443e0efd79,
         type: 3}
       propertyPath: controlKeys.Array.data[2]
-      value: 274
+      value: 107
       objectReference: {fileID: 0}
     - target: {fileID: 7290349700844560250, guid: 8bc49503a82e53d4891ed2443e0efd79,
         type: 3}
       propertyPath: controlKeys.Array.data[3]
+      value: 108
+      objectReference: {fileID: 0}
+    - target: {fileID: 7290349700844560250, guid: 8bc49503a82e53d4891ed2443e0efd79,
+        type: 3}
+      propertyPath: controlKeys.Array.data[4]
+      value: 273
+      objectReference: {fileID: 0}
+    - target: {fileID: 7290349700844560250, guid: 8bc49503a82e53d4891ed2443e0efd79,
+        type: 3}
+      propertyPath: controlKeys.Array.data[5]
+      value: 276
+      objectReference: {fileID: 0}
+    - target: {fileID: 7290349700844560250, guid: 8bc49503a82e53d4891ed2443e0efd79,
+        type: 3}
+      propertyPath: controlKeys.Array.data[6]
+      value: 274
+      objectReference: {fileID: 0}
+    - target: {fileID: 7290349700844560250, guid: 8bc49503a82e53d4891ed2443e0efd79,
+        type: 3}
+      propertyPath: controlKeys.Array.data[7]
       value: 275
       objectReference: {fileID: 0}
     - target: {fileID: 7290349700844560251, guid: 8bc49503a82e53d4891ed2443e0efd79,
@@ -921,6 +940,26 @@ PrefabInstance:
         type: 3}
       propertyPath: controlKeys.Array.data[3]
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7290349700844560250, guid: 8bc49503a82e53d4891ed2443e0efd79,
+        type: 3}
+      propertyPath: controlKeys.Array.data[4]
+      value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 7290349700844560250, guid: 8bc49503a82e53d4891ed2443e0efd79,
+        type: 3}
+      propertyPath: controlKeys.Array.data[5]
+      value: 102
+      objectReference: {fileID: 0}
+    - target: {fileID: 7290349700844560250, guid: 8bc49503a82e53d4891ed2443e0efd79,
+        type: 3}
+      propertyPath: controlKeys.Array.data[6]
+      value: 103
+      objectReference: {fileID: 0}
+    - target: {fileID: 7290349700844560250, guid: 8bc49503a82e53d4891ed2443e0efd79,
+        type: 3}
+      propertyPath: controlKeys.Array.data[7]
+      value: 104
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bc49503a82e53d4891ed2443e0efd79, type: 3}
