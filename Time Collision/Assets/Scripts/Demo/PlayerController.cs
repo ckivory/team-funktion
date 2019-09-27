@@ -126,7 +126,7 @@ public class PlayerController : MonoBehaviour
         if (other.tag == "Prop")
         {
             inventory.Add(other.gameObject.GetComponent<PropController>().propNum);
-            Destroy(other.gameObject);
+            //Destroy(other.gameObject);
         }
     }
     

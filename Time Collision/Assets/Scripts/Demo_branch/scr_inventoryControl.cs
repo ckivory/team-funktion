@@ -8,6 +8,7 @@ public class scr_inventoryControl : MonoBehaviour
     public float itemDynamicVar;
     Dictionary<string, int> inventory;
     GameObject item;
+    GameObject selected;
     List<GameObject> itemList;
 
     // Start is called before the first frame update
@@ -15,6 +16,7 @@ public class scr_inventoryControl : MonoBehaviour
     {
         itemList = new List<GameObject>();
         inventory = new Dictionary<string, int>();
+        selected = null;
     }
 
     // Update is called once per frame
@@ -27,15 +29,15 @@ public class scr_inventoryControl : MonoBehaviour
     {
 
         //just an example to manipulate the orbiting items
-        //if (itemList.Count > 0)
-        //{
-        //    foreach (GameObject obj in itemList)
-        //    {
-        //        obj.GetComponent<scr_orbitControl>().xSpread += itemDynamicVar;
-        //        obj.GetComponent<scr_orbitControl>().zSpread += itemDynamicVar;
-        //        obj.GetComponent<scr_orbitControl>().ySpread += itemDynamicVar;
-        //    }
-        //}
+        if (itemList.Count > 0)
+        {
+            foreach (GameObject obj in itemList)
+            {
+                obj.GetComponent<scr_orbitControl>().xSpread += itemDynamicVar;
+                obj.GetComponent<scr_orbitControl>().zSpread += itemDynamicVar;
+                obj.GetComponent<scr_orbitControl>().ySpread += itemDynamicVar;
+            }
+        }
 
 
         item = other.gameObject;
@@ -52,6 +54,20 @@ public class scr_inventoryControl : MonoBehaviour
                 inventory[itemType]++;
             }
         }
+
+        if (selected == null)
+        {
+            
+        }
+
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="direction"></param>
+    public void cycleSelected(string direction)
+    {
 
     }
 }
