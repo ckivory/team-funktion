@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5609658589961995378}
   - component: {fileID: -8433307044693286549}
   m_Layer: 0
-  m_Name: pf_capsule
+  m_Name: pf_Capsule
   m_TagString: item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -112,11 +112,14 @@ MonoBehaviour:
   speedMax: 2
   speedMin: 1
   centerOffset: 0
+  torque: 1
   captured: 0
   xSpread: 0
   zSpread: 0
   ySpread: 0
   rotSpeed: 0
+  isBullet: 0
+  mass: 2
 --- !u!54 &-8433307044693286549
 Rigidbody:
   m_ObjectHideFlags: 0
