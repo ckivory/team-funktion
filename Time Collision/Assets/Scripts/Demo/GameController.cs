@@ -4,22 +4,10 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    public Camera skyCam;
-
-    private List<Camera> cameras;
+    public List<Camera> cameras;
     public int startCamera;
 
-    public List<GameObject> players;
-    
     private int currentCamera;
-    private void registerCameras()
-    {
-        cameras.Add(skyCam);
-        foreach (GameObject player in players)
-        {
-            cameras.Add(player.transform.GetChild(2).GetComponent<Camera>());
-        }
-    }
 
     private void cycleCameras()
     {
@@ -37,9 +25,7 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
-        cameras = new List<Camera>();
-        registerCameras();
-        currentCamera = startCamera % cameras.Count;
+        currentCamera = startCamera;
         selectNew();
     }
 
