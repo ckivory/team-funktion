@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8608654846981425248}
   m_Layer: 0
   m_Name: pf_Cube
-  m_TagString: Untagged
+  m_TagString: item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 328240274581039935}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.806551, y: -1.0530014, z: -3.788}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -107,8 +107,9 @@ MonoBehaviour:
   Controller: {fileID: 0}
   playerToFollow: {fileID: 0}
   captured: 0
-  xSpread: 5
-  zSpread: 5
-  ySpread: 5
-  rotSpeed: 1
+  xSpread: 1
+  zSpread: 1
+  ySpread: 1
+  rotSpeed: 5
   type: Cube
+  centerOffset: 0.7

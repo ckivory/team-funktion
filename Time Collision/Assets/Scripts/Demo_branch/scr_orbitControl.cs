@@ -13,6 +13,7 @@ public class scr_orbitControl : MonoBehaviour
     public float ySpread;
     public float rotSpeed;
     public string type;
+    public float centerOffset;
     float timer = 0;
     Transform centerPoint;
 
@@ -27,10 +28,19 @@ public class scr_orbitControl : MonoBehaviour
     {
         if (captured)
         {
-            GetComponent<BoxCollider>().enabled = false;
+            if (GetComponent<BoxCollider>()!=null)
+            {
+                GetComponent<BoxCollider>().enabled = false;
+            }
+            if (GetComponent<CapsuleCollider>() != null)
+            {
+                GetComponent<CapsuleCollider>().enabled = false;
+            }
+
             
             centerPoint = playerToFollow.transform;
             timer += Time.deltaTime * rotSpeed;
+            this.transform.LookAt(centerPoint);
             Rotate();
         }
 
@@ -42,23 +52,8 @@ public class scr_orbitControl : MonoBehaviour
         float z = Mathf.Sin(timer) * zSpread;
         float y = Mathf.Sin(timer) * ySpread;
         Vector3 pos = new Vector3(x, y, z);
-        transform.position = pos + centerPoint.position;
+        transform.position = pos + centerPoint.position + new Vector3(centerOffset, centerOffset, centerOffset);
     }
-
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    if (collision.gameObject.tag == "Player")
-    //    {
-    //        playerToFollow = collision.gameObject;
-    //        captured = true;
-    //        xSpread = 1;
-    //        ySpread = 1;
-    //        zSpread = ;
-    //        rotSpeed = 1;
-    //    }
-
-
-    //}
 
     private void OnTriggerEnter(Collider other)
     {
@@ -66,10 +61,6 @@ public class scr_orbitControl : MonoBehaviour
         {
             playerToFollow = other.gameObject;
             captured = true;
-            xSpread = 1;
-            ySpread = 1;
-            zSpread = 1;
-            rotSpeed = 1;
         }
     }
 }

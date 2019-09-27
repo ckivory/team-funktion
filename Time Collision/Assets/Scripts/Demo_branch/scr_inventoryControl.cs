@@ -4,18 +4,16 @@ using UnityEngine;
 
 public class scr_inventoryControl : MonoBehaviour
 {
-
-    public GameObject cube;
-    public GameObject oCube;
+    public float itemDynamicVar;
     Dictionary<string, int> inventory;
     GameObject item;
-    List<GameObject> itemList;  //created for future convenience
+    List<GameObject> itemList;
 
     // Start is called before the first frame update
     void Start()
     {
+        itemList = new List<GameObject>();
         inventory = new Dictionary<string, int>();
-
     }
 
     // Update is called once per frame
@@ -24,12 +22,35 @@ public class scr_inventoryControl : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        item = collision.gameObject;
-        if (item.GetComponent<scr_orbitControl>().type == "cube")
+
+        //just an example to manipulate the orbiting items
+        if(itemList.Count>0)
         {
-            inventory.Add("cube", 1);
+            foreach (GameObject obj in itemList)
+            {
+                obj.GetComponent<scr_orbitControl>().xSpread += itemDynamicVar;
+                obj.GetComponent<scr_orbitControl>().zSpread += itemDynamicVar;
+                //obj.GetComponent<scr_orbitControl>().rotSpeed += itemDynamicVar;
+            }
         }
+
+
+        item = other.gameObject;
+        if(item.tag == "item")
+        {
+            itemList.Add(item);
+            string itemType = item.GetComponent<scr_orbitControl>().type;
+            if (!inventory.ContainsKey(itemType))
+            {
+                inventory.Add(itemType, 1);
+            }
+            else
+            {
+                inventory[itemType]++;
+            }
+        }
+
     }
 }
