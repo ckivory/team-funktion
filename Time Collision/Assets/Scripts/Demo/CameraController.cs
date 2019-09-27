@@ -53,7 +53,6 @@ public class CameraController : MonoBehaviour
     void Start()
     {
         cam = this.GetComponent<Camera>();
-        scale = cam.orthographicSize;
     }
 
     void Update()

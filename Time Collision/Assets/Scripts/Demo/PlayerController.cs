@@ -9,13 +9,11 @@ public class PlayerController : MonoBehaviour
     public float rotAccel;
     public int controllerNum;
     public bool usingController;
-
     public List<KeyCode> controlKeys;
+    
     private Vector3 movementInput;
     private Vector3 rotationInput;
-
     private List<int> inventory;
-
     private Rigidbody rb;
 
     private void getJoystickMovement()
@@ -104,7 +102,7 @@ public class PlayerController : MonoBehaviour
             rotationInput.x += 1;
         }
     }
-
+    
     private void updateRotation()
     {
         if(usingController)
@@ -131,11 +129,10 @@ public class PlayerController : MonoBehaviour
             Destroy(other.gameObject);
         }
     }
-
+    
     void Start()
     {
         rb = this.GetComponent<Rigidbody>();
-        inventory = new List<int>();
     }
 
     void Update()
