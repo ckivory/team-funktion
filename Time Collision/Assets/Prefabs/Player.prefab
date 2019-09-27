@@ -216,7 +216,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeed: 10
   accel: 1
-  rotAccel: 0.5
+  rotAccel: 0.25
   controllerNum: 0
   usingController: 1
   controlKeys: 0000000000000000000000000000000000000000000000000000000000000000
