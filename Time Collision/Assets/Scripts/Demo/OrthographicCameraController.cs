@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraController : MonoBehaviour
+public class OrthographicCameraController : MonoBehaviour
 {
     public List<GameObject> players;
     public Vector3 baseOffset;

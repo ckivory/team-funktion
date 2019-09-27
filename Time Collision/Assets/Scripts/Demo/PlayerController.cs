@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public Camera cam;
     public float maxSpeed;
     public float accel;
-    public float rotAccel;
     public int controllerNum;
     public bool usingController;
     public List<KeyCode> controlKeys;
     
     private Vector3 movementInput;
-    private Vector3 rotationInput;
     private List<int> inventory;
     private Rigidbody rb;
 
@@ -56,6 +55,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void alignMovement()
+    {
+        movementInput = movementInput.x * Vector3.Cross(Vector3.up, transform.forward).normalized + movementInput.z * transform.forward.normalized;
+    }
+
     private void updateMovement()
     {
         if(usingController)
@@ -67,6 +71,8 @@ public class PlayerController : MonoBehaviour
             getKeyboardMovement();
         }
 
+        alignMovement();
+
         rb.velocity += movementInput * accel;         // Additive controls, so it will intentionally feel a little floaty.
         if(rb.velocity.magnitude > maxSpeed)
         {
@@ -74,50 +80,13 @@ public class PlayerController : MonoBehaviour
         }
         // If movementInput is zero, they will slowly drift to a stop with a drag of 1.
     }
-
-    private void getJoystickRotation()
-    {
-        rotationInput = Vector3.zero;
-        rotationInput.x = Input.GetAxis("J" + controllerNum + "XRot");
-        rotationInput.z = Input.GetAxis("J" + controllerNum + "YRot");
-    }
-
-    private void getKeyboardRotation()
-    {
-        rotationInput = Vector3.zero;
-        if (Input.GetKey(controlKeys[4]))       // UP
-        {
-            rotationInput.z += 1;
-        }
-        if (Input.GetKey(controlKeys[5]))       // LEFT
-        {
-            rotationInput.x -= 1;
-        }
-        if (Input.GetKey(controlKeys[6]))       // DOWN
-        {
-            rotationInput.z -= 1;
-        }
-        if (Input.GetKey(controlKeys[7]))       // RIGHT
-        {
-            rotationInput.x += 1;
-        }
-    }
     
     private void updateRotation()
     {
-        if(usingController)
+        Vector3 newForward = -1 * (cam.transform.position - this.transform.position);
+        if(newForward != Vector3.zero)
         {
-            getJoystickRotation();
-        }
-        else
-        {
-            getKeyboardRotation();
-        }
-
-        this.transform.forward += rotationInput * rotAccel;
-        if(this.transform.forward.magnitude > 1)
-        {
-            this.transform.forward = this.transform.forward.normalized;
+            this.transform.forward = new Vector3(newForward.x, 0f, newForward.z);
         }
     }
 
@@ -133,6 +102,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = this.GetComponent<Rigidbody>();
+        inventory = new List<int>();
     }
 
     void Update()
