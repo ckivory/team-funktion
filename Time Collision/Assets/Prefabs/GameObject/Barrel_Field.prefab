@@ -311,7 +311,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: Cube
-  dynamicVar: 5
+  dynamicVar: 10
   Controller: {fileID: 0}
   speedMax: 3
   speedMin: 1

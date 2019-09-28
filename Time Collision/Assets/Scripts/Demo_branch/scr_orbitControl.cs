@@ -19,11 +19,11 @@ public class scr_orbitControl : MonoBehaviour
     GameObject playerToFollow;
     [HideInInspector]
     public bool captured;
-    [HideInInspector]
+    //[HideInInspector]
     public float xSpread = 0;
-    [HideInInspector]
+    //[HideInInspector]
     public float zSpread = 0;
-    [HideInInspector]
+    //[HideInInspector]
     public float ySpread = 0;
     [HideInInspector]
     public float rotSpeed = 0;
@@ -34,8 +34,7 @@ public class scr_orbitControl : MonoBehaviour
     Transform centerPoint;
 
 
-    // Start is called before the first frame update
-    void Start()
+    void Idle()
     {
         int rn = UnityEngine.Random.Range(0, 3);
         if (rn < 1)
@@ -49,50 +48,87 @@ public class scr_orbitControl : MonoBehaviour
         else if (rn < 3)
         {
             GetComponent<Rigidbody>().AddTorque(transform.right * torque);
-        }        else if (rn < 3)
+        }
+        else if (rn < 3)
         {
             GetComponent<Rigidbody>().AddTorque(transform.right * torque);
         }
-
+    }
+    // Start is called before the first frame update
+    void Start()
+    {
+        Idle();
         //In case mass was not set
         if (mass < 0.001f)
         {
             mass = 1f;
         }
     }
+    void DisableCollision()
+    {
+        if (GetComponent<BoxCollider>() != null)
+        {
+            GetComponent<BoxCollider>().enabled = false;
+        }
+        if (GetComponent<CapsuleCollider>() != null)
+        {
+            GetComponent<CapsuleCollider>().enabled = false;
+        }
+        if (GetComponent<SphereCollider>() != null)
+        {
+            GetComponent<SphereCollider>().enabled = false;
+        }
+        if (GetComponent<MeshCollider>() != null)
+        {
+            GetComponent<MeshCollider>().enabled = false;
+        }
+        Component.Destroy(GetComponent<Rigidbody>());
+    }
+
+    void EnableCollision()
+    {
+        if (GetComponent<BoxCollider>() != null)
+        {
+            GetComponent<BoxCollider>().enabled = true;
+        }
+        if (GetComponent<CapsuleCollider>() != null)
+        {
+            GetComponent<CapsuleCollider>().enabled = true;
+        }
+        if (GetComponent<SphereCollider>() != null)
+        {
+            GetComponent<SphereCollider>().enabled = true;
+        }
+        if (GetComponent<MeshCollider>() != null)
+        {
+            GetComponent<MeshCollider>().enabled = true;
+        }
+        this.gameObject.AddComponent<Rigidbody>();
+
+    }
 
     // Update is called once per frame
     void Update()
     {
+        if (!captured && !isBullet)
+        {
+            //if (Vector3.Distance())
+        }
+
         if (captured && !isBullet)   //If captured by player
         {
-            //Disable all collider
-            if (GetComponent<BoxCollider>() != null)
-            {
-                GetComponent<BoxCollider>().enabled = false;
-            }
-            if (GetComponent<CapsuleCollider>() != null)
-            {
-                GetComponent<CapsuleCollider>().enabled = false;
-            }
-            if (GetComponent<SphereCollider>() != null)
-            {
-                GetComponent<SphereCollider>().enabled = false;
-            }
-            if (GetComponent<MeshCollider>() != null)
-            {
-                GetComponent<MeshCollider>().enabled = false;
-            }
-            //Destroy rigidbody
-            Component.Destroy(GetComponent<Rigidbody>());
-
-
+            DisableCollision();
             //Set center point
             centerPoint = playerToFollow.transform;
             //Set timer
             timer += Time.deltaTime * rotSpeed;
             //Rotate around center point
             Rotate();
+        }
+
+        if (isBullet && !captured)
+        {
+            EnableCollision();
         }
 
     }
@@ -110,34 +146,43 @@ public class scr_orbitControl : MonoBehaviour
         transform.position = pos + centerPoint.position + new Vector3(centerOffset, centerOffset, centerOffset);
     }
 
-    private void OnTriggerEnter(Collider other)
+    void CapturedBy(Collider other)
     {
+        playerToFollow = other.gameObject;
+        float r = 1.1f * playerToFollow.GetComponent<SphereCollider>().radius;
+        if (Math.Abs(dynamicVar) / mass <= 1.1 * r)
+        {
+            dynamicVar = (1.1f * r + dynamicVar) * mass;
+        }
+        captured = true;
+        while (Math.Abs(xSpread) < r)
+        {
+            xSpread = UnityEngine.Random.Range(-dynamicVar / mass, dynamicVar / mass);
+        }
+        while (Math.Abs(zSpread) < r)
+        {
+            zSpread = UnityEngine.Random.Range(-dynamicVar / mass, dynamicVar / mass);
+        }
+        ySpread = UnityEngine.Random.Range(-dynamicVar / mass, dynamicVar / mass);
+        rotSpeed = UnityEngine.Random.Range(speedMin, speedMax) / mass;
 
+    }
 
+    void hit(Collider other)
+    {
+        //hit not implemented yet
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
         if (other.tag == "Player" && !isBullet)
         {
+            CapturedBy(other);
+        }
 
-            playerToFollow = other.gameObject;
-            float r = 1.1f * playerToFollow.GetComponent<SphereCollider>().radius;
-            if (Math.Abs(dynamicVar)/mass <= 1.1 * r)
-            {
-                dynamicVar = (1.1f * r + dynamicVar)*mass;
-            }
-            captured = true;
-            while (Math.Abs(xSpread) < r)
-            {
-                xSpread = UnityEngine.Random.Range(-dynamicVar/mass, dynamicVar/mass);
-            }
-            //while (Math.Abs(ySpread) <r)
-            //{
-            //    ySpread = UnityEngine.Random.Range(-dynamicVar, dynamicVar);
-            //}
-            while (Math.Abs(zSpread) < r)
-            {
-                zSpread = UnityEngine.Random.Range(-dynamicVar / mass, dynamicVar / mass);
-            }
-            ySpread = UnityEngine.Random.Range(-dynamicVar, dynamicVar);
-            rotSpeed = UnityEngine.Random.Range(speedMin, speedMax)/mass;
+        if(other.tag =="Player" && isBullet)
+        {
+            hit(other);
         }
     }
 }

@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// For item selection testing
+/// </summary>
 public class scr_cycleItem : MonoBehaviour
 {
     public List<KeyCode> Keys;

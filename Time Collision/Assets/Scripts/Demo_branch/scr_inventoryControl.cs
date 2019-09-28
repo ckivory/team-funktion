@@ -129,6 +129,9 @@ public class scr_inventoryControl : MonoBehaviour
         if (inventory.ContainsKey(selectedType) && inventory[selectedType] > 0)
         {
             inventory[selectedType]--;
+            selected.GetComponent<scr_orbitControl>().captured = false;
+            selected.GetComponent<scr_orbitControl>().isBullet = true;
+
             itemList.Remove(selected);
         }
     }
