@@ -124,16 +124,12 @@ public class scr_inventoryControl : MonoBehaviour
 
 
     [HideInInspector]
-    public void shootItem()
+    public void removeItem()
     {
         if (inventory.ContainsKey(selectedType) && inventory[selectedType] > 0)
         {
             inventory[selectedType]--;
-
-        }
-        else
-        {
-
+            itemList.Remove(selected);
         }
     }
 

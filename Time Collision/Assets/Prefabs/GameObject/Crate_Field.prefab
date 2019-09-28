@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 932516654306112861}
   - component: {fileID: 932516654306112860}
   m_Layer: 0
-  m_Name: Crate
+  m_Name: Crate_Field
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -155,9 +155,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: Cube
-  dynamicVar: 2
+  dynamicVar: 6
   Controller: {fileID: 0}
-  speedMax: 25
+  speedMax: 10
   speedMin: 5
   centerOffset: 0
   torque: 1
