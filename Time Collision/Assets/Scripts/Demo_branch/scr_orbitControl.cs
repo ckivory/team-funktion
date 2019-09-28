@@ -19,9 +19,9 @@ public class scr_orbitControl : MonoBehaviour
     GameObject playerToFollow;
     [HideInInspector]
     public bool captured;
-    //[HideInInspector]
+    [HideInInspector]
     public float xSpread = 0;
-    //[HideInInspector]
+    [HideInInspector]
     public float zSpread = 0;
     [HideInInspector]
     public float ySpread = 0;
@@ -47,6 +47,9 @@ public class scr_orbitControl : MonoBehaviour
             GetComponent<Rigidbody>().AddTorque(transform.forward * torque);
         }
         else if (rn < 3)
+        {
+            GetComponent<Rigidbody>().AddTorque(transform.right * torque);
+        }        else if (rn < 3)
         {
             GetComponent<Rigidbody>().AddTorque(transform.right * torque);
         }
@@ -75,6 +78,10 @@ public class scr_orbitControl : MonoBehaviour
             if (GetComponent<SphereCollider>() != null)
             {
                 GetComponent<SphereCollider>().enabled = false;
+            }
+            if (GetComponent<MeshCollider>() != null)
+            {
+                GetComponent<MeshCollider>().enabled = false;
             }
             //Destroy rigidbody
             Component.Destroy(GetComponent<Rigidbody>());

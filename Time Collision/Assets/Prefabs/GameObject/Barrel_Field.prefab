@@ -244,7 +244,7 @@ GameObject:
   - component: {fileID: 2949796388016498890}
   - component: {fileID: 2949796388016498889}
   m_Layer: 0
-  m_Name: Barrel
+  m_Name: Barrel_Field
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -311,10 +311,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: Cube
-  dynamicVar: 2
+  dynamicVar: 5
   Controller: {fileID: 0}
-  speedMax: 15
-  speedMin: 5
+  speedMax: 3
+  speedMin: 1
   centerOffset: 0
   torque: 1
   captured: 0
