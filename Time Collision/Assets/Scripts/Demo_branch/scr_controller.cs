@@ -50,6 +50,7 @@ public class scr_controller : MonoBehaviour
                 spawnPoint = new Vector3(Random.Range(spawnPointXMin, spawnPointXMax), 0.5f, Random.Range(spawnPointZMin, spawnPointZMax));
             }
             GameObject itemToSave = Instantiate(itemTypeToSpawn[Random.Range(0, itemTypeToSpawn.Length)], spawnPoint, Quaternion.identity);
+            itemToSave.tag = "item";
             items.Add(itemToSave);
         }
     }

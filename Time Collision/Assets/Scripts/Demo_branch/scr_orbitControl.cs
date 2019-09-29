@@ -64,7 +64,7 @@ public class scr_orbitControl : MonoBehaviour
             mass = 1f;
         }
     }
-    void DisableCollision()
+    public void DisableCollision()
     {
         if (GetComponent<BoxCollider>() != null)
         {
@@ -82,10 +82,13 @@ public class scr_orbitControl : MonoBehaviour
         {
             GetComponent<MeshCollider>().enabled = false;
         }
-        Component.Destroy(GetComponent<Rigidbody>());
+        if (!(GetComponent<Rigidbody>() == null))
+        {
+            Component.Destroy(GetComponent<Rigidbody>());
+        }
     }
 
-    void EnableCollision()
+    public void EnableCollision()
     {
         if (GetComponent<BoxCollider>() != null)
         {
@@ -103,7 +106,12 @@ public class scr_orbitControl : MonoBehaviour
         {
             GetComponent<MeshCollider>().enabled = true;
         }
-        this.gameObject.AddComponent<Rigidbody>();
+
+        if (GetComponent<Rigidbody>() == null)
+        {
+            this.gameObject.AddComponent<Rigidbody>();
+        }
+
 
     }
 
@@ -117,7 +125,8 @@ public class scr_orbitControl : MonoBehaviour
 
         if (captured && !isBullet)   //If captured by player
         {
-            DisableCollision();
+            //DisableCollision();
+
             //Set center point
             centerPoint = playerToFollow.transform;
             //Set timer
@@ -126,10 +135,11 @@ public class scr_orbitControl : MonoBehaviour
             Rotate();
         }
 
-        if (isBullet && !captured)
-        {
-            EnableCollision();
-        }
+        
+        //if (isBullet && !captured)
+        //{
+        //    EnableCollision();
+        //}
 
     }
 
@@ -180,7 +190,7 @@ public class scr_orbitControl : MonoBehaviour
             CapturedBy(other);
         }
 
-        if(other.tag =="Player" && isBullet)
+        if (other.tag == "Player" && isBullet)
         {
             hit(other);
         }

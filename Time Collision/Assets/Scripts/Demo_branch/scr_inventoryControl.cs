@@ -29,9 +29,8 @@ public class scr_inventoryControl : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider other)
+    void Expand()
     {
-
         //just an example to manipulate the orbiting items
         if (itemList.Count > 0 && expand)
         {
@@ -45,13 +44,15 @@ public class scr_inventoryControl : MonoBehaviour
 
             }
         }
-
-
+    }
+    void UpdateInventory(Collider other)
+    {
         item = other.gameObject;    //Get other
         //Update inventory
-        if (item.tag == "item")
+        if (item.tag == "item" && !item.GetComponent<scr_orbitControl>().isBullet)
         {
             itemList.Add(item);
+            item.GetComponent<scr_orbitControl>().DisableCollision();
             string itemType = item.GetComponent<scr_orbitControl>().type;
             if (!inventory.ContainsKey(itemType))
             {
@@ -69,9 +70,11 @@ public class scr_inventoryControl : MonoBehaviour
                 selectedType = selected.GetComponent<scr_orbitControl>().type;
             }
         }
-
-
-
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        Expand();
+        UpdateInventory(other);
     }
 
     /// <summary>
@@ -81,14 +84,21 @@ public class scr_inventoryControl : MonoBehaviour
     [HideInInspector]
     public void cycleSelected(string direction)
     {
-        if (inventory.Count < 2)
+        if (itemList.Count == 0)
+        {
+            selectedNum = 0;
+            selected = null;
+            selectedType = null;
+            return;
+        }
+        else if (inventory.Count < 2)
         {
             return;
         }
         string preType = selectedType;
         if (direction == "right")
         {
-            if (selectedNum == itemList.Count - 1)
+            if (selectedNum >= itemList.Count - 1)
             {
                 selectedNum = 0;
             }
@@ -100,7 +110,7 @@ public class scr_inventoryControl : MonoBehaviour
 
         if (direction == "left")
         {
-            if (selectedNum == 0)
+            if (selectedNum <= 0)
             {
                 selectedNum = itemList.Count - 1;
             }
@@ -122,18 +132,42 @@ public class scr_inventoryControl : MonoBehaviour
         }
     }
 
-
+    /// <summary>
+    /// Removes an selected object from inventory. 
+    /// </summary>
     [HideInInspector]
-    public void removeItem()
+    public GameObject removeItem()
     {
-        if (inventory.ContainsKey(selectedType) && inventory[selectedType] > 0)
+        GameObject bullet = selected;
+        if (inventory.Count>0 && inventory.ContainsKey(selectedType) && inventory[selectedType] > 0)
         {
             inventory[selectedType]--;
             selected.GetComponent<scr_orbitControl>().captured = false;
             selected.GetComponent<scr_orbitControl>().isBullet = true;
 
             itemList.Remove(selected);
+
+            if(inventory[selectedType] <= 0)
+            {
+                inventory.Remove(selectedType);
+            }
+
+            selectedNum = 0;
+            if (itemList.Count>0)
+            {
+                selected = itemList[0];
+                selectedType = selected.GetComponent<scr_orbitControl>().type;
+            }
+            else
+            {
+                selected = null;
+                selectedType = null;
+            }
+            bullet.GetComponent<scr_orbitControl>().EnableCollision();
+            return bullet;
         }
+
+        return null;
     }
 
 

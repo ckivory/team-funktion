@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ad40034434f9db42bf7e0b363d7ba1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: Cube
+  type: Box
   dynamicVar: 6
   Controller: {fileID: 0}
   speedMax: 10
