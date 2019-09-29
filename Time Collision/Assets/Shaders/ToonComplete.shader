@@ -117,7 +117,7 @@
 				float shadow = SHADOW_ATTENUATION(i);
 				// Partition the intensity into light and dark, smoothly interpolated
 				// between the two to avoid a jagged break.
-				float lightIntensity = smoothstep(0, 0.01, NdotL * shadow);	
+				float lightIntensity = smoothstep(0, 0.5, NdotL * shadow);	
 				// Multiply by the main directional light's intensity and color.
 				float4 light = lightIntensity * _LightColor0;
 

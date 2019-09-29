@@ -78,7 +78,7 @@ Material:
     - _MyRange: 0.5
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _RimAmount: 0.716
+    - _RimAmount: 0.15
     - _RimThreshold: 0.1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
