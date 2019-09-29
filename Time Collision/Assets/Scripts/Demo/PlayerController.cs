@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public float maxSpeed;
     public float accel;
     public float aimSpeed;
+    public float aimDamping;
     public GameObject propPrefab;
     public float shotForce;
     public int controllerNum;
@@ -20,7 +21,7 @@ public class PlayerController : MonoBehaviour
     private float currentAim;
     private float targetAim;
     private float currentAimSpeed;
-    private const float AIM_MAX = 60.0f;
+    private const float AIM_MAX = 60f;
     private List<int> inventory;
     private Rigidbody rb;
 
@@ -101,22 +102,25 @@ public class PlayerController : MonoBehaviour
 
     private void updateAim()
     {
-        targetAim = Input.GetAxis("J" + controllerNum + "LT") * AIM_MAX;
-        Mathf.Clamp(targetAim, 0f, AIM_MAX);
-        currentAim = Mathf.SmoothDamp(currentAim, targetAim, ref currentAimSpeed, aimSpeed);
-        arrow.transform.localEulerAngles = new Vector3(currentAim, 0f, 0f);
+        targetAim -= Input.GetAxis("J" + controllerNum + "LT") * Time.deltaTime * (1 / aimSpeed);
+        targetAim += Input.GetAxis("J" + controllerNum + "RT") * Time.deltaTime * (1 / aimSpeed);
+        targetAim = Mathf.Clamp(targetAim, 0f, AIM_MAX);
+        currentAim = Mathf.SmoothDamp(currentAim, targetAim, ref currentAimSpeed, aimSpeed * aimDamping);
+
+        arrow.transform.forward = this.transform.forward;
+        arrow.transform.rotation *= Quaternion.Euler(-1 * currentAim, 0f, 0f);
     }
 
     private void fire()
     {
-        if(Input.GetButtonDown("J" + controllerNum + "RB") && inventory.Count > 0)
+        if (Input.GetButtonDown("J" + controllerNum + "RB") && inventory.Count > 0)
         {
             inventory.Remove(0);
             GameObject prop = Instantiate(propPrefab, transform.position, Quaternion.identity) as GameObject;
-            Rigidbody propRB = prop.GetComponent<Rigidbody>();
-            propRB.detectCollisions = false;
-            propRB.velocity = new Vector3(this.transform.forward.x, 0f, this.transform.forward.z).normalized;
-            propRB.velocity = (Quaternion.Euler(currentAim, 0f, 0f) * propRB.velocity) * shotForce;
+            prop.transform.forward = arrow.transform.forward;
+            prop.GetComponent<Rigidbody>().velocity = prop.transform.forward.normalized * shotForce;
+            prop.GetComponent<Rigidbody>().velocity += rb.velocity;
+            prop.GetComponent<Rigidbody>().detectCollisions = false;
         }
     }
 

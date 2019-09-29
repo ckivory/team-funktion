@@ -433,7 +433,7 @@ InputManager:
     dead: 0.001
     sensitivity: 3
     snap: 0
-    invert: 1
+    invert: 0
     type: 2
     axis: 8
     joyNum: 1
@@ -449,9 +449,41 @@ InputManager:
     dead: 0.001
     sensitivity: 3
     snap: 0
-    invert: 1
+    invert: 0
     type: 2
     axis: 8
+    joyNum: 2
+  - serializedVersion: 3
+    m_Name: J1RT
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 3
+    dead: 0.001
+    sensitivity: 3
+    snap: 0
+    invert: 0
+    type: 2
+    axis: 9
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: J2RT
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 3
+    dead: 0.001
+    sensitivity: 3
+    snap: 0
+    invert: 0
+    type: 2
+    axis: 9
     joyNum: 2
   - serializedVersion: 3
     m_Name: J1RB
@@ -467,7 +499,7 @@ InputManager:
     snap: 0
     invert: 0
     type: 0
-    axis: 0
+    axis: 2
     joyNum: 1
   - serializedVersion: 3
     m_Name: J2RB
@@ -483,5 +515,5 @@ InputManager:
     snap: 0
     invert: 0
     type: 0
-    axis: 0
+    axis: 2
     joyNum: 2

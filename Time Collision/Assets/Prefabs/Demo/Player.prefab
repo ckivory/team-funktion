@@ -311,7 +311,8 @@ MonoBehaviour:
   arrow: {fileID: 8018325473718912157}
   maxSpeed: 10
   accel: 1
-  aimSpeed: 0.1
+  aimSpeed: 0.01
+  aimDamping: 5
   propPrefab: {fileID: 199621307284906939, guid: 2b42558e67a7216439d52f1d30d58cbb,
     type: 3}
   shotForce: 10
