@@ -100,6 +100,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void addToInventory(int propNum)
+    {
+        inventory.Add(propNum);
+    }
+
     private void updateAim()
     {
         targetAim -= Input.GetAxis("J" + controllerNum + "LT") * Time.deltaTime * (1 / aimSpeed);
@@ -111,28 +116,25 @@ public class PlayerController : MonoBehaviour
         arrow.transform.rotation *= Quaternion.Euler(-1 * currentAim, 0f, 0f);
     }
 
+    private void initializeProjectile(GameObject firedProp)
+    {
+        firedProp.GetComponent<ProjectileController>().whoFired = gameObject;
+
+        firedProp.transform.forward = arrow.transform.forward;
+        firedProp.GetComponent<Rigidbody>().velocity = firedProp.transform.forward.normalized * shotForce;
+        //firedProp.GetComponent<Rigidbody>().velocity += rb.velocity;
+    }
+
     private void fire()
     {
         if (Input.GetButtonDown("J" + controllerNum + "RB") && inventory.Count > 0)
         {
             inventory.Remove(0);
             GameObject prop = Instantiate(propPrefab, transform.position, Quaternion.identity) as GameObject;
-            prop.transform.forward = arrow.transform.forward;
-            prop.GetComponent<Rigidbody>().velocity = prop.transform.forward.normalized * shotForce;
-            prop.GetComponent<Rigidbody>().velocity += rb.velocity;
-            prop.GetComponent<Rigidbody>().detectCollisions = false;
+            initializeProjectile(prop);
         }
     }
 
-    public void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Prop")
-        {
-            inventory.Add(other.gameObject.GetComponent<PropController>().propNum);
-            Destroy(other.gameObject);
-        }
-    }
-    
     void Start()
     {
         rb = this.GetComponent<Rigidbody>();

@@ -8,12 +8,7 @@ public class GameController : MonoBehaviour
     public int startCamera;
 
     private int currentCamera;
-
-    private void cycleCameras()
-    {
-        currentCamera = (currentCamera + 1) % cameras.Count;
-    }
-
+    
     private void selectNew()
     {
         foreach(Camera cam in cameras)
@@ -31,10 +26,41 @@ public class GameController : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.C))
+        if(Input.GetKeyDown(KeyCode.Alpha1))
         {
-            cycleCameras();
-            selectNew();
+            try
+            {
+                currentCamera = 0;
+                selectNew();
+            }
+            catch
+            {
+                print("Camera must exist!");
+            }
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            try
+            {
+                currentCamera = 1;
+                selectNew();
+            }
+            catch
+            {
+                print("Camera must exist!");
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            try
+            {
+                currentCamera = 2;
+                selectNew();
+            }
+            catch
+            {
+                print("Camera must exist!");
+            }
         }
     }
 }

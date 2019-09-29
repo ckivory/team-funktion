@@ -199,7 +199,7 @@ GameObject:
   - component: {fileID: 8350141649346319233}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -313,7 +313,7 @@ MonoBehaviour:
   accel: 1
   aimSpeed: 0.01
   aimDamping: 5
-  propPrefab: {fileID: 199621307284906939, guid: 2b42558e67a7216439d52f1d30d58cbb,
+  propPrefab: {fileID: 199621307284906939, guid: aee232819e173b241892bac56ce2a53f,
     type: 3}
   shotForce: 10
   controllerNum: 0
