@@ -41,7 +41,6 @@ public class scr_inventoryControl : MonoBehaviour
                 obj.GetComponent<scr_orbitControl>().zSpread += expandFactor * Math.Sign(obj.GetComponent<scr_orbitControl>().zSpread); ;
                 //obj.GetComponent<scr_orbitControl>().ySpread += expandFactor/2;
                 obj.GetComponent<scr_orbitControl>().rotSpeed += expandFactor / 10;
-
             }
         }
     }

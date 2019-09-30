@@ -130,7 +130,8 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("J" + controllerNum + "RB") && inventory.Count > 0)
         {
             inventory.Remove(0);
-            GameObject prop = Instantiate(propPrefab, transform.position, Quaternion.identity) as GameObject;
+            //GameObject prop = Instantiate(propPrefab, transform.position, Quaternion.identity) as GameObject;
+            GameObject prop = GetComponent<scr_inventoryControl>().removeItem();
             initializeProjectile(prop);
         }
     }
