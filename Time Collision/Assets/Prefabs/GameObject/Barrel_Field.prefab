@@ -243,9 +243,10 @@ GameObject:
   - component: {fileID: 6010712171604694708}
   - component: {fileID: 2949796388016498890}
   - component: {fileID: 2949796388016498889}
+  - component: {fileID: -2799756868189484532}
   m_Layer: 0
   m_Name: Barrel_Field
-  m_TagString: Untagged
+  m_TagString: item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -324,6 +325,19 @@ MonoBehaviour:
   rotSpeed: 0
   isBullet: 0
   mass: 2
+--- !u!114 &-2799756868189484532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4744767056463312973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ca8df787f11e214bb32abc5d4daa979, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whoFired: {fileID: 0}
 --- !u!1 &8819360393390714341
 GameObject:
   m_ObjectHideFlags: 0

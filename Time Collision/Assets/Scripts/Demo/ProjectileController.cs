@@ -8,12 +8,15 @@ public class ProjectileController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Destroy(gameObject);
+        if (GetComponent<scr_orbitControl>().isBullet)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject != whoFired)
+        if (other.gameObject != whoFired && GetComponent<scr_orbitControl>().isBullet)
         {
             Destroy(other.gameObject);
             Destroy(gameObject);

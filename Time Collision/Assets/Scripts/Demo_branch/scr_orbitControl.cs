@@ -126,7 +126,7 @@ public class scr_orbitControl : MonoBehaviour
         if (captured && !isBullet)   //If captured by player
         {
             //DisableCollision();
-
+            DisableCollision();
             //Set center point
             centerPoint = playerToFollow.transform;
             //Set timer

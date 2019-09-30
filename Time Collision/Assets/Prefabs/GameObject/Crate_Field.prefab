@@ -89,6 +89,7 @@ GameObject:
   - component: {fileID: 3542182686932778020}
   - component: {fileID: 932516654306112861}
   - component: {fileID: 932516654306112860}
+  - component: {fileID: 333715103321039835}
   m_Layer: 0
   m_Name: Crate_Field
   m_TagString: Untagged
@@ -168,6 +169,19 @@ MonoBehaviour:
   rotSpeed: 0
   isBullet: 0
   mass: 2
+--- !u!114 &333715103321039835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7251298450365760712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ca8df787f11e214bb32abc5d4daa979, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whoFired: {fileID: 0}
 --- !u!1 &8158253398747968977
 GameObject:
   m_ObjectHideFlags: 0
