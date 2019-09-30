@@ -127,7 +127,7 @@ public class PlayerController : MonoBehaviour
 
     private void fire()
     {
-        if (Input.GetButtonDown("J" + controllerNum + "RB") )//&& inventory.Count > 0)
+        if (Input.GetButtonDown("J" + controllerNum + "RB") || Input.GetKeyDown(KeyCode.F))//&& inventory.Count > 0)
         {
             inventory.Remove(0);
             //GameObject prop = Instantiate(propPrefab, transform.position, Quaternion.identity) as GameObject;
