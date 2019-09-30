@@ -593,6 +593,7 @@ MonoBehaviour:
   - {fileID: 1001157530}
   baseOffset: {x: 0, y: 30, z: -20}
   cameraSpeed: 0.25
+  cameraPadding: 0
   cameraMin: 5
 --- !u!1 &1001157530 stripped
 GameObject:
@@ -673,12 +674,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 8350141649346319233, guid: 8bc49503a82e53d4891ed2443e0efd79,
         type: 3}
       propertyPath: controllerNum
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8350141649346319233, guid: 8bc49503a82e53d4891ed2443e0efd79,
+=======
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2b42558e67a7216439d52f1d30d58cbb, type: 3}
+--- !u!1001 &1288885832
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1351052642}
+    m_Modifications:
+    - target: {fileID: 7290349700844560245, guid: 8bc49503a82e53d4891ed2443e0efd79,
+>>>>>>> 025950f46eea790e966ddd420513158a6e677c9b
         type: 3}
       propertyPath: controlKeys.Array.data[0]
       value: 105
@@ -738,7 +752,16 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.02114582
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 3991652907273165719, guid: 8bc49503a82e53d4891ed2443e0efd79,
+=======
+    - target: {fileID: 7290349700844560241, guid: 8bc49503a82e53d4891ed2443e0efd79,
+        type: 3}
+      propertyPath: m_Name
+      value: Player2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7290349700844560246, guid: 8bc49503a82e53d4891ed2443e0efd79,
+>>>>>>> 025950f46eea790e966ddd420513158a6e677c9b
         type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -1078,11 +1101,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1351052642}
     m_Modifications:
-    - target: {fileID: 7290349700844560241, guid: 8bc49503a82e53d4891ed2443e0efd79,
-        type: 3}
-      propertyPath: m_Name
-      value: Player1
-      objectReference: {fileID: 0}
     - target: {fileID: 7290349700844560245, guid: 8bc49503a82e53d4891ed2443e0efd79,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1138,7 +1156,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 8350141649346319233, guid: 8bc49503a82e53d4891ed2443e0efd79,
+=======
+    - target: {fileID: 7290349700844560241, guid: 8bc49503a82e53d4891ed2443e0efd79,
+        type: 3}
+      propertyPath: m_Name
+      value: Player1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7290349700844560250, guid: 8bc49503a82e53d4891ed2443e0efd79,
+        type: 3}
+      propertyPath: controllerNumber
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7290349700844560250, guid: 8bc49503a82e53d4891ed2443e0efd79,
+        type: 3}
+      propertyPath: controllerNum
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7290349700844560250, guid: 8bc49503a82e53d4891ed2443e0efd79,
+>>>>>>> 025950f46eea790e966ddd420513158a6e677c9b
         type: 3}
       propertyPath: controlKeys.Array.data[0]
       value: 119

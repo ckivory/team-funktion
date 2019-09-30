@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8608654846981425248}
   - component: {fileID: 5705493603884479431}
   m_Layer: 0
-  m_Name: pf_cube
+  m_Name: pf_Cube
   m_TagString: item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -111,11 +111,14 @@ MonoBehaviour:
   speedMax: 2
   speedMin: 1
   centerOffset: 0
+  torque: 1
   captured: 0
   xSpread: 0
   zSpread: 0
   ySpread: 0
   rotSpeed: 0
+  isBullet: 0
+  mass: 2
 --- !u!54 &5705493603884479431
 Rigidbody:
   m_ObjectHideFlags: 0
