@@ -36,8 +36,8 @@ public class OverShoulderCameraController : MonoBehaviour
 
     private void updateInput()
     {
-        targetX += Input.GetAxis("J" + controllerNum + "XRot") * cameraSpeed;
-        targetY += Input.GetAxis("J" + controllerNum + "YRot") * cameraSpeed;
+        targetX += Input.GetAxis("J" + controllerNum + "XRot") * cameraSpeed * Time.deltaTime;
+        targetY += Input.GetAxis("J" + controllerNum + "YRot") * cameraSpeed * Time.deltaTime;
         targetY = Mathf.Clamp(targetY, MIN_Y, MAX_Y);
 
         currentX = Mathf.SmoothDamp(currentX, targetX, ref omegaX, sensitivityX);

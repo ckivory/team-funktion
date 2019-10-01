@@ -89,7 +89,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   camTransform: {fileID: 4617151699560123912}
-  cameraSpeed: 2
+  cameraSpeed: 120
   sensitivityX: 0.125
   sensitivityY: 0.25
 --- !u!1 &6411542354775502731
