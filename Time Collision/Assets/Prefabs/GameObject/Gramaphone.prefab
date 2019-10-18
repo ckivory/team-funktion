@@ -9,8 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3492235843558717334}
+  - component: {fileID: -5761593197774779284}
   m_Layer: 0
-  m_Name: Gramaphone_OBJ
+  m_Name: Gramaphone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39,6 +40,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 112.63801, z: 0}
+--- !u!114 &-5761593197774779284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 445205623230088581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cdd0fb5792a1504d841622761a480f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Power: 10
+  Weight: 5
 --- !u!1 &781697790074428738
 GameObject:
   m_ObjectHideFlags: 0
