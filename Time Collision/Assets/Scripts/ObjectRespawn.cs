@@ -5,10 +5,12 @@ using UnityEngine;
 public class ObjectRespawn : MonoBehaviour
 {
     public GameObject ObjectToRespawn;
-    // These are two variable for determine the range of offset when new respawn is created
+    // these are four variable for determine the range of offset when new respawn is created
     public float MinOffsetX;
+    public float MaxOffsetX;
+    public float MinOffsetY;
     public float MaxOffsetY;
-    // These are variables that determine the respawn timer based on the min and max value
+    // these are variables that determine the respawn timer based on the min and max value
     public float MinTimer;
     public float MaxTimer;
     private float CurrentTimer;
@@ -19,7 +21,7 @@ public class ObjectRespawn : MonoBehaviour
     }
     void OnEnable()
     {
-        // Getting the respawn timer for the first time
+        // getting the respawn timer for the first time
         CurrentTimer = NewTimer();
     }
 }
