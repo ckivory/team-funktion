@@ -9,8 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4819497128911140911}
-  - component: {fileID: 432718198498577483}
-  - component: {fileID: 432718198498577480}
   m_Layer: 0
   m_Name: PlayerSphere
   m_TagString: Untagged
@@ -34,36 +32,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 114.48401, z: 0}
---- !u!114 &432718198498577483
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 432718198498577482}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c10f03e58b96a344849c39d7d2cfebb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Sphere: {fileID: 1987872730179893983}
-  Disk: {fileID: 5186574011789132070}
---- !u!114 &432718198498577480
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 432718198498577482}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc516ad685b3e8c4daaa6733cb069458, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Sphere: {fileID: 1987872730179893983}
-  Disk: {fileID: 5186574011789132070}
-  max: 300
-  speed: 0.05
 --- !u!1 &1987872730179893983
 GameObject:
   m_ObjectHideFlags: 0
