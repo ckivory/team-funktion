@@ -126,7 +126,7 @@ public class scr_orbitControl : MonoBehaviour
         if (captured && !isBullet)   //If captured by player
         {
             //DisableCollision();
-
+            DisableCollision();
             //Set center point
             centerPoint = playerToFollow.transform;
             //Set timer
@@ -173,7 +173,7 @@ public class scr_orbitControl : MonoBehaviour
         {
             zSpread = UnityEngine.Random.Range(-dynamicVar / mass, dynamicVar / mass);
         }
-        ySpread = UnityEngine.Random.Range(-dynamicVar / mass, dynamicVar / mass);
+        ySpread = 0;// UnityEngine.Random.Range(-dynamicVar / mass, dynamicVar / mass);
         rotSpeed = UnityEngine.Random.Range(speedMin, speedMax) / mass;
 
     }

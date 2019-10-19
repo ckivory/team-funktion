@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public Camera cam;
+    public GameObject arrow;
     public float maxSpeed;
     public float accel;
-    public float rotAccel;
+    public float aimSpeed;
+    public float aimDamping;
+    public GameObject propPrefab;
+    public float shotForce;
     public int controllerNum;
     public bool usingController;
     public List<KeyCode> controlKeys;
     
+    
     private Vector3 movementInput;
-    private Vector3 rotationInput;
+    private float currentAim;
+    private float targetAim;
+    private float currentAimSpeed;
+    private const float AIM_MAX = 60f;
     private List<int> inventory;
     private Rigidbody rb;
 
@@ -56,6 +65,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void alignMovement()
+    {
+        movementInput = movementInput.x * Vector3.Cross(Vector3.up, transform.forward).normalized + movementInput.z * transform.forward.normalized;
+    }
+
     private void updateMovement()
     {
         if(usingController)
@@ -67,6 +81,8 @@ public class PlayerController : MonoBehaviour
             getKeyboardMovement();
         }
 
+        alignMovement();
+
         rb.velocity += movementInput * accel;         // Additive controls, so it will intentionally feel a little floaty.
         if(rb.velocity.magnitude > maxSpeed)
         {
@@ -74,70 +90,65 @@ public class PlayerController : MonoBehaviour
         }
         // If movementInput is zero, they will slowly drift to a stop with a drag of 1.
     }
-
-    private void getJoystickRotation()
-    {
-        rotationInput = Vector3.zero;
-        rotationInput.x = Input.GetAxis("J" + controllerNum + "XRot");
-        rotationInput.z = Input.GetAxis("J" + controllerNum + "YRot");
-    }
-
-    private void getKeyboardRotation()
-    {
-        rotationInput = Vector3.zero;
-        if (Input.GetKey(controlKeys[4]))       // UP
-        {
-            rotationInput.z += 1;
-        }
-        if (Input.GetKey(controlKeys[5]))       // LEFT
-        {
-            rotationInput.x -= 1;
-        }
-        if (Input.GetKey(controlKeys[6]))       // DOWN
-        {
-            rotationInput.z -= 1;
-        }
-        if (Input.GetKey(controlKeys[7]))       // RIGHT
-        {
-            rotationInput.x += 1;
-        }
-    }
     
     private void updateRotation()
     {
-        if(usingController)
+        Vector3 newForward = (this.transform.position - cam.transform.position);
+        if(newForward != Vector3.zero)
         {
-            getJoystickRotation();
-        }
-        else
-        {
-            getKeyboardRotation();
-        }
-
-        this.transform.forward += rotationInput * rotAccel;
-        if(this.transform.forward.magnitude > 1)
-        {
-            this.transform.forward = this.transform.forward.normalized;
+            this.transform.forward = new Vector3(newForward.x, 0f, newForward.z);
         }
     }
 
-    public void OnTriggerEnter(Collider other)
+    private void addToInventory(int propNum)
     {
-        if (other.tag == "Prop")
+        inventory.Add(propNum);
+    }
+
+    private void updateAim()
+    {
+        targetAim -= Input.GetAxis("J" + controllerNum + "LT") * Time.deltaTime * (1 / aimSpeed);
+        targetAim += Input.GetAxis("J" + controllerNum + "RT") * Time.deltaTime * (1 / aimSpeed);
+        targetAim = Mathf.Clamp(targetAim, 0f, AIM_MAX);
+        currentAim = Mathf.SmoothDamp(currentAim, targetAim, ref currentAimSpeed, aimSpeed * aimDamping);
+
+        arrow.transform.forward = this.transform.forward;
+        arrow.transform.rotation *= Quaternion.Euler(-1 * currentAim, 0f, 0f);
+    }
+
+    private void initializeProjectile(GameObject firedProp)
+    {
+        firedProp.GetComponent<ProjectileController>().whoFired = gameObject;
+
+        firedProp.transform.forward = arrow.transform.forward;
+        firedProp.GetComponent<Rigidbody>().velocity = firedProp.transform.forward.normalized * shotForce;
+        //firedProp.GetComponent<Rigidbody>().velocity += rb.velocity;
+    }
+
+    private void fire()
+    {
+        if (Input.GetButtonDown("J" + controllerNum + "RB") || Input.GetKeyDown(KeyCode.F))//&& inventory.Count > 0)
         {
-            inventory.Add(other.gameObject.GetComponent<PropController>().propNum);
-            //Destroy(other.gameObject);
+            inventory.Remove(0);
+            //GameObject prop = Instantiate(propPrefab, transform.position, Quaternion.identity) as GameObject;
+            GameObject prop = GetComponent<scr_inventoryControl>().removeItem();
+            initializeProjectile(prop);
         }
     }
-    
+
     void Start()
     {
         rb = this.GetComponent<Rigidbody>();
+        inventory = new List<int>();
+        currentAim = 0f;
+        targetAim = 0f;
     }
 
     void Update()
     {
         updateMovement();
         updateRotation();
+        updateAim();
+        fire();
     }
 }

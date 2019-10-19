@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraController : MonoBehaviour
+public class OrthographicCameraController : MonoBehaviour
 {
     public List<GameObject> players;
     public Vector3 baseOffset;
@@ -21,7 +21,10 @@ public class CameraController : MonoBehaviour
         {
             foreach (GameObject player in players)
             {
-                playerCenter += player.transform.position;
+                if(player != null)
+                {
+                    playerCenter += player.transform.position;
+                }
             }
             playerCenter /= players.Count;
         }
@@ -34,10 +37,13 @@ public class CameraController : MonoBehaviour
         float maxDisplacement = 0f;
         foreach (GameObject player in players)
         {
-            displacement = (player.transform.position - playerCenter).magnitude;
-            if (displacement > maxDisplacement)
+            if(player != null)
             {
-                maxDisplacement = displacement;
+                displacement = (player.transform.position - playerCenter).magnitude;
+                if (displacement > maxDisplacement)
+                {
+                    maxDisplacement = displacement;
+                }
             }
         }
         scale = Mathf.SmoothDamp(scale, Mathf.Max(maxDisplacement, cameraMin), ref currentSpeed, cameraSpeed);
