@@ -43,12 +43,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 971bfcbc2c3e85748b38a63ad38e4b5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemNumToSpawn: 5
-  spawnPointXMin: -15
-  spawnPointXMax: 15
-  spawnPointZMin: -15
-  spawnPointZMax: 15
+  players: {fileID: 0}
+  itemNumToSpawn: 1
   itemTypeToSpawn:
-  - {fileID: 328240274581039935, guid: 5921d293492b46d498a2ed4d90af4556, type: 3}
-  - {fileID: 5730497272663745611, guid: 97460bc5d6a1fed44b27d38081bc43bd, type: 3}
-  - {fileID: 902020298391014985, guid: 0f729dcfe9f904647b07a947cd082009, type: 3}
+  - {fileID: 4744767056463312973, guid: e74d6bcd31d962245b185abfff29ead3, type: 3}
+  - {fileID: 7251298450365760712, guid: d4cb428a71ce3aa47a4ece99f937db61, type: 3}
+  - {fileID: 9084589849402155440, guid: 19bcd0287b72b974aba78b8576d79657, type: 3}
+  spawnPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

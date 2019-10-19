@@ -7,15 +7,39 @@ public class scr_controller : MonoBehaviour
 {
     public GameObject players;
     public int itemNumToSpawn;
+    public GameObject[] itemTypeToSpawn;
+    public GameObject[] spawnPoints;
+    List<GameObject> items;
+    GameObject itemToRemove;
     //Legacy code
     //public float spawnPointXMin;
     //public float spawnPointXMax;
     //public float spawnPointZMin;
     //public float spawnPointZMax;
-    public GameObject[] itemTypeToSpawn;
-    public GameObject[] spawnPoints;
-    List<GameObject> items;
-    GameObject itemToRemove;
+    // these are four variable for determine the range of offset when new respawn is created
+    public float MinOffsetX;
+    public float MaxOffsetX;
+    public float MinOffsetZ;
+    public float MaxOffsetZ;
+
+    // these are variables that determine the respawn timer based on the min and max value
+    public float MinTimer;
+    public float MaxTimer;
+    private float CurrentTimer;
+
+    private float NewTimer()
+    {
+        return Random.Range(MinTimer, MaxTimer);
+    }
+    void OnEnable()
+    {
+        // getting the respawn timer for the first time
+        CurrentTimer = NewTimer();
+    }
+    void  applyOffset(ref Vector3 v3)
+    {
+        v3 += new Vector3(Random.Range(MinOffsetX, MaxOffsetX), 0f, Random.Range(MinOffsetZ, MaxOffsetZ));
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +56,12 @@ public class scr_controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        respawnItem();
+        CurrentTimer-=Time.deltaTime;
+        if (CurrentTimer <= 0f)
+        {
+            respawnItem();
+            CurrentTimer = NewTimer();
+        }
     }
 
 
@@ -45,6 +74,7 @@ public class scr_controller : MonoBehaviour
             while (distanceToPlayer < 5)
             {
                 spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length - 1)].transform.position;
+                applyOffset(ref spawnPoint);
             }
             GameObject itemToSave = Instantiate(itemTypeToSpawn[Random.Range(0, itemTypeToSpawn.Length)], spawnPoint, Quaternion.identity);
             itemToSave.tag = "item";
