@@ -7,9 +7,7 @@ using UnityEngine;
 /// </summary>
 public class scr_cycleItem : MonoBehaviour
 {
-    public List<KeyCode> Keys;
     GameObject bullet;
-
     // Start is called before the first frame update
     void Start()
     {

@@ -33,6 +33,11 @@ public class scr_orbitControl : MonoBehaviour
     float timer = 0;
     Transform centerPoint;
 
+    // weight is the effective health of the player which also determine their current level of size
+    // power is how much damage in terms of weight that will be dealth when the object hit the enemy player
+    public float Power;
+    public float Weight;
+
 
     void Idle()
     {
