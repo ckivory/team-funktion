@@ -14,7 +14,7 @@ public class scr_inventoryControl : MonoBehaviour
     int selectedNum = 0;
     List<GameObject> itemList;
     public float initialWeight;
-    float weight;
+    public float weight;
     public bool expand;
 
     // Start is called before the first frame update
@@ -172,5 +172,10 @@ public class scr_inventoryControl : MonoBehaviour
         return null;
     }
 
-
+    void OnGUI()
+    {
+        GUIStyle WeightStyle=new GUIStyle();
+        WeightStyle.fontSize = 50;
+        GUI.Label(new Rect(100, 100, 300, 150), "Current Weight:"+this.weight.ToString(),WeightStyle);
+    }
 }
