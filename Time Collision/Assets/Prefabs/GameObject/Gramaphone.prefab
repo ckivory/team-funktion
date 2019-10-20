@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3492235843558717334}
   - component: {fileID: -5761593197774779284}
+  - component: {fileID: 8434218671370745748}
+  - component: {fileID: 8434218671370745747}
   m_Layer: 0
   m_Name: Gramaphone
   m_TagString: Untagged
@@ -24,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 445205623230088581}
-  m_LocalRotation: {x: -0, y: 0.83214027, z: -0, w: 0.5545653}
+  m_LocalRotation: {x: 0, y: 0.8321381, z: 0, w: 0.5545684}
   m_LocalPosition: {x: -11.63, y: 0.9, z: 30.13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -52,8 +54,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cdd0fb5792a1504d841622761a480f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Power: 10
-  Weight: 5
+--- !u!54 &8434218671370745748
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 445205623230088581}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 1
+--- !u!64 &8434218671370745747
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 445205623230088581}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -1026100765583077436, guid: 1ae2b63f55732454cb2928285bcaaf58, type: 3}
 --- !u!1 &781697790074428738
 GameObject:
   m_ObjectHideFlags: 0
