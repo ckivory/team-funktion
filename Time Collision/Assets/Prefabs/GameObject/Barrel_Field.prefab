@@ -309,8 +309,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2ad40034434f9db42bf7e0b363d7ba1f, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   type: Barrel
   dynamicVar: 10
   Controller: {fileID: 0}
@@ -325,6 +325,8 @@ MonoBehaviour:
   rotSpeed: 0
   isBullet: 0
   mass: 2
+  Power: 0
+  Weight: 1
 --- !u!114 &686287507195358661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,10 +337,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0cdd0fb5792a1504d841622761a480f7, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  Power: 10
-  Weight: 5
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8819360393390714341
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class scr_inventoryControl : MonoBehaviour
 {
-    public float expandFactor;
+    public float growFac;
     Dictionary<string, int> inventory;
     [HideInInspector]
     public GameObject item;
@@ -13,6 +13,8 @@ public class scr_inventoryControl : MonoBehaviour
     public string selectedType;
     int selectedNum = 0;
     List<GameObject> itemList;
+    public float initialWeight;
+    public float weight;
     public bool expand;
 
     // Start is called before the first frame update
@@ -21,6 +23,7 @@ public class scr_inventoryControl : MonoBehaviour
         itemList = new List<GameObject>();
         inventory = new Dictionary<string, int>();
         selected = null;
+        weight = initialWeight;
     }
 
     // Update is called once per frame
@@ -37,10 +40,10 @@ public class scr_inventoryControl : MonoBehaviour
             foreach (GameObject obj in itemList)
             {
 
-                obj.GetComponent<scr_orbitControl>().xSpread += expandFactor * Math.Sign(obj.GetComponent<scr_orbitControl>().xSpread);
-                obj.GetComponent<scr_orbitControl>().zSpread += expandFactor * Math.Sign(obj.GetComponent<scr_orbitControl>().zSpread); ;
+                obj.GetComponent<scr_orbitControl>().xSpread += growFac * Math.Sign(obj.GetComponent<scr_orbitControl>().xSpread);
+                obj.GetComponent<scr_orbitControl>().zSpread += growFac * Math.Sign(obj.GetComponent<scr_orbitControl>().zSpread); ;
                 //obj.GetComponent<scr_orbitControl>().ySpread += expandFactor/2;
-                obj.GetComponent<scr_orbitControl>().rotSpeed += expandFactor / 10;
+                obj.GetComponent<scr_orbitControl>().rotSpeed += growFac / 10;
             }
         }
     }
@@ -61,7 +64,7 @@ public class scr_inventoryControl : MonoBehaviour
             {
                 inventory[itemType]++;
             }
-
+            weight += item.GetComponent<scr_orbitControl>().Weight;
             //Select the first item got picked up
             if (selected == null)
             {
@@ -169,5 +172,10 @@ public class scr_inventoryControl : MonoBehaviour
         return null;
     }
 
-
+    void OnGUI()
+    {
+        GUIStyle WeightStyle=new GUIStyle();
+        WeightStyle.fontSize = 50;
+        GUI.Label(new Rect(100, 100, 300, 150), "Current Weight:"+this.weight.ToString(),WeightStyle);
+    }
 }

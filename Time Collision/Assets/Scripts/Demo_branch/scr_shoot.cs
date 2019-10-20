@@ -19,7 +19,6 @@ public class scr_shoot : MonoBehaviour
             bullet = GetComponent<scr_inventoryControl>().removeItem();
             if (bullet != null)
             {
-
                 bullet.GetComponent<Rigidbody>().AddForce(this.transform.forward*999f);
             }
         }
