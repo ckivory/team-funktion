@@ -465,7 +465,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
 --- !u!114 &-3408205787632008162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -479,15 +479,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: Landmine
-  dynamicVar: 5
+  dynamicVar: 10
   Controller: {fileID: 0}
-  speedMax: 7
-  speedMin: 3
+  speedMax: 3
+  speedMin: 1
   centerOffset: 0
   torque: 1
   captured: 0
-  xSpread: 0
-  zSpread: 0
+  xSpread: 2
+  zSpread: 2
   ySpread: 0
   rotSpeed: 0
   isBullet: 0
