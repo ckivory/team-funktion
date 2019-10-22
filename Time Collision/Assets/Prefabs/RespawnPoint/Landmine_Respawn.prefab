@@ -49,5 +49,5 @@ MonoBehaviour:
   MaxOffsetX: 0
   MinOffsetZ: 0
   MaxOffsetZ: 0
-  MinTimer: 5
-  MaxTimer: 10
+  MinTimer: 15
+  MaxTimer: 30

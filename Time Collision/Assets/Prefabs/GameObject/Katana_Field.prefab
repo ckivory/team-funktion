@@ -701,15 +701,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: Katana
-  dynamicVar: 1
+  dynamicVar: 10
   Controller: {fileID: 0}
-  speedMax: 10
-  speedMin: 5
+  speedMax: 5
+  speedMin: 2
   centerOffset: 0
   torque: 1
   captured: 0
-  xSpread: 0
-  zSpread: 0
+  xSpread: 7
+  zSpread: 7
   ySpread: 0
   rotSpeed: 0
   isBullet: 0

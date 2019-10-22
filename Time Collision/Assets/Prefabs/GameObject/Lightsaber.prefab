@@ -9975,9 +9975,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5439355012559033122}
+  - component: {fileID: -4560686157367388989}
+  - component: {fileID: -6797197325105625081}
+  - component: {fileID: -9000517230509702564}
+  - component: {fileID: 3897156490559434561}
   m_Layer: 0
   m_Name: Lightsaber
-  m_TagString: Untagged
+  m_TagString: item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10005,6 +10009,76 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &-4560686157367388989
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9018213373250412849}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 3809219540878892122, guid: ac2d32ffb76f7d04b93e027f09af7f43, type: 3}
+--- !u!54 &-6797197325105625081
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9018213373250412849}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &-9000517230509702564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9018213373250412849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ad40034434f9db42bf7e0b363d7ba1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: Lightsaber
+  dynamicVar: 10
+  Controller: {fileID: 0}
+  speedMax: 4
+  speedMin: 1
+  centerOffset: 0
+  torque: 1
+  captured: 0
+  xSpread: 4
+  zSpread: 4
+  ySpread: 0
+  rotSpeed: 0
+  isBullet: 0
+  mass: 2
+  Power: 0
+  Weight: 1
+--- !u!114 &3897156490559434561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9018213373250412849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cdd0fb5792a1504d841622761a480f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9020639834749410453
 GameObject:
   m_ObjectHideFlags: 0
