@@ -14,7 +14,7 @@ public class scr_inventoryControl : MonoBehaviour
     int selectedNum = 0;
     List<GameObject> itemList;
     public float initialWeight;
-    public float weight;
+    public float Weight;
     public bool expand;
 
     // Start is called before the first frame update
@@ -23,7 +23,7 @@ public class scr_inventoryControl : MonoBehaviour
         itemList = new List<GameObject>();
         inventory = new Dictionary<string, int>();
         selected = null;
-        weight = initialWeight;
+        Weight = initialWeight;
     }
 
     // Update is called once per frame
@@ -64,7 +64,7 @@ public class scr_inventoryControl : MonoBehaviour
             {
                 inventory[itemType]++;
             }
-            weight += item.GetComponent<scr_orbitControl>().Weight;
+            Weight += item.GetComponent<scr_orbitControl>().Weight;
             //Select the first item got picked up
             if (selected == null)
             {
@@ -166,6 +166,7 @@ public class scr_inventoryControl : MonoBehaviour
                 selectedType = null;
             }
             bullet.GetComponent<scr_orbitControl>().EnableCollision();
+
             return bullet;
         }
 
@@ -176,6 +177,6 @@ public class scr_inventoryControl : MonoBehaviour
     {
         GUIStyle WeightStyle=new GUIStyle();
         WeightStyle.fontSize = 50;
-        GUI.Label(new Rect(100, 100, 300, 150), "Current Weight:"+this.weight.ToString(),WeightStyle);
+        GUI.Label(new Rect(100, 100, 300, 150), "Current Weight:"+this.Weight.ToString(),WeightStyle);
     }
 }
