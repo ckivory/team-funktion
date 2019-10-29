@@ -6,6 +6,9 @@ public class DiskController : MonoBehaviour
 {
     public GameObject player;
     private List<int> inventory;
+    private float diskSize;
+    public List<GameObject> collectedObjects;
+    private List<GameObject> diskObjects;
 
     private void Start()
     {
@@ -16,8 +19,16 @@ public class DiskController : MonoBehaviour
         
     }
 
+    void addToDisk(int collectedType)
+    {
+
+    }
+
     public void UpdateDisk()
     {
+        Vector3 _diskSize = new Vector3(1,0, 1) * diskSize;
+        this.transform.localScale = _diskSize;
+
 
     }
 
