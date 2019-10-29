@@ -703,11 +703,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7251298450365760712, guid: d4cb428a71ce3aa47a4ece99f937db61,
-        type: 3}
-      propertyPath: m_Name
-      value: Crate_Field
-      objectReference: {fileID: 0}
     - target: {fileID: 8846607964566358412, guid: d4cb428a71ce3aa47a4ece99f937db61,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -762,6 +757,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7251298450365760712, guid: d4cb428a71ce3aa47a4ece99f937db61,
+        type: 3}
+      propertyPath: m_Name
+      value: Crate_Field
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4cb428a71ce3aa47a4ece99f937db61, type: 3}
@@ -1568,6 +1568,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -1.577
       objectReference: {fileID: 0}
+    - target: {fileID: 4540457055177626264, guid: 62c0e3f0c25abad418e56eb61a721763,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: daba6c43d1172764eab0524d56a5d267, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62c0e3f0c25abad418e56eb61a721763, type: 3}
 --- !u!1001 &1848121755302750746
