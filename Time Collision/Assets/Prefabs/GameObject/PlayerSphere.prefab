@@ -464,11 +464,8 @@ GameObject:
   - component: {fileID: 287423127271723610}
   - component: {fileID: 287423127271723612}
   - component: {fileID: 287423127271723613}
-  - component: {fileID: 287423127271723615}
-  - component: {fileID: 287423127271723614}
-  - component: {fileID: 287423127271723601}
   m_Layer: 0
-  m_Name: PlayerSphere 1
+  m_Name: PlayerSphere
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -546,49 +543,6 @@ MonoBehaviour:
   controllerNum: 1
   usingController: 0
   controlKeys: 77000000610000007300000064000000
---- !u!114 &287423127271723615
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7889059186723114482}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d627cb8b99b00af459a0d0e7e4a6650c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  initialSize: 0
---- !u!114 &287423127271723614
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7889059186723114482}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c915f8faf52f06d49b0c6f63eda6c4f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &287423127271723601
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7889059186723114482}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03199aa70f3996d4dbae6fa03b2def70, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  growFac: 0
-  item: {fileID: 0}
-  selectedType: 
-  initialWeight: 0
-  Weight: 0
-  expand: 0
 --- !u!1 &8959265969423718699
 GameObject:
   m_ObjectHideFlags: 0
