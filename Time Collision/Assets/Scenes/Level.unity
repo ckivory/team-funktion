@@ -2699,7 +2699,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: fda3c6f4576b2934fac395c877a62ab7, type: 2}
+      objectReference: {fileID: 2100000, guid: 613cc7b8a123a60428c06b501be1050c, type: 2}
     - target: {fileID: 7743900081024195407, guid: 8e2e0ea42ec28c34fbcbc7df0171b427,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -3301,7 +3301,7 @@ Light:
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
-    m_Bias: 0.05
+    m_Bias: 0.108
     m_NormalBias: 0.4
     m_NearPlane: 0.2
     m_CullingMatrixOverride:
