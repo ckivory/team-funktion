@@ -40,6 +40,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Top_Render_Layer
+    uniqueID: 2139630355
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
