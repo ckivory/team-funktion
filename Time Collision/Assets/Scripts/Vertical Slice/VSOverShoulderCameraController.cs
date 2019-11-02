@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OverShoulderCameraController : MonoBehaviour
+public class VSOverShoulderCameraController : MonoBehaviour
 {
     public GameObject player;
-    public Transform camTransform;
+    private Transform camTransform;
 
-    public float cameraSpeed;
+    public float cameraSpeed = 120;
 
-    public float sensitivityX = 4.0f;
-    public float sensitivityY = 1.0f;
+    public float sensitivityX = 0.125f;
+    public float sensitivityY = 0.25f;
+    public float mouseSensitivity = 3f;
     
     private Camera cam;
     private int controllerNum;
@@ -40,12 +41,13 @@ public class OverShoulderCameraController : MonoBehaviour
         {
             targetX += Input.GetAxis("J" + controllerNum + "XRot") * cameraSpeed * Time.deltaTime;
             targetY += Input.GetAxis("J" + controllerNum + "YRot") * cameraSpeed * Time.deltaTime;
-            targetY = Mathf.Clamp(targetY, MIN_Y, MAX_Y);
         }
         else
         {
-            // TODO: Implement mouse-based camera movement
+            targetX += Input.GetAxis("Mouse X") * cameraSpeed * mouseSensitivity * Time.deltaTime;
+            targetY += -1 * Input.GetAxis("Mouse Y") * cameraSpeed * mouseSensitivity * Time.deltaTime;
         }
+        targetY = Mathf.Clamp(targetY, MIN_Y, MAX_Y);
 
         currentX = Mathf.SmoothDamp(currentX, targetX, ref omegaX, sensitivityX);
         currentY = Mathf.SmoothDamp(currentY, targetY, ref omegaY, sensitivityY);

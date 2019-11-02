@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38c3ace15b050eb4e9ed41a5c610184a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObjectToRespawn: {fileID: 7085181105243925176, guid: da17131deaa5e894daa3ca40421dd754,
+  ObjectToRespawn: {fileID: 7085181105243925176, guid: bda57639671bf634a9c45577126a5c6d,
     type: 3}
   MinOffsetX: 0
   MaxOffsetX: 0

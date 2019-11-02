@@ -10,19 +10,20 @@ public class PlayerController : MonoBehaviour
     public float accel;
     public float aimSpeed;
     public float aimDamping;
-    public GameObject propPrefab;
     public float shotForce;
     public int controllerNum;
     public bool usingController;
-    public List<KeyCode> controlKeys;
-    
-    
+
+    public List<GameObject> collectedPropPrefabs;
+    public List<GameObject> firedPropPrefabs;
+
     private Vector3 movementInput;
     private float currentAim;
     private float targetAim;
     private float currentAimSpeed;
     private const float AIM_MAX = 60f;
     private List<int> inventory;
+    private int selectedProp;
     private Rigidbody rb;
 
     private void getJoystickMovement()
@@ -47,19 +48,19 @@ public class PlayerController : MonoBehaviour
     private void getKeyboardMovement()
     {
         movementInput = Vector3.zero;
-        if(Input.GetKey(controlKeys[0]))       // UP
+        if(Input.GetKey(KeyCode.W))
         {
             movementInput.z += 1;
         }
-        if (Input.GetKey(controlKeys[1]))       // LEFT
+        if (Input.GetKey(KeyCode.A))
         {
             movementInput.x -= 1;
         }
-        if (Input.GetKey(controlKeys[2]))       // DOWN
+        if (Input.GetKey(KeyCode.S))
         {
             movementInput.z -= 1;
         }
-        if (Input.GetKey(controlKeys[3]))       // RIGHT
+        if (Input.GetKey(KeyCode.D))
         {
             movementInput.x += 1;
         }
@@ -100,15 +101,36 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter(Collision col)
+    {
+        if(col.gameObject.CompareTag("Collectible"))
+        {
+            int propNum = col.gameObject.GetComponent<ObjectAttributes>().propNum;
+            addToInventory(propNum);
+            string invString = string.Join(",", inventory.ToArray());
+            Debug.Log(invString);
+            Destroy(col.gameObject);
+        }
+    }
+
     private void addToInventory(int propNum)
     {
-        inventory.Add(propNum);
+        inventory[propNum]++;
     }
 
     private void updateAim()
     {
-        targetAim -= Input.GetAxis("J" + controllerNum + "LT") * Time.deltaTime * (1 / aimSpeed);
-        targetAim += Input.GetAxis("J" + controllerNum + "RT") * Time.deltaTime * (1 / aimSpeed);
+        if(usingController)
+        {
+            // TODO: Change to X and Y
+            targetAim -= Input.GetAxis("J" + controllerNum + "LT") * Time.deltaTime * (1 / aimSpeed);
+            targetAim += Input.GetAxis("J" + controllerNum + "RT") * Time.deltaTime * (1 / aimSpeed);
+        }
+        else
+        {
+            // TODO: Implement scroll-based pitch
+        }
+
         targetAim = Mathf.Clamp(targetAim, 0f, AIM_MAX);
         currentAim = Mathf.SmoothDamp(currentAim, targetAim, ref currentAimSpeed, aimSpeed * aimDamping);
 
@@ -116,23 +138,42 @@ public class PlayerController : MonoBehaviour
         arrow.transform.rotation *= Quaternion.Euler(-1 * currentAim, 0f, 0f);
     }
 
-    private void initializeProjectile(GameObject firedProp)
+    private void initializeProjectile()
     {
-        firedProp.GetComponent<ProjectileController>().whoFired = gameObject;
+        GameObject shot = Instantiate(firedPropPrefabs[selectedProp], rb.position, arrow.transform.rotation);
+        shot.GetComponent<Rigidbody>().velocity = arrow.transform.forward * shotForce;
+    }
 
-        firedProp.transform.forward = arrow.transform.forward;
-        firedProp.GetComponent<Rigidbody>().velocity = firedProp.transform.forward.normalized * shotForce;
-        //firedProp.GetComponent<Rigidbody>().velocity += rb.velocity;
+    private bool triggerPulled()
+    {
+        if(usingController)
+        {
+            if (Input.GetButtonDown("J" + controllerNum + "RB") || Input.GetKeyDown(KeyCode.F))//&& inventory.Count > 0)
+            {
+                return true;
+            }
+        }
+        else
+        {
+            if(Input.GetMouseButtonDown(0))
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     private void fire()
     {
-        if (Input.GetButtonDown("J" + controllerNum + "RB") || Input.GetKeyDown(KeyCode.F))//&& inventory.Count > 0)
+        if(inventory[selectedProp]> 0)
         {
-            inventory.Remove(0);
-            //GameObject prop = Instantiate(propPrefab, transform.position, Quaternion.identity) as GameObject;
-            GameObject prop = GetComponent<scr_inventoryControl>().removeItem();
-            initializeProjectile(prop);
+            Debug.Log("Firing " + selectedProp + ". " + (inventory[selectedProp] - 1) + " items left.");
+            initializeProjectile();
+            inventory[selectedProp]--;
+        }
+        else
+        {
+            Debug.Log("Click");
         }
     }
 
@@ -140,8 +181,13 @@ public class PlayerController : MonoBehaviour
     {
         rb = this.GetComponent<Rigidbody>();
         inventory = new List<int>();
+        for (int i = 0; i < collectedPropPrefabs.Count; i++)
+        {
+            inventory.Add(0);
+        }
         currentAim = 0f;
         targetAim = 0f;
+        selectedProp = 1;
     }
 
     void Update()
@@ -149,6 +195,9 @@ public class PlayerController : MonoBehaviour
         updateMovement();
         updateRotation();
         updateAim();
-        fire();
+        if(triggerPulled())
+        {
+            fire();
+        }
     }
 }

@@ -5,7 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - item
-  - Prop
+  - Disk
+  - Collectible
+  - Collected
+  - Fired
   layers:
   - Default
   - TransparentFX
@@ -15,12 +18,12 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Disk
+  - Collectible
+  - Collected
+  - Fired
+  - PlayerBoundary
   - 
   - 
   - 
