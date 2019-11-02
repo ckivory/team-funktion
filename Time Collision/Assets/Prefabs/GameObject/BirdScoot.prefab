@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: Birdscoot
-  dynamicVar: 0
+  dynamicVar: 10
   Controller: {fileID: 0}
   speedMax: 6
   speedMin: 2
