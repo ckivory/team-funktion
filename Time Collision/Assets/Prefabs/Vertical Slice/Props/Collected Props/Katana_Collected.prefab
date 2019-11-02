@@ -628,7 +628,7 @@ GameObject:
   - component: {fileID: 1150474336377436494}
   m_Layer: 11
   m_Name: Katana_Collected
-  m_TagString: item
+  m_TagString: Collected
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

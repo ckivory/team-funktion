@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: -976358349819747645}
   m_Layer: 11
   m_Name: Knight_Collected
-  m_TagString: Untagged
+  m_TagString: Collected
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

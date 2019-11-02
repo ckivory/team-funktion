@@ -627,9 +627,10 @@ GameObject:
   - component: {fileID: 5208883066514887587}
   - component: {fileID: 1150474336377436494}
   - component: {fileID: 1473854355831634408}
+  - component: {fileID: 8821986942265577528}
   m_Layer: 12
   m_Name: Katana_Fired
-  m_TagString: item
+  m_TagString: Fired
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -686,3 +687,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8821986942265577528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9084589849402155440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 677d4e97155943241858580bd2742150, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whoFired: {fileID: 0}
+  propNum: 0
+  propMass: 0
+  propDamage: 0

@@ -121,6 +121,16 @@ public class VSPlayerController : MonoBehaviour
                 selectedProp = findNonEmpty();
             }
         }
+        if (col.gameObject.CompareTag("Fired"))
+        {
+            Debug.Log("Player " + controllerNum + " Collision with projectile!");
+            Debug.Log(gameObject);
+            if(!(gameObject.GetInstanceID() == col.GetComponent<ObjectAttributes>().whoFired.GetInstanceID()))
+            {
+                // TODO: Implement health system
+                Destroy(gameObject);
+            }
+        }
     }
 
     private void addToInventory(int propNum)
@@ -153,6 +163,7 @@ public class VSPlayerController : MonoBehaviour
         {
             GameObject shot = Instantiate(firedPropPrefabs[selectedProp], rb.position, arrow.transform.rotation);
             shot.GetComponent<Rigidbody>().velocity = (arrow.transform.forward + spread(shotCount)) * shotForce;
+            shot.GetComponent<ObjectAttributes>().whoFired = gameObject;
             Debug.Log("Shot " + i + ": " + shot.GetComponent<Rigidbody>().velocity);
         }
     }

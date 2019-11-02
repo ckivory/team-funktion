@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 5453023728956337453}
   m_Layer: 11
   m_Name: Fridge_Collected
-  m_TagString: item
+  m_TagString: Collected
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -243,7 +243,7 @@ GameObject:
   - component: {fileID: 6010712171604694708}
   m_Layer: 11
   m_Name: Barrel_Collected
-  m_TagString: item
+  m_TagString: Collected
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

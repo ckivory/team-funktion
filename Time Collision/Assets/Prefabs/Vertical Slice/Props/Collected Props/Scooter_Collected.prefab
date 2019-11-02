@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 3258987292482680899}
   m_Layer: 11
   m_Name: Scooter_Collected
-  m_TagString: item
+  m_TagString: Collected
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

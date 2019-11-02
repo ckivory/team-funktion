@@ -396,9 +396,10 @@ GameObject:
   - component: {fileID: 115008060366962416}
   - component: {fileID: 4963569279813321703}
   - component: {fileID: 4963569279813321702}
+  - component: {fileID: 2839914994183067179}
   m_Layer: 12
   m_Name: Landmine_Fired
-  m_TagString: item
+  m_TagString: Fired
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -464,6 +465,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2839914994183067179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4018282755487714531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 677d4e97155943241858580bd2742150, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whoFired: {fileID: 0}
+  propNum: 0
+  propMass: 0
+  propDamage: 0
 --- !u!1 &4139944524124075527
 GameObject:
   m_ObjectHideFlags: 0

@@ -398,7 +398,7 @@ GameObject:
   - component: {fileID: -303905718914001071}
   m_Layer: 11
   m_Name: Landmine_Collected
-  m_TagString: item
+  m_TagString: Collected
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
