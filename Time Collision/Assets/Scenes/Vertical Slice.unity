@@ -196,6 +196,206 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 182083271}
     m_Modifications:
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitCapacity.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalCapacity.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalRadius.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalCapacityList.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalRadiusList.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalSpeedList.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitCapacity.Array.data[0]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalCapacity.Array.data[0]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalRadius.Array.data[0]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: disk
+      value: 
+      objectReference: {fileID: 819644564}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalCapacityList.Array.data[0]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalCapacityList.Array.data[1]
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalCapacityList.Array.data[2]
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalCapacityList.Array.data[3]
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalCapacityList.Array.data[4]
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalCapacityList.Array.data[5]
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalCapacityList.Array.data[6]
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalCapacityList.Array.data[7]
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalCapacityList.Array.data[8]
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalCapacityList.Array.data[9]
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalRadiusList.Array.data[0]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalRadiusList.Array.data[1]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalRadiusList.Array.data[2]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalRadiusList.Array.data[3]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalRadiusList.Array.data[4]
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalRadiusList.Array.data[5]
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalRadiusList.Array.data[6]
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalRadiusList.Array.data[7]
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalRadiusList.Array.data[8]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalRadiusList.Array.data[9]
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalSpeedList.Array.data[0]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalSpeedList.Array.data[1]
+      value: 2.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalSpeedList.Array.data[2]
+      value: 2.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalSpeedList.Array.data[3]
+      value: 2.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalSpeedList.Array.data[4]
+      value: 2.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalSpeedList.Array.data[5]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalSpeedList.Array.data[6]
+      value: 3.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalSpeedList.Array.data[7]
+      value: 3.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalSpeedList.Array.data[8]
+      value: 3.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalSpeedList.Array.data[9]
+      value: 3.8
+      objectReference: {fileID: 0}
     - target: {fileID: 1237174199995717007, guid: ebb736522c7116d47a9a3013c8e6e58a,
         type: 3}
       propertyPath: m_Name
@@ -426,6 +626,196 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 182083271}
     m_Modifications:
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalCapacity.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalRadius.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalCapacityList.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalRadiusList.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalSpeedList.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalCapacity.Array.data[0]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalRadius.Array.data[0]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalRadiusList.Array.data[0]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalRadiusList.Array.data[1]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalRadiusList.Array.data[2]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalCapacityList.Array.data[0]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalCapacityList.Array.data[1]
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalCapacityList.Array.data[2]
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalCapacityList.Array.data[3]
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalCapacityList.Array.data[4]
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalCapacityList.Array.data[5]
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalCapacityList.Array.data[6]
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalCapacityList.Array.data[7]
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalCapacityList.Array.data[8]
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalCapacityList.Array.data[9]
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalRadiusList.Array.data[3]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalRadiusList.Array.data[4]
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalRadiusList.Array.data[5]
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalRadiusList.Array.data[6]
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalRadiusList.Array.data[7]
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalRadiusList.Array.data[8]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalRadiusList.Array.data[9]
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: disk
+      value: 
+      objectReference: {fileID: 1056640390}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalSpeedList.Array.data[0]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalSpeedList.Array.data[1]
+      value: 2.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalSpeedList.Array.data[2]
+      value: 2.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalSpeedList.Array.data[3]
+      value: 2.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalSpeedList.Array.data[4]
+      value: 2.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalSpeedList.Array.data[5]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalSpeedList.Array.data[6]
+      value: 3.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalSpeedList.Array.data[7]
+      value: 3.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalSpeedList.Array.data[8]
+      value: 3.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 10131207674585242, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: orbitalSpeedList.Array.data[9]
+      value: 3.8
+      objectReference: {fileID: 0}
     - target: {fileID: 1237174199995717007, guid: ebb736522c7116d47a9a3013c8e6e58a,
         type: 3}
       propertyPath: m_Name
@@ -994,6 +1384,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fceb947ecd4a1504ca7fd3dd48a010c0, type: 3}
+--- !u!1 &819644564 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1237174199763494646, guid: ebb736522c7116d47a9a3013c8e6e58a,
+    type: 3}
+  m_PrefabInstance: {fileID: 8873376}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &869351377
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1201,6 +1597,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fceb947ecd4a1504ca7fd3dd48a010c0, type: 3}
+--- !u!1 &1056640390 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1237174199763494646, guid: ebb736522c7116d47a9a3013c8e6e58a,
+    type: 3}
+  m_PrefabInstance: {fileID: 84964571}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1185360647
 PrefabInstance:
   m_ObjectHideFlags: 0
