@@ -700,7 +700,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bc763867f426f841921ee2c620559c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isStuck: 0
+  isStuck: 1
+  howFar: 5
 --- !u!114 &1634634567116297195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -714,6 +715,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   whoFired: {fileID: 0}
-  propNum: 3
-  propMass: 0.5
+  propNum: 4
+  propMass: 1
   propDamage: 4

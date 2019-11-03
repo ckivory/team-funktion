@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class ItemSpawnController : MonoBehaviour
 {
+    public float baseSpawnHeight = 3.5f;
+    public float heightIncrement = 0.2f;
+
     public List<GameObject> spawnedItems;
     public List<float> minTimes;
     public List<float> maxTimes;
@@ -12,17 +15,17 @@ public class ItemSpawnController : MonoBehaviour
 
     private void spawnItem(int itemNum)
     {
-        Vector3 spawnPosition = new Vector3(0f, 2f, 0f);
+        Vector3 spawnPosition = new Vector3(0f, baseSpawnHeight, 0f);
         
         while(Physics.CheckSphere(spawnPosition, 1f))
         {
             spawnPosition.x = Random.Range(this.transform.position.x - this.transform.localScale.x / 2, this.transform.position.x + this.transform.localScale.x / 2);
             spawnPosition.z = Random.Range(this.transform.position.z - this.transform.localScale.z / 2, this.transform.position.z + this.transform.localScale.z / 2);
 
-            spawnPosition.y += 0.2f;
+            spawnPosition.y += heightIncrement;
         }
 
-        Instantiate(spawnedItems[itemNum], spawnPosition, Quaternion.identity);
+        GameObject newProp = Instantiate(spawnedItems[itemNum], spawnPosition, Quaternion.identity);
     }
 
     private void Start()

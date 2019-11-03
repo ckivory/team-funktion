@@ -10048,7 +10048,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1237174199995717007}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5, z: 0}
+  m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 1237174200178207180}
@@ -10120,17 +10120,21 @@ MonoBehaviour:
   - {fileID: 4744767056463312973, guid: ed917e1f4db7ca44c9b44ab5da9c0fbb, type: 3}
   - {fileID: 7251298450365760712, guid: 1abeaee649413c0438a760ff80884214, type: 3}
   - {fileID: 8617994201647920770, guid: 979b5a5de3cb6ce4b8b5e9f468691c4b, type: 3}
+  - {fileID: 445205623230088581, guid: c59550ee6d7ec1f44aa45a6f9eb45d14, type: 3}
   - {fileID: 9084589849402155440, guid: 9e6da44cc4fbc254aa3d4e94f11f8eb1, type: 3}
   - {fileID: 9188675194279928149, guid: 3f25289cfcffbac438bc9048b73a9ca8, type: 3}
   - {fileID: 4018282755487714531, guid: bc0fb799096ba9548a126df1b3173ef7, type: 3}
+  - {fileID: 9018213373250412849, guid: 202f77210d73b1d419ec6a08bd248400, type: 3}
   - {fileID: 7085181105243925176, guid: 96a3347546b45cd44af88652196ff3fe, type: 3}
   firedPropPrefabs:
   - {fileID: 4744767056463312973, guid: f400d6c444e01bf45ab54e6a092af357, type: 3}
   - {fileID: 7251298450365760712, guid: 8b7c03d923b6381468ea539e072dd788, type: 3}
   - {fileID: 8617994201647920770, guid: 02ef962711af4524ba1f9cd228c6400b, type: 3}
+  - {fileID: 445205623230088581, guid: 414af909622bd1a4f8cecb2825d076aa, type: 3}
   - {fileID: 9084589849402155440, guid: 8769e0eb2e7fa9944b61c2c0ce199529, type: 3}
   - {fileID: 9188675194279928149, guid: 22f1ea0cc7cd05043aa3279dedc38840, type: 3}
   - {fileID: 4018282755487714531, guid: ae680cceecf4734489b0a6e6b850af21, type: 3}
+  - {fileID: 9018213373250412849, guid: 39e6a0de7a5298b4292b10142b91faaa, type: 3}
   - {fileID: 7085181105243925176, guid: cc7b52d240d55fb438a51a128edacb1e, type: 3}
   inventory: 
 --- !u!1 &1237174200105411008
@@ -15047,6 +15051,7 @@ GameObject:
   - component: {fileID: 3478343060284948328}
   - component: {fileID: 5870325129853443807}
   - component: {fileID: 4747174800174169991}
+  - component: {fileID: 8397307202570852356}
   m_Layer: 9
   m_Name: DiskCollider
   m_TagString: Player
@@ -15062,8 +15067,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1759720334518389646}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 3, z: 4}
+  m_LocalPosition: {x: 0, y: -3, z: 0}
+  m_LocalScale: {x: 4.4, y: 3, z: 4.4}
   m_Children: []
   m_Father: {fileID: 1237174199763494647}
   m_RootOrder: 0
@@ -15127,6 +15132,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &8397307202570852356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1759720334518389646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cbe4ca4f2bb2a2428a1229487918644, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!1 &5776453898486320184
 GameObject:
   m_ObjectHideFlags: 0

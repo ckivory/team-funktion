@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8749500967634640664}
   - component: {fileID: 1626527522145081650}
   - component: {fileID: 3196350212673006070}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: polySurface15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 932516654306112861}
   - component: {fileID: 6900974913501040336}
   - component: {fileID: 2943678572703995188}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: Crate_Fired
   m_TagString: Fired
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7251298450365760712}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.4081, y: 0.673, z: -5.3609}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.970175, y: 0.970175, z: 0.970175}
   m_Children:
   - {fileID: 5221826362523601264}
@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   whoFired: {fileID: 0}
-  propNum: 0
+  propNum: 1
   propMass: 0
   propDamage: 0
 --- !u!114 &2943678572703995188
@@ -183,7 +183,7 @@ GameObject:
   - component: {fileID: 5221826362523601264}
   - component: {fileID: 1599955047110451558}
   - component: {fileID: 5374140135357288894}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: pCube1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

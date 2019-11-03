@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 677d4e97155943241858580bd2742150, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  propNum: 6
-  massNeeded: 0
+  whoFired: {fileID: 0}
+  propNum: 8
   propMass: 2
   propDamage: 4
