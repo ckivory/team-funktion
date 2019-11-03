@@ -8,10 +8,12 @@ public class TestPCGrowth : MonoBehaviour
     public GameObject Disk;
     public float max;
     public float speed;
+    private SphereCollider SphCollider;
     private float timer;
     private Vector3 scale = new Vector3(1, 1, 1);
     void OnEnable()
     {
+        SphCollider = gameObject.GetComponent<SphereCollider>();
         timer = 0;
         scale *= speed;
     }
@@ -21,8 +23,8 @@ public class TestPCGrowth : MonoBehaviour
     {
         if (timer<max)
         {
-            Sphere.transform.localScale += scale/20;
-            Disk.transform.localScale += scale/2;
+            Sphere.transform.localScale += scale/5;
+            Disk.transform.localScale += scale;
             timer += 1;
         }
     }
