@@ -16,6 +16,11 @@ public class VSPlayerController : MonoBehaviour
     public int controllerNum;
     public bool usingController;
 
+    public GameObject core;
+    public GameObject disk;
+    public float coreSpeed;
+    public float diskSpeed;
+
     public List<GameObject> collectedPropPrefabs;
     public List<GameObject> firedPropPrefabs;
 
@@ -106,6 +111,12 @@ public class VSPlayerController : MonoBehaviour
         }
     }
 
+    private void updateSpin()
+    {
+        core.transform.Rotate(0f, coreSpeed * Time.deltaTime, 0f);
+        disk.transform.Rotate(0f, diskSpeed * Time.deltaTime, 0f);
+    }
+
     private void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.CompareTag("Collectible"))
@@ -123,8 +134,6 @@ public class VSPlayerController : MonoBehaviour
         }
         if (col.gameObject.CompareTag("Fired"))
         {
-            Debug.Log("Player " + controllerNum + " Collision with projectile!");
-            Debug.Log(gameObject);
             if(!(gameObject.GetInstanceID() == col.GetComponent<ObjectAttributes>().whoFired.GetInstanceID()))
             {
                 // TODO: Implement health system
@@ -164,7 +173,6 @@ public class VSPlayerController : MonoBehaviour
             GameObject shot = Instantiate(firedPropPrefabs[selectedProp], rb.position, arrow.transform.rotation);
             shot.GetComponent<Rigidbody>().velocity = (arrow.transform.forward + spread(shotCount)) * shotForce;
             shot.GetComponent<ObjectAttributes>().whoFired = gameObject;
-            Debug.Log("Shot " + i + ": " + shot.GetComponent<Rigidbody>().velocity);
         }
     }
 
@@ -364,12 +372,17 @@ public class VSPlayerController : MonoBehaviour
         LTpressed = false;
         selectedProp = 1;
         selectedCount = 1;
+        if(!usingController)
+        {
+            Cursor.visible = false;
+        }
     }
 
     void Update()
     {
         updateMovement();
         updateRotation();
+        updateSpin();
         updateAim();
         updateSelected();
         updateSelectedCount();

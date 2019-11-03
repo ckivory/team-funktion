@@ -89,6 +89,7 @@ GameObject:
   - component: {fileID: 3258987292482680899}
   - component: {fileID: 3258987292482680956}
   - component: {fileID: 6488030217006087652}
+  - component: {fileID: 7961109676145399235}
   m_Layer: 12
   m_Name: Scooter_Fired
   m_TagString: Fired
@@ -157,3 +158,16 @@ MonoBehaviour:
   propNum: 0
   propMass: 0
   propDamage: 0
+--- !u!114 &7961109676145399235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7085181105243925176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb5e413cb1a835d40aa4a3843ffc62e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whoFired: {fileID: 0}

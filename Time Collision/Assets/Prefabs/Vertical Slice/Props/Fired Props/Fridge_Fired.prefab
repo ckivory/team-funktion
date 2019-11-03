@@ -89,6 +89,7 @@ GameObject:
   - component: {fileID: -5979364547653643095}
   - component: {fileID: 4763122566642341370}
   - component: {fileID: 8317563110047598683}
+  - component: {fileID: 5187398232484653658}
   m_Layer: 12
   m_Name: Fridge_Fired
   m_TagString: Fired
@@ -158,6 +159,19 @@ MonoBehaviour:
   propNum: 0
   propMass: 0
   propDamage: 0
+--- !u!114 &5187398232484653658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8617994201647920770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb5e413cb1a835d40aa4a3843ffc62e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whoFired: {fileID: 0}
 --- !u!1 &9163650176077928432
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,9 +13,14 @@ public class ItemSpawnController : MonoBehaviour
     private void spawnItem(int itemNum)
     {
         Vector3 spawnPosition = new Vector3(0f, 2f, 0f);
+        
+        while(Physics.CheckSphere(spawnPosition, 1f))
+        {
+            spawnPosition.x = Random.Range(this.transform.position.x - this.transform.localScale.x / 2, this.transform.position.x + this.transform.localScale.x / 2);
+            spawnPosition.z = Random.Range(this.transform.position.z - this.transform.localScale.z / 2, this.transform.position.z + this.transform.localScale.z / 2);
 
-        spawnPosition.x = Random.Range(this.transform.position.x - this.transform.localScale.x / 2, this.transform.position.x + this.transform.localScale.x / 2);
-        spawnPosition.z = Random.Range(this.transform.position.z - this.transform.localScale.z / 2, this.transform.position.z + this.transform.localScale.z / 2);
+            spawnPosition.y += 0.2f;
+        }
 
         Instantiate(spawnedItems[itemNum], spawnPosition, Quaternion.identity);
     }

@@ -89,6 +89,7 @@ GameObject:
   - component: {fileID: 3542182686932778020}
   - component: {fileID: 932516654306112861}
   - component: {fileID: 6900974913501040336}
+  - component: {fileID: 2943678572703995188}
   m_Layer: 10
   m_Name: Crate_Fired
   m_TagString: Fired
@@ -158,6 +159,19 @@ MonoBehaviour:
   propNum: 0
   propMass: 0
   propDamage: 0
+--- !u!114 &2943678572703995188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7251298450365760712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb5e413cb1a835d40aa4a3843ffc62e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whoFired: {fileID: 0}
 --- !u!1 &8158253398747968977
 GameObject:
   m_ObjectHideFlags: 0
