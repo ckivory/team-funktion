@@ -3500,6 +3500,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player2
       objectReference: {fileID: 0}
+    - target: {fileID: 1237174200682086006, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: m_NormalizedViewPortRect.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237174200682086006, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: m_NormalizedViewPortRect.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237174200682086006, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: m_NormalizedViewPortRect.width
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237174200682086006, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: m_NormalizedViewPortRect.height
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1237174199995716993, guid: ebb736522c7116d47a9a3013c8e6e58a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3564,26 +3584,6 @@ PrefabInstance:
         type: 3}
       propertyPath: usingController
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1237174200682086006, guid: ebb736522c7116d47a9a3013c8e6e58a,
-        type: 3}
-      propertyPath: m_NormalizedViewPortRect.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1237174200682086006, guid: ebb736522c7116d47a9a3013c8e6e58a,
-        type: 3}
-      propertyPath: m_NormalizedViewPortRect.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1237174200682086006, guid: ebb736522c7116d47a9a3013c8e6e58a,
-        type: 3}
-      propertyPath: m_NormalizedViewPortRect.width
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1237174200682086006, guid: ebb736522c7116d47a9a3013c8e6e58a,
-        type: 3}
-      propertyPath: m_NormalizedViewPortRect.height
-      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebb736522c7116d47a9a3013c8e6e58a, type: 3}
@@ -4278,6 +4278,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player4
       objectReference: {fileID: 0}
+    - target: {fileID: 1237174200682086006, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: m_NormalizedViewPortRect.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237174200682086006, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: m_NormalizedViewPortRect.height
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237174200682086006, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: m_NormalizedViewPortRect.width
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1237174199995716993, guid: ebb736522c7116d47a9a3013c8e6e58a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4338,21 +4353,6 @@ PrefabInstance:
       propertyPath: controllerNum
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 1237174200682086006, guid: ebb736522c7116d47a9a3013c8e6e58a,
-        type: 3}
-      propertyPath: m_NormalizedViewPortRect.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1237174200682086006, guid: ebb736522c7116d47a9a3013c8e6e58a,
-        type: 3}
-      propertyPath: m_NormalizedViewPortRect.height
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1237174200682086006, guid: ebb736522c7116d47a9a3013c8e6e58a,
-        type: 3}
-      propertyPath: m_NormalizedViewPortRect.width
-      value: 0.5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebb736522c7116d47a9a3013c8e6e58a, type: 3}
 --- !u!1001 &1040235058
@@ -4366,6 +4366,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237174200682086006, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: m_NormalizedViewPortRect.width
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237174200682086006, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: m_NormalizedViewPortRect.height
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1237174199995716993, guid: ebb736522c7116d47a9a3013c8e6e58a,
         type: 3}
@@ -4426,16 +4436,6 @@ PrefabInstance:
         type: 3}
       propertyPath: controllerNum
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1237174200682086006, guid: ebb736522c7116d47a9a3013c8e6e58a,
-        type: 3}
-      propertyPath: m_NormalizedViewPortRect.width
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1237174200682086006, guid: ebb736522c7116d47a9a3013c8e6e58a,
-        type: 3}
-      propertyPath: m_NormalizedViewPortRect.height
-      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebb736522c7116d47a9a3013c8e6e58a, type: 3}
@@ -6867,6 +6867,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Colosseum
       objectReference: {fileID: 0}
+    - target: {fileID: 4042141363966698052, guid: 224e2e2bbbd040e438e416d2bec36017,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1027889437871378519, guid: 224e2e2bbbd040e438e416d2bec36017,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6936,6 +6941,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.4137186
+      objectReference: {fileID: 0}
+    - target: {fileID: 2126264365642173216, guid: 224e2e2bbbd040e438e416d2bec36017,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 224e2e2bbbd040e438e416d2bec36017, type: 3}
@@ -9023,6 +9033,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player1
       objectReference: {fileID: 0}
+    - target: {fileID: 1237174200682086006, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: m_NormalizedViewPortRect.height
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237174200682086006, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: m_NormalizedViewPortRect.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237174200682086006, guid: ebb736522c7116d47a9a3013c8e6e58a,
+        type: 3}
+      propertyPath: m_NormalizedViewPortRect.width
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1237174199995716993, guid: ebb736522c7116d47a9a3013c8e6e58a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9082,21 +9107,6 @@ PrefabInstance:
         type: 3}
       propertyPath: controllerNum
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1237174200682086006, guid: ebb736522c7116d47a9a3013c8e6e58a,
-        type: 3}
-      propertyPath: m_NormalizedViewPortRect.height
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1237174200682086006, guid: ebb736522c7116d47a9a3013c8e6e58a,
-        type: 3}
-      propertyPath: m_NormalizedViewPortRect.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1237174200682086006, guid: ebb736522c7116d47a9a3013c8e6e58a,
-        type: 3}
-      propertyPath: m_NormalizedViewPortRect.width
-      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebb736522c7116d47a9a3013c8e6e58a, type: 3}
