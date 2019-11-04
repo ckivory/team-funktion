@@ -34,8 +34,10 @@ public class VSPlayerController : MonoBehaviour
     private bool RTpressed;
     private bool LTpressed;
     public List<int> inventory;
-    private int selectedProp;
-    private int selectedCount;
+    [HideInInspector]
+    public int selectedProp;    //made public by Lin
+    [HideInInspector]
+    public int selectedCount;   //made public by Lin
     private Rigidbody rb;
 
     private void getJoystickMovement()
