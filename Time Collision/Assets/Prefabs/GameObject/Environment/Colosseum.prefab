@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1130531184539000688}
   - component: {fileID: 1845325856030083162}
   - component: {fileID: 8083558292400212494}
+  - component: {fileID: 3648447235705725964}
   m_Layer: 0
   m_Name: OutterWall_Colosseum
   m_TagString: Untagged
@@ -77,6 +78,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &3648447235705725964
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 320496113626330800}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -1599870921474257519, guid: 4b688ee75f095194c83c997a53ef113f, type: 3}
 --- !u!1 &4042141363966698052
 GameObject:
   m_ObjectHideFlags: 0
@@ -86,7 +101,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1027889437871378519}
-  - component: {fileID: 2126264365642173216}
   - component: {fileID: -3548618528408317566}
   m_Layer: 0
   m_Name: Colosseum
@@ -111,20 +125,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 3.9400003, y: 0.178, z: 2.582}
---- !u!64 &2126264365642173216
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4042141363966698052}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -2234714100509850747, guid: 4b688ee75f095194c83c997a53ef113f, type: 3}
 --- !u!54 &-3548618528408317566
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -152,6 +152,7 @@ GameObject:
   - component: {fileID: 7743418510727600566}
   - component: {fileID: 6727185401047251526}
   - component: {fileID: 2550983675011371186}
+  - component: {fileID: 402256914655543140}
   m_Layer: 0
   m_Name: Colosseum_InnerRing
   m_TagString: Untagged
@@ -218,3 +219,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &402256914655543140
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5529315885047883354}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -2234714100509850747, guid: 4b688ee75f095194c83c997a53ef113f, type: 3}

@@ -123,6 +123,7 @@ public class VSPlayerController : MonoBehaviour
         {
             int propNum = col.gameObject.GetComponent<ObjectAttributes>().propNum;
             addToInventory(propNum);
+            GetComponent<DiskController>().AddToDisk(propNum);  //added by Lin
             string invString = string.Join(",", inventory.ToArray());
             Debug.Log(invString);
             Destroy(col.gameObject);
@@ -171,6 +172,7 @@ public class VSPlayerController : MonoBehaviour
         for (int i = 0; i < shotCount; i++)
         {
             GameObject shot = Instantiate(firedPropPrefabs[selectedProp], rb.position, arrow.transform.rotation);
+            GetComponent<DiskController>().RemoveFromDisk(selectedProp);    //Added by Lin
             shot.GetComponent<Rigidbody>().velocity = (arrow.transform.forward + spread(shotCount)) * shotForce;
             shot.GetComponent<ObjectAttributes>().whoFired = gameObject;
         }
