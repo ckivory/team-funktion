@@ -157,7 +157,7 @@ MonoBehaviour:
   whoFired: {fileID: 0}
   propNum: 8
   propMass: 2
-  propDamage: 4
+  propDamage: 5
 --- !u!1001 &5232547480108461512
 PrefabInstance:
   m_ObjectHideFlags: 0

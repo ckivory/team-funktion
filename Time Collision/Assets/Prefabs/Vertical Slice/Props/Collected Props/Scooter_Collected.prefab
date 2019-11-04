@@ -87,6 +87,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6055309007760480427}
   - component: {fileID: 3258987292482680899}
+  - component: {fileID: 7667860355429449323}
   m_Layer: 11
   m_Name: Scooter_Collected
   m_TagString: Collected
@@ -123,3 +124,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: -2515166038792200818, guid: c894dbf42dbab5d47b4bcbb1d37869e3, type: 3}
+--- !u!114 &7667860355429449323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7085181105243925176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 677d4e97155943241858580bd2742150, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whoFired: {fileID: 0}
+  propNum: 8
+  propMass: 2
+  propDamage: 5

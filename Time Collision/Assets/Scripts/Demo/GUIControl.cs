@@ -28,16 +28,17 @@ public class GUIControl : MonoBehaviour
 
     void UpdateGUI()
     {
-        int selectedType = Player.GetComponent<VSPlayerController>().selectedProp;
-        int midNum = Player.GetComponent<VSPlayerController>().inventory[selectedType];
-        int leftType = LeftType(selectedType);
-        int rightType = RightType(selectedType);
-        Middle.sprite = PropSprites[selectedType];
-        Left.sprite = PropSprites[leftType];
-        right.sprite = PropSprites[rightType];
-        MidNum.text = ""+midNum;
-
-
+        if(Player != null)
+        {
+            int selectedType = Player.GetComponent<VSPlayerController>().selectedProp;
+            int midNum = Player.GetComponent<VSPlayerController>().inventory[selectedType];
+            int leftType = LeftType(selectedType);
+            int rightType = RightType(selectedType);
+            Middle.sprite = PropSprites[selectedType];
+            Left.sprite = PropSprites[leftType];
+            right.sprite = PropSprites[rightType];
+            MidNum.text = "" + midNum;
+        }
     }
 
     int LeftType(int selectedType)

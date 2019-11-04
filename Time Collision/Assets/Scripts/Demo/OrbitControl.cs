@@ -36,12 +36,15 @@ public class OrbitControl : MonoBehaviour
     void Rotate()
     {
         timer += Time.deltaTime * rotSpeed;
-        centerPoint = playerToFollow.transform;
-        float x = Mathf.Cos(timer) * rotR;
-        float z = Mathf.Sin(timer) * rotR;
-        float y = Mathf.Sin(timer) * ySpread;
-        Vector3 pos = new Vector3(x, y, z);
-        this.transform.LookAt(centerPoint);
-        transform.position = pos + centerPoint.position;
+        if(playerToFollow != null)
+        {
+            centerPoint = playerToFollow.transform;
+            float x = Mathf.Cos(timer) * rotR;
+            float z = Mathf.Sin(timer) * rotR;
+            float y = Mathf.Sin(timer) * ySpread;
+            Vector3 pos = new Vector3(x, y, z);
+            this.transform.LookAt(centerPoint);
+            transform.position = pos + centerPoint.position;
+        }
     }
 }

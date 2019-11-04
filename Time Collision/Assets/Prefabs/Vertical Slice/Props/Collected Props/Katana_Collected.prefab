@@ -626,6 +626,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5208883066514887587}
   - component: {fileID: 1150474336377436494}
+  - component: {fileID: -1010950925735479495}
   m_Layer: 11
   m_Name: Katana_Collected
   m_TagString: Collected
@@ -669,3 +670,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 543257679913428660, guid: a43a5d4a2da6d6541baf23f21af19124, type: 3}
+--- !u!114 &-1010950925735479495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9084589849402155440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 677d4e97155943241858580bd2742150, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whoFired: {fileID: 0}
+  propNum: 4
+  propMass: 1
+  propDamage: 10

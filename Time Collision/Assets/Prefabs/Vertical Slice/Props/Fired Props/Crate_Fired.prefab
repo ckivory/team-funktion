@@ -157,8 +157,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whoFired: {fileID: 0}
   propNum: 1
-  propMass: 0
-  propDamage: 0
 --- !u!114 &2943678572703995188
 MonoBehaviour:
   m_ObjectHideFlags: 0
