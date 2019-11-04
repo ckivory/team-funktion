@@ -4945,12 +4945,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 2708900101440681895}
   arrow: {fileID: 2708900101677915463}
-  maxSpeed: 20
+  maxSpeed: 500
   accel: 1
   aimSpeed: 0.01
   aimDamping: 5
   scrollSensitivity: 10
-  shotForce: 40
+  shotForce: 60
   maxSpread: 0.1
   controllerNum: 3
   usingController: 1
@@ -4958,6 +4958,7 @@ MonoBehaviour:
   disk: {fileID: 2708900102619311911}
   coreSpeed: 40
   diskSpeed: 30
+  playerMass: 0
   collectedPropPrefabs:
   - {fileID: 4744767056463312973, guid: ed917e1f4db7ca44c9b44ab5da9c0fbb, type: 3}
   - {fileID: 7251298450365760712, guid: 1abeaee649413c0438a760ff80884214, type: 3}
@@ -4979,6 +4980,8 @@ MonoBehaviour:
   - {fileID: 9018213373250412849, guid: 39e6a0de7a5298b4292b10142b91faaa, type: 3}
   - {fileID: 7085181105243925176, guid: cc7b52d240d55fb438a51a128edacb1e, type: 3}
   inventory: 
+  selectedProp: 0
+  selectedCount: 0
 --- !u!114 &3791854332356077899
 MonoBehaviour:
   m_ObjectHideFlags: 0

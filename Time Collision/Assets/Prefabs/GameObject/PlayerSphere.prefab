@@ -10223,6 +10223,7 @@ MonoBehaviour:
   disk: {fileID: 1237174199763494646}
   coreSpeed: 30
   diskSpeed: 40
+  playerMass: 0
   collectedPropPrefabs:
   - {fileID: 4744767056463312973, guid: ed917e1f4db7ca44c9b44ab5da9c0fbb, type: 3}
   - {fileID: 7251298450365760712, guid: 1abeaee649413c0438a760ff80884214, type: 3}
@@ -10240,6 +10241,8 @@ MonoBehaviour:
   - {fileID: 4018282755487714531, guid: ae680cceecf4734489b0a6e6b850af21, type: 3}
   - {fileID: 7085181105243925176, guid: cc7b52d240d55fb438a51a128edacb1e, type: 3}
   inventory: 
+  selectedProp: 0
+  selectedCount: 0
 --- !u!1 &1237174200105411008
 GameObject:
   m_ObjectHideFlags: 0

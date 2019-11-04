@@ -100,7 +100,7 @@ public class VSPlayerController : MonoBehaviour
 
         alignMovement();
 
-        rb.velocity += movementInput * accel;         // Additive controls, so it will intentionally feel a little floaty.
+        rb.velocity += movementInput * accel / Mathf.Max(playerMass / 20, 1f);         // Additive controls, so it will intentionally feel a little floaty.
         if (rb.velocity.magnitude > maxSpeed)
         {
             rb.velocity = rb.velocity.normalized * maxSpeed;
@@ -220,7 +220,7 @@ public class VSPlayerController : MonoBehaviour
         {
             GameObject shot = Instantiate(firedPropPrefabs[selectedProp], rb.position, arrow.transform.rotation);
             GetComponent<DiskController>().RemoveFromDisk(selectedProp);    //Added by Lin
-            shot.GetComponent<Rigidbody>().velocity = (arrow.transform.forward + spread(shotCount)) * shotForce;
+            shot.GetComponent<Rigidbody>().velocity = rb.velocity + (arrow.transform.forward + spread(shotCount)) * shotForce;
             shot.GetComponent<ObjectAttributes>().whoFired = gameObject;
         }
     }
@@ -263,31 +263,30 @@ public class VSPlayerController : MonoBehaviour
 
     private void fire()
     {
-        if (inventory[selectedProp] > 0)
+        if(inventory[selectedProp] < 1)
         {
-            Debug.Log("Firing " + selectedProp + ". " + (inventory[selectedProp] - 1) + " items left.");            
+            selectedProp = findNonEmpty();
+        }
+        if(inventory[selectedProp] > 0)
+        {
+            Debug.Log("Firing " + selectedProp + "s. ");            
             initializeProjectiles(numProjectiles());
             for (int i = 0; i < numProjectiles(); i++)
             {
                 GetComponent<DiskController>().RemoveFromDisk(selectedProp);
             }
             inventory[selectedProp] -= numProjectiles();
-
-            if(inventory[selectedProp] == 0)
-            {
-                selectedProp = findNonEmpty();
-            }
             updateMass();
         }
         else
         {
-            Debug.Log("Click");
+            Debug.Log("Nothing to fire!");
         }
     }
 
     private int findNonEmpty()
     {
-        for(int i = 0; i < 7; i++)
+        for(int i = 0; i < inventory.Count; i++)
         {
             int index = (selectedProp + i) % inventory.Count;
             if (inventory[index] > 0)
