@@ -84,7 +84,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1920, y: 1080}
+  m_ReferenceResolution: {x: 3840, y: 2160}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -898,8 +898,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Text: {fileID: 284157010053937328}
   Player: {fileID: 0}
-  BlueImage: {fileID: 21300000, guid: 2f409f7e233414942afd609e67fa456e, type: 3}
-  GrayImage: {fileID: 21300000, guid: 80995958a2ac3a242afd0ba4d289f691, type: 3}
+  BlueImage: {fileID: 21300000, guid: 6ef9fd8245562174cadce094c48e34d1, type: 3}
+  GrayImage: {fileID: 21300000, guid: 68986c4463c5c9344b0157b584a8a375, type: 3}
   self: {fileID: 284157010826508461}
   Type: 4
 --- !u!1 &284157010835819496
@@ -1324,7 +1324,7 @@ MonoBehaviour:
   Text: {fileID: 284157010835819498}
   Player: {fileID: 0}
   BlueImage: {fileID: 21300000, guid: 3490d8169a2eef643ae94f6d8aac5fa4, type: 3}
-  GrayImage: {fileID: 21300000, guid: 68986c4463c5c9344b0157b584a8a375, type: 3}
+  GrayImage: {fileID: 21300000, guid: f4e9481697da0bf4e87f4bc6d3f46b30, type: 3}
   self: {fileID: 284157011457060469}
   Type: 7
 --- !u!1 &284157011611588358
