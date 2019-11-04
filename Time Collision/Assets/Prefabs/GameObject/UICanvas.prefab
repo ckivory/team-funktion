@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 284157009896227808}
   - component: {fileID: 284157009896227809}
   m_Layer: 5
-  m_Name: PlayerCanvas(1)
+  m_Name: UICanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -119,7 +119,7 @@ GameObject:
   - component: {fileID: 284157009930181215}
   - component: {fileID: 284157009930181212}
   m_Layer: 5
-  m_Name: Text
+  m_Name: GramaAmount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -198,7 +198,7 @@ GameObject:
   - component: {fileID: 284157010053937331}
   - component: {fileID: 284157010053937328}
   m_Layer: 5
-  m_Name: Text (3)
+  m_Name: KatanaAmount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -277,7 +277,7 @@ GameObject:
   - component: {fileID: 284157010290799943}
   - component: {fileID: 284157010290799940}
   m_Layer: 5
-  m_Name: Text (3)
+  m_Name: FridgeAmount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -356,7 +356,7 @@ GameObject:
   - component: {fileID: 284157010459235789}
   - component: {fileID: 284157010459235762}
   m_Layer: 5
-  m_Name: Text (1)
+  m_Name: HelmetAmount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -435,7 +435,7 @@ GameObject:
   - component: {fileID: 284157010568904582}
   - component: {fileID: 284157010568904583}
   m_Layer: 5
-  m_Name: Text
+  m_Name: BarrelAmount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -514,7 +514,7 @@ GameObject:
   - component: {fileID: 284157010599247135}
   - component: {fileID: 284157010599247132}
   m_Layer: 5
-  m_Name: Image (7)
+  m_Name: MineImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -589,7 +589,7 @@ GameObject:
   - component: {fileID: 284157010781765430}
   - component: {fileID: 284157010781765431}
   m_Layer: 5
-  m_Name: Image (3)
+  m_Name: HelmetImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -664,7 +664,7 @@ GameObject:
   - component: {fileID: 284157010805276460}
   - component: {fileID: 284157010805276461}
   m_Layer: 5
-  m_Name: Image
+  m_Name: BarrelImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -739,7 +739,7 @@ GameObject:
   - component: {fileID: 284157010826508460}
   - component: {fileID: 284157010826508461}
   m_Layer: 5
-  m_Name: Image (5)
+  m_Name: KatanaImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -814,7 +814,7 @@ GameObject:
   - component: {fileID: 284157010835819493}
   - component: {fileID: 284157010835819498}
   m_Layer: 5
-  m_Name: Text (3)
+  m_Name: SaberAmount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -893,7 +893,7 @@ GameObject:
   - component: {fileID: 284157010884489148}
   - component: {fileID: 284157010884489149}
   m_Layer: 5
-  m_Name: Text
+  m_Name: CrateAmount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -972,7 +972,7 @@ GameObject:
   - component: {fileID: 284157010987130589}
   - component: {fileID: 284157010987130562}
   m_Layer: 5
-  m_Name: Text (2)
+  m_Name: ScooterAmount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1051,7 +1051,7 @@ GameObject:
   - component: {fileID: 284157010989012044}
   - component: {fileID: 284157010989012045}
   m_Layer: 5
-  m_Name: Image (8)
+  m_Name: FridgeImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1126,7 +1126,7 @@ GameObject:
   - component: {fileID: 284157011457060468}
   - component: {fileID: 284157011457060469}
   m_Layer: 5
-  m_Name: Image (6)
+  m_Name: SaberImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1201,7 +1201,7 @@ GameObject:
   - component: {fileID: 284157011611588352}
   - component: {fileID: 284157011611588353}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: CrateImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1276,7 +1276,7 @@ GameObject:
   - component: {fileID: 284157011801847797}
   - component: {fileID: 284157011801847802}
   m_Layer: 5
-  m_Name: Image (4)
+  m_Name: ScooterImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1351,7 +1351,7 @@ GameObject:
   - component: {fileID: 284157011840208908}
   - component: {fileID: 284157011840208909}
   m_Layer: 5
-  m_Name: Text (4)
+  m_Name: MineAmount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1430,7 +1430,7 @@ GameObject:
   - component: {fileID: 284157011985300740}
   - component: {fileID: 284157011985300741}
   m_Layer: 5
-  m_Name: Image (2)
+  m_Name: GramaImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

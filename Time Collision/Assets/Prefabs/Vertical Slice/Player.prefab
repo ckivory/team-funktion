@@ -10150,6 +10150,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 568e91c458158364b90d97814c8c515e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  disk: {fileID: 1237174199763494646}
+  orbitalCapacityList: 0a000000140000001e00000028000000320000003c00000046000000500000005a00000064000000
+  orbitalRadiusList: 02000000030000000400000005000000060000000700000008000000090000000a0000000b000000
+  orbitalSpeedList:
+  - 2
+  - 2.2
+  - 2.4
+  - 2.6
+  - 2.8
+  - 3
+  - 3.2
+  - 3.4
+  - 3.6
+  - 3.8
 --- !u!1 &1237174200105411008
 GameObject:
   m_ObjectHideFlags: 0
