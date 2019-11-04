@@ -33,7 +33,7 @@ public class DiskController : MonoBehaviour
         objectToAdd.AddComponent<OrbitControl>();
         objectToAdd.GetComponent<OrbitControl>().playerToFollow = this.gameObject;
         objectToAdd.GetComponent<OrbitControl>().rotR = orbitalRadiusList[tier];
-        objectToAdd.GetComponent<OrbitControl>().rotSpeed = orbitalSpeedList[tier];
+        objectToAdd.GetComponent<OrbitControl>().rotSpeed = -orbitalSpeedList[tier];
         objectToAdd.GetComponent<OrbitControl>().type = collectedType;
         if (diskObjects.Count > 0)
         {
