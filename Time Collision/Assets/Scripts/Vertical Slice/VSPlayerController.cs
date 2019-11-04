@@ -21,6 +21,8 @@ public class VSPlayerController : MonoBehaviour
     public float coreSpeed;
     public float diskSpeed;
 
+    public float playerMass;
+
     public List<GameObject> collectedPropPrefabs;
     public List<GameObject> firedPropPrefabs;
 
