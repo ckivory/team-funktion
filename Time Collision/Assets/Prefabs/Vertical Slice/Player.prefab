@@ -10113,12 +10113,13 @@ MonoBehaviour:
   scrollSensitivity: 10
   shotForce: 40
   maxSpread: 0.1
-  controllerNum: 2
+  controllerNum: 0
   usingController: 0
   core: {fileID: 1237174199507839897}
   disk: {fileID: 1237174199763494646}
   coreSpeed: 40
   diskSpeed: 30
+  playerMass: 0
   collectedPropPrefabs:
   - {fileID: 4744767056463312973, guid: ed917e1f4db7ca44c9b44ab5da9c0fbb, type: 3}
   - {fileID: 7251298450365760712, guid: 1abeaee649413c0438a760ff80884214, type: 3}
@@ -15260,6 +15261,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1237174199995716993}
     m_Modifications:
+    - target: {fileID: 3755344215905557382, guid: 2e87b7124ad7bf1449f8d6acd4243069,
+        type: 3}
+      propertyPath: m_Name
+      value: Blue_Disk_Spiral
+      objectReference: {fileID: 0}
     - target: {fileID: 3755344215905557383, guid: 2e87b7124ad7bf1449f8d6acd4243069,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15314,11 +15320,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3755344215905557382, guid: 2e87b7124ad7bf1449f8d6acd4243069,
-        type: 3}
-      propertyPath: m_Name
-      value: Blue_Disk_Spiral
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e87b7124ad7bf1449f8d6acd4243069, type: 3}

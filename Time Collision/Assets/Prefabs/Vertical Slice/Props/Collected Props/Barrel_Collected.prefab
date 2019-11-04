@@ -241,6 +241,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8611891458329168478}
   - component: {fileID: 6010712171604694708}
+  - component: {fileID: -6380969692487807232}
   m_Layer: 11
   m_Name: Barrel_Collected
   m_TagString: Collected
@@ -280,6 +281,22 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: -5076798556035486163, guid: 0fee104da66c80c488507740a9d98045, type: 3}
+--- !u!114 &-6380969692487807232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4744767056463312973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 677d4e97155943241858580bd2742150, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whoFired: {fileID: 0}
+  propNum: 0
+  propMass: 1
+  propDamage: 2
 --- !u!1 &8819360393390714341
 GameObject:
   m_ObjectHideFlags: 0

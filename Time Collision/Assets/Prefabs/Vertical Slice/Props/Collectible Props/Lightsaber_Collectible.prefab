@@ -9977,8 +9977,8 @@ GameObject:
   - component: {fileID: 5439355012559033122}
   - component: {fileID: 4186572380627510270}
   - component: {fileID: 3349530714017421379}
-  - component: {fileID: 7724986349299979552}
   - component: {fileID: 6791128458029476634}
+  - component: {fileID: 7724986349299979552}
   m_Layer: 10
   m_Name: Lightsaber_Collectible
   m_TagString: Collectible
@@ -10040,20 +10040,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &7724986349299979552
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9018213373250412849}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bc763867f426f841921ee2c620559c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isStuck: 1
-  howFar: 5
 --- !u!114 &6791128458029476634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10068,8 +10054,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whoFired: {fileID: 0}
   propNum: 7
-  propMass: 0.5
-  propDamage: 7
+--- !u!114 &7724986349299979552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9018213373250412849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bc763867f426f841921ee2c620559c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isStuck: 1
+  howFar: 5
 --- !u!1 &9020639834749410453
 GameObject:
   m_ObjectHideFlags: 0

@@ -30,17 +30,20 @@ public class UIIconControl : MonoBehaviour
 
     void UpdateGUI()
     {
-        Inventory = Player.GetComponent<VSPlayerController>().inventory;
-        if (Type == Player.GetComponent<VSPlayerController>().selectedProp)
+        if(Player != null)
         {
-            self.sprite = BlueImage;
-        }
-        else
-        {
-            self.sprite = GrayImage;
-        }
+            Inventory = Player.GetComponent<VSPlayerController>().inventory;
+            if (Type == Player.GetComponent<VSPlayerController>().selectedProp)
+            {
+                self.sprite = BlueImage;
+            }
+            else
+            {
+                self.sprite = GrayImage;
+            }
 
-        Text.text = ""+Inventory[Type];
+            Text.text = "" + Inventory[Type];
+        }
     }
     
 }

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3492235843558717334}
   - component: {fileID: 8434218671370745747}
+  - component: {fileID: -1607725114409547929}
   m_Layer: 11
   m_Name: Gramaphone_Collected
   m_TagString: Collected
@@ -54,6 +55,22 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: -1026100765583077436, guid: 1ae2b63f55732454cb2928285bcaaf58, type: 3}
+--- !u!114 &-1607725114409547929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 445205623230088581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 677d4e97155943241858580bd2742150, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whoFired: {fileID: 0}
+  propNum: 3
+  propMass: 5
+  propDamage: 7
 --- !u!1 &781697790074428738
 GameObject:
   m_ObjectHideFlags: 0

@@ -22,6 +22,8 @@ public class VSPlayerController : MonoBehaviour
     public float diskSpeed;
 
     public float playerMass;
+    private int shield;
+    private float shieldRemaining;
 
     public List<GameObject> collectedPropPrefabs;
     public List<GameObject> firedPropPrefabs;
@@ -98,7 +100,7 @@ public class VSPlayerController : MonoBehaviour
 
         alignMovement();
 
-        rb.velocity += movementInput * accel;         // Additive controls, so it will intentionally feel a little floaty.
+        rb.velocity += movementInput * accel / Mathf.Max(playerMass / 20, 1f);         // Additive controls, so it will intentionally feel a little floaty.
         if (rb.velocity.magnitude > maxSpeed)
         {
             rb.velocity = rb.velocity.normalized * maxSpeed;
@@ -127,22 +129,49 @@ public class VSPlayerController : MonoBehaviour
         {
             int propNum = col.gameObject.GetComponent<ObjectAttributes>().propNum;
             addToInventory(propNum);
-            GetComponent<DiskController>().AddToDisk(propNum);  //added by Lin
             string invString = string.Join(",", inventory.ToArray());
             Debug.Log(invString);
             Destroy(col.gameObject);
-
-            if (inventory[selectedProp] == 0)
-            {
-                selectedProp = findNonEmpty();
-            }
         }
         if (col.gameObject.CompareTag("Fired"))
         {
-            if(!(gameObject.GetInstanceID() == col.GetComponent<ObjectAttributes>().whoFired.GetInstanceID()))
+            if (!(gameObject.GetInstanceID() == col.GetComponent<ObjectAttributes>().whoFired.GetInstanceID()))
             {
-                // TODO: Implement health system
-                Destroy(gameObject);
+                if (shield == -1)
+                {
+                    Destroy(gameObject);
+                }
+                else
+                {
+                    float damageToDeal = ObjectAttributes.getDamage(col.gameObject.GetComponent<ObjectAttributes>().propNum);
+                    Debug.Log("Taking " + damageToDeal + " damage");
+                    while (damageToDeal > 0)
+                    {
+                        if(shieldRemaining > damageToDeal)
+                        {
+                            shieldRemaining -= damageToDeal;
+                            damageToDeal = 0;
+                            Destroy(col.gameObject);
+                            return;
+                        }
+                        else
+                        {
+                            damageToDeal -= shieldRemaining;
+                            inventory[shield]--;
+                            GetComponent<DiskController>().RemoveFromDisk(shield);  //added by Lin
+                            newShield();
+
+                            // This gives the player one last chance to get new cover when their last shield breaks. Large objects can break the rest of your shield, but they can't kill you in one shot unless your inventory is empty.
+                            if (shield == -1)
+                            {
+                                damageToDeal = 0f;      
+                                Destroy(col.gameObject);
+                                return;
+                            }
+                        }
+                    }
+                    Destroy(col.gameObject);
+                }
             }
         }
     }
@@ -150,6 +179,20 @@ public class VSPlayerController : MonoBehaviour
     private void addToInventory(int propNum)
     {
         inventory[propNum]++;
+        if (inventory[selectedProp] == 0)
+        {
+            selectedProp = findNonEmpty();
+        }
+        updateMass();
+        GetComponent<DiskController>().AddToDisk(propNum);  //added by Lin
+        if (inventory[selectedProp] == 0)
+        {
+            selectedProp = findNonEmpty();
+        }
+        if (shield == -1)
+        {
+            newShield();
+        }
     }
 
     private void updateAim()
@@ -177,7 +220,7 @@ public class VSPlayerController : MonoBehaviour
         {
             GameObject shot = Instantiate(firedPropPrefabs[selectedProp], rb.position, arrow.transform.rotation);
             GetComponent<DiskController>().RemoveFromDisk(selectedProp);    //Added by Lin
-            shot.GetComponent<Rigidbody>().velocity = (arrow.transform.forward + spread(shotCount)) * shotForce;
+            shot.GetComponent<Rigidbody>().velocity = rb.velocity + (arrow.transform.forward + spread(shotCount)) * shotForce;
             shot.GetComponent<ObjectAttributes>().whoFired = gameObject;
         }
     }
@@ -220,26 +263,30 @@ public class VSPlayerController : MonoBehaviour
 
     private void fire()
     {
-        if (inventory[selectedProp] > 0)
+        if(inventory[selectedProp] < 1)
         {
-            Debug.Log("Firing " + selectedProp + ". " + (inventory[selectedProp] - 1) + " items left.");            
+            selectedProp = findNonEmpty();
+        }
+        if(inventory[selectedProp] > 0)
+        {
+            Debug.Log("Firing " + selectedProp + "s. ");            
             initializeProjectiles(numProjectiles());
-            inventory[selectedProp] -= numProjectiles();
-
-            if(inventory[selectedProp] == 0)
+            for (int i = 0; i < numProjectiles(); i++)
             {
-                selectedProp = findNonEmpty();
+                GetComponent<DiskController>().RemoveFromDisk(selectedProp);
             }
+            inventory[selectedProp] -= numProjectiles();
+            updateMass();
         }
         else
         {
-            Debug.Log("Click");
+            Debug.Log("Nothing to fire!");
         }
     }
 
     private int findNonEmpty()
     {
-        for(int i = 0; i < 7; i++)
+        for(int i = 0; i < inventory.Count; i++)
         {
             int index = (selectedProp + i) % inventory.Count;
             if (inventory[index] > 0)
@@ -364,6 +411,39 @@ public class VSPlayerController : MonoBehaviour
         }
     }
 
+    private void updateMass()
+    {
+        playerMass = 0;
+        for(int i = 0; i < inventory.Count; i++)
+        {
+            playerMass += ObjectAttributes.getMass(i) * inventory[i];
+        }
+        Debug.Log("Player mass is: " + playerMass);
+    }
+
+    private void newShield()
+    {
+        shield = -1;
+        float bestShieldSoFar = 0f;
+        for(int i = 0; i < inventory.Count; i++)
+        {
+            if(ObjectAttributes.getMass(i) > bestShieldSoFar && inventory[i] > 0)
+            {
+                bestShieldSoFar = ObjectAttributes.getMass(i);
+                shield = i;
+            }
+        }
+        if(shield > -1)
+        {
+            shieldRemaining = ObjectAttributes.getMass(shield);
+        }
+        else
+        {
+            shieldRemaining = 0f;
+        }
+        Debug.Log("New shield: " + shield);
+    }
+
     void Start()
     {
         rb = this.GetComponent<Rigidbody>();
@@ -378,6 +458,7 @@ public class VSPlayerController : MonoBehaviour
         LTpressed = false;
         selectedProp = 1;
         selectedCount = 1;
+        shield = -1;
         if(!usingController)
         {
             Cursor.visible = false;
