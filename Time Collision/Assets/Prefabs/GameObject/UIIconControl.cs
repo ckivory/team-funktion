@@ -1,0 +1,46 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+public class UIIconControl : MonoBehaviour
+{
+    public Text Text;
+    [HideInInspector]
+    public GameObject Player;
+    public Sprite BlueImage;
+    public Sprite GrayImage;
+    public Image self;
+    /// <summary>
+    /// Must be assigned according to the order in inventory
+    /// </summary>
+    public int Type;
+    List<int> Inventory;
+    bool selected;
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        UpdateGUI();
+    }
+
+    void UpdateGUI()
+    {
+        Inventory = Player.GetComponent<VSPlayerController>().inventory;
+        if (Type == Player.GetComponent<VSPlayerController>().selectedProp)
+        {
+            self.sprite = BlueImage;
+        }
+        else
+        {
+            self.sprite = GrayImage;
+        }
+
+        Text.text = ""+Inventory[Type];
+    }
+    
+}
