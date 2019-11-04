@@ -5286,8 +5286,8 @@ MonoBehaviour:
   baseSpawnHeight: 3.5
   heightIncrement: 0.2
   spawnedItems:
-  - {fileID: 4744767056463312973, guid: ed917e1f4db7ca44c9b44ab5da9c0fbb, type: 3}
-  - {fileID: 8617994201647920770, guid: 979b5a5de3cb6ce4b8b5e9f468691c4b, type: 3}
+  - {fileID: 4744767056463312973, guid: 51a4eb999fdfa964bae6a347b02a6e55, type: 3}
+  - {fileID: 8617994201647920770, guid: 0ae08f39ca81e254aab5123132ff4806, type: 3}
   - {fileID: 445205623230088581, guid: c8421b2c48916fc4e8124bb3e785b1aa, type: 3}
   minTimes:
   - 18
@@ -9066,8 +9066,8 @@ MonoBehaviour:
   baseSpawnHeight: 3.5
   heightIncrement: 0.2
   spawnedItems:
-  - {fileID: 4744767056463312973, guid: ed917e1f4db7ca44c9b44ab5da9c0fbb, type: 3}
-  - {fileID: 8617994201647920770, guid: 979b5a5de3cb6ce4b8b5e9f468691c4b, type: 3}
+  - {fileID: 4744767056463312973, guid: 51a4eb999fdfa964bae6a347b02a6e55, type: 3}
+  - {fileID: 8617994201647920770, guid: 0ae08f39ca81e254aab5123132ff4806, type: 3}
   - {fileID: 445205623230088581, guid: c8421b2c48916fc4e8124bb3e785b1aa, type: 3}
   minTimes:
   - 18

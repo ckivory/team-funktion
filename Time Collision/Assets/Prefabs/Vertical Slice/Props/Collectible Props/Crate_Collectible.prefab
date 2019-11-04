@@ -89,6 +89,7 @@ GameObject:
   - component: {fileID: 3542182686932778020}
   - component: {fileID: 932516654306112861}
   - component: {fileID: 3476307688660240728}
+  - component: {fileID: 5298384601700313149}
   m_Layer: 10
   m_Name: Crate_Collectible
   m_TagString: Collectible
@@ -157,8 +158,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whoFired: {fileID: 0}
   propNum: 1
-  propMass: 1
-  propDamage: 2
+--- !u!114 &5298384601700313149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7251298450365760712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff5826d2fc541ec4ba391d97eab7220c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DespawnTimer: 30
 --- !u!1 &8158253398747968977
 GameObject:
   m_ObjectHideFlags: 0

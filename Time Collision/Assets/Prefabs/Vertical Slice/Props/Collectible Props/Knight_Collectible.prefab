@@ -89,6 +89,7 @@ GameObject:
   - component: {fileID: -976358349819747645}
   - component: {fileID: 3363373125906889223}
   - component: {fileID: 6540830029833307975}
+  - component: {fileID: -3857353186578601794}
   m_Layer: 10
   m_Name: Knight_Collectible
   m_TagString: Collectible
@@ -156,8 +157,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whoFired: {fileID: 0}
   propNum: 5
-  propMass: 2
-  propDamage: 4
+--- !u!114 &-3857353186578601794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9188675194279928149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff5826d2fc541ec4ba391d97eab7220c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DespawnTimer: 30
 --- !u!1001 &8915699707930754924
 PrefabInstance:
   m_ObjectHideFlags: 0

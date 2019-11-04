@@ -89,6 +89,7 @@ GameObject:
   - component: {fileID: 3258987292482680899}
   - component: {fileID: 3258987292482680956}
   - component: {fileID: 3119610134264971941}
+  - component: {fileID: 4473214916323651888}
   m_Layer: 10
   m_Name: Scooter_Collectible
   m_TagString: Collectible
@@ -156,8 +157,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whoFired: {fileID: 0}
   propNum: 8
-  propMass: 2
-  propDamage: 5
+--- !u!114 &4473214916323651888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7085181105243925176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff5826d2fc541ec4ba391d97eab7220c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DespawnTimer: 30
 --- !u!1001 &5232547480108461512
 PrefabInstance:
   m_ObjectHideFlags: 0
