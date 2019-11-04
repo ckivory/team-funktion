@@ -18,6 +18,9 @@ public class UICanvasControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Player == null)
+        {
+            Destroy(this.gameObject);
+        }
     }
 }
