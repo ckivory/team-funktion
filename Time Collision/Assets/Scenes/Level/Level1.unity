@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44231832, g: 0.49135846, b: 0.5712338, a: 1}
+  m_IndirectSpecularColor: {r: 0.4423182, g: 0.49135798, b: 0.5712333, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -17327,7 +17327,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1239440051200181299, guid: d3b6612b5527d504596630982c9ea7cf, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d3b6612b5527d504596630982c9ea7cf, type: 3}
 --- !u!1001 &3800089393738970083
 PrefabInstance:
@@ -17406,7 +17407,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3800089391938570300, guid: 876d319b82173524d9b9af4e19cf0770, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 876d319b82173524d9b9af4e19cf0770, type: 3}
 --- !u!1001 &6662636086600079370
 PrefabInstance:
@@ -17494,6 +17496,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5574650779002997810, guid: a324ab1b4bb51284696968d8061583e8,
+        type: 3}
+      propertyPath: usingController
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a324ab1b4bb51284696968d8061583e8, type: 3}
@@ -17583,6 +17590,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9149721646838172533, guid: d82623b8c4aff5d48987b43833d1de54,
+        type: 3}
+      propertyPath: usingController
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9149721647008085820, guid: d82623b8c4aff5d48987b43833d1de54,
         type: 3}
