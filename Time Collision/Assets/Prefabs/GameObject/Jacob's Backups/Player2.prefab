@@ -10092,6 +10092,7 @@ MonoBehaviour:
   sensitivityX: 0.125
   sensitivityY: 0.25
   mouseSensitivity: 3
+  distance: 18
 --- !u!1 &5574650780147623015
 GameObject:
   m_ObjectHideFlags: 0

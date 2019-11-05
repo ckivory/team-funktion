@@ -16,7 +16,7 @@ public class VSOverShoulderCameraController : MonoBehaviour
     private Camera cam;
     private int controllerNum;
 
-    private float distance = 10.0f;
+    public float distance = 20.0f;
 
     private float currentX = 0.0f;
     private float currentY = 0.0f;

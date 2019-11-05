@@ -9924,6 +9924,7 @@ MonoBehaviour:
   sensitivityX: 0.125
   sensitivityY: 0.25
   mouseSensitivity: 3
+  distance: 18
 --- !u!1 &2708900101641122822
 GameObject:
   m_ObjectHideFlags: 0
@@ -15275,11 +15276,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2708900102112003695}
     m_Modifications:
-    - target: {fileID: 3755344215905557382, guid: 89041331809341644b60a9174c2e284c,
-        type: 3}
-      propertyPath: m_Name
-      value: Red_Disk_Spiral 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3755344215905557383, guid: 89041331809341644b60a9174c2e284c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15349,6 +15345,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.3623444
+      objectReference: {fileID: 0}
+    - target: {fileID: 3755344215905557382, guid: 89041331809341644b60a9174c2e284c,
+        type: 3}
+      propertyPath: m_Name
+      value: Red_Disk_Spiral 1
       objectReference: {fileID: 0}
     - target: {fileID: 3755344215905557377, guid: 89041331809341644b60a9174c2e284c,
         type: 3}
