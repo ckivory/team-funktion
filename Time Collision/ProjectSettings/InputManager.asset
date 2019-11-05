@@ -548,7 +548,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 4
-    joyNum: 5
+    joyNum: 4
   - serializedVersion: 3
     m_Name: J1LT
     descriptiveName: 
