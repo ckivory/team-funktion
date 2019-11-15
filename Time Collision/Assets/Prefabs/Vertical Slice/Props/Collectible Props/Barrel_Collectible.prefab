@@ -241,7 +241,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8611891458329168478}
   - component: {fileID: 6010712171604694708}
-  - component: {fileID: 2949796388016498890}
+  - component: {fileID: -6144302891804203287}
   - component: {fileID: 990552761505644385}
   - component: {fileID: -1860560873155956418}
   m_Layer: 10
@@ -284,7 +284,7 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: -5076798556035486163, guid: 0fee104da66c80c488507740a9d98045, type: 3}
---- !u!54 &2949796388016498890
+--- !u!54 &-6144302891804203287
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -411,6 +411,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8611891458329168478}
     m_Modifications:
+    - target: {fileID: 1575382208379894859, guid: ef80640f454bec743808b74d180cff27,
+        type: 3}
+      propertyPath: m_Name
+      value: Spawn Effect
+      objectReference: {fileID: 0}
     - target: {fileID: 1575382208379894856, guid: ef80640f454bec743808b74d180cff27,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -465,11 +470,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1575382208379894859, guid: ef80640f454bec743808b74d180cff27,
-        type: 3}
-      propertyPath: m_Name
-      value: Spawn Effect
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef80640f454bec743808b74d180cff27, type: 3}
