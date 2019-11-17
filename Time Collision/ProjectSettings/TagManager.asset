@@ -9,6 +9,8 @@ TagManager:
   - Collected
   - Fired
   - Prop
+  - DeathZone
+  - Ground
   layers:
   - Default
   - TransparentFX

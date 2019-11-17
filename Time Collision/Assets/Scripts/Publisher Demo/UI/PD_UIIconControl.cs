@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class UIIconControl : MonoBehaviour
+public class PD_UIIconControl : MonoBehaviour
 {
     public Text Text;
     [HideInInspector]
@@ -32,8 +32,8 @@ public class UIIconControl : MonoBehaviour
     {
         if(Player != null)
         {
-            Inventory = Player.GetComponent<VSPlayerController>().inventory;
-            if (Type == Player.GetComponent<VSPlayerController>().selectedProp)
+            Inventory = Player.GetComponent<PDPlayerController>().inventory;
+            if (Type == Player.GetComponent<PDPlayerController>().selectedProp)
             {
                 self.sprite = BlueImage;
             }
