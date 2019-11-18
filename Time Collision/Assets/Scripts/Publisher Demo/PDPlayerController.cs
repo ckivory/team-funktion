@@ -218,6 +218,12 @@ public class PDPlayerController : MonoBehaviour
         }
     }
 
+    // For deathzone to access when it disappears
+    public void LeaveZone()
+    {
+        insideZone = false;
+    }
+
     private void addToInventory(int propNum)
     {
         inventory[propNum]++;

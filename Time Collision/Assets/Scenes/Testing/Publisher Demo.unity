@@ -1320,6 +1320,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06733bcc1482c3743807d2ce531433a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Players:
+  - {fileID: 2097722921}
+  - {fileID: 1754175503}
+  - {fileID: 898203417}
+  - {fileID: 1163741147}
   radii:
   - 2000
   - 1000

@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DeathZoneController : MonoBehaviour
+public class PD_DeathZoneController : MonoBehaviour
 {
+    public List<GameObject> Players;
+
     public List<float> radii;
     private float radius;
 
@@ -78,6 +80,12 @@ public class DeathZoneController : MonoBehaviour
     {
         if (waveNum > waveTimes.Count - 1)
         {
+            // DeathZone should disappear at the end.
+            foreach(GameObject player in Players)
+            {
+                player.SendMessage("LeaveZone");
+            }
+            Destroy(gameObject);
             return;
         }
         timer += Time.deltaTime;

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PDItemSpawnController : MonoBehaviour
+public class PD_ItemSpawnController : MonoBehaviour
 {
     public float baseSpawnHeight = 3.5f;
     public float heightIncrement = 0.2f;
