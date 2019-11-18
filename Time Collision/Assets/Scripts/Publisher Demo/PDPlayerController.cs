@@ -46,6 +46,8 @@ public class PDPlayerController : MonoBehaviour
     public int selectedCount;   //made public by Lin
     private Rigidbody rb;
 
+    private bool alive;
+
     private void getJoystickMovement()
     {
         movementInput = Vector3.zero;
@@ -127,57 +129,92 @@ public class PDPlayerController : MonoBehaviour
         disk.transform.Rotate(0f, diskSpeed * Time.deltaTime, 0f);
     }
 
-    private void OnTriggerEnter(Collider col)
+    private void playerDeath()
     {
-        if (col.gameObject.CompareTag("Collectible"))
+        alive = false;
+        // Code for changing the player's avatar to represent the fact that they are dead.
+        arrow.SetActive(false);     // A suggestion
+    }
+
+    private void takeDamage(float damageToDeal)
+    {
+        Debug.Log("Taking " + damageToDeal + " damage");
+        if (shield == -1)
         {
-            int propNum = col.gameObject.GetComponent<ObjectAttributes>().propNum;
-            addToInventory(propNum);
-            string invString = string.Join(",", inventory.ToArray());
-            Debug.Log(invString);
-            Destroy(col.gameObject);
+            playerDeath();
+            return;
         }
-        if (col.gameObject.CompareTag("Fired"))
+
+        while (damageToDeal > 0)
         {
-            if (!(gameObject.GetInstanceID() == col.GetComponent<ObjectAttributes>().whoFired.GetInstanceID()))
+            if (shieldRemaining > damageToDeal)
             {
+                shieldRemaining -= damageToDeal;
+                //damageToDeal = 0;
+                return;
+            }
+            else
+            {
+                damageToDeal -= shieldRemaining;
+                inventory[shield]--;
+                GetComponent<PD_DiskController>().RemoveFromDisk(shield);  //added by Lin
+                newShield();
+
+                // This gives the player one last chance to get new cover when their last shield breaks. Large objects can break the rest of your shield, but they can't kill you in one shot unless your inventory is empty.
                 if (shield == -1)
                 {
-                    // Player death
-                    Destroy(gameObject);
+                    return;
                 }
-                else
-                {
-                    float damageToDeal = ObjectAttributes.getDamage(col.gameObject.GetComponent<ObjectAttributes>().propNum);
-                    Debug.Log("Taking " + damageToDeal + " damage");
-                    while (damageToDeal > 0)
-                    {
-                        if(shieldRemaining > damageToDeal)
-                        {
-                            shieldRemaining -= damageToDeal;
-                            damageToDeal = 0;
-                            Destroy(col.gameObject);
-                            return;
-                        }
-                        else
-                        {
-                            damageToDeal -= shieldRemaining;
-                            inventory[shield]--;
-                            GetComponent<PD_DiskController>().RemoveFromDisk(shield);  //added by Lin
-                            newShield();
+            }
+        }
+    }
 
-                            // This gives the player one last chance to get new cover when their last shield breaks. Large objects can break the rest of your shield, but they can't kill you in one shot unless your inventory is empty.
-                            if (shield == -1)
-                            {
-                                damageToDeal = 0f;      
-                                Destroy(col.gameObject);
-                                return;
-                            }
-                        }
+    private void OnTriggerEnter(Collider col)
+    {
+        if(alive)
+        {
+            if (col.gameObject.CompareTag("Collectible"))
+            {
+                int propNum = col.gameObject.GetComponent<ObjectAttributes>().propNum;
+                addToInventory(propNum);
+                string invString = string.Join(",", inventory.ToArray());
+                Debug.Log(invString);
+                Destroy(col.gameObject);
+            }
+            if (col.gameObject.CompareTag("Fired"))
+            {
+                if (!(gameObject.GetInstanceID() == col.GetComponent<ObjectAttributes>().whoFired.GetInstanceID()))
+                {
+                    if (shield == -1)
+                    {
+                        playerDeath();
+                    }
+                    else
+                    {
+                        float damageToTake = ObjectAttributes.getDamage(col.gameObject.GetComponent<ObjectAttributes>().propNum);
+                        takeDamage(damageToTake);
                     }
                     Destroy(col.gameObject);
                 }
             }
+        }
+    }
+
+    private void OnTriggerStay(Collider col)
+    {
+        if(col.CompareTag("DeathZone"))
+        {
+            //Debug.Log("Inside Zone");
+            insideZone = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider col)
+    {
+        if(col.CompareTag("DeathZone"))
+        {
+            Debug.Log("Leaving Zone");
+            insideZone = false;
         }
     }
 
@@ -471,49 +508,35 @@ public class PDPlayerController : MonoBehaviour
         }
         damageTimer = 0f;
         insideZone = true;
+        alive = true;
     }
 
     void Update()
     {
-        updateMovement();
+        if(alive)
+        {
+            updateMovement();
+        }
         updateRotation();
         updateSpin();
-        updateAim();
+        if(alive)
+        {
+            updateAim();
+        }
         updateSelected();
         updateSelectedCount();
-        if(triggerPulled())
+        if(alive && triggerPulled())
         {
             fire();
         }
-        if(!insideZone)
+        if (alive && !insideZone)
         {
+            //Debug.Log("Outside Zone!");
             damageTimer += Time.deltaTime;
             if(damageTimer >= 1)
             {
-                float damageToDeal = 1f;
-                while (damageToDeal > 0)
-                {
-                    if (shieldRemaining > damageToDeal)
-                    {
-                        shieldRemaining -= damageToDeal;
-                        damageToDeal = 0f;
-                        continue;
-                    }
-                    else
-                    {
-                        damageToDeal -= shieldRemaining;
-                        inventory[shield]--;
-                        GetComponent<PD_DiskController>().RemoveFromDisk(shield);  //added by Lin
-                        newShield();
-
-                        // This gives the player one last chance to get new cover when their last shield breaks. Large objects can break the rest of your shield, but they can't kill you in one shot unless your inventory is empty.
-                        if (shield == -1)
-                        {
-                            damageToDeal = 0f;
-                            continue;
-                        }
-                    }
-                }
+                float damageToTake = 1f;
+                takeDamage(damageToTake);
                 damageTimer = 0f;
             }
         }
