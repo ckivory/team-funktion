@@ -48,7 +48,7 @@ public class PD_DeathZoneController : MonoBehaviour
         }
         catch (System.Exception e)
         {
-            Debug.Log("Make sure you have at least one radius in the list");
+            Debug.Log(e.Message+" Make sure you have at least one radius in the list");
         }
     }
 

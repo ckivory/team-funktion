@@ -10287,7 +10287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disk: {fileID: 9149721646600714241}
-  orbitalCapacityList: 0a000000140000001e00000028000000320000003c00000046000000500000005a00000064000000
+  orbitalCapacityList: 0400000006000000080000000a0000000c0000000e00000010000000120000001400000016000000
   orbitalRadiusList: 02000000030000000400000005000000060000000700000008000000090000000a0000000b000000
   orbitalSpeedList:
   - 2
@@ -15261,6 +15261,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9149721646034391369}
     m_Modifications:
+    - target: {fileID: 3755344215905557382, guid: 2e87b7124ad7bf1449f8d6acd4243069,
+        type: 3}
+      propertyPath: m_Name
+      value: Blue_Disk_Spiral
+      objectReference: {fileID: 0}
     - target: {fileID: 3755344215905557383, guid: 2e87b7124ad7bf1449f8d6acd4243069,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15330,11 +15335,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.3623444
-      objectReference: {fileID: 0}
-    - target: {fileID: 3755344215905557382, guid: 2e87b7124ad7bf1449f8d6acd4243069,
-        type: 3}
-      propertyPath: m_Name
-      value: Blue_Disk_Spiral
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e87b7124ad7bf1449f8d6acd4243069, type: 3}
