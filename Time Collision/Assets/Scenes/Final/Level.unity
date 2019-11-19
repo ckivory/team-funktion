@@ -17322,6 +17322,56 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1229656898934279691, guid: d3b6612b5527d504596630982c9ea7cf,
+        type: 3}
+      propertyPath: orbitalCapacityList.Array.data[0]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1229656898934279691, guid: d3b6612b5527d504596630982c9ea7cf,
+        type: 3}
+      propertyPath: orbitalCapacityList.Array.data[1]
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1229656898934279691, guid: d3b6612b5527d504596630982c9ea7cf,
+        type: 3}
+      propertyPath: orbitalCapacityList.Array.data[2]
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1229656898934279691, guid: d3b6612b5527d504596630982c9ea7cf,
+        type: 3}
+      propertyPath: orbitalCapacityList.Array.data[3]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1229656898934279691, guid: d3b6612b5527d504596630982c9ea7cf,
+        type: 3}
+      propertyPath: orbitalCapacityList.Array.data[4]
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1229656898934279691, guid: d3b6612b5527d504596630982c9ea7cf,
+        type: 3}
+      propertyPath: orbitalCapacityList.Array.data[5]
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1229656898934279691, guid: d3b6612b5527d504596630982c9ea7cf,
+        type: 3}
+      propertyPath: orbitalCapacityList.Array.data[6]
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1229656898934279691, guid: d3b6612b5527d504596630982c9ea7cf,
+        type: 3}
+      propertyPath: orbitalCapacityList.Array.data[7]
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 1229656898934279691, guid: d3b6612b5527d504596630982c9ea7cf,
+        type: 3}
+      propertyPath: orbitalCapacityList.Array.data[8]
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1229656898934279691, guid: d3b6612b5527d504596630982c9ea7cf,
+        type: 3}
+      propertyPath: orbitalCapacityList.Array.data[9]
+      value: 22
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1239440051200181299, guid: d3b6612b5527d504596630982c9ea7cf, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d3b6612b5527d504596630982c9ea7cf, type: 3}
@@ -17401,6 +17451,56 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3791854332356077899, guid: 876d319b82173524d9b9af4e19cf0770,
+        type: 3}
+      propertyPath: orbitalCapacityList.Array.data[0]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3791854332356077899, guid: 876d319b82173524d9b9af4e19cf0770,
+        type: 3}
+      propertyPath: orbitalCapacityList.Array.data[1]
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3791854332356077899, guid: 876d319b82173524d9b9af4e19cf0770,
+        type: 3}
+      propertyPath: orbitalCapacityList.Array.data[2]
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3791854332356077899, guid: 876d319b82173524d9b9af4e19cf0770,
+        type: 3}
+      propertyPath: orbitalCapacityList.Array.data[3]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3791854332356077899, guid: 876d319b82173524d9b9af4e19cf0770,
+        type: 3}
+      propertyPath: orbitalCapacityList.Array.data[4]
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3791854332356077899, guid: 876d319b82173524d9b9af4e19cf0770,
+        type: 3}
+      propertyPath: orbitalCapacityList.Array.data[5]
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3791854332356077899, guid: 876d319b82173524d9b9af4e19cf0770,
+        type: 3}
+      propertyPath: orbitalCapacityList.Array.data[6]
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 3791854332356077899, guid: 876d319b82173524d9b9af4e19cf0770,
+        type: 3}
+      propertyPath: orbitalCapacityList.Array.data[7]
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 3791854332356077899, guid: 876d319b82173524d9b9af4e19cf0770,
+        type: 3}
+      propertyPath: orbitalCapacityList.Array.data[8]
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3791854332356077899, guid: 876d319b82173524d9b9af4e19cf0770,
+        type: 3}
+      propertyPath: orbitalCapacityList.Array.data[9]
+      value: 22
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3800089391938570300, guid: 876d319b82173524d9b9af4e19cf0770, type: 3}
@@ -17496,6 +17596,56 @@ PrefabInstance:
         type: 3}
       propertyPath: usingController
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6653380704174815530, guid: a324ab1b4bb51284696968d8061583e8,
+        type: 3}
+      propertyPath: orbitalCapacityList.Array.data[0]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6653380704174815530, guid: a324ab1b4bb51284696968d8061583e8,
+        type: 3}
+      propertyPath: orbitalCapacityList.Array.data[1]
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6653380704174815530, guid: a324ab1b4bb51284696968d8061583e8,
+        type: 3}
+      propertyPath: orbitalCapacityList.Array.data[2]
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6653380704174815530, guid: a324ab1b4bb51284696968d8061583e8,
+        type: 3}
+      propertyPath: orbitalCapacityList.Array.data[3]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6653380704174815530, guid: a324ab1b4bb51284696968d8061583e8,
+        type: 3}
+      propertyPath: orbitalCapacityList.Array.data[4]
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6653380704174815530, guid: a324ab1b4bb51284696968d8061583e8,
+        type: 3}
+      propertyPath: orbitalCapacityList.Array.data[5]
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 6653380704174815530, guid: a324ab1b4bb51284696968d8061583e8,
+        type: 3}
+      propertyPath: orbitalCapacityList.Array.data[6]
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 6653380704174815530, guid: a324ab1b4bb51284696968d8061583e8,
+        type: 3}
+      propertyPath: orbitalCapacityList.Array.data[7]
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 6653380704174815530, guid: a324ab1b4bb51284696968d8061583e8,
+        type: 3}
+      propertyPath: orbitalCapacityList.Array.data[8]
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6653380704174815530, guid: a324ab1b4bb51284696968d8061583e8,
+        type: 3}
+      propertyPath: orbitalCapacityList.Array.data[9]
+      value: 22
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a324ab1b4bb51284696968d8061583e8, type: 3}
