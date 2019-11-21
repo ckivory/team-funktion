@@ -29,6 +29,9 @@ public class PDPlayerController : MonoBehaviour
     private int shield;
     private float shieldRemaining;
 
+    public float coolDownDuration = 0.1f;
+    private float coolDown;
+
     public List<GameObject> collectedPropPrefabs;
     public List<GameObject> firedPropPrefabs;
 
@@ -282,14 +285,14 @@ public class PDPlayerController : MonoBehaviour
     {
         if (usingController)
         {
-            if (Input.GetButtonDown("J" + controllerNum + "RB"))
+            if (Input.GetButton("J" + controllerNum + "RB"))
             {
                 return true;
             }
         }
         else
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButton(0))
             {
                 return true;
             }
@@ -492,6 +495,23 @@ public class PDPlayerController : MonoBehaviour
         Debug.Log("New shield: " + shield);
     }
 
+    private void handleFiring()
+    {
+        if (triggerPulled())
+        {
+            Debug.Log("Cooldown: " + coolDown);
+            if (coolDown <= 0)
+            {
+                fire();
+                coolDown = coolDownDuration;
+            }
+        }
+        if (coolDown > 0)
+        {
+            coolDown -= Time.deltaTime;
+        }
+    }
+
     void Start()
     {
         rb = this.GetComponent<Rigidbody>();
@@ -513,6 +533,7 @@ public class PDPlayerController : MonoBehaviour
             Cursor.visible = false;
         }
         damageTimer = 0f;
+        coolDown = 0f;
         insideZone = true;
         alive = true;
     }
@@ -531,10 +552,14 @@ public class PDPlayerController : MonoBehaviour
         }
         updateSelected();
         updateSelectedCount();
-        if(alive && triggerPulled())
+
+        if(alive)
         {
-            fire();
+            handleFiring();
         }
+        
+        
+        
         if (alive && !insideZone)
         {
             //Debug.Log("Outside Zone!");
