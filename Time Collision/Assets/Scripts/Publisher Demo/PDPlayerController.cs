@@ -10,8 +10,8 @@ public class PDPlayerController : MonoBehaviour
     private float damageTimer;
     private bool insideZone;
 
-    public float maxSpeed = 500f;
-    public float accel = 1f;
+    public float maxSpeed = 200f;
+    public float accel = 1.5f;
     public float aimSpeed = 0.01f;
     public float aimDamping = 5f;
     public float scrollSensitivity = 10f;

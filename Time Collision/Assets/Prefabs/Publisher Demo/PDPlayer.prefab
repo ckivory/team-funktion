@@ -10142,6 +10142,7 @@ MonoBehaviour:
   - {fileID: 4018282755487714531, guid: 1e6ab61e60bd027439d04056189ad77f, type: 3}
   - {fileID: 9018213373250412849, guid: 5d9eb2a126d8b31459fd6690b98ce6fe, type: 3}
   - {fileID: 7085181105243925176, guid: 71fd44f8f3c95424eb03d357581c58c2, type: 3}
+  - {fileID: 7287095493153802058, guid: 7dae98316830bbf48b4ed31d09975f17, type: 3}
   firedPropPrefabs:
   - {fileID: 4744767056463312973, guid: 97df467e806aabd48b9d2d5c4d682116, type: 3}
   - {fileID: 7251298450365760712, guid: 5a3783795ae5d344d8cc69c4bcfdbba3, type: 3}
@@ -10152,6 +10153,7 @@ MonoBehaviour:
   - {fileID: 4018282755487714531, guid: 683f629a6e965f54bb1cf8c5f2ae8435, type: 3}
   - {fileID: 9018213373250412849, guid: ef851e091aec7604382c7a076b0183d3, type: 3}
   - {fileID: 7085181105243925176, guid: b71e8e3ac08010146ae9fbace0188a8e, type: 3}
+  - {fileID: 7287095493153802058, guid: 4cb4a93e32c8bb443891c1b1833c6130, type: 3}
   inventory: 
   selectedProp: 0
   selectedCount: 0
