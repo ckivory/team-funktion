@@ -10117,8 +10117,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 1237174200682086006}
   arrow: {fileID: 1237174198821115030}
-  maxSpeed: 200
-  accel: 1.5
+  levelMasses:
+  - 0
+  - 5
+  - 10
+  - 15
+  - 20
+  accelerations:
+  - 3
+  - 2
+  - 1.5
+  - 1.25
+  - 1
+  topSpeed: 50
   aimSpeed: 0.01
   aimDamping: 10
   aimMin: 10

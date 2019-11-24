@@ -10,8 +10,11 @@ public class PDPlayerController : MonoBehaviour
     private float damageTimer;
     private bool insideZone;
 
-    public float maxSpeed = 200f;
-    public float accel = 1.5f;
+    public List<float> levelMasses;
+    private int level;
+
+    public List<float> accelerations;
+    public float topSpeed;
 
     public float aimSpeed = 0.01f;
     public float aimDamping = 5f;
@@ -101,7 +104,7 @@ public class PDPlayerController : MonoBehaviour
     {
         movementInput = movementInput.x * Vector3.Cross(Vector3.up, transform.forward).normalized + movementInput.z * transform.forward.normalized;
     }
-
+    
     private void updateMovement()
     {
         if (usingController)
@@ -115,10 +118,10 @@ public class PDPlayerController : MonoBehaviour
 
         alignMovement();
 
-        rb.velocity += movementInput * accel / Mathf.Max(playerMass / 20, 1f);         // Additive controls, so it will intentionally feel a little floaty.
-        if (rb.velocity.magnitude > maxSpeed)
+        rb.velocity += movementInput * accelerations[level];         // Additive controls, so it will intentionally feel a little floaty.
+        if (rb.velocity.magnitude > topSpeed)
         {
-            rb.velocity = rb.velocity.normalized * maxSpeed;
+            rb.velocity = rb.velocity.normalized * topSpeed;
         }
         // If movementInput is zero, they will slowly drift to a stop with a drag of 1.
     }
@@ -470,6 +473,21 @@ public class PDPlayerController : MonoBehaviour
         }
     }
 
+    private void updateLevel()
+    {
+        level = 0;
+        
+        for(int i = 0; i < levelMasses.Count; i++)
+        {
+            if(levelMasses[i] <= playerMass)
+            {
+                level = i;
+            }
+        }
+
+        Debug.Log("Level: " + level);
+    }
+
     private void updateMass()
     {
         playerMass = 0;
@@ -477,6 +495,7 @@ public class PDPlayerController : MonoBehaviour
         {
             playerMass += ObjectAttributes.getMass(i) * inventory[i];
         }
+        updateLevel();
         Debug.Log("Player mass is: " + playerMass);
     }
 
@@ -528,7 +547,8 @@ public class PDPlayerController : MonoBehaviour
         {
             inventory.Add(0);
         }
-        
+
+        level = 0;
         currentAim = 0f;
         targetAim = 0f;
         RTpressed = false;

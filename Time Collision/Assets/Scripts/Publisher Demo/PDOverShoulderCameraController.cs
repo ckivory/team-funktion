@@ -20,6 +20,8 @@ public class PDOverShoulderCameraController : MonoBehaviour
     public float minYRot = 10.0f;
     public float maxYRot = 30.0f;
 
+    public float initialRotation;
+
     private float currentX = 0.0f;
     private float currentY = 0.0f;
     private float targetX = 0.0f;
@@ -30,6 +32,9 @@ public class PDOverShoulderCameraController : MonoBehaviour
     private void Start()
     {
         camTransform = this.transform;
+
+        targetX = currentX = initialRotation;
+
         controllerNum = player.GetComponent<PDPlayerController>().controllerNum;
         cam = GetComponent<Camera>();
     }

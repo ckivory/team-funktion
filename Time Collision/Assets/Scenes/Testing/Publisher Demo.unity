@@ -4368,6 +4368,11 @@ PrefabInstance:
       propertyPath: usingController
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7026119425612755244, guid: 6a30c0a3692fd0548898ccb4ee1e1d77,
+        type: 3}
+      propertyPath: initialRotation
+      value: 45
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a30c0a3692fd0548898ccb4ee1e1d77, type: 3}
 --- !u!1 &898203417 stripped
@@ -6012,6 +6017,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_NormalizedViewPortRect.x
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7026119425612755244, guid: 6a30c0a3692fd0548898ccb4ee1e1d77,
+        type: 3}
+      propertyPath: initialRotation
+      value: 135
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a30c0a3692fd0548898ccb4ee1e1d77, type: 3}
@@ -8214,6 +8224,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_NormalizedViewPortRect.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7026119425612755244, guid: 6a30c0a3692fd0548898ccb4ee1e1d77,
+        type: 3}
+      propertyPath: initialRotation
+      value: 315
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a30c0a3692fd0548898ccb4ee1e1d77, type: 3}
@@ -10821,6 +10836,16 @@ PrefabInstance:
       propertyPath: usingController
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7587840009133854684, guid: 6a30c0a3692fd0548898ccb4ee1e1d77,
+        type: 3}
+      propertyPath: speeds.Array.data[1]
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 7587840009133854684, guid: 6a30c0a3692fd0548898ccb4ee1e1d77,
+        type: 3}
+      propertyPath: speeds.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1237174200682086006, guid: 6a30c0a3692fd0548898ccb4ee1e1d77,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.y
@@ -10841,10 +10866,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 1237174199995716995, guid: 6a30c0a3692fd0548898ccb4ee1e1d77,
+    - target: {fileID: 7026119425612755244, guid: 6a30c0a3692fd0548898ccb4ee1e1d77,
         type: 3}
-      propertyPath: m_Drag
-      value: 3
+      propertyPath: initialRotation
+      value: 225
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a30c0a3692fd0548898ccb4ee1e1d77, type: 3}
