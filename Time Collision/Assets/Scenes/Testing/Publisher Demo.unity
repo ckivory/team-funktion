@@ -308,6 +308,7 @@ MonoBehaviour:
   - 27
   - 30
   - 40
+  maxItems: 040000000300000005000000
 --- !u!4 &11734825 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5580326632950349651, guid: 101f3a7ae6707f243937086a89194e87,
@@ -1027,6 +1028,7 @@ MonoBehaviour:
   - 27
   - 33
   - 25
+  maxItems: 030000000200000005000000
 --- !u!1001 &171103357
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1690,6 +1692,7 @@ MonoBehaviour:
   - 30
   - 15
   - 40
+  maxItems: 030000000700000005000000
 --- !u!1001 &455770744
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2365,6 +2368,7 @@ MonoBehaviour:
   - 12
   - 9
   - 20
+  maxItems: 0a0000000a00000003000000
 --- !u!1 &511848420
 GameObject:
   m_ObjectHideFlags: 0
@@ -2585,6 +2589,7 @@ MonoBehaviour:
   - 30
   - 15
   - 33
+  maxItems: 030000000700000005000000
 --- !u!4 &532950873 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8186229479527654011, guid: 67edd83ac70d3974e9945f62c29508df,
@@ -3181,6 +3186,7 @@ MonoBehaviour:
   - 12
   - 9
   - 20
+  maxItems: 0a0000000a00000003000000
 --- !u!1001 &736774581
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3712,6 +3718,7 @@ MonoBehaviour:
   - 27
   - 24
   - 24
+  maxItems: 030000000500000007000000
 --- !u!1001 &799464693
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3977,6 +3984,7 @@ MonoBehaviour:
   maxTimes:
   - 27
   - 24
+  maxItems: 0300000005000000
 --- !u!1 &829001463
 GameObject:
   m_ObjectHideFlags: 0
@@ -4081,6 +4089,7 @@ MonoBehaviour:
   - 27
   - 33
   - 25
+  maxItems: 030000000200000005000000
 --- !u!1001 &830759171
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4281,6 +4290,7 @@ MonoBehaviour:
   - 27
   - 15
   - 25
+  maxItems: 050000000400000006000000
 --- !u!1001 &898203416
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5033,6 +5043,7 @@ MonoBehaviour:
   - 27
   - 24
   - 24
+  maxItems: 030000000700000005000000
 --- !u!1001 &990981273
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5230,6 +5241,7 @@ MonoBehaviour:
   - 7
   - 8
   - 3
+  maxItems: 0a0000000a00000005000000040000000500000004000000020000000200000005000000
 --- !u!1001 &1009397824
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5873,6 +5885,7 @@ MonoBehaviour:
   - 12
   - 9
   - 20
+  maxItems: 0a0000000a00000003000000
 --- !u!23 &1138615219
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6887,6 +6900,7 @@ MonoBehaviour:
   - 12
   - 9
   - 20
+  maxItems: 0a0000000a00000003000000
 --- !u!4 &1338220151 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8186229479527654011, guid: 67edd83ac70d3974e9945f62c29508df,
@@ -7589,14 +7603,18 @@ MonoBehaviour:
   - {fileID: 9188675194279928149, guid: 7a19ce61299aec9459c669e5b763b7bf, type: 3}
   - {fileID: 4744767056463312973, guid: c9494202823e549449649541cef2c4f4, type: 3}
   - {fileID: 9084589849402155440, guid: f84c6cab245909242bd28527d21a15a6, type: 3}
+  - {fileID: 7287095493153802058, guid: fd468cc19f368bc41a72b5b064fb4b13, type: 3}
   minTimes:
   - 18
   - 8
   - 15
+  - 10
   maxTimes:
   - 27
   - 13
   - 20
+  - 20
+  maxItems: 050000000a0000000400000004000000
 --- !u!4 &1593393349 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7288545484489463616, guid: f29730147ae7d2d48ad3ac8cb7ed910c,
@@ -7707,6 +7725,7 @@ MonoBehaviour:
   - 27
   - 15
   - 25
+  maxItems: 040000000500000006000000
 --- !u!1001 &1621388281
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10712,6 +10731,7 @@ MonoBehaviour:
   maxTimes:
   - 33
   - 24
+  maxItems: 0300000004000000
 --- !u!4 &2087480617 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7288545484489463616, guid: f29730147ae7d2d48ad3ac8cb7ed910c,
@@ -11013,6 +11033,7 @@ MonoBehaviour:
   - 27
   - 15
   - 25
+  maxItems: 0a0000000300000005000000
 --- !u!4 &2125429540 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5100349309429196496, guid: 9ea60110155b6774d9b2b8b43dd12900,

@@ -89,9 +89,9 @@ GameObject:
   - component: {fileID: -976358349819747645}
   - component: {fileID: 3363373125906889223}
   - component: {fileID: 6540830029833307975}
-  - component: {fileID: -3857353186578601794}
+  - component: {fileID: 5511227836344585254}
   m_Layer: 10
-  m_Name: Knight_Collectible
+  m_Name: PD_Knight_Collectible
   m_TagString: Collectible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -157,7 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whoFired: {fileID: 0}
   propNum: 5
---- !u!114 &-3857353186578601794
+--- !u!114 &5511227836344585254
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 9188675194279928149}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff5826d2fc541ec4ba391d97eab7220c, type: 3}
+  m_Script: {fileID: 11500000, guid: 73b033bbd0c03924b9ed7e4f306ad1bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   DespawnTimer: 50

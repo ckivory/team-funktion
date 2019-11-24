@@ -25,8 +25,8 @@ public class PDOverShoulderCameraController : MonoBehaviour
     private float omegaX;
     private float omegaY;
     
-    private const float MIN_Y = 0.0f;
-    private const float MAX_Y = 50.0f;
+    private const float MIN_Y = 5.0f;
+    private const float MAX_Y = 30.0f;
 
     private void Start()
     {
@@ -58,6 +58,7 @@ public class PDOverShoulderCameraController : MonoBehaviour
         Vector3 dir = new Vector3(0f, 0f, -distance);
         Quaternion rotation = Quaternion.Euler(currentY, currentX, 0);
         camTransform.position = player.transform.position + rotation * dir;
+        //camTransform.position += new Vector3(0f, 10f, 0f);
     }
 
     private void Update()

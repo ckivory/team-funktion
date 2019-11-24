@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7416400552343904805}
   - component: {fileID: 6862498963184365580}
   - component: {fileID: 3493948967746440449}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: textureEditorIsolateSelectSet_Insignia
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 1120419862703930419}
   - component: {fileID: 2484644072825369106}
   - component: {fileID: 5047106929471759789}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,7 +165,7 @@ GameObject:
   - component: {fileID: 2931364166646389482}
   - component: {fileID: 4386071602566088610}
   - component: {fileID: 6483596383285267349}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Strap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -242,7 +242,7 @@ GameObject:
   - component: {fileID: 3714524305909593989}
   - component: {fileID: 3885517647998062231}
   - component: {fileID: 7158556843266794371}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Reinforcements
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -319,7 +319,7 @@ GameObject:
   - component: {fileID: 3430944251801712054}
   - component: {fileID: 8380988069076506662}
   - component: {fileID: 1440431500197470031}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Bolts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -396,7 +396,7 @@ GameObject:
   - component: {fileID: 8653681145417757456}
   - component: {fileID: 8009867576302111171}
   - component: {fileID: 5355650230888831615}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: polySurface2_Shield_polySurface4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -475,9 +475,9 @@ GameObject:
   - component: {fileID: -8816993483350215817}
   - component: {fileID: 3439995932747518248}
   - component: {fileID: 777278987703972016}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: PD_Shield_Fired
-  m_TagString: Untagged
+  m_TagString: Fired
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -572,7 +572,7 @@ GameObject:
   - component: {fileID: 8956494391136294854}
   - component: {fileID: 4809444063396786210}
   - component: {fileID: 6349574875884705210}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: polySurface3_polySurface2_Shield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -649,7 +649,7 @@ GameObject:
   - component: {fileID: 6627452400791148366}
   - component: {fileID: 3653624646894886562}
   - component: {fileID: 1958685539067822434}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Shield_polySurface1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

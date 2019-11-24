@@ -89,9 +89,9 @@ GameObject:
   - component: {fileID: 3974559113938924902}
   - component: {fileID: 6851247340745496540}
   - component: {fileID: 2520550548087208837}
-  - component: {fileID: -7254360082682124734}
+  - component: {fileID: 6992801817117573504}
   m_Layer: 10
-  m_Name: Fridge_Collectible
+  m_Name: PD_Fridge_Collectible
   m_TagString: Collectible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -158,7 +158,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whoFired: {fileID: 0}
   propNum: 2
---- !u!114 &-7254360082682124734
+--- !u!114 &6992801817117573504
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8617994201647920770}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff5826d2fc541ec4ba391d97eab7220c, type: 3}
+  m_Script: {fileID: 11500000, guid: 73b033bbd0c03924b9ed7e4f306ad1bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   DespawnTimer: 45

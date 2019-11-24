@@ -117,6 +117,13 @@ MonoBehaviour:
   - 250
   - 100
   - 0
+  damageAmounts:
+  - 1
+  - 2
+  - 4
+  - 8
+  - 16
+  - 32
   waveTimes:
   - 60
   - 40

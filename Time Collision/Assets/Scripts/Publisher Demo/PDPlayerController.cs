@@ -250,8 +250,10 @@ public class PDPlayerController : MonoBehaviour
     {
         if (usingController)
         {
+            
             targetAim -= Input.GetAxis("J" + controllerNum + "X") * Time.deltaTime * (1 / aimSpeed);
             targetAim += Input.GetAxis("J" + controllerNum + "Y") * Time.deltaTime * (1 / aimSpeed);
+            
         }
         else
         {

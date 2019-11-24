@@ -9,6 +9,8 @@ public class PD_DeathZoneController : MonoBehaviour
     public List<float> radii;
     private float radius;
 
+    public List<float> damageAmounts;
+
     public List<float> waveTimes;
 
     private float timer;
