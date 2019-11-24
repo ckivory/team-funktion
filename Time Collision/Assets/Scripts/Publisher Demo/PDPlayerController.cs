@@ -12,8 +12,12 @@ public class PDPlayerController : MonoBehaviour
 
     public float maxSpeed = 200f;
     public float accel = 1.5f;
+
     public float aimSpeed = 0.01f;
     public float aimDamping = 5f;
+    public float aimMin = 10f;
+    public float aimMax = 60f;
+
     public float scrollSensitivity = 10f;
     public float shotForce = 60f;
     public float maxSpread = 0.2f;
@@ -41,7 +45,7 @@ public class PDPlayerController : MonoBehaviour
     private float currentAim;
     private float targetAim;
     private float currentAimSpeed;
-    private const float AIM_MAX = 60f;
+
     private bool RTpressed;
     private bool LTpressed;
     public List<int> inventory;
@@ -262,7 +266,7 @@ public class PDPlayerController : MonoBehaviour
             targetAim -= Input.GetAxis("Mouse ScrollWheel") * scrollSensitivity * Time.deltaTime * (1 / aimSpeed);
         }
 
-        targetAim = Mathf.Clamp(targetAim, 0f, AIM_MAX);
+        targetAim = Mathf.Clamp(targetAim, aimMin, aimMax);
         currentAim = Mathf.SmoothDamp(currentAim, targetAim, ref currentAimSpeed, aimSpeed * aimDamping);
 
         arrow.transform.forward = this.transform.forward;

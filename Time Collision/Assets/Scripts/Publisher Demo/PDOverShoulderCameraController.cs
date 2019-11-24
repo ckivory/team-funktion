@@ -17,6 +17,8 @@ public class PDOverShoulderCameraController : MonoBehaviour
     private int controllerNum;
 
     public float distance = 20.0f;
+    public float minYRot = 10.0f;
+    public float maxYRot = 30.0f;
 
     private float currentX = 0.0f;
     private float currentY = 0.0f;
@@ -24,9 +26,6 @@ public class PDOverShoulderCameraController : MonoBehaviour
     private float targetY = 0.0f;
     private float omegaX;
     private float omegaY;
-    
-    private const float MIN_Y = 5.0f;
-    private const float MAX_Y = 30.0f;
 
     private void Start()
     {
@@ -47,7 +46,7 @@ public class PDOverShoulderCameraController : MonoBehaviour
             targetX += Input.GetAxis("Mouse X") * cameraSpeed * mouseSensitivity * Time.deltaTime;
             targetY += -1 * Input.GetAxis("Mouse Y") * cameraSpeed * mouseSensitivity * Time.deltaTime;
         }
-        targetY = Mathf.Clamp(targetY, MIN_Y, MAX_Y);
+        targetY = Mathf.Clamp(targetY, minYRot, maxYRot);
 
         currentX = Mathf.SmoothDamp(currentX, targetX, ref omegaX, sensitivityX);
         currentY = Mathf.SmoothDamp(currentY, targetY, ref omegaY, sensitivityY);
