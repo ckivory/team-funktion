@@ -243,6 +243,7 @@ GameObject:
   - component: {fileID: 6010712171604694708}
   - component: {fileID: -6144302891804203287}
   - component: {fileID: 990552761505644385}
+  - component: {fileID: -1693589846497956459}
   - component: {fileID: 3848162776151148065}
   m_Layer: 10
   m_Name: PD_Barrel_Collectible
@@ -314,6 +315,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whoFired: {fileID: 0}
   propNum: 0
+--- !u!114 &-1693589846497956459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4744767056463312973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ce57db910fea2a4d8080fe00ecb3dd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxVel: 10
+  maxRotVel: 10
 --- !u!114 &3848162776151148065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -327,6 +342,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DespawnTimer: 40
+  parentSpawner: {fileID: 0}
 --- !u!1 &8819360393390714341
 GameObject:
   m_ObjectHideFlags: 0

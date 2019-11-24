@@ -89,6 +89,7 @@ GameObject:
   - component: {fileID: 3542182686932778020}
   - component: {fileID: 932516654306112861}
   - component: {fileID: 3476307688660240728}
+  - component: {fileID: -6158652208515093572}
   - component: {fileID: -6612057958142360878}
   m_Layer: 10
   m_Name: PD_Crate_Collectible
@@ -158,6 +159,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whoFired: {fileID: 0}
   propNum: 1
+--- !u!114 &-6158652208515093572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7251298450365760712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ce57db910fea2a4d8080fe00ecb3dd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxVel: 10
+  maxRotVel: 10
 --- !u!114 &-6612057958142360878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,6 +186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DespawnTimer: 40
+  parentSpawner: {fileID: 0}
 --- !u!1 &8158253398747968977
 GameObject:
   m_ObjectHideFlags: 0

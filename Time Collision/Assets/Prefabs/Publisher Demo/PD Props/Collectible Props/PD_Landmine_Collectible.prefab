@@ -494,6 +494,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DespawnTimer: 60
+  parentSpawner: {fileID: 0}
 --- !u!1 &4139944524124075527
 GameObject:
   m_ObjectHideFlags: 0

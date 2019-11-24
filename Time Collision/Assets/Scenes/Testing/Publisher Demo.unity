@@ -294,7 +294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d4efb00563a38e42b135cf71b1759c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseSpawnHeight: 3.5
+  baseSpawnHeight: 20
   heightIncrement: 0.2
   spawnedItems:
   - {fileID: 9084589849402155440, guid: f84c6cab245909242bd28527d21a15a6, type: 3}
@@ -1014,7 +1014,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d4efb00563a38e42b135cf71b1759c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseSpawnHeight: 3.5
+  baseSpawnHeight: 20
   heightIncrement: 0.2
   spawnedItems:
   - {fileID: 9084589849402155440, guid: f84c6cab245909242bd28527d21a15a6, type: 3}
@@ -1678,7 +1678,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d4efb00563a38e42b135cf71b1759c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseSpawnHeight: 3.5
+  baseSpawnHeight: 20
   heightIncrement: 0.2
   spawnedItems:
   - {fileID: 4018282755487714531, guid: da1f79bc02c7b0c4cb6252d526e46ded, type: 3}
@@ -2354,7 +2354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d4efb00563a38e42b135cf71b1759c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseSpawnHeight: 3.5
+  baseSpawnHeight: 20
   heightIncrement: 0.2
   spawnedItems:
   - {fileID: 4744767056463312973, guid: c9494202823e549449649541cef2c4f4, type: 3}
@@ -2575,7 +2575,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d4efb00563a38e42b135cf71b1759c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseSpawnHeight: 3.5
+  baseSpawnHeight: 20
   heightIncrement: 0.2
   spawnedItems:
   - {fileID: 4018282755487714531, guid: da1f79bc02c7b0c4cb6252d526e46ded, type: 3}
@@ -3172,7 +3172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d4efb00563a38e42b135cf71b1759c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseSpawnHeight: 3.5
+  baseSpawnHeight: 20
   heightIncrement: 0.2
   spawnedItems:
   - {fileID: 4744767056463312973, guid: c9494202823e549449649541cef2c4f4, type: 3}
@@ -3704,7 +3704,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d4efb00563a38e42b135cf71b1759c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseSpawnHeight: 3.5
+  baseSpawnHeight: 20
   heightIncrement: 0.2
   spawnedItems:
   - {fileID: 4018282755487714531, guid: da1f79bc02c7b0c4cb6252d526e46ded, type: 3}
@@ -3973,7 +3973,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d4efb00563a38e42b135cf71b1759c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseSpawnHeight: 3.5
+  baseSpawnHeight: 20
   heightIncrement: 0.2
   spawnedItems:
   - {fileID: 9084589849402155440, guid: f84c6cab245909242bd28527d21a15a6, type: 3}
@@ -4075,7 +4075,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d4efb00563a38e42b135cf71b1759c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseSpawnHeight: 3.5
+  baseSpawnHeight: 20
   heightIncrement: 0.2
   spawnedItems:
   - {fileID: 9084589849402155440, guid: f84c6cab245909242bd28527d21a15a6, type: 3}
@@ -4276,7 +4276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d4efb00563a38e42b135cf71b1759c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseSpawnHeight: 3.5
+  baseSpawnHeight: 20
   heightIncrement: 0.2
   spawnedItems:
   - {fileID: 4744767056463312973, guid: c9494202823e549449649541cef2c4f4, type: 3}
@@ -5034,7 +5034,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d4efb00563a38e42b135cf71b1759c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseSpawnHeight: 3.5
+  baseSpawnHeight: 20
   heightIncrement: 0.2
   spawnedItems:
   - {fileID: 4018282755487714531, guid: da1f79bc02c7b0c4cb6252d526e46ded, type: 3}
@@ -5214,7 +5214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d4efb00563a38e42b135cf71b1759c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseSpawnHeight: 3.5
+  baseSpawnHeight: 20
   heightIncrement: 0.2
   spawnedItems:
   - {fileID: 4744767056463312973, guid: c9494202823e549449649541cef2c4f4, type: 3}
@@ -5876,7 +5876,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d4efb00563a38e42b135cf71b1759c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseSpawnHeight: 3.5
+  baseSpawnHeight: 20
   heightIncrement: 0.2
   spawnedItems:
   - {fileID: 4744767056463312973, guid: c9494202823e549449649541cef2c4f4, type: 3}
@@ -6896,7 +6896,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d4efb00563a38e42b135cf71b1759c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseSpawnHeight: 3.5
+  baseSpawnHeight: 20
   heightIncrement: 0.2
   spawnedItems:
   - {fileID: 4744767056463312973, guid: c9494202823e549449649541cef2c4f4, type: 3}
@@ -7607,7 +7607,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d4efb00563a38e42b135cf71b1759c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseSpawnHeight: 3.5
+  baseSpawnHeight: 20
   heightIncrement: 0.2
   spawnedItems:
   - {fileID: 9188675194279928149, guid: 7a19ce61299aec9459c669e5b763b7bf, type: 3}
@@ -7721,7 +7721,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d4efb00563a38e42b135cf71b1759c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseSpawnHeight: 3.5
+  baseSpawnHeight: 20
   heightIncrement: 0.2
   spawnedItems:
   - {fileID: 9084589849402155440, guid: f84c6cab245909242bd28527d21a15a6, type: 3}
@@ -10735,7 +10735,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d4efb00563a38e42b135cf71b1759c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseSpawnHeight: 3.5
+  baseSpawnHeight: 20
   heightIncrement: 0.2
   spawnedItems:
   - {fileID: 9018213373250412849, guid: e054124b20d7cf640a5214ea1eac1fb7, type: 3}
@@ -10845,6 +10845,11 @@ PrefabInstance:
         type: 3}
       propertyPath: speeds.Array.data[0]
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7587840009133854684, guid: 6a30c0a3692fd0548898ccb4ee1e1d77,
+        type: 3}
+      propertyPath: accelerations.Array.data[0]
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 1237174200682086006, guid: 6a30c0a3692fd0548898ccb4ee1e1d77,
         type: 3}
@@ -11044,7 +11049,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d4efb00563a38e42b135cf71b1759c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseSpawnHeight: 3.5
+  baseSpawnHeight: 20
   heightIncrement: 0.2
   spawnedItems:
   - {fileID: 4744767056463312973, guid: c9494202823e549449649541cef2c4f4, type: 3}

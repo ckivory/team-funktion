@@ -474,6 +474,7 @@ GameObject:
   - component: {fileID: 6124628100584560491}
   - component: {fileID: -8816993483350215817}
   - component: {fileID: 3439995932747518248}
+  - component: {fileID: -4719378658094246844}
   - component: {fileID: 2882267038136057670}
   m_Layer: 10
   m_Name: PD_Shield_Collectible
@@ -548,6 +549,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whoFired: {fileID: 0}
   propNum: 9
+--- !u!114 &-4719378658094246844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7287095493153802058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ce57db910fea2a4d8080fe00ecb3dd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxVel: 10
+  maxRotVel: 10
 --- !u!114 &2882267038136057670
 MonoBehaviour:
   m_ObjectHideFlags: 0

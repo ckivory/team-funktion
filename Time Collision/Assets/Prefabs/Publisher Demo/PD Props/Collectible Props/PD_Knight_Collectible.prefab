@@ -89,6 +89,7 @@ GameObject:
   - component: {fileID: -976358349819747645}
   - component: {fileID: 3363373125906889223}
   - component: {fileID: 6540830029833307975}
+  - component: {fileID: -9090875663782106497}
   - component: {fileID: 5511227836344585254}
   m_Layer: 10
   m_Name: PD_Knight_Collectible
@@ -157,6 +158,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whoFired: {fileID: 0}
   propNum: 5
+--- !u!114 &-9090875663782106497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9188675194279928149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ce57db910fea2a4d8080fe00ecb3dd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxVel: 10
+  maxRotVel: 10
 --- !u!114 &5511227836344585254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,6 +185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DespawnTimer: 50
+  parentSpawner: {fileID: 0}
 --- !u!1001 &8915699707930754924
 PrefabInstance:
   m_ObjectHideFlags: 0

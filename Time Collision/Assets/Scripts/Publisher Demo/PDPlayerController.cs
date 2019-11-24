@@ -118,7 +118,7 @@ public class PDPlayerController : MonoBehaviour
 
         alignMovement();
 
-        rb.velocity += movementInput * accelerations[level];         // Additive controls, so it will intentionally feel a little floaty.
+        rb.velocity += movementInput * accelerations[level] * Time.deltaTime;         // Additive controls, so it will intentionally feel a little floaty.
         if (rb.velocity.magnitude > topSpeed)
         {
             rb.velocity = rb.velocity.normalized * topSpeed;
