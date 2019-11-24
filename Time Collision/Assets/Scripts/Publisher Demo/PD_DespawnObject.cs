@@ -19,7 +19,6 @@ public class PD_DespawnObject : MonoBehaviour
 
     private void OnDestroy()
     {
-        Debug.Log("Being destroyed!");
         if(parentSpawner != null)
         {
             parentSpawner.SendMessage("decrementItem", propNum);

@@ -117,13 +117,14 @@ MonoBehaviour:
   - 250
   - 100
   - 0
-  damageAmounts:
+  damageValues:
   - 1
   - 2
   - 4
   - 8
   - 16
   - 32
+  currentDamage: 0
   waveTimes:
   - 60
   - 40

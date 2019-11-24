@@ -35,6 +35,8 @@ public class PDPlayerController : MonoBehaviour
     public List<GameObject> collectedPropPrefabs;
     public List<GameObject> firedPropPrefabs;
 
+    public PD_DeathZoneController deathZone;
+
     private Vector3 movementInput;
     private float currentAim;
     private float targetAim;
@@ -349,7 +351,7 @@ public class PDPlayerController : MonoBehaviour
         }
         return selectedProp; 
     }
-
+    
     private bool onTriggerDown(bool rightTrigger)
     {
         if (rightTrigger)
@@ -534,6 +536,7 @@ public class PDPlayerController : MonoBehaviour
         {
             Cursor.visible = false;
         }
+        deathZone = GameObject.FindGameObjectWithTag("DeathZone").GetComponent<PD_DeathZoneController>();
         damageTimer = 0f;
         coolDown = 0f;
         insideZone = true;
@@ -568,8 +571,7 @@ public class PDPlayerController : MonoBehaviour
             damageTimer += Time.deltaTime;
             if(damageTimer >= 1)
             {
-                float damageToTake = 1f;
-                takeDamage(damageToTake);
+                takeDamage(deathZone.currentDamage);
                 damageTimer = 0f;
             }
         }
