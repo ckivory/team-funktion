@@ -10846,11 +10846,6 @@ PrefabInstance:
       propertyPath: speeds.Array.data[0]
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7587840009133854684, guid: 6a30c0a3692fd0548898ccb4ee1e1d77,
-        type: 3}
-      propertyPath: accelerations.Array.data[0]
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 1237174200682086006, guid: 6a30c0a3692fd0548898ccb4ee1e1d77,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.y

@@ -10124,11 +10124,11 @@ MonoBehaviour:
   - 20
   - 25
   accelerations:
-  - 3
-  - 2
-  - 1.5
-  - 1.25
-  - 1
+  - 150
+  - 125
+  - 100
+  - 75
+  - 50
   topSpeed: 50
   aimSpeed: 0.01
   aimDamping: 10
