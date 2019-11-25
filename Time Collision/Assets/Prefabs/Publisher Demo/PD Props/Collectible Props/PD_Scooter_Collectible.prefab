@@ -89,9 +89,9 @@ GameObject:
   - component: {fileID: 3258987292482680899}
   - component: {fileID: 3258987292482680956}
   - component: {fileID: 3119610134264971941}
-  - component: {fileID: 4473214916323651888}
+  - component: {fileID: 8726146852542394608}
   m_Layer: 10
-  m_Name: Scooter_Collectible
+  m_Name: PD_Scooter_Collectible
   m_TagString: Collectible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -104,15 +104,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7085181105243925176}
-  m_LocalRotation: {x: -0, y: -0.14860538, z: -0, w: 0.98889667}
-  m_LocalPosition: {x: -19.859999, y: 0.93000007, z: 30.6}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.05188577, y: 0.05188577, z: 0.05188577}
   m_Children:
   - {fileID: 4788634076839869428}
   - {fileID: 6719757604178809216}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -17.092001, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &3258987292482680899
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -141,7 +141,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!114 &3119610134264971941
 MonoBehaviour:
@@ -157,7 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whoFired: {fileID: 0}
   propNum: 8
---- !u!114 &4473214916323651888
+--- !u!114 &8726146852542394608
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -166,10 +166,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7085181105243925176}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff5826d2fc541ec4ba391d97eab7220c, type: 3}
+  m_Script: {fileID: 11500000, guid: 73b033bbd0c03924b9ed7e4f306ad1bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   DespawnTimer: 50
+  parentSpawner: {fileID: 0}
 --- !u!1001 &5232547480108461512
 PrefabInstance:
   m_ObjectHideFlags: 0

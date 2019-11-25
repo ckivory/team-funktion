@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7416400552343904805}
   - component: {fileID: 6862498963184365580}
   - component: {fileID: 3493948967746440449}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: textureEditorIsolateSelectSet_Insignia
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 1120419862703930419}
   - component: {fileID: 2484644072825369106}
   - component: {fileID: 5047106929471759789}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,7 +165,7 @@ GameObject:
   - component: {fileID: 2931364166646389482}
   - component: {fileID: 4386071602566088610}
   - component: {fileID: 6483596383285267349}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Strap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -242,7 +242,7 @@ GameObject:
   - component: {fileID: 3714524305909593989}
   - component: {fileID: 3885517647998062231}
   - component: {fileID: 7158556843266794371}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Reinforcements
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -319,7 +319,7 @@ GameObject:
   - component: {fileID: 3430944251801712054}
   - component: {fileID: 8380988069076506662}
   - component: {fileID: 1440431500197470031}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Bolts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -396,7 +396,7 @@ GameObject:
   - component: {fileID: 8653681145417757456}
   - component: {fileID: 8009867576302111171}
   - component: {fileID: 5355650230888831615}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: polySurface2_Shield_polySurface4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -474,10 +474,11 @@ GameObject:
   - component: {fileID: 6124628100584560491}
   - component: {fileID: -8816993483350215817}
   - component: {fileID: 3439995932747518248}
-  - component: {fileID: -2812373041169064356}
-  m_Layer: 0
+  - component: {fileID: 1425317431119242646}
+  - component: {fileID: 2882267038136057670}
+  m_Layer: 10
   m_Name: PD_Shield_Collectible
-  m_TagString: Untagged
+  m_TagString: Collectible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -489,8 +490,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7287095493153802058}
-  m_LocalRotation: {x: -0, y: -0.45937118, z: -0, w: -0.88824445}
-  m_LocalPosition: {x: -9.64, y: 4.35, z: 24}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.59, z: 0}
   m_LocalScale: {x: 1.2088, y: 1.2088, z: 1.2088}
   m_Children:
   - {fileID: 3430944251801712054}
@@ -503,7 +504,7 @@ Transform:
   - {fileID: 7416400552343904805}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -305.307, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &6124628100584560491
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -532,7 +533,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &3439995932747518248
 MonoBehaviour:
@@ -548,7 +549,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whoFired: {fileID: 0}
   propNum: 9
---- !u!114 &-2812373041169064356
+--- !u!114 &1425317431119242646
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -557,10 +558,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 7287095493153802058}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff5826d2fc541ec4ba391d97eab7220c, type: 3}
+  m_Script: {fileID: 11500000, guid: 0bc763867f426f841921ee2c620559c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isStuck: 0
+  howFar: 2
+--- !u!114 &2882267038136057670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7287095493153802058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73b033bbd0c03924b9ed7e4f306ad1bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   DespawnTimer: 45
+  parentSpawner: {fileID: 0}
 --- !u!1 &8221570347580508537
 GameObject:
   m_ObjectHideFlags: 0
@@ -572,7 +588,7 @@ GameObject:
   - component: {fileID: 8956494391136294854}
   - component: {fileID: 4809444063396786210}
   - component: {fileID: 6349574875884705210}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: polySurface3_polySurface2_Shield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -649,7 +665,7 @@ GameObject:
   - component: {fileID: 6627452400791148366}
   - component: {fileID: 3653624646894886562}
   - component: {fileID: 1958685539067822434}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Shield_polySurface1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

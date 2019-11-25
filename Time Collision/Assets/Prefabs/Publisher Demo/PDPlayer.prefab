@@ -10117,10 +10117,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 1237174200682086006}
   arrow: {fileID: 1237174198821115030}
-  maxSpeed: 200
-  accel: 1.5
+  levelMasses:
+  - 0
+  - 10
+  - 15
+  - 20
+  - 25
+  accelerations:
+  - 150
+  - 125
+  - 100
+  - 75
+  - 50
+  topSpeed: 50
   aimSpeed: 0.01
   aimDamping: 10
+  aimMin: 10
+  aimMax: 60
   scrollSensitivity: 50
   shotForce: 60
   maxSpread: 0.2
@@ -10154,6 +10167,7 @@ MonoBehaviour:
   - {fileID: 9018213373250412849, guid: ef851e091aec7604382c7a076b0183d3, type: 3}
   - {fileID: 7085181105243925176, guid: b71e8e3ac08010146ae9fbace0188a8e, type: 3}
   - {fileID: 7287095493153802058, guid: 4cb4a93e32c8bb443891c1b1833c6130, type: 3}
+  deathZone: {fileID: 0}
   inventory: 
   selectedProp: 0
   selectedCount: 0
@@ -15060,6 +15074,9 @@ MonoBehaviour:
   sensitivityY: 0.25
   mouseSensitivity: 3
   distance: 20
+  minYRot: 10
+  maxYRot: 30
+  initialRotation: 0
 --- !u!1 &1759720334518389646
 GameObject:
   m_ObjectHideFlags: 0

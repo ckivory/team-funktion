@@ -2575,8 +2575,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   positionLerpTime: 0.5
-  rotationLerpTime: 0.05
-  movementSpeed: 10
+  rotationLerpTime: 0.1
+  movementSpeed: 30
   rb: {fileID: 0}
 --- !u!1001 &1834317554
 PrefabInstance:
