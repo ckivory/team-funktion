@@ -243,7 +243,7 @@ GameObject:
   - component: {fileID: 6010712171604694708}
   - component: {fileID: -6380969692487807232}
   m_Layer: 11
-  m_Name: Barrel_Collected
+  m_Name: PD_Barrel_Collected
   m_TagString: Collected
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -257,7 +257,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4744767056463312973}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.96, y: 1, z: -1.98}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
   m_Children:
   - {fileID: 8937863337645262570}
@@ -295,8 +295,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whoFired: {fileID: 0}
   propNum: 0
-  propMass: 1
-  propDamage: 2
 --- !u!1 &8819360393390714341
 GameObject:
   m_ObjectHideFlags: 0

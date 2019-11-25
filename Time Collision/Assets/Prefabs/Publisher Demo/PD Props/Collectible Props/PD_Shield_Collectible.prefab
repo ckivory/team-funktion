@@ -490,8 +490,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7287095493153802058}
-  m_LocalRotation: {x: -0, y: -0.45937118, z: -0, w: -0.88824445}
-  m_LocalPosition: {x: -9.64, y: 4.35, z: 24}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.59, z: 0}
   m_LocalScale: {x: 1.2088, y: 1.2088, z: 1.2088}
   m_Children:
   - {fileID: 3430944251801712054}
@@ -504,7 +504,7 @@ Transform:
   - {fileID: 7416400552343904805}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -305.307, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &6124628100584560491
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -533,7 +533,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &3439995932747518248
 MonoBehaviour:
@@ -561,7 +561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bc763867f426f841921ee2c620559c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isStuck: 1
+  isStuck: 0
   howFar: 2
 --- !u!114 &2882267038136057670
 MonoBehaviour:
