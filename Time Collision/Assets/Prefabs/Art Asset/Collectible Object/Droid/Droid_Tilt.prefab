@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 3691621102407807300}
   - component: {fileID: 5647588057157028722}
   - component: {fileID: 2115788031613908875}
+  - component: {fileID: 8918593446579945181}
   m_Layer: 0
-  m_Name: Droid_Dead
+  m_Name: Droid_Tilt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,3 +78,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &8918593446579945181
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 387340412425896791}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 3422381420136292454, guid: f5a9e9da493d950409d3672b60315d89, type: 3}

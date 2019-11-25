@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8434218671370745747}
   - component: {fileID: 8434218671370745748}
   - component: {fileID: -5412768618309132160}
-  - component: {fileID: -5021844104826626750}
   - component: {fileID: 7811544584867959444}
   m_Layer: 10
   m_Name: PD_Gramaphone_Collectible
@@ -89,20 +88,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whoFired: {fileID: 0}
   propNum: 3
---- !u!114 &-5021844104826626750
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 445205623230088581}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ce57db910fea2a4d8080fe00ecb3dd3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxVel: 10
-  maxRotVel: 10
 --- !u!114 &7811544584867959444
 MonoBehaviour:
   m_ObjectHideFlags: 0

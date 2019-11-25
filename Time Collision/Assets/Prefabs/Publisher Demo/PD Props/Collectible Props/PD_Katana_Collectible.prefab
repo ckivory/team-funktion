@@ -731,6 +731,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DespawnTimer: 60
+  parentSpawner: {fileID: 0}
 --- !u!1001 &4741736226418963843
 PrefabInstance:
   m_ObjectHideFlags: 0

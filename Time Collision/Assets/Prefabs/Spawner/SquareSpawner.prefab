@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6286217586626396531}
   - component: {fileID: 9208671661742863511}
   m_Layer: 0
-  m_Name: SquareSpawner 1
+  m_Name: SquareSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d4efb00563a38e42b135cf71b1759c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseSpawnHeight: 3.5
+  baseSpawnHeight: 20
   heightIncrement: 0.2
   spawnedItems: []
   minTimes: []
