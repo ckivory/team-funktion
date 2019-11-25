@@ -8162,8 +8162,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   positionLerpTime: 0.5
-  rotationLerpTime: 0.05
-  movementSpeed: 10
+  rotationLerpTime: 0.1
+  movementSpeed: 100
   rb: {fileID: 0}
 --- !u!81 &1028640775
 AudioListener:
