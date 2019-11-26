@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PD_UICanvasControl : MonoBehaviour
+public class UICanvasControl : MonoBehaviour
 {
     public List<GameObject> Icons;
     public GameObject Player;
@@ -11,7 +11,7 @@ public class PD_UICanvasControl : MonoBehaviour
     {
         for(int i = 0; i < Icons.Count; i++)
         {
-            Icons[i].GetComponent<PD_UIIconControl>().Player = Player;
+            Icons[i].GetComponent<UIIconControl>().Player = Player;
         }
     }
 

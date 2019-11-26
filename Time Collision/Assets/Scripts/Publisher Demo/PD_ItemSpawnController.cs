@@ -10,9 +10,6 @@ public class PD_ItemSpawnController : MonoBehaviour
     public List<GameObject> spawnedItems;
     public List<float> minTimes;
     public List<float> maxTimes;
-
-    public List<int> maxItems;
-    private List<int> numItems;
     
     private List<float> timers;
 
@@ -37,44 +34,18 @@ public class PD_ItemSpawnController : MonoBehaviour
         if(!Physics.CheckSphere(spawnPosition, 1f, lMask))
         {
             GameObject newProp = Instantiate(spawnedItems[itemNum], spawnPosition, Quaternion.identity);
-            newProp.transform.Rotate(new Vector3(0f, Random.Range(0f, 360f), 0f));
-            newProp.GetComponent<PD_DespawnObject>().parentSpawner = gameObject;
             //Debug.Log("Spawned item at: " + spawnPosition);
-        }
-    }
-    
-    private int itemNumFromPropNum(int propNum)
-    {
-        for(int i = 0; i < spawnedItems.Count; i++)
-        {
-            if(spawnedItems[i].GetComponent<ObjectAttributes>().propNum == propNum)
-            {
-                return i;
-            }
-        }
-        return -1;
-    }
-
-    public void decrementItem(int propNum)
-    {
-        int item = itemNumFromPropNum(propNum);
-        if(item != -1)
-        {
-            numItems[item]--;
         }
     }
 
     private void Start()
     {
         timers = new List<float>();
-        numItems = new List<int>();
-
+        
         for (int i = 0; i < spawnedItems.Count; i++)
         {
-            timers.Add(0f);
+            timers.Add(0);
             timers[i] = Random.Range(minTimes[i], maxTimes[i]);
-            
-            numItems.Add(0);
         }
     }
 
@@ -83,17 +54,11 @@ public class PD_ItemSpawnController : MonoBehaviour
     {
         for(int i = 0; i < spawnedItems.Count; i++)
         {
-            //Debug.Log("Number of timers: " + timers.Count);
             timers[i] -= Time.deltaTime;
             if(timers[i] <= 0)
             {
-                if (numItems[i] < maxItems[i])
-                {
-                    spawnItem(i);
-                    numItems[i]++;
-                }
-                
                 timers[i] = Random.Range(minTimes[i], maxTimes[i]);
+                spawnItem(i);
             }
         }
     }

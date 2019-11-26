@@ -9,15 +9,10 @@ public class PD_DeathZoneController : MonoBehaviour
     public List<float> radii;
     private float radius;
 
-    public List<float> damageValues;
-    public float currentDamage;
-
     public List<float> waveTimes;
-    
+
     private float timer;
     private int waveNum;
-
-    private bool hidden;
 
     private void invertMesh()
     {
@@ -53,7 +48,7 @@ public class PD_DeathZoneController : MonoBehaviour
         }
         catch (System.Exception e)
         {
-            Debug.Log(e.Message+" Make sure you have at least one radius in the list");
+            Debug.Log("Make sure you have at least one radius in the list");
         }
     }
 
@@ -68,8 +63,6 @@ public class PD_DeathZoneController : MonoBehaviour
         invertMesh();
         initializeRadius();
         initializeTimer();
-        currentDamage = damageValues[0];
-        hidden = false;
     }
 
     private void updateRadius()
@@ -85,34 +78,29 @@ public class PD_DeathZoneController : MonoBehaviour
     
     public void Update()
     {
-        if(!hidden)
+        if (waveNum > waveTimes.Count - 1)
         {
-            if (waveNum > waveTimes.Count - 1)
+            // DeathZone should disappear at the end.
+            foreach(GameObject player in Players)
             {
-                // DeathZone should disappear at the end.
-                foreach (GameObject player in Players)
-                {
-                    player.SendMessage("LeaveZone");
-                }
-                gameObject.GetComponent<MeshRenderer>().enabled = false;
-                hidden = true;
-                return;
+                player.SendMessage("LeaveZone");
             }
+            Destroy(gameObject);
+            return;
+        }
+        timer += Time.deltaTime;
 
-            timer += Time.deltaTime;
-            //Debug.Log("Wave: " + waveNum + ". Radius: " + radius + ". Time left in wave: " + (waveTimes[waveNum] - timer));
+        //Debug.Log("Wave: " + waveNum + ". Radius: " + radius + ". Time left in wave: " + (waveTimes[waveNum] - timer));
 
-            // Even waveNumber means we are staying the same size, odd means we are moving to a new size
-            if (waveNum % 2 == 1)
-            {
-                updateRadius();
-            }
-            if (timer > waveTimes[waveNum])
-            {
-                waveNum++;
-                timer = 0f;
-                currentDamage = damageValues[waveNum / 2];
-            }
+        // Even waveNumber means we are staying the same size, odd means we are moving to a new size
+        if (waveNum % 2 == 1)
+        {
+            updateRadius();
+        }
+        if(timer > waveTimes[waveNum])
+        {
+            waveNum++;
+            timer = 0f;
         }
     }
 }

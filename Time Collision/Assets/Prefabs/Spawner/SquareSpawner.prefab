@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6286217586626396529}
   - component: {fileID: 6286217586626396528}
   - component: {fileID: 6286217586626396531}
-  - component: {fileID: 9208671661742863511}
+  - component: {fileID: 6286217586626396530}
   m_Layer: 0
   m_Name: SquareSpawner
   m_TagString: Untagged
@@ -78,7 +78,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &9208671661742863511
+--- !u!114 &6286217586626396530
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -87,12 +87,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6286217586626396533}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d4efb00563a38e42b135cf71b1759c2, type: 3}
+  m_Script: {fileID: 11500000, guid: f1916fb5957800845ba623f41269a8dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseSpawnHeight: 20
-  heightIncrement: 0.2
   spawnedItems: []
   minTimes: []
   maxTimes: []
-  maxItems: 

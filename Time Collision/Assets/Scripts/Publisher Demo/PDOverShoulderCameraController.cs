@@ -17,10 +17,6 @@ public class PDOverShoulderCameraController : MonoBehaviour
     private int controllerNum;
 
     public float distance = 20.0f;
-    public float minYRot = 10.0f;
-    public float maxYRot = 30.0f;
-
-    public float initialRotation;
 
     private float currentX = 0.0f;
     private float currentY = 0.0f;
@@ -28,13 +24,13 @@ public class PDOverShoulderCameraController : MonoBehaviour
     private float targetY = 0.0f;
     private float omegaX;
     private float omegaY;
+    
+    private const float MIN_Y = 0.0f;
+    private const float MAX_Y = 50.0f;
 
     private void Start()
     {
         camTransform = this.transform;
-
-        targetX = currentX = initialRotation;
-
         controllerNum = player.GetComponent<PDPlayerController>().controllerNum;
         cam = GetComponent<Camera>();
     }
@@ -51,7 +47,7 @@ public class PDOverShoulderCameraController : MonoBehaviour
             targetX += Input.GetAxis("Mouse X") * cameraSpeed * mouseSensitivity * Time.deltaTime;
             targetY += -1 * Input.GetAxis("Mouse Y") * cameraSpeed * mouseSensitivity * Time.deltaTime;
         }
-        targetY = Mathf.Clamp(targetY, minYRot, maxYRot);
+        targetY = Mathf.Clamp(targetY, MIN_Y, MAX_Y);
 
         currentX = Mathf.SmoothDamp(currentX, targetX, ref omegaX, sensitivityX);
         currentY = Mathf.SmoothDamp(currentY, targetY, ref omegaY, sensitivityY);
@@ -62,7 +58,6 @@ public class PDOverShoulderCameraController : MonoBehaviour
         Vector3 dir = new Vector3(0f, 0f, -distance);
         Quaternion rotation = Quaternion.Euler(currentY, currentX, 0);
         camTransform.position = player.transform.position + rotation * dir;
-        //camTransform.position += new Vector3(0f, 10f, 0f);
     }
 
     private void Update()

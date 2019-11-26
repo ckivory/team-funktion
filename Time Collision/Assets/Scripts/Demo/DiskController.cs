@@ -13,7 +13,6 @@ public class DiskController : MonoBehaviour
     public List<int> orbitalCapacityList;
     public List<int> orbitalRadiusList;
     public List<float> orbitalSpeedList;
-    int tier;
 
     private void Start()
     {
@@ -24,12 +23,12 @@ public class DiskController : MonoBehaviour
     }
     private void Update()
     {
-        ResizeDisk();
+
     }
 
     public void AddToDisk(int collectedType)
     {
-
+        int tier = GetTier();
         GameObject objectToAdd = Instantiate(collectedPropPrefabs[collectedType]);
         objectToAdd.AddComponent<OrbitControl>();
         objectToAdd.GetComponent<OrbitControl>().playerToFollow = this.gameObject;
@@ -41,8 +40,7 @@ public class DiskController : MonoBehaviour
             objectToAdd.GetComponent<OrbitControl>().timer = diskObjects[diskObjects.Count - 1].GetComponent<OrbitControl>().timer + 2*Mathf.PI / orbitalCapacityList[tier]*orbitalRadiusList[tier];
         }
         diskObjects.Add(objectToAdd);
-        changeTier();
-        //ResizeDisk(tier);
+        ResizeDisk(tier);
     }
 
     public void RemoveFromDisk(int collectedType)
@@ -58,38 +56,36 @@ public class DiskController : MonoBehaviour
                 break;
             }
         }
-        changeTier();
-        //ResizeDisk(GetTier());
+        ResizeDisk(GetTier());
 
     }
 
-    void changeTier()
+    public void UpdateDisk()
+    {
+       
+    }
+
+    int GetTier()
     {
         int n = diskObjects.Count + 1;
+        int t = 1;
         for (int i = 0; i < orbitalCapacityList.Count; i++)
         {
             if (n < orbitalCapacityList[i])
             {
-                tier = i+1;
-                return;
+                return t;
             }
             else
             {
                 n -= orbitalCapacityList[i];
+                t++;
             }
         }
-        return;
-        //tier = t;
+        return t;
     }
 
-    void ResizeDisk()
+    void ResizeDisk(float tier)
     {
-        Vector3 newSize = new Vector3(5, 1, 5) * (1f + (tier-1f) / 10f);
-        Vector3 resizeFactor = (newSize - disk.transform.localScale)/10;
-        if(disk.transform.localScale == newSize)
-        {
-            return;
-        }
-        disk.transform.localScale += resizeFactor;
+        disk.transform.localScale = new Vector3(5,1,5)*(1f+tier/10f);
     }
 }

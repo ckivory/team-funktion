@@ -139,6 +139,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whoFired: {fileID: 0}
   propNum: 2
+  propMass: 5
+  propDamage: 10
 --- !u!1 &9163650176077928432
 GameObject:
   m_ObjectHideFlags: 0

@@ -9978,7 +9978,7 @@ GameObject:
   - component: {fileID: 4186572380627510270}
   - component: {fileID: -4757384788035550938}
   m_Layer: 11
-  m_Name: PD_Lightsaber_Collected
+  m_Name: Lightsaber_Collected
   m_TagString: Collected
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9992,7 +9992,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9018213373250412849}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -30.65, y: 1.7095, z: 40.02}
   m_LocalScale: {x: 0.04, y: 0.04, z: 0.04}
   m_Children:
   - {fileID: 8493953555479913925}
