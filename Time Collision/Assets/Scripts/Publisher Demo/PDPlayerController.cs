@@ -10,10 +10,17 @@ public class PDPlayerController : MonoBehaviour
     private float damageTimer;
     private bool insideZone;
 
-    public float maxSpeed = 500f;
-    public float accel = 1f;
+    public List<float> levelMasses;
+    private int level;
+
+    public List<float> accelerations;
+    public float topSpeed;
+
     public float aimSpeed = 0.01f;
     public float aimDamping = 5f;
+    public float aimMin = 10f;
+    public float aimMax = 60f;
+
     public float scrollSensitivity = 10f;
     public float shotForce = 60f;
     public float maxSpread = 0.2f;
@@ -29,14 +36,19 @@ public class PDPlayerController : MonoBehaviour
     private int shield;
     private float shieldRemaining;
 
+    public float coolDownDuration = 0.1f;
+    private float coolDown;
+
     public List<GameObject> collectedPropPrefabs;
     public List<GameObject> firedPropPrefabs;
+
+    public PD_DeathZoneController deathZone;
 
     private Vector3 movementInput;
     private float currentAim;
     private float targetAim;
     private float currentAimSpeed;
-    private const float AIM_MAX = 60f;
+
     private bool RTpressed;
     private bool LTpressed;
     public List<int> inventory;
@@ -92,7 +104,7 @@ public class PDPlayerController : MonoBehaviour
     {
         movementInput = movementInput.x * Vector3.Cross(Vector3.up, transform.forward).normalized + movementInput.z * transform.forward.normalized;
     }
-
+    
     private void updateMovement()
     {
         if (usingController)
@@ -106,10 +118,10 @@ public class PDPlayerController : MonoBehaviour
 
         alignMovement();
 
-        rb.velocity += movementInput * accel / Mathf.Max(playerMass / 20, 1f);         // Additive controls, so it will intentionally feel a little floaty.
-        if (rb.velocity.magnitude > maxSpeed)
+        rb.velocity += movementInput * accelerations[level] * Time.deltaTime;         // Additive controls, so it will intentionally feel a little floaty.
+        if (rb.velocity.magnitude > topSpeed)
         {
-            rb.velocity = rb.velocity.normalized * maxSpeed;
+            rb.velocity = rb.velocity.normalized * topSpeed;
         }
         // If movementInput is zero, they will slowly drift to a stop with a drag of 1.
     }
@@ -247,15 +259,17 @@ public class PDPlayerController : MonoBehaviour
     {
         if (usingController)
         {
+            
             targetAim -= Input.GetAxis("J" + controllerNum + "X") * Time.deltaTime * (1 / aimSpeed);
             targetAim += Input.GetAxis("J" + controllerNum + "Y") * Time.deltaTime * (1 / aimSpeed);
+            
         }
         else
         {
             targetAim -= Input.GetAxis("Mouse ScrollWheel") * scrollSensitivity * Time.deltaTime * (1 / aimSpeed);
         }
 
-        targetAim = Mathf.Clamp(targetAim, 0f, AIM_MAX);
+        targetAim = Mathf.Clamp(targetAim, aimMin, aimMax);
         currentAim = Mathf.SmoothDamp(currentAim, targetAim, ref currentAimSpeed, aimSpeed * aimDamping);
 
         arrow.transform.forward = this.transform.forward;
@@ -282,14 +296,14 @@ public class PDPlayerController : MonoBehaviour
     {
         if (usingController)
         {
-            if (Input.GetButtonDown("J" + controllerNum + "RB"))
+            if (Input.GetButton("J" + controllerNum + "RB"))
             {
                 return true;
             }
         }
         else
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButton(0))
             {
                 return true;
             }
@@ -344,7 +358,7 @@ public class PDPlayerController : MonoBehaviour
         }
         return selectedProp; 
     }
-
+    
     private bool onTriggerDown(bool rightTrigger)
     {
         if (rightTrigger)
@@ -459,6 +473,21 @@ public class PDPlayerController : MonoBehaviour
         }
     }
 
+    private void updateLevel()
+    {
+        level = 0;
+        
+        for(int i = 0; i < levelMasses.Count; i++)
+        {
+            if(levelMasses[i] <= playerMass)
+            {
+                level = i;
+            }
+        }
+
+        Debug.Log("Level: " + level);
+    }
+
     private void updateMass()
     {
         playerMass = 0;
@@ -466,6 +495,7 @@ public class PDPlayerController : MonoBehaviour
         {
             playerMass += ObjectAttributes.getMass(i) * inventory[i];
         }
+        updateLevel();
         Debug.Log("Player mass is: " + playerMass);
     }
 
@@ -492,6 +522,23 @@ public class PDPlayerController : MonoBehaviour
         Debug.Log("New shield: " + shield);
     }
 
+    private void handleFiring()
+    {
+        if (triggerPulled())
+        {
+            Debug.Log("Cooldown: " + coolDown);
+            if (coolDown <= 0)
+            {
+                fire();
+                coolDown = coolDownDuration;
+            }
+        }
+        if (coolDown > 0)
+        {
+            coolDown -= Time.deltaTime;
+        }
+    }
+
     void Start()
     {
         rb = this.GetComponent<Rigidbody>();
@@ -500,7 +547,8 @@ public class PDPlayerController : MonoBehaviour
         {
             inventory.Add(0);
         }
-        
+
+        level = 0;
         currentAim = 0f;
         targetAim = 0f;
         RTpressed = false;
@@ -512,7 +560,9 @@ public class PDPlayerController : MonoBehaviour
         {
             Cursor.visible = false;
         }
+        deathZone = GameObject.FindGameObjectWithTag("DeathZone").GetComponent<PD_DeathZoneController>();
         damageTimer = 0f;
+        coolDown = 0f;
         insideZone = true;
         alive = true;
     }
@@ -531,18 +581,21 @@ public class PDPlayerController : MonoBehaviour
         }
         updateSelected();
         updateSelectedCount();
-        if(alive && triggerPulled())
+
+        if(alive)
         {
-            fire();
+            handleFiring();
         }
+        
+        
+        
         if (alive && !insideZone)
         {
             //Debug.Log("Outside Zone!");
             damageTimer += Time.deltaTime;
             if(damageTimer >= 1)
             {
-                float damageToTake = 1f;
-                takeDamage(damageToTake);
+                takeDamage(deathZone.currentDamage);
                 damageTimer = 0f;
             }
         }

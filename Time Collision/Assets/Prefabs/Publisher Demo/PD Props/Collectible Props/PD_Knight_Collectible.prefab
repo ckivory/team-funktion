@@ -89,9 +89,10 @@ GameObject:
   - component: {fileID: -976358349819747645}
   - component: {fileID: 3363373125906889223}
   - component: {fileID: 6540830029833307975}
-  - component: {fileID: -3857353186578601794}
+  - component: {fileID: -9090875663782106497}
+  - component: {fileID: 5511227836344585254}
   m_Layer: 10
-  m_Name: Knight_Collectible
+  m_Name: PD_Knight_Collectible
   m_TagString: Collectible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -105,7 +106,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9188675194279928149}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.74, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.47824907, y: 0.47824907, z: 0.47824907}
   m_Children:
   - {fileID: 885446993476051460}
@@ -157,7 +158,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whoFired: {fileID: 0}
   propNum: 5
---- !u!114 &-3857353186578601794
+--- !u!114 &-9090875663782106497
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -166,10 +167,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 9188675194279928149}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff5826d2fc541ec4ba391d97eab7220c, type: 3}
+  m_Script: {fileID: 11500000, guid: 4ce57db910fea2a4d8080fe00ecb3dd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxVel: 10
+  maxRotVel: 10
+--- !u!114 &5511227836344585254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9188675194279928149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73b033bbd0c03924b9ed7e4f306ad1bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   DespawnTimer: 50
+  parentSpawner: {fileID: 0}
 --- !u!1001 &8915699707930754924
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -243,9 +243,10 @@ GameObject:
   - component: {fileID: 6010712171604694708}
   - component: {fileID: -6144302891804203287}
   - component: {fileID: 990552761505644385}
-  - component: {fileID: -1860560873155956418}
+  - component: {fileID: -1693589846497956459}
+  - component: {fileID: 3848162776151148065}
   m_Layer: 10
-  m_Name: Barrel_Collectible
+  m_Name: PD_Barrel_Collectible
   m_TagString: Collectible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -259,7 +260,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4744767056463312973}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.96, y: 1, z: -1.98}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.11977455, y: 0.11977455, z: 0.11977455}
   m_Children:
   - {fileID: 8937863337645262570}
@@ -314,7 +315,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whoFired: {fileID: 0}
   propNum: 0
---- !u!114 &-1860560873155956418
+--- !u!114 &-1693589846497956459
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -323,10 +324,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 4744767056463312973}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff5826d2fc541ec4ba391d97eab7220c, type: 3}
+  m_Script: {fileID: 11500000, guid: 4ce57db910fea2a4d8080fe00ecb3dd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxVel: 10
+  maxRotVel: 10
+--- !u!114 &3848162776151148065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4744767056463312973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73b033bbd0c03924b9ed7e4f306ad1bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   DespawnTimer: 40
+  parentSpawner: {fileID: 0}
 --- !u!1 &8819360393390714341
 GameObject:
   m_ObjectHideFlags: 0

@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 3542182686932778020}
   - component: {fileID: -8276712303215976093}
   m_Layer: 11
-  m_Name: Crate_Collected
+  m_Name: PD_Crate_Collected
   m_TagString: Collected
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -103,7 +103,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7251298450365760712}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.4081, y: 0.673, z: -5.3609}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
   - {fileID: 5221826362523601264}
@@ -139,8 +139,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whoFired: {fileID: 0}
   propNum: 1
-  propMass: 1
-  propDamage: 2
 --- !u!1 &8158253398747968977
 GameObject:
   m_ObjectHideFlags: 0
