@@ -14,7 +14,14 @@ public class PD_UICanvasControl : MonoBehaviour
     {
         for(int i =0;i<Images.Count;i++)
         {
-            ImageLoc.Add(Images[i].transform.position);
+            try
+            {
+                ImageLoc.Add(Images[i].transform.position);
+            }
+            catch(System.Exception)
+            {
+                Debug.Log("Error in PD UI Canvas Control");
+            }
         }
 
 

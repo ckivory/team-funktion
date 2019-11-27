@@ -49,6 +49,8 @@ public class PDPlayerController : MonoBehaviour
     private float targetAim;
     private float currentAimSpeed;
 
+    //public int MINE_PROPNUM = 6;
+
     private bool RTpressed;
     private bool LTpressed;
     public List<int> inventory;
@@ -219,6 +221,7 @@ public class PDPlayerController : MonoBehaviour
             //Debug.Log("Inside Zone");
             insideZone = true;
         }
+        
     }
 
     private void OnTriggerExit(Collider col)

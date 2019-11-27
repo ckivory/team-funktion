@@ -11,6 +11,8 @@ TagManager:
   - Prop
   - DeathZone
   - Ground
+  - Mine
+  - Explosion
   layers:
   - Default
   - TransparentFX
@@ -27,8 +29,8 @@ TagManager:
   - Fired
   - PlayerBoundary
   - DeathZone
-  - 
-  - 
+  - Mine
+  - Explosion
   - 
   - 
   - 
