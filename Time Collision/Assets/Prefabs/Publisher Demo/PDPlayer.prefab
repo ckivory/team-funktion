@@ -10168,6 +10168,7 @@ MonoBehaviour:
   - {fileID: 7085181105243925176, guid: b71e8e3ac08010146ae9fbace0188a8e, type: 3}
   - {fileID: 7287095493153802058, guid: 4cb4a93e32c8bb443891c1b1833c6130, type: 3}
   deathZone: {fileID: 0}
+  MINE_PROPNUM: 6
   inventory: 
   selectedProp: 0
   selectedCount: 0

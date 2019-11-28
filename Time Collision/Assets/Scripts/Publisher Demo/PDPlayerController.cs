@@ -49,7 +49,8 @@ public class PDPlayerController : MonoBehaviour
     private float targetAim;
     private float currentAimSpeed;
 
-    //public int MINE_PROPNUM = 6;
+    [HideInInspector]
+    public int MINE_PROPNUM = 6;    // This number is how we differentiate mines from other props. Not the cleanest solution, but it doesn't require us to overhaul the entire inventory system.
 
     private bool RTpressed;
     private bool LTpressed;
@@ -211,6 +212,11 @@ public class PDPlayerController : MonoBehaviour
                     Destroy(col.gameObject);
                 }
             }
+            if(col.gameObject.CompareTag("Explosion"))          // For some reason this gets activated twice for each explosion?
+            {
+                Debug.Log("Player " + controllerNum + " entering explosion!");
+                takeDamage(ObjectAttributes.damageList[MINE_PROPNUM]);
+            }
         }
     }
 
@@ -314,6 +320,25 @@ public class PDPlayerController : MonoBehaviour
         return false;
     }
 
+    private bool altTriggerPulled()
+    {
+        if(usingController)
+        {
+            if(Input.GetButton("J" + controllerNum + "LB"))
+            {
+                return true;
+            }
+        }
+        else
+        {
+            if(Input.GetMouseButton(1))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
     private int numProjectiles()
     {
         if (selectedCount > inventory[selectedProp])
@@ -342,10 +367,28 @@ public class PDPlayerController : MonoBehaviour
             }
             inventory[selectedProp] -= numProjectiles();
             updateMass();
+            coolDown = coolDownDuration;
         }
         else
         {
             Debug.Log("Nothing to fire!");
+        }
+    }
+
+    private void plantMine()
+    {
+        if (inventory[MINE_PROPNUM] < 1)
+        {
+            Debug.Log("No mines to plant.");
+        }
+        else
+        {
+            Debug.Log("Planting mine.");
+            GameObject newMine = Instantiate(firedPropPrefabs[MINE_PROPNUM], transform.position, Quaternion.identity);
+            GetComponent<PD_DiskController>().RemoveFromDisk(MINE_PROPNUM);
+            inventory[MINE_PROPNUM]--;
+            updateMass();
+            coolDown = coolDownDuration;
         }
     }
 
@@ -354,7 +397,7 @@ public class PDPlayerController : MonoBehaviour
         for(int i = 0; i < inventory.Count; i++)
         {
             int index = (selectedProp + i) % inventory.Count;
-            if (inventory[index] > 0)
+            if (inventory[index] > 0 && index != MINE_PROPNUM)
             {
                 return index;
             }
@@ -406,16 +449,25 @@ public class PDPlayerController : MonoBehaviour
         {
             if (onTriggerDown(true))
             {
-                selectedProp = (selectedProp + 1) % inventory.Count;
+                // Duct-tape solution to keep player from shooting mines normally.
+                do
+                {
+                    selectedProp = (selectedProp + 1) % inventory.Count;
+                } while (selectedProp == MINE_PROPNUM);
                 Debug.Log(selectedProp);
             }
             if (onTriggerDown(false))
             {
-                selectedProp--;
-                if (selectedProp < 0)
+                // Duct-tape solution to keep player from shooting mines normally.
+                do
                 {
-                    selectedProp += inventory.Count;
-                }
+                    selectedProp--;
+                    if (selectedProp < 0)
+                    {
+                        selectedProp += inventory.Count;
+                    }
+                } while (selectedProp == MINE_PROPNUM);
+                
                 Debug.Log(selectedProp);
             }
         }
@@ -423,16 +475,24 @@ public class PDPlayerController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                selectedProp = (selectedProp + 1) % inventory.Count;
+                // Duct-tape solution to keep player from shooting mines normally.
+                do
+                {
+                    selectedProp = (selectedProp + 1) % inventory.Count;
+                } while (selectedProp == MINE_PROPNUM);
                 Debug.Log(selectedProp);
             }
             if (Input.GetKeyDown(KeyCode.Q))
             {
-                selectedProp--;
-                if (selectedProp < 0)
+                // Duct-tape solution to keep player from shooting mines normally.
+                do
                 {
-                    selectedProp += inventory.Count;
-                }
+                    selectedProp--;
+                    if (selectedProp < 0)
+                    {
+                        selectedProp += inventory.Count;
+                    }
+                } while (selectedProp == MINE_PROPNUM);
                 Debug.Log(selectedProp);
             }
         }
@@ -532,10 +592,25 @@ public class PDPlayerController : MonoBehaviour
             Debug.Log("Cooldown: " + coolDown);
             if (coolDown <= 0)
             {
-                fire();
-                coolDown = coolDownDuration;
+                if(selectedProp != MINE_PROPNUM)
+                {
+                    fire();
+                }
+                else
+                {
+                    Debug.Log("You shouldn't be able to get here. We can't fire mines normally.");
+                }
             }
         }
+        else if(altTriggerPulled())
+        {
+            Debug.Log("Cooldown: " + coolDown);
+            if (coolDown <= 0)
+            {
+                plantMine();
+            }
+        }
+
         if (coolDown > 0)
         {
             coolDown -= Time.deltaTime;
@@ -556,7 +631,7 @@ public class PDPlayerController : MonoBehaviour
         targetAim = 0f;
         RTpressed = false;
         LTpressed = false;
-        selectedProp = 1;
+        selectedProp = 0;
         selectedCount = 1;
         shield = -1;
         if(!usingController)
