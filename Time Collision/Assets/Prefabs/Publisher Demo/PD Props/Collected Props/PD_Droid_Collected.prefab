@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 1176745226641539241}
   - component: {fileID: -4376584438938581056}
   - component: {fileID: -1418721023187726507}
-  m_Layer: 0
-  m_Name: Droid_Rest 1
-  m_TagString: Untagged
+  m_Layer: 11
+  m_Name: PD_Droid_Collected
+  m_TagString: Collected
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

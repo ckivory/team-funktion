@@ -2614,7 +2614,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &556325719
 Transform:
   m_ObjectHideFlags: 0
@@ -2644,15 +2644,18 @@ MonoBehaviour:
   baseSpawnHeight: 20
   heightIncrement: 0.2
   spawnedItems:
-  - {fileID: 9084589849402155440, guid: f84c6cab245909242bd28527d21a15a6, type: 3}
-  - {fileID: 9018213373250412849, guid: e054124b20d7cf640a5214ea1eac1fb7, type: 3}
+  - {fileID: 7085181105243925176, guid: a8956a6c46ef6554180ec667adfb8b2c, type: 3}
+  - {fileID: 445205623230088581, guid: a8f9415bf8164f54f88f0f85ab75310f, type: 3}
+  - {fileID: 7287095493153802058, guid: fd468cc19f368bc41a72b5b064fb4b13, type: 3}
   minTimes:
+  - 1
   - 1
   - 1
   maxTimes:
   - 1
   - 1
-  maxItems: 6400000064000000
+  - 1
+  maxItems: 640000006400000064000000
 --- !u!23 &556325721
 MeshRenderer:
   m_ObjectHideFlags: 0

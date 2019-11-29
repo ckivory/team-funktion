@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8434218671370745747}
   - component: {fileID: 8434218671370745748}
   - component: {fileID: -5412768618309132160}
+  - component: {fileID: -8847978702814274068}
   - component: {fileID: 7811544584867959444}
   m_Layer: 10
   m_Name: PD_Gramaphone_Collectible
@@ -88,6 +89,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whoFired: {fileID: 0}
   propNum: 3
+--- !u!114 &-8847978702814274068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 445205623230088581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ada324387e8ac347a76a6259e817b73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xRotate: 0
+  yRotate: 0
+  zRotate: 0
+  goLeft: 0
+  goForward: 0
+  minForce: 0
+  maxForce: 0
+  spin: 1
 --- !u!114 &7811544584867959444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -802,6 +823,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3492235843558717334}
     m_Modifications:
+    - target: {fileID: 1575382208379894859, guid: ef80640f454bec743808b74d180cff27,
+        type: 3}
+      propertyPath: m_Name
+      value: Spawn Effect
+      objectReference: {fileID: 0}
     - target: {fileID: 1575382208379894856, guid: ef80640f454bec743808b74d180cff27,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -856,11 +882,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1575382208379894859, guid: ef80640f454bec743808b74d180cff27,
-        type: 3}
-      propertyPath: m_Name
-      value: Spawn Effect
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef80640f454bec743808b74d180cff27, type: 3}

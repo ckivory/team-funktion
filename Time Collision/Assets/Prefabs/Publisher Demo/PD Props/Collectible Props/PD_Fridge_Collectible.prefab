@@ -89,6 +89,7 @@ GameObject:
   - component: {fileID: 3974559113938924902}
   - component: {fileID: 6851247340745496540}
   - component: {fileID: 2520550548087208837}
+  - component: {fileID: 3073368881074121715}
   - component: {fileID: 6992801817117573504}
   m_Layer: 10
   m_Name: PD_Fridge_Collectible
@@ -158,6 +159,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whoFired: {fileID: 0}
   propNum: 2
+--- !u!114 &3073368881074121715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8617994201647920770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ada324387e8ac347a76a6259e817b73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xRotate: 0
+  yRotate: 0
+  zRotate: 0
+  goLeft: 0
+  goForward: 0
+  spin: 0
 --- !u!114 &6992801817117573504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256,6 +275,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4738382503147947153}
     m_Modifications:
+    - target: {fileID: 1575382208379894859, guid: ef80640f454bec743808b74d180cff27,
+        type: 3}
+      propertyPath: m_Name
+      value: Spawn Effect
+      objectReference: {fileID: 0}
     - target: {fileID: 1575382208379894856, guid: ef80640f454bec743808b74d180cff27,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -325,11 +349,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.4658
-      objectReference: {fileID: 0}
-    - target: {fileID: 1575382208379894859, guid: ef80640f454bec743808b74d180cff27,
-        type: 3}
-      propertyPath: m_Name
-      value: Spawn Effect
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef80640f454bec743808b74d180cff27, type: 3}

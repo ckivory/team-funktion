@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2541755405007785577}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: L_Arm_01_Jt 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4315704689571248624}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: L_Toe_Jt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +69,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4866970622660094343}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Bandana_01_Jt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2220503919874221544}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: R_Toe_Jt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,7 +130,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3785841121096762720}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: L_Arm_02_Jt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,7 +161,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 685288726002652051}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: R_Arm_02_Jt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -192,7 +192,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5073904016275207140}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: L_Arm_01_Jt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -223,7 +223,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 579663044354528929}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: R_Leg_Jt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -255,7 +255,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2258082584843681761}
   - component: {fileID: 3131968127454225460}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Droid_Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -350,7 +350,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3913138131641960002}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: L_Foot_Jt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -381,7 +381,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9007564287913270304}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: R_Arm_01_Jt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -412,7 +412,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1517363177611310524}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Head_Jt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -443,7 +443,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8494163896219144440}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Root_Jt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -474,7 +474,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1849059095449551637}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: R_Foot_Jt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -505,7 +505,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7198475647316764645}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: L_Leg_Jt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -540,10 +540,11 @@ GameObject:
   - component: {fileID: 5392722757430552158}
   - component: {fileID: 2564845611799336369}
   - component: {fileID: 6235315012396941553}
+  - component: {fileID: 1037357029468584000}
   - component: {fileID: 125499221014866808}
-  m_Layer: 0
-  m_Name: PD_Driod_Collectible
-  m_TagString: Untagged
+  m_Layer: 10
+  m_Name: PD_Droid_Collectible
+  m_TagString: Collectible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -611,7 +612,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &6235315012396941553
 MonoBehaviour:
@@ -627,6 +628,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whoFired: {fileID: 0}
   propNum: 10
+--- !u!114 &1037357029468584000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5656024165861215568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ada324387e8ac347a76a6259e817b73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xRotate: 0
+  yRotate: 0
+  zRotate: 0
+  goLeft: 0
+  goForward: 0
+  spin: 0
 --- !u!114 &125499221014866808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -650,7 +669,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7847813365970610592}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Hips_Jt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -685,7 +704,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4653144197641311894}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Bandana_02_Jt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -715,7 +734,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 934153131290459520}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: R_Arm_03_Jt
   m_TagString: Untagged
   m_Icon: {fileID: 0}

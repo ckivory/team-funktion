@@ -14,10 +14,11 @@ GameObject:
   - component: {fileID: -4376584438938581056}
   - component: {fileID: 7214392262625555541}
   - component: {fileID: -1418721023187726507}
+  - component: {fileID: 4225166969815244434}
   - component: {fileID: -1046607092869492168}
-  m_Layer: 0
-  m_Name: PD_Droid_Collected 1
-  m_TagString: Untagged
+  m_Layer: 12
+  m_Name: PD_Droid_Fired
+  m_TagString: Fired
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,6 +126,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whoFired: {fileID: 0}
   propNum: 10
+--- !u!114 &4225166969815244434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 605863343513220213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ada324387e8ac347a76a6259e817b73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xRotate: 0
+  yRotate: 0
+  zRotate: 0
+  goLeft: 0
+  goForward: 0
+  spin: 0
 --- !u!114 &-1046607092869492168
 MonoBehaviour:
   m_ObjectHideFlags: 0

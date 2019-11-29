@@ -89,6 +89,7 @@ GameObject:
   - component: {fileID: 3258987292482680899}
   - component: {fileID: 3258987292482680956}
   - component: {fileID: 3119610134264971941}
+  - component: {fileID: 1080430230455523346}
   - component: {fileID: 8726146852542394608}
   m_Layer: 10
   m_Name: PD_Scooter_Collectible
@@ -157,6 +158,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whoFired: {fileID: 0}
   propNum: 8
+--- !u!114 &1080430230455523346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7085181105243925176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ada324387e8ac347a76a6259e817b73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xRotate: 0
+  yRotate: 0
+  zRotate: 0
+  goLeft: 0
+  goForward: 0
+  minForce: 0
+  maxForce: 0
+  spin: 1
 --- !u!114 &8726146852542394608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,6 +199,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6055309007760480427}
     m_Modifications:
+    - target: {fileID: 1575382208379894859, guid: ef80640f454bec743808b74d180cff27,
+        type: 3}
+      propertyPath: m_Name
+      value: Spawn Effect
+      objectReference: {fileID: 0}
     - target: {fileID: 1575382208379894856, guid: ef80640f454bec743808b74d180cff27,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -232,11 +258,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1575382208379894859, guid: ef80640f454bec743808b74d180cff27,
-        type: 3}
-      propertyPath: m_Name
-      value: Spawn Effect
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef80640f454bec743808b74d180cff27, type: 3}

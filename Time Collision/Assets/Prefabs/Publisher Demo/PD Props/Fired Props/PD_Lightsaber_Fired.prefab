@@ -9978,6 +9978,7 @@ GameObject:
   - component: {fileID: 4186572380627510270}
   - component: {fileID: 3349530714017421379}
   - component: {fileID: 6791128458029476634}
+  - component: {fileID: 2989308243708076188}
   - component: {fileID: -4031545821763885553}
   m_Layer: 12
   m_Name: PD_Lightsaber_Fired
@@ -10053,6 +10054,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whoFired: {fileID: 0}
   propNum: 7
+--- !u!114 &2989308243708076188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9018213373250412849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ada324387e8ac347a76a6259e817b73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xRotate: 90
+  yRotate: 0
+  zRotate: 0
+  goLeft: 0
+  goForward: 0
+  spin: 0
 --- !u!114 &-4031545821763885553
 MonoBehaviour:
   m_ObjectHideFlags: 0

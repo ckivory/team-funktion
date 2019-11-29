@@ -474,7 +474,7 @@ GameObject:
   - component: {fileID: 6124628100584560491}
   - component: {fileID: -8816993483350215817}
   - component: {fileID: 3439995932747518248}
-  - component: {fileID: 1425317431119242646}
+  - component: {fileID: 1756479024686529776}
   - component: {fileID: 2882267038136057670}
   m_Layer: 10
   m_Name: PD_Shield_Collectible
@@ -549,7 +549,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whoFired: {fileID: 0}
   propNum: 9
---- !u!114 &1425317431119242646
+--- !u!114 &1756479024686529776
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -558,11 +558,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 7287095493153802058}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bc763867f426f841921ee2c620559c8, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ada324387e8ac347a76a6259e817b73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isStuck: 0
-  howFar: 2
+  xRotate: 0
+  yRotate: 0
+  zRotate: 0
+  goLeft: 0
+  goForward: 0
+  minForce: 5
+  maxForce: 10
+  spin: 1
 --- !u!114 &2882267038136057670
 MonoBehaviour:
   m_ObjectHideFlags: 0
