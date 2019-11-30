@@ -270,8 +270,8 @@ public class PDPlayerController : MonoBehaviour
         if (usingController)
         {
             
-            targetAim -= Input.GetAxis("J" + controllerNum + "X") * Time.deltaTime * (1 / aimSpeed);
-            targetAim += Input.GetAxis("J" + controllerNum + "Y") * Time.deltaTime * (1 / aimSpeed);
+            targetAim -= Input.GetAxis("J" + controllerNum + "LT") * Time.deltaTime * (1 / aimSpeed);
+            targetAim += Input.GetAxis("J" + controllerNum + "RT") * Time.deltaTime * (1 / aimSpeed);
             
         }
         else
@@ -309,7 +309,7 @@ public class PDPlayerController : MonoBehaviour
         float spread;
         if (shotCount < spreadNum)
         {
-            spread = maxSpread * ((float)(shotCount-1) / (float)spreadNum);
+            spread = maxSpread * ((float)(shotCount) / (float)spreadNum);
             Debug.Log("Items: " + shotCount + " Interpolated spread: " + spread);
         }
         else
@@ -392,6 +392,10 @@ public class PDPlayerController : MonoBehaviour
         {
             Debug.Log("Nothing to fire!");
         }
+        if(inventory[selectedProp] < 1)
+        {
+            selectedProp = findNonEmpty();
+        }
     }
 
     private void plantMine()
@@ -424,6 +428,18 @@ public class PDPlayerController : MonoBehaviour
         return selectedProp; 
     }
     
+    private bool isInventoryEmpty()
+    {
+        for(int i = 0; i < inventory.Count; i++)
+        {
+            if(inventory[i] > 0 && i != MINE_PROPNUM)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
     private bool onTriggerDown(bool rightTrigger)
     {
         if (rightTrigger)
@@ -466,16 +482,17 @@ public class PDPlayerController : MonoBehaviour
     {
         if (usingController)
         {
-            if (onTriggerDown(true))
+            if (Input.GetButtonDown("J" + controllerNum + "Y"))
             {
                 // Duct-tape solution to keep player from shooting mines normally.
                 do
                 {
                     selectedProp = (selectedProp + 1) % inventory.Count;
-                } while (selectedProp == MINE_PROPNUM);
+                } while (selectedProp == MINE_PROPNUM || (inventory[selectedProp] < 1 && !isInventoryEmpty()));
+
                 Debug.Log(selectedProp);
             }
-            if (onTriggerDown(false))
+            if (Input.GetButtonDown("J" + controllerNum + "X"))
             {
                 // Duct-tape solution to keep player from shooting mines normally.
                 do
@@ -485,7 +502,7 @@ public class PDPlayerController : MonoBehaviour
                     {
                         selectedProp += inventory.Count;
                     }
-                } while (selectedProp == MINE_PROPNUM);
+                } while (selectedProp == MINE_PROPNUM || (inventory[selectedProp] < 1 && !isInventoryEmpty()));
                 
                 Debug.Log(selectedProp);
             }
@@ -521,12 +538,12 @@ public class PDPlayerController : MonoBehaviour
     {
         if(usingController)
         {
-            if(Input.GetButtonDown("J" + controllerNum + "A"))
+            if(Input.GetButtonDown("J" + controllerNum + "B"))
             {
                 selectedCount++;
                 Debug.Log("Count: " + selectedCount);
             }
-            else if(Input.GetButtonDown("J" + controllerNum + "B"))
+            else if(Input.GetButtonDown("J" + controllerNum + "A"))
             {
                 selectedCount--;
                 if(selectedCount < 1)
