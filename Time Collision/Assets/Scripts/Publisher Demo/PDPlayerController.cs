@@ -286,14 +286,21 @@ public class PDPlayerController : MonoBehaviour
         arrow.transform.rotation *= Quaternion.Euler(-1 * currentAim, 0f, 0f);
     }
 
+    private void instantiateProj(Vector3 spreadAmount)
+    {
+        GameObject shot = Instantiate(firedPropPrefabs[selectedProp], rb.position, arrow.transform.rotation);
+        GetComponent<PD_DiskController>().RemoveFromDisk(selectedProp);    //Added by Lin
+        shot.GetComponent<Rigidbody>().velocity = rb.velocity + (arrow.transform.forward + spreadAmount) * shotForce;
+        shot.GetComponent<ObjectAttributes>().whoFired = gameObject;
+    }
+
     private void initializeProjectiles(int shotCount)
     {
-        for (int i = 0; i < shotCount; i++)
+        instantiateProj(Vector3.zero);
+
+        for (int i = 1; i < shotCount; i++)
         {
-            GameObject shot = Instantiate(firedPropPrefabs[selectedProp], rb.position, arrow.transform.rotation);
-            GetComponent<PD_DiskController>().RemoveFromDisk(selectedProp);    //Added by Lin
-            shot.GetComponent<Rigidbody>().velocity = rb.velocity + (arrow.transform.forward + spread(shotCount)) * shotForce;
-            shot.GetComponent<ObjectAttributes>().whoFired = gameObject;
+            instantiateProj(spread(shotCount));
         }
     }
 
