@@ -22,8 +22,9 @@ public class PDPlayerController : MonoBehaviour
     public float aimMax = 60f;
 
     public float scrollSensitivity = 10f;
-    public float shotForce = 60f;
-    public float maxSpread = 0.2f;
+    public float shotForce = 60f;           // How hard should objects be thrown?
+    public float maxSpread = 0.2f;          // What is the maximum amount of spread a shot should have?
+    public int spreadNum = 10;       // How many items should it take to reach this max spread?
     public int controllerNum = 0;
     public bool usingController = true;
 
@@ -298,7 +299,18 @@ public class PDPlayerController : MonoBehaviour
 
     private Vector3 spread(int shotCount)
     {
-        return Random.insideUnitSphere * maxSpread;
+        float spread;
+        if (shotCount < spreadNum)
+        {
+            spread = maxSpread * ((float)(shotCount-1) / (float)spreadNum);
+            Debug.Log("Items: " + shotCount + " Interpolated spread: " + spread);
+        }
+        else
+        {
+            spread = maxSpread;
+        }
+
+        return Random.insideUnitSphere * spread;
     }
 
     private bool triggerPulled()
@@ -548,7 +560,7 @@ public class PDPlayerController : MonoBehaviour
             }
         }
 
-        Debug.Log("Level: " + level);
+        //Debug.Log("Level: " + level);
     }
 
     private void updateMass()
@@ -559,7 +571,7 @@ public class PDPlayerController : MonoBehaviour
             playerMass += ObjectAttributes.getMass(i) * inventory[i];
         }
         updateLevel();
-        Debug.Log("Player mass is: " + playerMass);
+        //Debug.Log("Player mass is: " + playerMass);
     }
 
     private void newShield()
@@ -589,7 +601,7 @@ public class PDPlayerController : MonoBehaviour
     {
         if (triggerPulled())
         {
-            Debug.Log("Cooldown: " + coolDown);
+            //Debug.Log("Cooldown: " + coolDown);
             if (coolDown <= 0)
             {
                 if(selectedProp != MINE_PROPNUM)
@@ -604,7 +616,7 @@ public class PDPlayerController : MonoBehaviour
         }
         else if(altTriggerPulled())
         {
-            Debug.Log("Cooldown: " + coolDown);
+            //Debug.Log("Cooldown: " + coolDown);
             if (coolDown <= 0)
             {
                 plantMine();
