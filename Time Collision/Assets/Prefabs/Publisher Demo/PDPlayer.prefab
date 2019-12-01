@@ -10135,7 +10135,7 @@ MonoBehaviour:
   aimDamping: 10
   aimMin: 10
   aimMax: 60
-  scrollSensitivity: 50
+  scrollSensitivity: 10
   shotForce: 60
   maxSpread: 0.2
   spreadNum: 10
@@ -15077,7 +15077,7 @@ MonoBehaviour:
   cameraSpeed: 120
   sensitivityX: 0.125
   sensitivityY: 0.25
-  mouseSensitivity: 2
+  mouseSensitivity: 1
   distance: 20
   upOffset: 5
   minYRot: 0
