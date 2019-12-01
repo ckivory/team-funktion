@@ -4814,46 +4814,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8860440787791926784, guid: ccecf2af9ca6878468a4421969fad922,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: c025234d37fd1de46b261556bcc1a8ef, type: 2}
-    - target: {fileID: 5897249853159150630, guid: ccecf2af9ca6878468a4421969fad922,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: c025234d37fd1de46b261556bcc1a8ef, type: 2}
-    - target: {fileID: 3702831216863995430, guid: ccecf2af9ca6878468a4421969fad922,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 85c83ca5b6100dd42926114bdc73f545, type: 2}
-    - target: {fileID: 5425841767599182535, guid: ccecf2af9ca6878468a4421969fad922,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 85c83ca5b6100dd42926114bdc73f545, type: 2}
-    - target: {fileID: 7243048716718120197, guid: ccecf2af9ca6878468a4421969fad922,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 85c83ca5b6100dd42926114bdc73f545, type: 2}
-    - target: {fileID: 5470079096786931073, guid: ccecf2af9ca6878468a4421969fad922,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 85c83ca5b6100dd42926114bdc73f545, type: 2}
-    - target: {fileID: 3488334579931251898, guid: ccecf2af9ca6878468a4421969fad922,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 85c83ca5b6100dd42926114bdc73f545, type: 2}
-    - target: {fileID: 6730774032552530191, guid: ccecf2af9ca6878468a4421969fad922,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 85c83ca5b6100dd42926114bdc73f545, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ccecf2af9ca6878468a4421969fad922, type: 3}
 --- !u!1001 &3930302346209586859
