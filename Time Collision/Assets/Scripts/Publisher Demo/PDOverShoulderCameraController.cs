@@ -17,6 +17,8 @@ public class PDOverShoulderCameraController : MonoBehaviour
     private int controllerNum;
 
     public float distance = 20.0f;
+    public float upOffset = 10.0f;
+
     public float minYRot = 10.0f;
     public float maxYRot = 30.0f;
 
@@ -62,7 +64,7 @@ public class PDOverShoulderCameraController : MonoBehaviour
         Vector3 dir = new Vector3(0f, 0f, -distance);
         Quaternion rotation = Quaternion.Euler(currentY, currentX, 0);
         camTransform.position = player.transform.position + rotation * dir;
-        //camTransform.position += new Vector3(0f, 10f, 0f);
+        camTransform.position += new Vector3(0f, upOffset, 0f);
     }
 
     private void Update()
@@ -74,5 +76,6 @@ public class PDOverShoulderCameraController : MonoBehaviour
     {
         updatePosition();
         this.transform.LookAt(player.transform.position);
+        camTransform.position += new Vector3(0f, upOffset, 0f);
     }
 }

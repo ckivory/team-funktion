@@ -15077,9 +15077,10 @@ MonoBehaviour:
   cameraSpeed: 120
   sensitivityX: 0.125
   sensitivityY: 0.25
-  mouseSensitivity: 3
+  mouseSensitivity: 2
   distance: 20
-  minYRot: 10
+  upOffset: 5
+  minYRot: 0
   maxYRot: 30
   initialRotation: 0
 --- !u!1 &1759720334518389646

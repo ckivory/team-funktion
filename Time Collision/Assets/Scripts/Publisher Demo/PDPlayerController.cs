@@ -156,6 +156,9 @@ public class PDPlayerController : MonoBehaviour
 
     private void takeDamage(float damageToDeal)
     {
+        // Play particle effect for taking damage
+        vfx.transform.GetChild(1).GetComponent<ParticleSystem>().Play();
+
         Debug.Log("Taking " + damageToDeal + " damage");
         if (shield == -1)
         {
@@ -670,6 +673,7 @@ public class PDPlayerController : MonoBehaviour
     void Start()
     {
         rb = this.GetComponent<Rigidbody>();
+
         inventory = new List<int>();
         for (int i = 0; i < collectedPropPrefabs.Count; i++)
         {
@@ -702,7 +706,7 @@ public class PDPlayerController : MonoBehaviour
             updateMovement();
         }
         updateRotation();
-        if (arrow.active) //add to stop spining when player dies
+        if (arrow.activeInHierarchy) //add to stop spining when player dies
         {
             updateSpin();
         }

@@ -6687,7 +6687,7 @@ Transform:
   - {fileID: 647166261}
   - {fileID: 338686786}
   m_Father: {fileID: 1675220476}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &610941784 stripped
 Transform:
@@ -10853,6 +10853,11 @@ PrefabInstance:
       propertyPath: initialRotation
       value: 45
       objectReference: {fileID: 0}
+    - target: {fileID: 1237174199763494633, guid: 6a30c0a3692fd0548898ccb4ee1e1d77,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5e65124bd468933499b5d7ec138a25d7, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a30c0a3692fd0548898ccb4ee1e1d77, type: 3}
 --- !u!1 &898203417 stripped
@@ -21225,9 +21230,9 @@ Transform:
   m_Children:
   - {fileID: 2145581876}
   - {fileID: 5531644088852593386}
+  - {fileID: 593344380}
   - {fileID: 334640261}
   - {fileID: 754263639}
-  - {fileID: 593344380}
   - {fileID: 2079451284}
   - {fileID: 206376545}
   - {fileID: 1047264291}
@@ -22002,6 +22007,21 @@ PrefabInstance:
       propertyPath: controllerNum
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7587840009133854684, guid: 6a30c0a3692fd0548898ccb4ee1e1d77,
+        type: 3}
+      propertyPath: playerColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7587840009133854684, guid: 6a30c0a3692fd0548898ccb4ee1e1d77,
+        type: 3}
+      propertyPath: playerColor.g
+      value: 0.9878479
+      objectReference: {fileID: 0}
+    - target: {fileID: 7587840009133854684, guid: 6a30c0a3692fd0548898ccb4ee1e1d77,
+        type: 3}
+      propertyPath: playerColor.b
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7026119425612755244, guid: 6a30c0a3692fd0548898ccb4ee1e1d77,
         type: 3}
       propertyPath: initialRotation
@@ -22017,6 +22037,11 @@ PrefabInstance:
       propertyPath: m_NormalizedViewPortRect.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1237174199763494633, guid: 6a30c0a3692fd0548898ccb4ee1e1d77,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 387d1755fda31504f87cb3c30289ce08, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a30c0a3692fd0548898ccb4ee1e1d77, type: 3}
 --- !u!1 &1754175503 stripped
@@ -28037,6 +28062,21 @@ PrefabInstance:
       propertyPath: speeds.Array.data[0]
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7587840009133854684, guid: 6a30c0a3692fd0548898ccb4ee1e1d77,
+        type: 3}
+      propertyPath: playerColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7587840009133854684, guid: 6a30c0a3692fd0548898ccb4ee1e1d77,
+        type: 3}
+      propertyPath: playerColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7587840009133854684, guid: 6a30c0a3692fd0548898ccb4ee1e1d77,
+        type: 3}
+      propertyPath: playerColor.b
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7026119425612755244, guid: 6a30c0a3692fd0548898ccb4ee1e1d77,
         type: 3}
       propertyPath: initialRotation
@@ -28062,6 +28102,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1237174199763494633, guid: 6a30c0a3692fd0548898ccb4ee1e1d77,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: aa68c90b7e900dc46a56dd99b4564a0a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a30c0a3692fd0548898ccb4ee1e1d77, type: 3}
 --- !u!1 &2097722921 stripped
