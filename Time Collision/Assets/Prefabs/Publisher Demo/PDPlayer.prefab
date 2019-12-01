@@ -10117,6 +10117,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 1237174200682086006}
   arrow: {fileID: 1237174198821115030}
+  vfx: {fileID: 1237174199205564349}
   levelMasses:
   - 0
   - 10
@@ -10137,6 +10138,7 @@ MonoBehaviour:
   scrollSensitivity: 50
   shotForce: 60
   maxSpread: 0.2
+  spreadNum: 10
   controllerNum: 0
   usingController: 0
   core: {fileID: 1237174199507839897}
