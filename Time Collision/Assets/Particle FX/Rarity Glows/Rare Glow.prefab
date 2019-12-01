@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1695549168472798942}
   - component: {fileID: 1695549168472798941}
   m_Layer: 0
-  m_Name: Rare Glow 1
+  m_Name: Rare Glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -223,7 +223,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.231, g: 0.231, b: 0.231, a: 0.50980395}
+      maxColor: {r: 0, g: 0.38282737, b: 0.5283019, a: 0.50980395}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
