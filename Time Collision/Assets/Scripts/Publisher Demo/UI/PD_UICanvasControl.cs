@@ -11,6 +11,8 @@ public class PD_UICanvasControl : MonoBehaviour
     public List<Image> Images;
     public List<Text> Texts;
     public List<Sprite> Sprites;
+    public Text playerMass;
+    public Text selectedCount;
     List<Vector3> ImageLoc;
     List<int> Inventory;
     int selectedType;
@@ -47,8 +49,14 @@ public class PD_UICanvasControl : MonoBehaviour
             Destroy(gameObject);
         }
         Inventory = Player.GetComponent<PDPlayerController>().inventory;
-        UpdateDisplay();
-        updateImage();
+        int total;
+        total=UpdateDisplay();
+        if (total > 0)
+        {
+            updateImage();
+        }
+        playerMass.text = "current mass: " + Player.GetComponent<PDPlayerController>().playerMass*100;
+        selectedCount.text = "item count per shot: " + Player.GetComponent<PDPlayerController>().selectedCount;
     }
 
     void updateImage()
@@ -93,26 +101,26 @@ public class PD_UICanvasControl : MonoBehaviour
     
     int LeftFind(int start)
     {
-        int end = start - 1;
-        while ((end==6)||(Inventory[end]==0))
+        int end = start ;
+        do
         {
             end -= 1;
             if (end < 0) end += Sprites.Count;
-        }
-        return end;
+        } while ((end == 6) || (Inventory[end] == 0));
+            return end;
     }
 
     int RightFind(int start)
     {
-        int end = start + 1;
-        while ((end == 6) || (Inventory[end] == 0))
+        int end = start ;
+        do
         {
             end += 1;
             if (end > Sprites.Count - 1) end -= Sprites.Count;
-        }
-        return end;
+        } while ((end == 6) || (Inventory[end] == 0)) ;
+            return end;
     }
-    void UpdateDisplay()
+    int UpdateDisplay()
     {
         int total = 0;
         for (int index=0; index<Inventory.Count;index++)
@@ -154,6 +162,7 @@ public class PD_UICanvasControl : MonoBehaviour
             ToggleVisible(Images[3], Texts[3], true);
             ToggleVisible(Images[4], Texts[4], true);
         }
+        return total;
     }
 
     void ToggleVisible(Image image, Text text, bool visible)
