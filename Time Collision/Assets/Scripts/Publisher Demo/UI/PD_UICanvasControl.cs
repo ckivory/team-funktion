@@ -313,6 +313,14 @@ public class PD_UICanvasControl : MonoBehaviour
         {
             SceneManager.LoadScene("Publisher Demo");
         }
+        foreach (Image icon in Images)
+        {
+            icon.enabled = false;
+        }
+        foreach (Text amount in Texts)
+        {
+            amount.enabled = false;
+        }
 
     }
     void lose()
@@ -325,5 +333,13 @@ public class PD_UICanvasControl : MonoBehaviour
         mineAmount.enabled = false;
         CM.enabled = false;
         CPS.enabled = false;
+        foreach (Image icon in Images)
+        {
+            icon.enabled = false;
+        }
+        foreach (Text amount in Texts)
+        {
+            amount.enabled = false;
+        }
     }
 }
