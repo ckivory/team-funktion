@@ -6,8 +6,7 @@ public class PDPlayerController : MonoBehaviour
 {
     public Camera cam;
     public GameObject arrow;
-    public GameObject vfx;
-
+    
     private float damageTimer;
     private bool insideZone;
 
@@ -142,7 +141,7 @@ public class PDPlayerController : MonoBehaviour
 
     private void updateSpin()
     {
-        core.transform.Rotate(coreSpeed * Time.deltaTime, 0f, 0f);
+        core.transform.Rotate(0f, coreSpeed * Time.deltaTime, 0f);
         disk.transform.Rotate(0f, diskSpeed * Time.deltaTime, 0f);
     }
 
@@ -151,14 +150,10 @@ public class PDPlayerController : MonoBehaviour
         alive = false;
         // Code for changing the player's avatar to represent the fact that they are dead.
         arrow.SetActive(false);     // A suggestion
-        vfx.SetActive(false);
     }
 
     private void takeDamage(float damageToDeal)
     {
-        // Play particle effect for taking damage
-        vfx.transform.GetChild(1).GetComponent<ParticleSystem>().Play();
-
         Debug.Log("Taking " + damageToDeal + " damage");
         if (shield == -1)
         {
@@ -489,64 +484,52 @@ public class PDPlayerController : MonoBehaviour
         {
             if (Input.GetButtonDown("J" + controllerNum + "Y"))
             {
-                if (!isInventoryEmpty())
+                // Duct-tape solution to keep player from shooting mines normally.
+                do
                 {
-                    // Duct-tape solution to keep player from shooting mines normally.
-                    do
-                    {
-                        selectedProp = (selectedProp + 1) % inventory.Count;
-                    } while (selectedProp == MINE_PROPNUM || (inventory[selectedProp] < 1 && !isInventoryEmpty()));
+                    selectedProp = (selectedProp + 1) % inventory.Count;
+                } while (selectedProp == MINE_PROPNUM || (inventory[selectedProp] < 1 && !isInventoryEmpty()));
 
-                    Debug.Log(selectedProp);
-                }
+                Debug.Log(selectedProp);
             }
             if (Input.GetButtonDown("J" + controllerNum + "X"))
             {
-                if (!isInventoryEmpty())
+                // Duct-tape solution to keep player from shooting mines normally.
+                do
                 {
-                    // Duct-tape solution to keep player from shooting mines normally.
-                    do
+                    selectedProp--;
+                    if (selectedProp < 0)
                     {
-                        selectedProp--;
-                        if (selectedProp < 0)
-                        {
-                            selectedProp += inventory.Count;
-                        }
-                    } while (selectedProp == MINE_PROPNUM || (inventory[selectedProp] < 1 && !isInventoryEmpty()));
-
-                    Debug.Log(selectedProp);
-                }
+                        selectedProp += inventory.Count;
+                    }
+                } while (selectedProp == MINE_PROPNUM || (inventory[selectedProp] < 1 && !isInventoryEmpty()));
+                
+                Debug.Log(selectedProp);
             }
         }
         else
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                if (!isInventoryEmpty())
+                // Duct-tape solution to keep player from shooting mines normally.
+                do
                 {
-                    // Duct-tape solution to keep player from shooting mines normally.
-                    do
-                    {
-                        selectedProp = (selectedProp + 1) % inventory.Count;
-                    } while (selectedProp == MINE_PROPNUM || (inventory[selectedProp] < 1 && !isInventoryEmpty()));
-                    Debug.Log(selectedProp);
-                }
+                    selectedProp = (selectedProp + 1) % inventory.Count;
+                } while (selectedProp == MINE_PROPNUM);
+                Debug.Log(selectedProp);
             }
             if (Input.GetKeyDown(KeyCode.Q))
             {
-                if (!isInventoryEmpty())
+                // Duct-tape solution to keep player from shooting mines normally.
+                do
                 {
-                    // Duct-tape solution to keep player from shooting mines normally.
-                    do
+                    selectedProp--;
+                    if (selectedProp < 0)
                     {
-                        selectedProp--;
-                        if (selectedProp < 0)
-                        {
-                            selectedProp += inventory.Count;
-                        }
-                    } while (selectedProp == MINE_PROPNUM || (inventory[selectedProp] < 1 && !isInventoryEmpty()));
-                    Debug.Log(selectedProp);
-                }
+                        selectedProp += inventory.Count;
+                    }
+                } while (selectedProp == MINE_PROPNUM);
+                Debug.Log(selectedProp);
             }
         }
     }
@@ -673,7 +656,6 @@ public class PDPlayerController : MonoBehaviour
     void Start()
     {
         rb = this.GetComponent<Rigidbody>();
-
         inventory = new List<int>();
         for (int i = 0; i < collectedPropPrefabs.Count; i++)
         {
@@ -706,10 +688,7 @@ public class PDPlayerController : MonoBehaviour
             updateMovement();
         }
         updateRotation();
-        if (arrow.activeInHierarchy) //add to stop spining when player dies
-        {
-            updateSpin();
-        }
+        updateSpin();
         if(alive)
         {
             updateAim();
