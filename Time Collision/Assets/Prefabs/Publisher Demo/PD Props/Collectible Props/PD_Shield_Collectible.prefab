@@ -582,6 +582,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DespawnTimer: 45
   parentSpawner: {fileID: 0}
+  DespawnParticle: {fileID: 2241723574760857876, guid: 6da64dcca65643d4381e49b86e98bb76,
+    type: 3}
 --- !u!1 &8221570347580508537
 GameObject:
   m_ObjectHideFlags: 0

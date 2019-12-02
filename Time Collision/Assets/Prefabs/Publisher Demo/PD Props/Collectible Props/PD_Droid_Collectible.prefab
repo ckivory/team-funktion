@@ -646,7 +646,7 @@ MonoBehaviour:
   zRotate: 0
   goLeft: 0
   goForward: 0
-  spin: 0
+  spin: 1
 --- !u!114 &125499221014866808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -661,6 +661,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DespawnTimer: 40
   parentSpawner: {fileID: 0}
+  DespawnParticle: {fileID: 2241723574760857876, guid: 6da64dcca65643d4381e49b86e98bb76,
+    type: 3}
 --- !u!1 &6617037377813296722
 GameObject:
   m_ObjectHideFlags: 0

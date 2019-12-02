@@ -10,6 +10,8 @@ public class PD_DespawnObject : MonoBehaviour
     public GameObject parentSpawner;
     private int propNum;
 
+    public GameObject DespawnParticle;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +33,7 @@ public class PD_DespawnObject : MonoBehaviour
         Timer -= Time.deltaTime;
         if (Timer <= 0)
         {
+            Instantiate(DespawnParticle, transform.position, transform.rotation);
             Destroy(gameObject);
         }
     }
