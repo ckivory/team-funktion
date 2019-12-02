@@ -2418,11 +2418,11 @@ MonoBehaviour:
   - {fileID: 445205623230088581, guid: a8f9415bf8164f54f88f0f85ab75310f, type: 3}
   minTimes:
   - 18
-  - 22
+  - 20
   - 10
   maxTimes:
   - 27
-  - 33
+  - 30
   - 25
   maxItems: 030000000200000005000000
 --- !u!1001 &171103357
@@ -6377,6 +6377,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 4507725626238384389, guid: 92fcda67f07ff0f408178287488c70b0,
+        type: 3}
+      propertyPath: m_Text
+      value: GAME OVER
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92fcda67f07ff0f408178287488c70b0, type: 3}
 --- !u!224 &455770745 stripped
@@ -8123,11 +8128,11 @@ MonoBehaviour:
   minTimes:
   - 15
   - 10
-  - 22
+  - 20
   maxTimes:
   - 30
   - 15
-  - 33
+  - 30
   maxItems: 030000000700000005000000
 --- !u!1001 &527542793
 PrefabInstance:
@@ -9167,6 +9172,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 255.16003
+      objectReference: {fileID: 0}
+    - target: {fileID: 4507725626238384389, guid: 92fcda67f07ff0f408178287488c70b0,
+        type: 3}
+      propertyPath: m_Text
+      value: GAME OVER
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92fcda67f07ff0f408178287488c70b0, type: 3}
@@ -13988,11 +13998,11 @@ MonoBehaviour:
   - {fileID: 445205623230088581, guid: a8f9415bf8164f54f88f0f85ab75310f, type: 3}
   minTimes:
   - 18
-  - 22
+  - 20
   - 10
   maxTimes:
   - 27
-  - 33
+  - 30
   - 25
   maxItems: 030000000200000005000000
 --- !u!1001 &829332424
@@ -22270,6 +22280,11 @@ PrefabInstance:
       propertyPath: Player
       value: 
       objectReference: {fileID: 2097722921}
+    - target: {fileID: 4507725626238384389, guid: 92fcda67f07ff0f408178287488c70b0,
+        type: 3}
+      propertyPath: m_Text
+      value: GAME OVER
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92fcda67f07ff0f408178287488c70b0, type: 3}
 --- !u!224 &1316278999 stripped
@@ -25818,6 +25833,26 @@ PrefabInstance:
         type: 3}
       propertyPath: waveTimes.Array.data[5]
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2309838897308648724, guid: 7b6506aa794156a40a28ea5765f94503,
+        type: 3}
+      propertyPath: damageValues.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2309838897308648724, guid: 7b6506aa794156a40a28ea5765f94503,
+        type: 3}
+      propertyPath: damageValues.Array.data[1]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2309838897308648724, guid: 7b6506aa794156a40a28ea5765f94503,
+        type: 3}
+      propertyPath: damageValues.Array.data[2]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2309838897308648724, guid: 7b6506aa794156a40a28ea5765f94503,
+        type: 3}
+      propertyPath: damageValues.Array.data[3]
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b6506aa794156a40a28ea5765f94503, type: 3}
@@ -32051,6 +32086,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 255.16003
       objectReference: {fileID: 0}
+    - target: {fileID: 4507725626238384389, guid: 92fcda67f07ff0f408178287488c70b0,
+        type: 3}
+      propertyPath: m_Text
+      value: GAME OVER
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92fcda67f07ff0f408178287488c70b0, type: 3}
 --- !u!224 &1855919948 stripped
@@ -36198,10 +36238,10 @@ MonoBehaviour:
   - {fileID: 9018213373250412849, guid: e054124b20d7cf640a5214ea1eac1fb7, type: 3}
   - {fileID: 4018282755487714531, guid: da1f79bc02c7b0c4cb6252d526e46ded, type: 3}
   minTimes:
-  - 22
+  - 20
   - 16
   maxTimes:
-  - 33
+  - 30
   - 24
   maxItems: 0300000004000000
 --- !u!1001 &2083133935
