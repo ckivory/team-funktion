@@ -7,7 +7,12 @@ public class PD_UICanvasControl : MonoBehaviour
 {
     //public List<GameObject> Icons;
     public GameObject Player;
+    public GameObject Arrow;
     public List<Image> Images;
+    public List<Text> Texts;
+    public List<Sprite> Sprites;
+    public Text playerMass;
+    public Text selectedCount;
     List<Vector3> ImageLoc;
     public List<Sprite> BlueSprites;
     public List<Sprite> GreySprites;
@@ -35,7 +40,7 @@ public class PD_UICanvasControl : MonoBehaviour
         Inventory = Controller.inventory;
         alarm = 2.0f;
         lastType = 0;
-        
+
 
     }
 
@@ -107,6 +112,13 @@ public class PD_UICanvasControl : MonoBehaviour
         }
 
 
+    void updateImage()
+    {
+        selectedType = Player.GetComponent<PDPlayerController>().selectedProp;
+        int l1 = LeftFind(selectedType);
+        int l2 = LeftFind(l1);
+        int r1 = RightFind(selectedType);
+        int r2 = RightFind(r1);
 
     }
 

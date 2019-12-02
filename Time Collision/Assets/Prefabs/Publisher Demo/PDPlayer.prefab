@@ -10117,6 +10117,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 1237174200682086006}
   arrow: {fileID: 1237174198821115030}
+  vfx: {fileID: 1237174199205564349}
   levelMasses:
   - 0
   - 10
@@ -10134,9 +10135,10 @@ MonoBehaviour:
   aimDamping: 10
   aimMin: 10
   aimMax: 60
-  scrollSensitivity: 50
+  scrollSensitivity: 10
   shotForce: 60
   maxSpread: 0.2
+  spreadNum: 10
   controllerNum: 0
   usingController: 0
   core: {fileID: 1237174199507839897}
@@ -15075,9 +15077,10 @@ MonoBehaviour:
   cameraSpeed: 120
   sensitivityX: 0.125
   sensitivityY: 0.25
-  mouseSensitivity: 3
+  mouseSensitivity: 1
   distance: 20
-  minYRot: 10
+  upOffset: 5
+  minYRot: 0
   maxYRot: 30
   initialRotation: 0
 --- !u!1 &1759720334518389646

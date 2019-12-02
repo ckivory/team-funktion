@@ -25,7 +25,7 @@ public class PD_UIIconControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        UpdateGUI();
+        //UpdateGUI();
     }
 
     void UpdateGUI()
