@@ -8053,11 +8053,11 @@ MonoBehaviour:
   minTimes:
   - 15
   - 10
-  - 20
+  - 10
   maxTimes:
   - 30
   - 15
-  - 30
+  - 15
   maxItems: 030000000700000005000000
 --- !u!1001 &527542793
 PrefabInstance:
@@ -25792,12 +25792,12 @@ PrefabInstance:
     - target: {fileID: 2309838897308648724, guid: 7b6506aa794156a40a28ea5765f94503,
         type: 3}
       propertyPath: damageValues.Array.data[2]
-      value: 4
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 2309838897308648724, guid: 7b6506aa794156a40a28ea5765f94503,
         type: 3}
       propertyPath: damageValues.Array.data[3]
-      value: 8
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b6506aa794156a40a28ea5765f94503, type: 3}
@@ -36096,10 +36096,10 @@ MonoBehaviour:
   - {fileID: 9018213373250412849, guid: e054124b20d7cf640a5214ea1eac1fb7, type: 3}
   - {fileID: 4018282755487714531, guid: da1f79bc02c7b0c4cb6252d526e46ded, type: 3}
   minTimes:
-  - 20
+  - 10
   - 16
   maxTimes:
-  - 30
+  - 15
   - 24
   maxItems: 0300000004000000
 --- !u!1001 &2083133935
