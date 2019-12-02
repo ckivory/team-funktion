@@ -428,11 +428,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8611891458329168478}
     m_Modifications:
-    - target: {fileID: 1575382208379894859, guid: ef80640f454bec743808b74d180cff27,
-        type: 3}
-      propertyPath: m_Name
-      value: Spawn Effect
-      objectReference: {fileID: 0}
     - target: {fileID: 1575382208379894856, guid: ef80640f454bec743808b74d180cff27,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -488,6 +483,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1575382208379894859, guid: ef80640f454bec743808b74d180cff27,
+        type: 3}
+      propertyPath: m_Name
+      value: Spawn Effect
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef80640f454bec743808b74d180cff27, type: 3}
 --- !u!4 &874271313536069341 stripped
@@ -503,11 +503,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8611891458329168478}
     m_Modifications:
-    - target: {fileID: 5228177216914762717, guid: 178f1a3d57ea0cd4a921957f3a6abf17,
-        type: 3}
-      propertyPath: m_Name
-      value: Glow
-      objectReference: {fileID: 0}
     - target: {fileID: 1997493119491953813, guid: 178f1a3d57ea0cd4a921957f3a6abf17,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -566,17 +561,22 @@ PrefabInstance:
     - target: {fileID: 1997493119491953813, guid: 178f1a3d57ea0cd4a921957f3a6abf17,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.22126932
+      value: 0.28990707
       objectReference: {fileID: 0}
     - target: {fileID: 1997493119491953813, guid: 178f1a3d57ea0cd4a921957f3a6abf17,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.22126932
+      value: 0.28990707
       objectReference: {fileID: 0}
     - target: {fileID: 1997493119491953813, guid: 178f1a3d57ea0cd4a921957f3a6abf17,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.22126932
+      value: 0.28990707
+      objectReference: {fileID: 0}
+    - target: {fileID: 5228177216914762717, guid: 178f1a3d57ea0cd4a921957f3a6abf17,
+        type: 3}
+      propertyPath: m_Name
+      value: Glow
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 178f1a3d57ea0cd4a921957f3a6abf17, type: 3}

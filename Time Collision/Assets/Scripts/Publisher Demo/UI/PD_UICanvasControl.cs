@@ -43,10 +43,23 @@ public class PD_UICanvasControl : MonoBehaviour
             //}
         }
 
-        Color temp = statBackground.color;
+        //initial alpha setup
+        Color temp;
+        temp = statBackground.color;
         temp.a = 0.5f;
         statBackground.color = temp;
-
+        foreach (Text amount in Texts)
+        {
+            temp = amount.color;
+            temp.a = 0f;
+            amount.color = temp;
+        }
+        foreach (Image icon in Images)
+        {
+            temp = icon.color;
+            temp.a = 0f;
+            icon.color = temp;
+        }
     }
 
     // Update is called once per frame
@@ -185,8 +198,8 @@ public class PD_UICanvasControl : MonoBehaviour
         Color temp2 = text.color;
         if (visible)
         {
-            temp1.a = 1;
-            temp2.a = 1;
+            temp1.a = 0.8f;
+            temp2.a = 0.8f;
         } else {
             temp1.a = 0;
             temp2.a = 0;
