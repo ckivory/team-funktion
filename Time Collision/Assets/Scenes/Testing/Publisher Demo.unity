@@ -25754,6 +25754,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 191
       objectReference: {fileID: 0}
+    - target: {fileID: 3615833752788878269, guid: 7b6506aa794156a40a28ea5765f94503,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3500
+      objectReference: {fileID: 0}
+    - target: {fileID: 3615833752788878269, guid: 7b6506aa794156a40a28ea5765f94503,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3500
+      objectReference: {fileID: 0}
     - target: {fileID: 2309838897308648724, guid: 7b6506aa794156a40a28ea5765f94503,
         type: 3}
       propertyPath: Players.Array.data[0]
@@ -25777,7 +25787,37 @@ PrefabInstance:
     - target: {fileID: 2309838897308648724, guid: 7b6506aa794156a40a28ea5765f94503,
         type: 3}
       propertyPath: waveTimes.Array.data[0]
-      value: 60000
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 2309838897308648724, guid: 7b6506aa794156a40a28ea5765f94503,
+        type: 3}
+      propertyPath: radii.Array.data[1]
+      value: 1800
+      objectReference: {fileID: 0}
+    - target: {fileID: 2309838897308648724, guid: 7b6506aa794156a40a28ea5765f94503,
+        type: 3}
+      propertyPath: radii.Array.data[2]
+      value: 1100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2309838897308648724, guid: 7b6506aa794156a40a28ea5765f94503,
+        type: 3}
+      propertyPath: waveTimes.Array.data[1]
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 2309838897308648724, guid: 7b6506aa794156a40a28ea5765f94503,
+        type: 3}
+      propertyPath: waveTimes.Array.data[2]
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2309838897308648724, guid: 7b6506aa794156a40a28ea5765f94503,
+        type: 3}
+      propertyPath: waveTimes.Array.data[6]
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 2309838897308648724, guid: 7b6506aa794156a40a28ea5765f94503,
+        type: 3}
+      propertyPath: waveTimes.Array.data[5]
+      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b6506aa794156a40a28ea5765f94503, type: 3}
