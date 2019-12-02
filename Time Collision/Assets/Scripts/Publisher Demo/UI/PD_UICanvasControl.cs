@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PD_UICanvasControl : MonoBehaviour
 {
     //public List<GameObject> Icons;
     public GameObject Player;
+    public List<GameObject> OtherPlayers;
     public GameObject Arrow;
     public List<Image> Images;
     public List<Text> Texts;
@@ -19,15 +21,19 @@ public class PD_UICanvasControl : MonoBehaviour
     public Text mineAmount;
     public Text CM;
     public Text CPS;
+    public Text WinLose;
 
     List<Vector3> ImageLoc;
     List<int> Inventory;
     int selectedType;
     float UIalarm;
     int preType;
+    float winTimer;
     // Start is called before the first frame update
     void Start()
     {
+        winTimer = 5f;
+        WinLose.enabled = false;
         preType = 0;
         UIalarm = 2.0f;
         for (int i = 0; i < Images.Count; i++)
@@ -73,8 +79,23 @@ public class PD_UICanvasControl : MonoBehaviour
     {
         if (!Arrow.active)
         {
-            Destroy(gameObject);
+            lose();
         }
+
+        bool win = true;
+        foreach (GameObject player in OtherPlayers)
+        {
+            if (player.GetComponent<PDPlayerController>().alive)
+            {
+                win = false;
+            }
+        }
+
+        if (win)
+        {
+            Win();
+        }
+
         Inventory = Player.GetComponent<PDPlayerController>().inventory;
         int total;
         total = UpdateDisplay();
@@ -272,5 +293,37 @@ public class PD_UICanvasControl : MonoBehaviour
             preType = Player.GetComponent<PDPlayerController>().selectedProp;
             UIalarm = 5f;
         }
+    }
+
+    void Win()
+    {
+        WinLose.text = "YOU WIN";
+        WinLose.enabled = true;
+        statBackground.enabled = false;
+        playerMass.enabled = false;
+        selectedCount.enabled = false;
+        mineImage.enabled = false;
+        mineAmount.enabled = false;
+        CM.enabled = false;
+        CPS.enabled = false;
+
+        winTimer -= Time.deltaTime;
+
+        if (winTimer <= 0)
+        {
+            SceneManager.LoadScene("Publisher Demo");
+        }
+
+    }
+    void lose()
+    {
+        WinLose.enabled = true;
+        statBackground.enabled = false;
+        playerMass.enabled = false;
+        selectedCount.enabled = false;
+        mineImage.enabled = false;
+        mineAmount.enabled = false;
+        CM.enabled = false;
+        CPS.enabled = false;
     }
 }

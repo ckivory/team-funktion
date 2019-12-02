@@ -63,7 +63,7 @@ public class PDPlayerController : MonoBehaviour
     public int selectedCount;   //made public by Lin
     private Rigidbody rb;
 
-    private bool alive;
+    public bool alive; //made public by Lin
 
     private void getJoystickMovement()
     {
