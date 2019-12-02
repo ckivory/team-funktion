@@ -90,7 +90,6 @@ GameObject:
   - component: {fileID: 932516654306112861}
   - component: {fileID: 6900974913501040336}
   - component: {fileID: 1398149255788812949}
-  - component: {fileID: 9028490590269587963}
   m_Layer: 12
   m_Name: PD_Crate_Fired
   m_TagString: Fired
@@ -171,20 +170,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   whoFired: {fileID: 0}
---- !u!114 &9028490590269587963
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7251298450365760712}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c6e448db903d5f46b7e18f721d7ca24, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  particle: {fileID: 2241723574760857876, guid: 6da64dcca65643d4381e49b86e98bb76,
-    type: 3}
 --- !u!1 &8158253398747968977
 GameObject:
   m_ObjectHideFlags: 0

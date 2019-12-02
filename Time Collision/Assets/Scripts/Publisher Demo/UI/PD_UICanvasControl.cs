@@ -77,25 +77,31 @@ public class PD_UICanvasControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!Arrow.active)
+        if (!Player.GetComponent<PDPlayerController>().alive)
         {
             lose();
         }
-
-        bool win = true;
-        foreach (GameObject player in OtherPlayers)
+        else
         {
-            if (player.GetComponent<PDPlayerController>().alive)
+            bool win = false;
+            int aliveCount = 0;
+            foreach (GameObject player in OtherPlayers)
             {
-                win = false;
+                if (player.GetComponent<PDPlayerController>().alive)
+                {
+                    aliveCount += 1;
+                }
+            }
+            if (aliveCount == 0)
+            {
+                win = true;
+            }
+
+            if (win)
+            {
+                Win();
             }
         }
-
-        if (win)
-        {
-            Win();
-        }
-
         Inventory = Player.GetComponent<PDPlayerController>().inventory;
         int total;
         total = UpdateDisplay();
@@ -297,7 +303,7 @@ public class PD_UICanvasControl : MonoBehaviour
 
     void Win()
     {
-        WinLose.text = "YOU WIN";
+        WinLose.text = "YOU WIN!";
         WinLose.enabled = true;
         statBackground.enabled = false;
         playerMass.enabled = false;
@@ -325,6 +331,7 @@ public class PD_UICanvasControl : MonoBehaviour
     }
     void lose()
     {
+        WinLose.text = "GAME OVER";
         WinLose.enabled = true;
         statBackground.enabled = false;
         playerMass.enabled = false;

@@ -17037,7 +17037,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 1e-45, y: 0, z: 1.64e-43, w: 0.0703125}
+  m_BoundingSphereOverride: {x: 0, y: -2.989532e+11, z: 9.32e-43, w: -8.4387656e+12}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -36786,7 +36786,7 @@ PrefabInstance:
     - target: {fileID: 1237174199995716993, guid: 6a30c0a3692fd0548898ccb4ee1e1d77,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -250
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1237174199995716993, guid: 6a30c0a3692fd0548898ccb4ee1e1d77,
         type: 3}
@@ -36796,7 +36796,7 @@ PrefabInstance:
     - target: {fileID: 1237174199995716993, guid: 6a30c0a3692fd0548898ccb4ee1e1d77,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -250
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 1237174199995716993, guid: 6a30c0a3692fd0548898ccb4ee1e1d77,
         type: 3}
@@ -38279,7 +38279,7 @@ PrefabInstance:
     - target: {fileID: 2309838897308648724, guid: 7b6506aa794156a40a28ea5765f94503,
         type: 3}
       propertyPath: waveTimes.Array.data[0]
-      value: 600000
+      value: 60000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b6506aa794156a40a28ea5765f94503, type: 3}

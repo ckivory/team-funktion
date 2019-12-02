@@ -97,21 +97,25 @@ MonoBehaviour:
   - {fileID: 0}
   radii:
   - 3500
+  - 1800
+  - 1300
+  - 900
   - 600
-  - 450
-  - 0
   damageValues:
   - 1
-  - 2
+  - 1.5
+  - 2.5
   - 4
-  - 8
+  - 6
   currentDamage: 0
   waveTimes:
-  - 60
+  - 35
   - 40
-  - 45
   - 30
+  - 35
+  - 25
   - 30
   - 20
+  - 25
   - 30
-  - 60
+  - 30

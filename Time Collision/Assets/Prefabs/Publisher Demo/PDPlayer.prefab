@@ -10137,22 +10137,32 @@ MonoBehaviour:
   vfx: {fileID: 1237174199205564349}
   levelMasses:
   - 0
-  - 10
-  - 15
-  - 20
-  - 25
-  accelerations:
-  - 150
-  - 125
-  - 100
-  - 75
+  - 18
+  - 35
   - 50
-  topSpeed: 50
+  - 63
+  - 75
+  - 88
+  - 104
+  - 125
+  - 140
+  accelerations:
+  - 100
+  - 92
+  - 85
+  - 78
+  - 72
+  - 67
+  - 63
+  - 58
+  - 54
+  - 51
+  topSpeed: 80
   aimSpeed: 0.01
   aimDamping: 10
-  aimMin: 10
-  aimMax: 60
-  scrollSensitivity: 10
+  aimMin: 15
+  aimMax: 75
+  scrollSensitivity: 40
   shotForce: 60
   maxSpread: 0.2
   spreadNum: 10
