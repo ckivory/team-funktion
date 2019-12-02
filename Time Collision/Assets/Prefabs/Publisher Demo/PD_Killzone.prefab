@@ -58,7 +58,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: eb57887db458dda47aa48b7cd0bcbba9, type: 2}
+  - {fileID: 2100000, guid: 4b1405117b33263408ab91f6835b4416, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -96,19 +96,15 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   radii:
-  - 2000
-  - 1000
-  - 500
-  - 250
-  - 100
+  - 3500
+  - 600
+  - 450
   - 0
   damageValues:
   - 1
   - 2
   - 4
   - 8
-  - 16
-  - 32
   currentDamage: 0
   waveTimes:
   - 60
@@ -117,7 +113,5 @@ MonoBehaviour:
   - 30
   - 30
   - 20
-  - 20
-  - 15
-  - 15
-  - 10
+  - 30
+  - 60
