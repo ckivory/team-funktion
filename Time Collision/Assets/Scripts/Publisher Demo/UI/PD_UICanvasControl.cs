@@ -17,13 +17,19 @@ public class PD_UICanvasControl : MonoBehaviour
     public Text selectedCount;
     public Image mineImage;
     public Text mineAmount;
+    public Text CM;
+    public Text CPS;
 
     List<Vector3> ImageLoc;
     List<int> Inventory;
     int selectedType;
+    float UIalarm;
+    int preType;
     // Start is called before the first frame update
     void Start()
     {
+        preType = 0;
+        UIalarm = 2.0f;
         for(int i =0;i<Images.Count;i++)
         {
             try
@@ -84,6 +90,8 @@ public class PD_UICanvasControl : MonoBehaviour
         } else ToggleVisible(mineImage, mineAmount, true);
         playerMass.text = "" + Player.GetComponent<PDPlayerController>().playerMass*100;
         selectedCount.text = "" + Player.GetComponent<PDPlayerController>().selectedCount;
+        UIalarm -= Time.deltaTime;
+        Fade();
     }
 
     void updateImage()
@@ -124,6 +132,8 @@ public class PD_UICanvasControl : MonoBehaviour
         Texts[0].text = "" + Inventory[l2];
         Texts[3].text = "" + Inventory[r1];
         Texts[4].text = "" + Inventory[r2];
+
+
     }
     
     int LeftFind(int start)
@@ -200,11 +210,64 @@ public class PD_UICanvasControl : MonoBehaviour
         {
             temp1.a = 0.8f;
             temp2.a = 0.8f;
-        } else {
-            temp1.a = 0;
-            temp2.a = 0;
+            //image.CrossFadeAlpha(1, 0.5f, false);
+            //text.CrossFadeAlpha(1, 0.5f, false);
+        }
+        else {
+            temp1.a = 0f;
+            temp2.a = 0f;
+            //image.CrossFadeAlpha(0, 0.5f, false);
+            //text.CrossFadeAlpha(0, 0.5f, false);
         }
         image.color = temp1;
         text.color = temp2;
+    }
+
+    void Fade()
+    {
+        if (UIalarm <= 0)
+        {
+            foreach (Image ima in Images)
+            {
+                ima.CrossFadeAlpha(0, 0.5f, false);
+            }
+
+            foreach(Text txt in Texts)
+            {
+                txt.CrossFadeAlpha(0, 0.5f, false);
+            }
+
+            mineImage.CrossFadeAlpha(0, 0.5f, false);
+            mineAmount.CrossFadeAlpha(0, 0.5f, false);
+            statBackground.CrossFadeAlpha(0, 0.5f, false);
+            playerMass.CrossFadeAlpha(0, 0.5f, false);
+            selectedCount.CrossFadeAlpha(0, 0.5f, false);
+            CM.CrossFadeAlpha(0, 0.5f, false);
+            CPS.CrossFadeAlpha(0, 0.5f, false);
+        }
+
+        if (preType != Player.GetComponent<PDPlayerController>().selectedProp)
+        {
+            foreach (Image ima in Images)
+            {
+                ima.CrossFadeAlpha(1, 0.5f, false);
+            }
+
+            foreach (Text txt in Texts)
+            {
+                txt.CrossFadeAlpha(1, 0.5f, false);
+            }
+
+            mineImage.CrossFadeAlpha(1, 0.5f, false);
+            mineAmount.CrossFadeAlpha(1, 0.5f, false);
+            statBackground.CrossFadeAlpha(1, 0.5f, false);
+            playerMass.CrossFadeAlpha(1, 0.5f, false);
+            selectedCount.CrossFadeAlpha(1, 0.5f, false);
+            CM.CrossFadeAlpha(1, 0.5f, false);
+            CPS.CrossFadeAlpha(1, 0.5f, false);
+
+            preType = Player.GetComponent<PDPlayerController>().selectedProp;
+            UIalarm = 5f;
+        }
     }
 }
