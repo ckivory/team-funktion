@@ -30,13 +30,13 @@ public class PD_UICanvasControl : MonoBehaviour
     {
         preType = 0;
         UIalarm = 2.0f;
-        for(int i =0;i<Images.Count;i++)
+        for (int i = 0; i < Images.Count; i++)
         {
             try
             {
                 ImageLoc.Add(Images[i].transform.position);
             }
-            catch(System.Exception)
+            catch (System.Exception)
             {
                 Debug.Log("Error in PD UI Canvas Control");
             }
@@ -77,18 +77,19 @@ public class PD_UICanvasControl : MonoBehaviour
         }
         Inventory = Player.GetComponent<PDPlayerController>().inventory;
         int total;
-        total=UpdateDisplay();
+        total = UpdateDisplay();
         if (total > 0)
         {
             updateImage();
         }
 
-        mineAmount.text = ""+Inventory[6];
-        if (Inventory[6]<1)
+        mineAmount.text = "" + Inventory[6];
+        if (Inventory[6] < 1)
         {
             ToggleVisible(mineImage, mineAmount, false);
-        } else ToggleVisible(mineImage, mineAmount, true);
-        playerMass.text = "" + Player.GetComponent<PDPlayerController>().playerMass*100;
+        }
+        else ToggleVisible(mineImage, mineAmount, true);
+        playerMass.text = "" + Player.GetComponent<PDPlayerController>().playerMass * 100;
         selectedCount.text = "" + Player.GetComponent<PDPlayerController>().selectedCount;
         UIalarm -= Time.deltaTime;
         Fade();
@@ -118,15 +119,15 @@ public class PD_UICanvasControl : MonoBehaviour
         //{
         //    r2 = r2 - Sprites.Count;
         //}
-        
+
 
         Images[2].sprite = Sprites[selectedType];
         Images[1].sprite = Sprites[l1];
         Images[0].sprite = Sprites[l2];
         Images[3].sprite = Sprites[r1];
         Images[4].sprite = Sprites[r2];
-        
-        
+
+
         Texts[2].text = "" + Inventory[selectedType];
         Texts[1].text = "" + Inventory[l1];
         Texts[0].text = "" + Inventory[l2];
@@ -135,39 +136,39 @@ public class PD_UICanvasControl : MonoBehaviour
 
 
     }
-    
+
     int LeftFind(int start)
     {
-        int end = start ;
+        int end = start;
         do
         {
             end -= 1;
             if (end < 0) end += Sprites.Count;
         } while ((end == 6) || (Inventory[end] == 0));
-            return end;
+        return end;
     }
 
     int RightFind(int start)
     {
-        int end = start ;
+        int end = start;
         do
         {
             end += 1;
             if (end > Sprites.Count - 1) end -= Sprites.Count;
-        } while ((end == 6) || (Inventory[end] == 0)) ;
-            return end;
+        } while ((end == 6) || (Inventory[end] == 0));
+        return end;
     }
     int UpdateDisplay()
     {
         int total = 0;
-        for (int index=0; index<Inventory.Count;index++)
+        for (int index = 0; index < Inventory.Count; index++)
         {
             if ((Inventory[index] > 0) && (index != 6))
             {
                 total += 1;
             }
         }
-        if (total==0)
+        if (total == 0)
         {
             ToggleVisible(Images[0], Texts[0], false);
             ToggleVisible(Images[1], Texts[1], false);
@@ -175,7 +176,7 @@ public class PD_UICanvasControl : MonoBehaviour
             ToggleVisible(Images[3], Texts[3], false);
             ToggleVisible(Images[4], Texts[4], false);
         }
-        if (total==1)
+        if (total == 1)
         {
             ToggleVisible(Images[0], Texts[0], false);
             ToggleVisible(Images[1], Texts[1], false);
@@ -183,7 +184,7 @@ public class PD_UICanvasControl : MonoBehaviour
             ToggleVisible(Images[3], Texts[3], false);
             ToggleVisible(Images[4], Texts[4], false);
         }
-        if ((total>1)&&(total<=3))
+        if ((total > 1) && (total <= 3))
         {
             ToggleVisible(Images[0], Texts[0], false);
             ToggleVisible(Images[1], Texts[1], true);
@@ -210,10 +211,12 @@ public class PD_UICanvasControl : MonoBehaviour
         {
             temp1.a = 0.8f;
             temp2.a = 0.8f;
+            image.CrossFadeAlpha(1, 0.5f, false);
             //image.CrossFadeAlpha(1, 0.5f, false);
             //text.CrossFadeAlpha(1, 0.5f, false);
         }
-        else {
+        else
+        {
             temp1.a = 0f;
             temp2.a = 0f;
             //image.CrossFadeAlpha(0, 0.5f, false);
@@ -227,44 +230,44 @@ public class PD_UICanvasControl : MonoBehaviour
     {
         if (UIalarm <= 0)
         {
-            foreach (Image ima in Images)
-            {
-                ima.CrossFadeAlpha(0, 0.5f, false);
-            }
+            Images[0].CrossFadeAlpha(0, 0.5f, false);
+            Images[1].CrossFadeAlpha(0, 0.5f, false);
+            Images[3].CrossFadeAlpha(0, 0.5f, false);
+            Images[4].CrossFadeAlpha(0, 0.5f, false);
 
-            foreach(Text txt in Texts)
-            {
-                txt.CrossFadeAlpha(0, 0.5f, false);
-            }
+            Texts[0].CrossFadeAlpha(0, 0.5f, false);
+            Texts[1].CrossFadeAlpha(0, 0.5f, false);
+            Texts[3].CrossFadeAlpha(0, 0.5f, false);
+            Texts[4].CrossFadeAlpha(0, 0.5f, false);
 
-            mineImage.CrossFadeAlpha(0, 0.5f, false);
-            mineAmount.CrossFadeAlpha(0, 0.5f, false);
-            statBackground.CrossFadeAlpha(0, 0.5f, false);
-            playerMass.CrossFadeAlpha(0, 0.5f, false);
-            selectedCount.CrossFadeAlpha(0, 0.5f, false);
-            CM.CrossFadeAlpha(0, 0.5f, false);
-            CPS.CrossFadeAlpha(0, 0.5f, false);
+            //mineImage.CrossFadeAlpha(0.5f, 0.5f, false);
+            //mineAmount.CrossFadeAlpha(0.5f, 0.5f, false);
+            //statBackground.CrossFadeAlpha(0, 0.5f, false);
+            //playerMass.CrossFadeAlpha(0, 0.5f, false);
+            //selectedCount.CrossFadeAlpha(0, 0.5f, false);
+            //CM.CrossFadeAlpha(0, 0.5f, false);
+            //CPS.CrossFadeAlpha(0, 0.5f, false);
         }
 
         if (preType != Player.GetComponent<PDPlayerController>().selectedProp)
         {
-            foreach (Image ima in Images)
-            {
-                ima.CrossFadeAlpha(1, 0.5f, false);
-            }
+            Images[0].CrossFadeAlpha(1, 0.5f, false);
+            Images[1].CrossFadeAlpha(1, 0.5f, false);
+            Images[3].CrossFadeAlpha(1, 0.5f, false);
+            Images[4].CrossFadeAlpha(1, 0.5f, false);
 
-            foreach (Text txt in Texts)
-            {
-                txt.CrossFadeAlpha(1, 0.5f, false);
-            }
+            Texts[0].CrossFadeAlpha(1, 0.5f, false);
+            Texts[1].CrossFadeAlpha(1, 0.5f, false);
+            Texts[3].CrossFadeAlpha(1, 0.5f, false);
+            Texts[4].CrossFadeAlpha(1, 0.5f, false);
 
-            mineImage.CrossFadeAlpha(1, 0.5f, false);
-            mineAmount.CrossFadeAlpha(1, 0.5f, false);
-            statBackground.CrossFadeAlpha(1, 0.5f, false);
-            playerMass.CrossFadeAlpha(1, 0.5f, false);
-            selectedCount.CrossFadeAlpha(1, 0.5f, false);
-            CM.CrossFadeAlpha(1, 0.5f, false);
-            CPS.CrossFadeAlpha(1, 0.5f, false);
+            //mineImage.CrossFadeAlpha(1, 0.5f, false);
+            //mineAmount.CrossFadeAlpha(1, 0.5f, false);
+            //statBackground.CrossFadeAlpha(1, 0.5f, false);
+            //playerMass.CrossFadeAlpha(1, 0.5f, false);
+            //selectedCount.CrossFadeAlpha(1, 0.5f, false);
+            //CM.CrossFadeAlpha(1, 0.5f, false);
+            //CPS.CrossFadeAlpha(1, 0.5f, false);
 
             preType = Player.GetComponent<PDPlayerController>().selectedProp;
             UIalarm = 5f;
