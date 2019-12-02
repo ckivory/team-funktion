@@ -11,8 +11,13 @@ public class PD_UICanvasControl : MonoBehaviour
     public List<Image> Images;
     public List<Text> Texts;
     public List<Sprite> Sprites;
+
+    public Image statBackground;
     public Text playerMass;
     public Text selectedCount;
+    public Image mineImage;
+    public Text mineAmount;
+
     List<Vector3> ImageLoc;
     List<int> Inventory;
     int selectedType;
@@ -38,6 +43,9 @@ public class PD_UICanvasControl : MonoBehaviour
             //}
         }
 
+        Color temp = statBackground.color;
+        temp.a = 0.5f;
+        statBackground.color = temp;
 
     }
 
@@ -55,8 +63,14 @@ public class PD_UICanvasControl : MonoBehaviour
         {
             updateImage();
         }
-        playerMass.text = "current mass: " + Player.GetComponent<PDPlayerController>().playerMass*100;
-        selectedCount.text = "item count per shot: " + Player.GetComponent<PDPlayerController>().selectedCount;
+
+        mineAmount.text = ""+Inventory[6];
+        if (Inventory[6]<1)
+        {
+            ToggleVisible(mineImage, mineAmount, false);
+        } else ToggleVisible(mineImage, mineAmount, true);
+        playerMass.text = "" + Player.GetComponent<PDPlayerController>().playerMass*100;
+        selectedCount.text = "" + Player.GetComponent<PDPlayerController>().selectedCount;
     }
 
     void updateImage()

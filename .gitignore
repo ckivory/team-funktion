@@ -34,3 +34,5 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+Time Collision/Assets/Scripts/Art.meta
+Time Collision/Assets/Scripts/Publisher Demo/Art.meta
