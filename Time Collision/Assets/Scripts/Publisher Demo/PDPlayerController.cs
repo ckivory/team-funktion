@@ -206,6 +206,7 @@ public class PDPlayerController : MonoBehaviour
             {
                 if (!(gameObject.GetInstanceID() == col.GetComponent<ObjectAttributes>().whoFired.GetInstanceID()))
                 {
+                    StartCoroutine(gameObject.GetComponent<FlashOnHit>().FlashObject()); //trigger flash on hit
                     if (shield == -1)
                     {
                         playerDeath();
