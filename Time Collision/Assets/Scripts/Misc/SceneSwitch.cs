@@ -23,12 +23,29 @@ public class SceneSwitch : MonoBehaviour
         SceneManager.LoadScene("Publisher Demo");
     }
 
-    // Added by Carson. This way we can
+    // Added by Carson. This way we can start the game in a variety of ways.
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space))
+        List<KeyCode> startKeys = new List<KeyCode>() {
+            KeyCode.KeypadEnter,
+            KeyCode.Return,
+            KeyCode.Space
+        };
+
+        foreach(KeyCode c in startKeys)
         {
-            StartGame();
+            if(Input.GetKeyDown(c))
+            {
+                StartGame();
+            }
+        }
+
+        for(int i = 1; i < 4; i++)
+        {
+            if (Input.GetButtonDown("J" + i + "Start"))
+            {
+                StartGame();
+            }
         }
     }
 }
