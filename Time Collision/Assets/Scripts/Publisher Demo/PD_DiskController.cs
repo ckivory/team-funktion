@@ -45,7 +45,7 @@ public class PD_DiskController : MonoBehaviour
         {
             objectToAdd.GetComponent<PD_OrbitControl>().timer = diskObjects[diskObjects.Count - 1].GetComponent<PD_OrbitControl>().timer + 2 * Mathf.PI / orbitalCapacityList[tier] * orbitalRadiusList[tier];
         }
-        Debug.Log("Adding object with radius: " + objectToAdd.GetComponent<PD_OrbitControl>().rotR);
+        // Debug.Log("Adding object with radius: " + objectToAdd.GetComponent<PD_OrbitControl>().rotR);
         diskObjects.Add(objectToAdd);
         changeTier();
         //ResizeDisk(tier);

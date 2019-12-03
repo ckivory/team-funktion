@@ -19,7 +19,7 @@ public class PD_MineController : MonoBehaviour
         armed = false;
         timer = armTime;
         target = targetObj.GetComponent<Collider>();
-        Debug.Log("Firing mine");
+        // Debug.Log("Firing mine");
     }
 
     private void OnTriggerStay(Collider col)
@@ -46,7 +46,7 @@ public class PD_MineController : MonoBehaviour
 
     private void explode()
     {
-        Debug.Log("Boom!");
+        // Debug.Log("Boom!");
         Instantiate(explosionPrefab, transform.position, Quaternion.identity);
         Destroy(gameObject);
         

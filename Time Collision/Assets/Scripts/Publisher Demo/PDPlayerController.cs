@@ -36,6 +36,8 @@ public class PDPlayerController : MonoBehaviour
     public float coreSpeed = 40f;
     public float diskSpeed = 30f;
 
+    float lastRot;
+
     [HideInInspector]
     public float playerMass = 0f;
 
@@ -153,8 +155,10 @@ public class PDPlayerController : MonoBehaviour
 
     private void updateSpin()
     {
+        float angleOffset = lastRot - transform.localRotation.eulerAngles.y;
         core.transform.Rotate(coreSpeed * Time.deltaTime, 0f, 0f);
-        disk.transform.Rotate(0f, diskSpeed * Time.deltaTime, 0f);
+        disk.transform.Rotate(0f, diskSpeed * Time.deltaTime + angleOffset, 0f);
+        lastRot = transform.localRotation.eulerAngles.y;
     }
 
     private void playerDeath()
@@ -675,7 +679,7 @@ public class PDPlayerController : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("You shouldn't be able to get here. We can't fire mines normally.");
+                    // Debug.Log("You shouldn't be able to get here. We can't fire mines normally.");
                 }
             }
         }
@@ -714,8 +718,9 @@ public class PDPlayerController : MonoBehaviour
         shield = -1;
         scale = 1f;
         baseHeight = transform.position.y;
+        lastRot = transform.localRotation.eulerAngles.y;
 
-        if(!usingController)
+        if (!usingController)
         {
             Cursor.visible = false;
         }
