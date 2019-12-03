@@ -72,7 +72,7 @@ public class PD_ItemSpawnController : MonoBehaviour
         for (int i = 0; i < spawnedItems.Count; i++)
         {
             timers.Add(0f);
-            timers[i] = Random.Range(minTimes[i], maxTimes[i]);
+            timers[i] = Random.Range(0f, maxTimes[i]);   // Min of zero to start with means objects can start spawning immediately without waiting for the first min time.
             
             numItems.Add(0);
         }
@@ -83,7 +83,6 @@ public class PD_ItemSpawnController : MonoBehaviour
     {
         for(int i = 0; i < spawnedItems.Count; i++)
         {
-            //Debug.Log("Number of timers: " + timers.Count);
             timers[i] -= Time.deltaTime;
             if(timers[i] <= 0)
             {

@@ -740,35 +740,26 @@ public class PDPlayerController : MonoBehaviour
         if(alive)
         {
             updateMovement();
-        }
-        updateRotation();
-        if (arrow.activeInHierarchy) //add to stop spining when player dies
-        {
-            updateSpin();
-        }
-        if(alive)
-        {
             updateAim();
-        }
-        updateSelected();
-        updateSelectedCount();
-
-        if(alive)
-        {
             handleFiring();
-        }
-        updateScale();
-        
-        
-        if (alive && !insideZone)
-        {
-            //Debug.Log("Outside Zone!");
-            damageTimer += Time.deltaTime;
-            if(damageTimer >= 1)
+
+            if(!insideZone)
             {
-                takeDamage(deathZone.currentDamage);
-                damageTimer = 0f;
+                //Debug.Log("Outside Zone!");
+                damageTimer += Time.deltaTime;
+                if (damageTimer >= 1)
+                {
+                    takeDamage(deathZone.currentDamage);
+                    damageTimer = 0f;
+                }
             }
         }
+        updateRotation();
+        updateSpin();
+        updateSelected();
+        updateSelectedCount();
+        updateScale();
+
+        Debug.Log("Current framerate: " + (1 / Time.deltaTime) + " fps");
     }
 }
