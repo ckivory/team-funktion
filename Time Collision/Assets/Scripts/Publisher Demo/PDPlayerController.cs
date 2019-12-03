@@ -572,34 +572,38 @@ public class PDPlayerController : MonoBehaviour
         {
             if(Input.GetButtonDown("J" + controllerNum + "B"))
             {
-                selectedCount++;
-                // Debug.Log("Count: " + selectedCount);
+                selectedCount *= 2;
+                if (selectedCount > 16)
+                {
+                    selectedCount = 16;
+                }
             }
             else if(Input.GetButtonDown("J" + controllerNum + "A"))
             {
-                selectedCount--;
+                selectedCount /= 2;
                 if(selectedCount < 1)
                 {
                     selectedCount = 1;
                 }
-                // Debug.Log("Count: " + selectedCount);
             }
         }
         else
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                selectedCount++;
-                // Debug.Log("Count: " + selectedCount);
+                selectedCount *= 2;
+                if (selectedCount > 16)
+                {
+                    selectedCount = 16;
+                }
             }
             else if (Input.GetKeyDown(KeyCode.LeftShift))
             {
-                selectedCount--;
+                selectedCount /= 2;
                 if (selectedCount < 1)
                 {
                     selectedCount = 1;
                 }
-                // Debug.Log("Count: " + selectedCount);
             }
         }
     }
