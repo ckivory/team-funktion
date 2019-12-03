@@ -10158,10 +10158,10 @@ MonoBehaviour:
   - 54
   - 51
   topSpeed: 80
-  aimSpeed: 0.01
+  aimSpeed: 0.0078
   aimDamping: 10
-  aimMin: 15
-  aimMax: 75
+  aimMin: 10
+  aimMax: 50
   scrollSensitivity: 40
   shotForce: 60
   maxSpread: 0.2
@@ -15103,12 +15103,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1237174199995717007}
   cameraSpeed: 120
-  sensitivityX: 0.125
-  sensitivityY: 0.25
+  sensitivityX: 0.13
+  sensitivityY: 0.28
   mouseSensitivity: 1
   distance: 20
   upOffset: 5
-  minYRot: 0
+  minYRot: -15
   maxYRot: 30
   initialRotation: 0
 --- !u!1 &1759720334518389646
