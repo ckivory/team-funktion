@@ -97,6 +97,8 @@ public class PD_UICanvasControl : MonoBehaviour
                 win = true;
             }
 
+            Debug.Log("Alive count: " + aliveCount);
+
             if (win)
             {
                 Win();
@@ -315,6 +317,7 @@ public class PD_UICanvasControl : MonoBehaviour
 
         winTimer -= Time.deltaTime;
 
+        Debug.Log("Win timer: " + winTimer);
         if (winTimer <= 0)
         {
             SceneManager.LoadScene("Title Screen");

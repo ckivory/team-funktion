@@ -26,7 +26,7 @@ public class PD_ExplosionController : MonoBehaviour
             {
                 Vector3 difference = col.gameObject.transform.position - transform.position;
                 rb.AddForce((explosionForce / Mathf.Max(difference.magnitude, 1f)) * difference.normalized);
-                Debug.Log("Applying force!");
+                // Debug.Log("Applying force!");
             }
         }
     }
