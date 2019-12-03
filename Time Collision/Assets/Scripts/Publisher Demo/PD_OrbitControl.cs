@@ -35,12 +35,13 @@ public class PD_OrbitControl : MonoBehaviour
 
     void Rotate()
     {
-        timer += Time.deltaTime * rotSpeed;
+        float currentRadius = (rotR * playerToFollow.GetComponent<PDPlayerController>().scale);
+        timer += Time.deltaTime * rotSpeed / currentRadius;
         if(playerToFollow != null)
         {
             centerPoint = playerToFollow.transform;
-            float x = Mathf.Cos(timer) * rotR * playerToFollow.GetComponent<PDPlayerController>().scale;
-            float z = Mathf.Sin(timer) * rotR * playerToFollow.GetComponent<PDPlayerController>().scale;
+            float x = Mathf.Cos(timer) * currentRadius;
+            float z = Mathf.Sin(timer) * currentRadius;
             float y = Mathf.Sin(timer) * ySpread * playerToFollow.GetComponent<PDPlayerController>().scale;
             Vector3 pos = new Vector3(x, y, z);
             this.transform.LookAt(centerPoint);
