@@ -10032,6 +10032,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1237174199995716993}
   - component: {fileID: 1237174199995716995}
+  - component: {fileID: 6833064924489520238}
   - component: {fileID: 4173036426900969643}
   - component: {fileID: 7587840009133854684}
   m_Layer: 8
@@ -10070,13 +10071,29 @@ Rigidbody:
   m_GameObject: {fileID: 1237174199995717007}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 1
+  m_Drag: 3
   m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!114 &6833064924489520238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1237174199995717007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13ccee86b4e54ed4e8b30316995d6c9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed1: 0.25
+  speed2: 0.25
+  length: 1.5
+  core: {fileID: 1237174199507839897}
 --- !u!114 &4173036426900969643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10117,13 +10134,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 1237174200682086006}
   arrow: {fileID: 1237174198821115030}
-  maxSpeed: 500
-  accel: 1
-  aimSpeed: 0.01
-  aimDamping: 5
-  scrollSensitivity: 10
+  vfx: {fileID: 1237174199205564349}
+  levelMasses:
+  - 0
+  - 18
+  - 35
+  - 50
+  - 63
+  - 75
+  - 88
+  - 104
+  - 125
+  - 140
+  accelerations:
+  - 100
+  - 92
+  - 85
+  - 78
+  - 72
+  - 67
+  - 63
+  - 58
+  - 54
+  - 51
+  topSpeed: 80
+  aimSpeed: 0.0078
+  aimDamping: 10
+  aimMin: 10
+  aimMax: 50
+  scrollSensitivity: 40
   shotForce: 60
   maxSpread: 0.2
+  spreadNum: 10
   controllerNum: 0
   usingController: 0
   core: {fileID: 1237174199507839897}
@@ -10131,6 +10173,7 @@ MonoBehaviour:
   coreSpeed: 40
   diskSpeed: 30
   playerMass: 0
+  coolDownDuration: 0.75
   collectedPropPrefabs:
   - {fileID: 4744767056463312973, guid: 831d8e4e202d7f249a0be787f6db9ea7, type: 3}
   - {fileID: 7251298450365760712, guid: 4c677b4230dcda749a2f46d5a6e8f65a, type: 3}
@@ -10141,6 +10184,8 @@ MonoBehaviour:
   - {fileID: 4018282755487714531, guid: 1e6ab61e60bd027439d04056189ad77f, type: 3}
   - {fileID: 9018213373250412849, guid: 5d9eb2a126d8b31459fd6690b98ce6fe, type: 3}
   - {fileID: 7085181105243925176, guid: 71fd44f8f3c95424eb03d357581c58c2, type: 3}
+  - {fileID: 7287095493153802058, guid: 7dae98316830bbf48b4ed31d09975f17, type: 3}
+  - {fileID: 605863343513220213, guid: 75a9452d159db2b47b30e32334e696aa, type: 3}
   firedPropPrefabs:
   - {fileID: 4744767056463312973, guid: 97df467e806aabd48b9d2d5c4d682116, type: 3}
   - {fileID: 7251298450365760712, guid: 5a3783795ae5d344d8cc69c4bcfdbba3, type: 3}
@@ -10151,9 +10196,14 @@ MonoBehaviour:
   - {fileID: 4018282755487714531, guid: 683f629a6e965f54bb1cf8c5f2ae8435, type: 3}
   - {fileID: 9018213373250412849, guid: ef851e091aec7604382c7a076b0183d3, type: 3}
   - {fileID: 7085181105243925176, guid: b71e8e3ac08010146ae9fbace0188a8e, type: 3}
+  - {fileID: 7287095493153802058, guid: 4cb4a93e32c8bb443891c1b1833c6130, type: 3}
+  - {fileID: 605863343513220213, guid: 9afc9afb784df4043b9c2dc025a1d5d5, type: 3}
+  deathZone: {fileID: 0}
+  MINE_PROPNUM: 6
   inventory: 
   selectedProp: 0
   selectedCount: 0
+  alive: 0
 --- !u!1 &1237174200105411008
 GameObject:
   m_ObjectHideFlags: 0
@@ -10181,7 +10231,7 @@ Transform:
   m_GameObject: {fileID: 1237174200105411008}
   m_LocalRotation: {x: -0.7071068, y: 0.000000029802319, z: 0.000000029802319, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalScale: {x: 0.80166, y: 0.80166, z: 0.80166}
   m_Children: []
   m_Father: {fileID: 1237174199205564350}
   m_RootOrder: 1
@@ -10376,7 +10426,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0, g: 0, b: 0, a: 1}
+      maxColor: {r: 0.5943396, g: 0.5943396, b: 0.5943396, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -14938,8 +14988,8 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 2139630355
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_RenderMode: 0
   m_SortMode: 0
@@ -15053,10 +15103,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1237174199995717007}
   cameraSpeed: 120
-  sensitivityX: 0.125
-  sensitivityY: 0.25
-  mouseSensitivity: 3
+  sensitivityX: 0.13
+  sensitivityY: 0.28
+  mouseSensitivity: 1
   distance: 20
+  upOffset: 5
+  minYRot: -15
+  maxYRot: 30
+  initialRotation: 0
 --- !u!1 &1759720334518389646
 GameObject:
   m_ObjectHideFlags: 0

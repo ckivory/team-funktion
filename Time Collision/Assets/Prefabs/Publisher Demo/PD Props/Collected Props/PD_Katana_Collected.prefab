@@ -628,7 +628,7 @@ GameObject:
   - component: {fileID: 1150474336377436494}
   - component: {fileID: -1010950925735479495}
   m_Layer: 11
-  m_Name: Katana_Collected
+  m_Name: PD_Katana_Collected
   m_TagString: Collected
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -684,5 +684,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whoFired: {fileID: 0}
   propNum: 4
-  propMass: 1
-  propDamage: 10

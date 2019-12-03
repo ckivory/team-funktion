@@ -9,36 +9,15 @@ public class PD_DeathZoneController : MonoBehaviour
     public List<float> radii;
     private float radius;
 
-    public List<float> waveTimes;
+    public List<float> damageValues;
+    public float currentDamage;
 
+    public List<float> waveTimes;
+    
     private float timer;
     private int waveNum;
 
-    private void invertMesh()
-    {
-        MeshFilter filter = GetComponent(typeof(MeshFilter)) as MeshFilter;
-        if (filter != null)
-        {
-            Mesh mesh = filter.mesh;
-
-            Vector3[] normals = mesh.normals;
-            for (int i = 0; i < normals.Length; i++)
-                normals[i] = -normals[i];
-            mesh.normals = normals;
-
-            for (int m = 0; m < mesh.subMeshCount; m++)
-            {
-                int[] triangles = mesh.GetTriangles(m);
-                for (int i = 0; i < triangles.Length; i += 3)
-                {
-                    int temp = triangles[i + 0];
-                    triangles[i + 0] = triangles[i + 1];
-                    triangles[i + 1] = temp;
-                }
-                mesh.SetTriangles(triangles, m);
-            }
-        }
-    }
+    private bool hidden;
     
     private void initializeRadius()
     {
@@ -48,7 +27,7 @@ public class PD_DeathZoneController : MonoBehaviour
         }
         catch (System.Exception e)
         {
-            Debug.Log("Make sure you have at least one radius in the list");
+            Debug.Log(e.Message+" Make sure you have at least one radius in the list");
         }
     }
 
@@ -60,9 +39,10 @@ public class PD_DeathZoneController : MonoBehaviour
 
     public void Start()
     {
-        invertMesh();
         initializeRadius();
         initializeTimer();
+        currentDamage = damageValues[0];
+        hidden = false;
     }
 
     private void updateRadius()
@@ -73,34 +53,39 @@ public class PD_DeathZoneController : MonoBehaviour
         int inner = outer + 1;
         radius = radii[outer] - (radii[outer] - radii[inner]) * ratio;
 
-        transform.localScale = new Vector3(radius, 250, radius);
+        transform.localScale = new Vector3(radius, transform.localScale.y, radius);
     }
     
     public void Update()
     {
-        if (waveNum > waveTimes.Count - 1)
+        if(!hidden)
         {
-            // DeathZone should disappear at the end.
-            foreach(GameObject player in Players)
+            if (waveNum > waveTimes.Count - 1)
             {
-                player.SendMessage("LeaveZone");
+                // DeathZone should disappear at the end.
+                foreach (GameObject player in Players)
+                {
+                    player.SendMessage("LeaveZone");
+                }
+                gameObject.GetComponent<MeshRenderer>().enabled = false;
+                hidden = true;
+                return;
             }
-            Destroy(gameObject);
-            return;
-        }
-        timer += Time.deltaTime;
 
-        //Debug.Log("Wave: " + waveNum + ". Radius: " + radius + ". Time left in wave: " + (waveTimes[waveNum] - timer));
+            timer += Time.deltaTime;
+            //Debug.Log("Wave: " + waveNum + ". Radius: " + radius + ". Time left in wave: " + (waveTimes[waveNum] - timer));
 
-        // Even waveNumber means we are staying the same size, odd means we are moving to a new size
-        if (waveNum % 2 == 1)
-        {
-            updateRadius();
-        }
-        if(timer > waveTimes[waveNum])
-        {
-            waveNum++;
-            timer = 0f;
+            // Even waveNumber means we are staying the same size, odd means we are moving to a new size
+            if (waveNum % 2 == 1)
+            {
+                updateRadius();
+            }
+            if (timer > waveTimes[waveNum])
+            {
+                waveNum++;
+                timer = 0f;
+                currentDamage = damageValues[waveNum / 2];
+            }
         }
     }
 }

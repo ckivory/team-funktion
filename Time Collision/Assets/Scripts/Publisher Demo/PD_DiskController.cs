@@ -13,6 +13,7 @@ public class PD_DiskController : MonoBehaviour
     public List<int> orbitalCapacityList;
     public List<int> orbitalRadiusList;
     public List<float> orbitalSpeedList;
+    int tier;
 
     private void Start()
     {
@@ -23,12 +24,12 @@ public class PD_DiskController : MonoBehaviour
     }
     private void Update()
     {
-
+        ResizeDisk();
     }
 
     public void AddToDisk(int collectedType)
     {
-        int tier = GetTier();
+
         GameObject objectToAdd = Instantiate(collectedPropPrefabs[collectedType]);
         objectToAdd.AddComponent<OrbitControl>();
         objectToAdd.GetComponent<OrbitControl>().playerToFollow = this.gameObject;
@@ -37,18 +38,19 @@ public class PD_DiskController : MonoBehaviour
         objectToAdd.GetComponent<OrbitControl>().type = collectedType;
         if (diskObjects.Count > 0)
         {
-            objectToAdd.GetComponent<OrbitControl>().timer = diskObjects[diskObjects.Count - 1].GetComponent<OrbitControl>().timer + 2*Mathf.PI / orbitalCapacityList[tier]*orbitalRadiusList[tier];
+            objectToAdd.GetComponent<OrbitControl>().timer = diskObjects[diskObjects.Count - 1].GetComponent<OrbitControl>().timer + 2 * Mathf.PI / orbitalCapacityList[tier] * orbitalRadiusList[tier];
         }
         diskObjects.Add(objectToAdd);
-        ResizeDisk(tier);
+        changeTier();
+        //ResizeDisk(tier);
     }
 
     public void RemoveFromDisk(int collectedType)
     {
         GameObject objectToRemove;
-        for (int i = diskObjects.Count-1; i >= 0; i--)
+        for (int i = diskObjects.Count - 1; i >= 0; i--)
         {
-            if (diskObjects[i].GetComponent<OrbitControl>().type ==  collectedType)
+            if (diskObjects[i].GetComponent<OrbitControl>().type == collectedType)
             {
                 objectToRemove = diskObjects[i];
                 Object.Destroy(objectToRemove);
@@ -56,36 +58,38 @@ public class PD_DiskController : MonoBehaviour
                 break;
             }
         }
-        ResizeDisk(GetTier());
+        changeTier();
+        //ResizeDisk(GetTier());
 
     }
 
-    public void UpdateDisk()
-    {
-       
-    }
-
-    int GetTier()
+    void changeTier()
     {
         int n = diskObjects.Count + 1;
-        int t = 1;
         for (int i = 0; i < orbitalCapacityList.Count; i++)
         {
             if (n < orbitalCapacityList[i])
             {
-                return t;
+                tier = i + 1;
+                return;
             }
             else
             {
                 n -= orbitalCapacityList[i];
-                t++;
             }
         }
-        return t;
+        return;
+        //tier = t;
     }
 
-    void ResizeDisk(float tier)
+    void ResizeDisk()
     {
-        disk.transform.localScale = new Vector3(5,1,5)*(1f+tier/10f);
+        Vector3 newSize = new Vector3(5, 1, 5) * (1f + (tier - 1f) / 10f);
+        Vector3 resizeFactor = (newSize - disk.transform.localScale) / 10;
+        if (disk.transform.localScale == newSize)
+        {
+            return;
+        }
+        disk.transform.localScale += resizeFactor;
     }
 }

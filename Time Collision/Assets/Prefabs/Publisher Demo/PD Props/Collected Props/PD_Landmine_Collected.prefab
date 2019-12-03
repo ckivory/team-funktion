@@ -397,7 +397,7 @@ GameObject:
   - component: {fileID: 4963569279813321703}
   - component: {fileID: 8378085418488740833}
   m_Layer: 11
-  m_Name: Landmine_Collected
+  m_Name: PD_Landmine_Collected
   m_TagString: Collected
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -411,8 +411,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4018282755487714531}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.78, y: 0.9, z: 5.48}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.35, y: 0.35, z: 0.35}
   m_Children:
   - {fileID: 702291804770367571}
   - {fileID: 8043156919208147046}
@@ -459,8 +459,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whoFired: {fileID: 0}
   propNum: 6
-  propMass: 1
-  propDamage: 15
 --- !u!1 &4139944524124075527
 GameObject:
   m_ObjectHideFlags: 0

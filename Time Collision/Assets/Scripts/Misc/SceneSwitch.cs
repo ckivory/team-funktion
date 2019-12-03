@@ -14,6 +14,6 @@ public class SceneSwitch : MonoBehaviour
     }
     void StartGame()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("Publisher Demo");
     }
 }
