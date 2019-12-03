@@ -10110,16 +10110,16 @@ MonoBehaviour:
   orbitalCapacityList: 0a000000140000001e00000028000000320000003c00000046000000500000005a00000064000000
   orbitalRadiusList: 02000000030000000400000005000000060000000700000008000000090000000a0000000b000000
   orbitalSpeedList:
-  - 8
-  - 8.8
-  - 9.6
-  - 10.4
-  - 11.2
-  - 12
-  - 12.8
-  - 13.6
-  - 14.4
-  - 15.2
+  - 4
+  - 2
+  - 1
+  - 0.5
+  - 0.25
+  - 0.125
+  - 0.0625
+  - 0.03125
+  - 0.016125
+  - 0.0080625
 --- !u!114 &7587840009133854684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10165,6 +10165,7 @@ MonoBehaviour:
   aimMax: 50
   scrollSensitivity: 10
   shotForce: 60
+  forceIncreaseFactor: 0.6
   maxSpread: 0.2
   spreadNum: 10
   controllerNum: 0

@@ -19,14 +19,6 @@ public class PD_OrbitControl : MonoBehaviour
     [HideInInspector]
     public int type;
 
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -35,8 +27,8 @@ public class PD_OrbitControl : MonoBehaviour
 
     void Rotate()
     {
-        float currentRadius = (rotR * playerToFollow.GetComponent<PDPlayerController>().scale);
-        timer += Time.deltaTime * rotSpeed / currentRadius;
+        float currentRadius = (rotR * playerToFollow.GetComponent<PDPlayerController>().scale) * 0.8f;  // The 0.8 keeps objects from being too close to the exact outer edge of the disk.
+        timer += Time.deltaTime * rotSpeed;
         if(playerToFollow != null)
         {
             centerPoint = playerToFollow.transform;

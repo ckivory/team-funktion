@@ -21,11 +21,16 @@ public class PD_DiskController : MonoBehaviour
         inventory = GetComponent<PDPlayerController>().inventory;
         collectedPropPrefabs = GetComponent<PDPlayerController>().collectedPropPrefabs;
         diskObjects = new List<GameObject>();
+        tier = 1;
     }
+
+    // Commented out by Carson. Scaling being handled by Player Controller now.
+    /*
     private void Update()
     {
-        //ResizeDisk();     Commented out by Carson. Scaling being handled by Player Controller now
+        ResizeDisk();
     }
+    */
 
     public void AddToDisk(int collectedType)
     {
@@ -40,6 +45,7 @@ public class PD_DiskController : MonoBehaviour
         {
             objectToAdd.GetComponent<PD_OrbitControl>().timer = diskObjects[diskObjects.Count - 1].GetComponent<PD_OrbitControl>().timer + 2 * Mathf.PI / orbitalCapacityList[tier] * orbitalRadiusList[tier];
         }
+        Debug.Log("Adding object with radius: " + objectToAdd.GetComponent<PD_OrbitControl>().rotR);
         diskObjects.Add(objectToAdd);
         changeTier();
         //ResizeDisk(tier);

@@ -24,9 +24,10 @@ public class PDPlayerController : MonoBehaviour
     public float aimMax = 60f;
 
     public float scrollSensitivity = 10f;
-    public float shotForce = 60f;           // How hard should objects be thrown?
-    public float maxSpread = 0.2f;          // What is the maximum amount of spread a shot should have?
-    public int spreadNum = 10;       // How many items should it take to reach this max spread?
+    public float shotForce = 60f;               // How hard should objects be thrown?
+    public float forceIncreaseFactor = 0.6f;    // How much of the player's growth should apply to how hard they fire objects?
+    public float maxSpread = 0.2f;              // What is the maximum amount of spread a shot should have?
+    public int spreadNum = 10;                  // How many items should it take to reach this max spread?
     public int controllerNum = 0;
     public bool usingController = true;
 
@@ -169,7 +170,7 @@ public class PDPlayerController : MonoBehaviour
         // Play particle effect for taking damage
         vfx.transform.GetChild(1).GetComponent<ParticleSystem>().Play();
 
-        Debug.Log("Taking " + damageToDeal + " damage");
+        // Debug.Log("Taking " + damageToDeal + " damage");
         if (shield == -1)
         {
             playerDeath();
@@ -211,8 +212,8 @@ public class PDPlayerController : MonoBehaviour
             {
                 int propNum = col.gameObject.GetComponent<ObjectAttributes>().propNum;
                 addToInventory(propNum);
-                string invString = string.Join(",", inventory.ToArray());
-                Debug.Log(invString);
+                // string invString = string.Join(",", inventory.ToArray());
+                // Debug.Log(invString);
                 Destroy(col.gameObject);
             }
             if (col.gameObject.CompareTag("Fired"))
@@ -234,7 +235,7 @@ public class PDPlayerController : MonoBehaviour
             }
             if(col.gameObject.CompareTag("Explosion"))          // For some reason this gets activated twice for each explosion?
             {
-                Debug.Log("Player " + controllerNum + " entering explosion!");
+                // Debug.Log("Player " + controllerNum + " entering explosion!");
                 takeDamage(ObjectAttributes.getDamage(MINE_PROPNUM));
             }
         }
@@ -254,7 +255,7 @@ public class PDPlayerController : MonoBehaviour
     {
         if(col.CompareTag("DeathZone"))
         {
-            Debug.Log("Leaving Zone");
+            // Debug.Log("Leaving Zone");
             insideZone = false;
         }
     }
@@ -309,7 +310,7 @@ public class PDPlayerController : MonoBehaviour
     {
         GameObject shot = Instantiate(firedPropPrefabs[selectedProp], rb.position, arrow.transform.rotation);
         GetComponent<PD_DiskController>().RemoveFromDisk(selectedProp);    //Added by Lin
-        shot.GetComponent<Rigidbody>().velocity = rb.velocity + (arrow.transform.forward + spreadAmount) * shotForce;
+        shot.GetComponent<Rigidbody>().velocity = rb.velocity + (arrow.transform.forward + spreadAmount) * shotForce * Mathf.Max(scale * forceIncreaseFactor, 1f);
         shot.GetComponent<ObjectAttributes>().whoFired = gameObject;
     }
 
@@ -329,7 +330,7 @@ public class PDPlayerController : MonoBehaviour
         if (shotCount < spreadNum)
         {
             spread = maxSpread * ((float)(shotCount) / (float)spreadNum);
-            Debug.Log("Items: " + shotCount + " Interpolated spread: " + spread);
+            // Debug.Log("Items: " + shotCount + " Interpolated spread: " + spread);
         }
         else
         {
@@ -397,19 +398,15 @@ public class PDPlayerController : MonoBehaviour
         }
         if(inventory[selectedProp] > 0)
         {
-            Debug.Log("Firing " + selectedProp + "s. ");            
+            // Debug.Log("Firing " + selectedProp + "s. ");            
             initializeProjectiles(numProjectiles());
-            for (int i = 0; i < numProjectiles(); i++)
-            {
-                GetComponent<PD_DiskController>().RemoveFromDisk(selectedProp);
-            }
             inventory[selectedProp] -= numProjectiles();
             updateMass();
             coolDown = coolDownDuration;
         }
         else
         {
-            Debug.Log("Nothing to fire!");
+            // Debug.Log("Nothing to fire!");
         }
         if(inventory[selectedProp] < 1)
         {
@@ -421,11 +418,11 @@ public class PDPlayerController : MonoBehaviour
     {
         if (inventory[MINE_PROPNUM] < 1)
         {
-            Debug.Log("No mines to plant.");
+            // Debug.Log("No mines to plant.");
         }
         else
         {
-            Debug.Log("Planting mine.");
+            // Debug.Log("Planting mine.");
             GameObject newMine = Instantiate(firedPropPrefabs[MINE_PROPNUM], transform.position, Quaternion.identity);
             GetComponent<PD_DiskController>().RemoveFromDisk(MINE_PROPNUM);
             inventory[MINE_PROPNUM]--;
@@ -511,7 +508,7 @@ public class PDPlayerController : MonoBehaviour
                         selectedProp = (selectedProp + 1) % inventory.Count;
                     } while (selectedProp == MINE_PROPNUM || (inventory[selectedProp] < 1 && !isInventoryEmpty()));
 
-                    Debug.Log(selectedProp);
+                    // Debug.Log(selectedProp);
                 }
             }
             if (Input.GetButtonDown("J" + controllerNum + "X"))
@@ -528,7 +525,7 @@ public class PDPlayerController : MonoBehaviour
                         }
                     } while (selectedProp == MINE_PROPNUM || (inventory[selectedProp] < 1 && !isInventoryEmpty()));
 
-                    Debug.Log(selectedProp);
+                    // Debug.Log(selectedProp);
                 }
             }
         }
@@ -572,7 +569,7 @@ public class PDPlayerController : MonoBehaviour
             if(Input.GetButtonDown("J" + controllerNum + "B"))
             {
                 selectedCount++;
-                Debug.Log("Count: " + selectedCount);
+                // Debug.Log("Count: " + selectedCount);
             }
             else if(Input.GetButtonDown("J" + controllerNum + "A"))
             {
@@ -581,7 +578,7 @@ public class PDPlayerController : MonoBehaviour
                 {
                     selectedCount = 1;
                 }
-                Debug.Log("Count: " + selectedCount);
+                // Debug.Log("Count: " + selectedCount);
             }
         }
         else
@@ -589,7 +586,7 @@ public class PDPlayerController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 selectedCount++;
-                Debug.Log("Count: " + selectedCount);
+                // Debug.Log("Count: " + selectedCount);
             }
             else if (Input.GetKeyDown(KeyCode.LeftShift))
             {
@@ -598,7 +595,7 @@ public class PDPlayerController : MonoBehaviour
                 {
                     selectedCount = 1;
                 }
-                Debug.Log("Count: " + selectedCount);
+                // Debug.Log("Count: " + selectedCount);
             }
         }
     }
@@ -662,7 +659,7 @@ public class PDPlayerController : MonoBehaviour
         {
             shieldRemaining = 0f;
         }
-        Debug.Log("New shield: " + shield);
+        // Debug.Log("New shield: " + shield);
     }
 
     private void handleFiring()

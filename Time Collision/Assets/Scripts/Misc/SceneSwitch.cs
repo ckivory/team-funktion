@@ -10,7 +10,10 @@ public class SceneSwitch : MonoBehaviour
     void OnEnable()
     {
         btnStartGame = gameObject.GetComponent<Button>();
-        btnStartGame.onClick.AddListener(StartGame);
+        if(btnStartGame != null)
+        {
+            btnStartGame.onClick.AddListener(StartGame);
+        }
     }
     void StartGame()
     {
