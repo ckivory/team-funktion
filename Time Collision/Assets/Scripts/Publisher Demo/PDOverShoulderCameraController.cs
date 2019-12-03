@@ -11,12 +11,18 @@ public class PDOverShoulderCameraController : MonoBehaviour
 
     public float sensitivityX = 0.125f;
     public float sensitivityY = 0.25f;
-    public float mouseSensitivity = 3f;
+    public float mouseSensitivity = 0.5f;
     
     private Camera cam;
     private int controllerNum;
 
     public float distance = 20.0f;
+
+    public float zoomScale = 15f;
+    public float zoomLerp = 1f;
+
+    private float zoomAmount;
+
     public float upOffset = 10.0f;
 
     public float minYRot = 10.0f;
@@ -39,6 +45,8 @@ public class PDOverShoulderCameraController : MonoBehaviour
 
         controllerNum = player.GetComponent<PDPlayerController>().controllerNum;
         cam = GetComponent<Camera>();
+
+        zoomAmount = 1f;
     }
 
     private void updateInput()
@@ -59,12 +67,19 @@ public class PDOverShoulderCameraController : MonoBehaviour
         currentY = Mathf.SmoothDamp(currentY, targetY, ref omegaY, sensitivityY);
     }
 
+    private void updateZoom()
+    {
+        float newZoomAmount = 1 + (player.GetComponent<PDPlayerController>().level / zoomScale);
+        float timedLerp = Mathf.Clamp(zoomLerp * Time.deltaTime, 0f, 1f);
+        zoomAmount = (zoomAmount * (1 - timedLerp)) + (newZoomAmount * timedLerp);
+    }
+
     private void updatePosition()
     {
-        Vector3 dir = new Vector3(0f, 0f, -distance);
+        updateZoom();
+        Vector3 dir = new Vector3(0f, 0f, -distance * zoomAmount);
         Quaternion rotation = Quaternion.Euler(currentY, currentX, 0);
         camTransform.position = player.transform.position + rotation * dir;
-        camTransform.position += new Vector3(0f, upOffset, 0f);
     }
 
     private void Update()

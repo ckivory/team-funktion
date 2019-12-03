@@ -24,21 +24,21 @@ public class PD_DiskController : MonoBehaviour
     }
     private void Update()
     {
-        ResizeDisk();
+        //ResizeDisk();     Commented out by Carson. Scaling being handled by Player Controller now
     }
 
     public void AddToDisk(int collectedType)
     {
 
         GameObject objectToAdd = Instantiate(collectedPropPrefabs[collectedType]);
-        objectToAdd.AddComponent<OrbitControl>();
-        objectToAdd.GetComponent<OrbitControl>().playerToFollow = this.gameObject;
-        objectToAdd.GetComponent<OrbitControl>().rotR = orbitalRadiusList[tier];
-        objectToAdd.GetComponent<OrbitControl>().rotSpeed = -orbitalSpeedList[tier];
-        objectToAdd.GetComponent<OrbitControl>().type = collectedType;
+        objectToAdd.AddComponent<PD_OrbitControl>();
+        objectToAdd.GetComponent<PD_OrbitControl>().playerToFollow = this.gameObject;
+        objectToAdd.GetComponent<PD_OrbitControl>().rotR = orbitalRadiusList[tier];
+        objectToAdd.GetComponent<PD_OrbitControl>().rotSpeed = -orbitalSpeedList[tier];
+        objectToAdd.GetComponent<PD_OrbitControl>().type = collectedType;
         if (diskObjects.Count > 0)
         {
-            objectToAdd.GetComponent<OrbitControl>().timer = diskObjects[diskObjects.Count - 1].GetComponent<OrbitControl>().timer + 2 * Mathf.PI / orbitalCapacityList[tier] * orbitalRadiusList[tier];
+            objectToAdd.GetComponent<PD_OrbitControl>().timer = diskObjects[diskObjects.Count - 1].GetComponent<PD_OrbitControl>().timer + 2 * Mathf.PI / orbitalCapacityList[tier] * orbitalRadiusList[tier];
         }
         diskObjects.Add(objectToAdd);
         changeTier();
@@ -50,7 +50,7 @@ public class PD_DiskController : MonoBehaviour
         GameObject objectToRemove;
         for (int i = diskObjects.Count - 1; i >= 0; i--)
         {
-            if (diskObjects[i].GetComponent<OrbitControl>().type == collectedType)
+            if (diskObjects[i].GetComponent<PD_OrbitControl>().type == collectedType)
             {
                 objectToRemove = diskObjects[i];
                 Object.Destroy(objectToRemove);

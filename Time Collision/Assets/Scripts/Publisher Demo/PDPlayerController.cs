@@ -12,7 +12,8 @@ public class PDPlayerController : MonoBehaviour
     private bool insideZone;
 
     public List<float> levelMasses;
-    private int level;
+    [HideInInspector]
+    public int level;
 
     public List<float> accelerations;
     public float topSpeed;
@@ -34,9 +35,18 @@ public class PDPlayerController : MonoBehaviour
     public float coreSpeed = 40f;
     public float diskSpeed = 30f;
 
+    [HideInInspector]
     public float playerMass = 0f;
+
     private int shield;
     private float shieldRemaining;
+
+    public float massScale = 10f;
+    public float scaleLerp = 1f;
+    [HideInInspector]
+    public float scale;
+
+    private float baseHeight;
 
     public float coolDownDuration = 0.1f;
     private float coolDown;
@@ -163,6 +173,7 @@ public class PDPlayerController : MonoBehaviour
         if (shield == -1)
         {
             playerDeath();
+            updateMass();
             return;
         }
 
@@ -171,6 +182,7 @@ public class PDPlayerController : MonoBehaviour
             if (shieldRemaining > damageToDeal)
             {
                 shieldRemaining -= damageToDeal;
+                updateMass();
                 //damageToDeal = 0;
                 return;
             }
@@ -180,6 +192,7 @@ public class PDPlayerController : MonoBehaviour
                 inventory[shield]--;
                 GetComponent<PD_DiskController>().RemoveFromDisk(shield);  //added by Lin
                 newShield();
+                updateMass();
 
                 // This gives the player one last chance to get new cover when their last shield breaks. Large objects can break the rest of your shield, but they can't kill you in one shot unless your inventory is empty.
                 if (shield == -1)
@@ -222,7 +235,7 @@ public class PDPlayerController : MonoBehaviour
             if(col.gameObject.CompareTag("Explosion"))          // For some reason this gets activated twice for each explosion?
             {
                 Debug.Log("Player " + controllerNum + " entering explosion!");
-                takeDamage(ObjectAttributes.damageList[MINE_PROPNUM]);
+                takeDamage(ObjectAttributes.getDamage(MINE_PROPNUM));
             }
         }
     }
@@ -612,8 +625,21 @@ public class PDPlayerController : MonoBehaviour
         {
             playerMass += ObjectAttributes.getMass(i) * inventory[i];
         }
+        if(shield != -1)
+        {
+            playerMass -= (ObjectAttributes.getMass(shield) - shieldRemaining);
+        }
         updateLevel();
         //Debug.Log("Player mass is: " + playerMass);
+    }
+
+    private void updateScale()
+    {
+        float newScale = (1 + (level / massScale));
+        float timedScaleLerp = Mathf.Clamp(scaleLerp * Time.deltaTime, 0f, 1f);
+        scale = (scale * (1 - timedScaleLerp)) + (newScale * timedScaleLerp);
+        transform.localScale = new Vector3(scale * 0.5f, scale * 0.5f, scale * 0.5f);
+        transform.position = new Vector3(transform.position.x, baseHeight + scale, transform.position.z);
     }
 
     private void newShield()
@@ -689,6 +715,9 @@ public class PDPlayerController : MonoBehaviour
         selectedProp = 0;
         selectedCount = 1;
         shield = -1;
+        scale = 1f;
+        baseHeight = transform.position.y;
+
         if(!usingController)
         {
             Cursor.visible = false;
@@ -722,7 +751,7 @@ public class PDPlayerController : MonoBehaviour
         {
             handleFiring();
         }
-        
+        updateScale();
         
         
         if (alive && !insideZone)

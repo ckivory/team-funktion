@@ -10146,6 +10146,7 @@ MonoBehaviour:
   - 104
   - 125
   - 140
+  level: 0
   accelerations:
   - 100
   - 92
@@ -10158,11 +10159,11 @@ MonoBehaviour:
   - 54
   - 51
   topSpeed: 80
-  aimSpeed: 0.0078
+  aimSpeed: 0.01
   aimDamping: 10
   aimMin: 10
   aimMax: 50
-  scrollSensitivity: 40
+  scrollSensitivity: 10
   shotForce: 60
   maxSpread: 0.2
   spreadNum: 10
@@ -10173,6 +10174,8 @@ MonoBehaviour:
   coreSpeed: 40
   diskSpeed: 30
   playerMass: 0
+  massScale: 5
+  scaleLerp: 1
   coolDownDuration: 0.75
   collectedPropPrefabs:
   - {fileID: 4744767056463312973, guid: 831d8e4e202d7f249a0be787f6db9ea7, type: 3}
@@ -15105,10 +15108,12 @@ MonoBehaviour:
   cameraSpeed: 120
   sensitivityX: 0.13
   sensitivityY: 0.28
-  mouseSensitivity: 1
+  mouseSensitivity: 0.5
   distance: 20
-  upOffset: 5
-  minYRot: -15
+  zoomScale: 15
+  zoomLerp: 1
+  upOffset: 4
+  minYRot: 0
   maxYRot: 30
   initialRotation: 0
 --- !u!1 &1759720334518389646

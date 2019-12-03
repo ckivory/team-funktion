@@ -10,6 +10,7 @@ public class PD_DeathZoneController : MonoBehaviour
     private float radius;
 
     public List<float> damageValues;
+    [HideInInspector]
     public float currentDamage;
 
     public List<float> waveTimes;
