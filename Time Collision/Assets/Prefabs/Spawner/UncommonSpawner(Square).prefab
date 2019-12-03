@@ -98,13 +98,13 @@ MonoBehaviour:
   - {fileID: 7085181105243925176, guid: a8956a6c46ef6554180ec667adfb8b2c, type: 3}
   - {fileID: 7287095493153802058, guid: fd468cc19f368bc41a72b5b064fb4b13, type: 3}
   minTimes:
-  - 16
-  - 15
-  - 14
-  - 16
-  maxTimes:
   - 24
-  - 26
-  - 22
   - 20
+  - 20
+  - 24
+  maxTimes:
+  - 40
+  - 36
+  - 28
+  - 32
   maxItems: 04000000040000000400000004000000

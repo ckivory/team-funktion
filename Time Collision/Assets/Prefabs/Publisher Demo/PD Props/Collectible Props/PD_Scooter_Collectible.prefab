@@ -189,7 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73b033bbd0c03924b9ed7e4f306ad1bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DespawnTimer: 50
+  DespawnTimer: 25
   parentSpawner: {fileID: 0}
   DespawnParticle: {fileID: 2241723574760857876, guid: 6da64dcca65643d4381e49b86e98bb76,
     type: 3}
