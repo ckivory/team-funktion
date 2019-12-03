@@ -29,10 +29,13 @@ public class PD_UICanvasControl : MonoBehaviour
     float UIalarm;
     int preType;
     float winTimer;
+    bool winning;       // Added by Carson to fix bug with ties.
+
     // Start is called before the first frame update
     void Start()
     {
         winTimer = 5f;
+        winning = false;
         WinLose.enabled = false;
         preType = 0;
         UIalarm = 2.0f;
@@ -74,54 +77,71 @@ public class PD_UICanvasControl : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
+    // Modified by Carson to fix ties and handle post-win player death
     void Update()
     {
-        if (!Player.GetComponent<PDPlayerController>().alive)
+        int aliveCount = 0;
+        foreach (GameObject player in OtherPlayers)
         {
-            lose();
+            if (player.GetComponent<PDPlayerController>().alive)
+            {
+                aliveCount += 1;
+            }
         }
-        else
+
+        if (winning)
         {
-            bool win = false;
-            int aliveCount = 0;
-            foreach (GameObject player in OtherPlayers)
+            if(!Player.GetComponent<PDPlayerController>().alive)
             {
-                if (player.GetComponent<PDPlayerController>().alive)
-                {
-                    aliveCount += 1;
-                }
+                winning = false;
+                winTimer = 5f;
+                tie();
             }
-            if (aliveCount == 0)
-            {
-                win = true;
-            }
-
-            Debug.Log("Alive count: " + aliveCount);
-
-            if (win)
+            else
             {
                 Win();
             }
         }
-        Inventory = Player.GetComponent<PDPlayerController>().inventory;
-        int total;
-        total = UpdateDisplay();
-        if (total > 0)
+        else
         {
-            updateImage();
-        }
+            if (!Player.GetComponent<PDPlayerController>().alive)
+            {
+                if(aliveCount > 0)
+                {
+                    lose();
+                }
+                else
+                {
+                    tie();
+                }
+            }
+            else
+            {
+                if (aliveCount == 0)
+                {
+                    winning = true;
+                    Win();
+                }
+            }
+            Inventory = Player.GetComponent<PDPlayerController>().inventory;
+            int total;
+            total = UpdateDisplay();
+            if (total > 0)
+            {
+                updateImage();
+            }
 
-        mineAmount.text = "" + Inventory[6];
-        if (Inventory[6] < 1)
-        {
-            ToggleVisible(mineImage, mineAmount, false);
+            mineAmount.text = "" + Inventory[6];
+            if (Inventory[6] < 1)
+            {
+                ToggleVisible(mineImage, mineAmount, false);
+            }
+            else ToggleVisible(mineImage, mineAmount, true);
+            playerMass.text = "" + Player.GetComponent<PDPlayerController>().playerMass * 100;
+            selectedCount.text = "" + Player.GetComponent<PDPlayerController>().selectedCount;
+            UIalarm -= Time.deltaTime;
+            Fade();
         }
-        else ToggleVisible(mineImage, mineAmount, true);
-        playerMass.text = "" + Player.GetComponent<PDPlayerController>().playerMass * 100;
-        selectedCount.text = "" + Player.GetComponent<PDPlayerController>().selectedCount;
-        UIalarm -= Time.deltaTime;
-        Fade();
     }
 
     void updateImage()
@@ -187,6 +207,7 @@ public class PD_UICanvasControl : MonoBehaviour
         } while ((end == 6) || (Inventory[end] == 0));
         return end;
     }
+
     int UpdateDisplay()
     {
         int total = 0;
@@ -317,7 +338,6 @@ public class PD_UICanvasControl : MonoBehaviour
 
         winTimer -= Time.deltaTime;
 
-        Debug.Log("Win timer: " + winTimer);
         if (winTimer <= 0)
         {
             SceneManager.LoadScene("Title Screen");
@@ -344,6 +364,35 @@ public class PD_UICanvasControl : MonoBehaviour
         mineAmount.enabled = false;
         CM.enabled = false;
         CPS.enabled = false;
+        foreach (Image icon in Images)
+        {
+            icon.enabled = false;
+        }
+        foreach (Text amount in Texts)
+        {
+            amount.enabled = false;
+        }
+    }
+
+    void tie()
+    {
+        WinLose.text = "Tie Game";
+        WinLose.enabled = true;
+        statBackground.enabled = false;
+        playerMass.enabled = false;
+        selectedCount.enabled = false;
+        mineImage.enabled = false;
+        mineAmount.enabled = false;
+        CM.enabled = false;
+        CPS.enabled = false;
+
+        winTimer -= Time.deltaTime;
+
+        if (winTimer <= 0)
+        {
+            SceneManager.LoadScene("Title Screen");
+            //SceneManager.LoadScene("Publisher Demo");
+        }
         foreach (Image icon in Images)
         {
             icon.enabled = false;
