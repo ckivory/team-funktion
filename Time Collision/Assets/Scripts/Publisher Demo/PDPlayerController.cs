@@ -6,6 +6,7 @@ public class PDPlayerController : MonoBehaviour
 {
     public Camera cam;
     public GameObject arrow;
+    public GameObject target;
     public GameObject vfx;
 
     private float damageTimer;
@@ -291,6 +292,23 @@ public class PDPlayerController : MonoBehaviour
         }
     }
 
+    private void updateTarget()
+    {
+        target.transform.localPosition = new Vector3(0f, target.transform.localPosition.y, 0f);
+        target.transform.position = new Vector3(target.transform.position.x, 0f, target.transform.position.z);
+
+        Vector3 initVel = (arrow.transform.forward * shotForce * Mathf.Max(scale * forceIncreaseFactor, 1f));
+        float a = Physics.gravity.y;
+        float b = initVel.y;
+        float c = rb.position.y;
+
+        float t = (-b - Mathf.Sqrt(b*b - (4*a*c)))/(2*a);
+        initVel.y = 0f;
+        float targetDistance = initVel.magnitude * t;
+
+        target.transform.position += targetDistance * transform.forward.normalized;
+    }
+
     private void updateAim()
     {
         if (usingController)
@@ -310,6 +328,8 @@ public class PDPlayerController : MonoBehaviour
 
         arrow.transform.forward = this.transform.forward;
         arrow.transform.rotation *= Quaternion.Euler(-1 * currentAim, 0f, 0f);
+
+        updateTarget();
     }
 
     private void instantiateProj(Vector3 spreadAmount)
@@ -646,7 +666,7 @@ public class PDPlayerController : MonoBehaviour
         float timedScaleLerp = Mathf.Clamp(scaleLerp * Time.deltaTime, 0f, 1f);
         scale = (scale * (1 - timedScaleLerp)) + (newScale * timedScaleLerp);
         transform.localScale = new Vector3(scale * 0.5f, scale * 0.5f, scale * 0.5f);
-        transform.position = new Vector3(transform.position.x, baseHeight + scale, transform.position.z);
+        transform.position = new Vector3(transform.position.x, baseHeight + scale - 1, transform.position.z);
     }
 
     private void newShield()
@@ -762,6 +782,6 @@ public class PDPlayerController : MonoBehaviour
         updateSelectedCount();
         updateScale();
 
-        Debug.Log("Current framerate: " + (1 / Time.deltaTime) + " fps");
+        //Debug.Log("Current framerate: " + (1 / Time.deltaTime) + " fps");
     }
 }

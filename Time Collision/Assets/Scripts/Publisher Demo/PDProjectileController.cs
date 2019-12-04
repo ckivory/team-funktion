@@ -10,7 +10,6 @@ public class PDProjectileController : MonoBehaviour
     {
         if(!other.gameObject.CompareTag("Player") && !other.gameObject.CompareTag("DeathZone"))
         {
-            Debug.Log("Destroyed by: " + other.gameObject.tag);
             Destroy(gameObject);
         }
     }

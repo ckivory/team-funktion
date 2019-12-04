@@ -243,7 +243,6 @@ GameObject:
   - component: {fileID: 6010712171604694708}
   - component: {fileID: 2949796388016498890}
   - component: {fileID: 264373293040250223}
-  - component: {fileID: -7209879862369459153}
   - component: {fileID: 2507628063046874093}
   m_Layer: 12
   m_Name: PD_Barrel_Fired
@@ -314,24 +313,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whoFired: {fileID: 0}
   propNum: 0
---- !u!114 &-7209879862369459153
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4744767056463312973}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ada324387e8ac347a76a6259e817b73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  xRotate: 0
-  yRotate: 0
-  zRotate: 90
-  goLeft: 0
-  goForward: 0
-  spin: 0
 --- !u!114 &2507628063046874093
 MonoBehaviour:
   m_ObjectHideFlags: 0
