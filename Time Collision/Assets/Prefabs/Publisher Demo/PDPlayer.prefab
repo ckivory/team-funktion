@@ -5384,6 +5384,7 @@ MonoBehaviour:
   cam: {fileID: 1237174200682086006}
   arrow: {fileID: 1237174198821115030}
   target: {fileID: 9213985258270800075}
+  predictPath: 1
   vfx: {fileID: 1237174199205564349}
   levelMasses:
   - 0
@@ -5414,7 +5415,7 @@ MonoBehaviour:
   aimMin: 10
   aimMax: 50
   scrollSensitivity: 10
-  shotForce: 60
+  shotForce: 80
   forceIncreaseFactor: 0.6
   maxSpread: 0.2
   spreadNum: 10

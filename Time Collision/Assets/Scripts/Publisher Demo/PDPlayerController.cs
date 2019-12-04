@@ -7,6 +7,7 @@ public class PDPlayerController : MonoBehaviour
     public Camera cam;
     public GameObject arrow;
     public GameObject target;
+    public bool predictPath;
     public GameObject vfx;
 
     private float damageTimer;
@@ -299,6 +300,10 @@ public class PDPlayerController : MonoBehaviour
         target.transform.position = new Vector3(target.transform.position.x, 0.1f, target.transform.position.z);
 
         Vector3 initVel = (arrow.transform.forward * shotForce * Mathf.Max(scale * forceIncreaseFactor, 1f));
+        if(predictPath)
+        {
+            initVel += rb.velocity;
+        }
         float a = Physics.gravity.y;
         float b = initVel.y;
         float c = rb.position.y;
@@ -307,7 +312,7 @@ public class PDPlayerController : MonoBehaviour
         initVel.y = 0f;
         float targetDistance = initVel.magnitude * t;
 
-        target.transform.position += targetDistance * transform.forward.normalized;
+        target.transform.position += targetDistance * initVel.normalized;
     }
 
     private void updateAim()
