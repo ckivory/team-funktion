@@ -781,7 +781,5 @@ public class PDPlayerController : MonoBehaviour
         updateSelected();
         updateSelectedCount();
         updateScale();
-
-        //Debug.Log("Current framerate: " + (1 / Time.deltaTime) + " fps");
     }
 }
