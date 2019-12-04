@@ -15118,6 +15118,8 @@ MonoBehaviour:
   minYRot: 0
   maxYRot: 30
   initialRotation: 0
+  rumbleAmount: 0.3
+  rumbleDuration: 1
 --- !u!1 &1759720334518389646
 GameObject:
   m_ObjectHideFlags: 0

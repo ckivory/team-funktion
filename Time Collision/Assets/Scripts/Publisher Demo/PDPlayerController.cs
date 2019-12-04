@@ -173,6 +173,7 @@ public class PDPlayerController : MonoBehaviour
     {
         // Play particle effect for taking damage
         vfx.transform.GetChild(1).GetComponent<ParticleSystem>().Play();
+        cam.SendMessage("beginRumble");
 
         // Debug.Log("Taking " + damageToDeal + " damage");
         if (shield == -1)
