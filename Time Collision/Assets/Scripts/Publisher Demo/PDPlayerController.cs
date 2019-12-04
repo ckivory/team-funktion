@@ -296,7 +296,7 @@ public class PDPlayerController : MonoBehaviour
     private void updateTarget()
     {
         target.transform.localPosition = new Vector3(0f, target.transform.localPosition.y, 0f);
-        target.transform.position = new Vector3(target.transform.position.x, 0f, target.transform.position.z);
+        target.transform.position = new Vector3(target.transform.position.x, 0.1f, target.transform.position.z);
 
         Vector3 initVel = (arrow.transform.forward * shotForce * Mathf.Max(scale * forceIncreaseFactor, 1f));
         float a = Physics.gravity.y;
