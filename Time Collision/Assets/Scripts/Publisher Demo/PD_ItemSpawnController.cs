@@ -12,9 +12,15 @@ public class PD_ItemSpawnController : MonoBehaviour
     public List<float> maxTimes;
 
     public List<int> maxItems;
-    private List<int> numItems;
     
     private List<float> timers;
+
+    public List<bool> activeWaves;
+    private PD_DeathZoneController deathZone;
+    private int currentWave;
+
+    // Pool of objects to pull from so the game doesn't have to create and destroy them constantly.
+    private List<List<GameObject>> pool;
 
     private void spawnItem(int itemNum)
     {
@@ -36,10 +42,11 @@ public class PD_ItemSpawnController : MonoBehaviour
 
         if(!Physics.CheckSphere(spawnPosition, 1f, lMask))
         {
-            GameObject newProp = Instantiate(spawnedItems[itemNum], spawnPosition, Quaternion.identity);
+            GameObject newProp = pool[itemNum][pool[itemNum].Count - 1];
+            pool[itemNum].RemoveAt(pool[itemNum].Count - 1);
+            newProp.transform.position = spawnPosition;
             newProp.transform.Rotate(new Vector3(0f, Random.Range(0f, 360f), 0f));
-            newProp.GetComponent<PD_DespawnObject>().parentSpawner = gameObject;
-            //Debug.Log("Spawned item at: " + spawnPosition);
+            newProp.SetActive(true);
         }
     }
     
@@ -55,18 +62,12 @@ public class PD_ItemSpawnController : MonoBehaviour
         return -1;
     }
 
-    public void decrementItem(int propNum)
+    public void AcceptToPool(GameObject g)
     {
-        int item = itemNumFromPropNum(propNum);
-        if(item != -1)
-        {
-            numItems[item]--;
-        }
+        int pn = g.GetComponent<ObjectAttributes>().propNum;
+        g.SetActive(false);
+        pool[itemNumFromPropNum(pn)].Add(g);
     }
-
-    public List<bool> activeWaves;
-    private PD_DeathZoneController deathZone;
-    private int currentWave;
 
     private void checkWave()
     {
@@ -76,21 +77,42 @@ public class PD_ItemSpawnController : MonoBehaviour
         }
     }
 
+    private List<List<GameObject>> fillPool()
+    {
+        List<List<GameObject>> newPool = new List<List<GameObject>>();
+        List<GameObject> bucket;
+        GameObject current;
+
+        foreach (GameObject firedType in spawnedItems)
+        {
+            bucket = new List<GameObject>();
+            for(int i = 0; i < maxItems.Count; i++)
+            {
+                current = Instantiate(firedType);
+                current.SetActive(false);
+                current.GetComponent<PD_DespawnObject>().parentSpawner = gameObject;
+                bucket.Add(current);
+            }
+            newPool.Add(bucket);
+        }
+
+        return newPool;
+    }
+
     private void Start()
     {
         timers = new List<float>();
-        numItems = new List<int>();
 
         for (int i = 0; i < spawnedItems.Count; i++)
         {
             timers.Add(0f);
             timers[i] = Random.Range(0f, maxTimes[i]);   // Min of zero to start with means objects can start spawning immediately without waiting for the first min time.
-            
-            numItems.Add(0);
         }
 
         deathZone = GameObject.FindGameObjectWithTag("DeathZone").GetComponent<PD_DeathZoneController>();
         currentWave = 0;
+
+        pool = fillPool();
     }
     
     void Update()
@@ -103,10 +125,9 @@ public class PD_ItemSpawnController : MonoBehaviour
                 timers[i] -= Time.deltaTime;
                 if (timers[i] <= 0)
                 {
-                    if (numItems[i] < maxItems[i])
+                    if (pool[i].Count > 0)
                     {
                         spawnItem(i);
-                        numItems[i]++;
                     }
 
                     timers[i] = Random.Range(minTimes[i], maxTimes[i]);

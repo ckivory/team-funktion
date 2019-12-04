@@ -221,7 +221,7 @@ public class PDPlayerController : MonoBehaviour
             {
                 int propNum = col.gameObject.GetComponent<ObjectAttributes>().propNum;
                 addToInventory(propNum);
-                Destroy(col.gameObject);
+                col.gameObject.SendMessage("ReturnToPool");
             }
             if (col.gameObject.CompareTag("Fired"))
             {

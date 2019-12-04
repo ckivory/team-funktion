@@ -19,11 +19,21 @@ public class PD_DespawnObject : MonoBehaviour
         propNum = gameObject.GetComponent<ObjectAttributes>().propNum;
     }
 
+    /*
     private void OnDestroy()
     {
         if(parentSpawner != null)
         {
             parentSpawner.SendMessage("decrementItem", propNum);
+        }
+    }
+    */
+
+    public void ReturnToPool()
+    {
+        if(parentSpawner != null)
+        {
+            parentSpawner.SendMessage("AcceptToPool", gameObject);
         }
     }
 
