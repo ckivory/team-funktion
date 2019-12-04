@@ -33,7 +33,7 @@ public class PD_DespawnObject : MonoBehaviour
     {
         if(parentSpawner != null)
         {
-            parentSpawner.SendMessage("AcceptToPool", gameObject);
+            parentSpawner.GetComponent<PD_ItemSpawnController>().AcceptToPool(gameObject);
         }
     }
 

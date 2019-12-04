@@ -66,7 +66,7 @@ public class PD_DeathZoneController : MonoBehaviour
                 // DeathZone should disappear at the end.
                 foreach (GameObject player in Players)
                 {
-                    player.SendMessage("LeaveZone");
+                    player.GetComponent<PDPlayerController>().LeaveZone();
                 }
                 gameObject.GetComponent<MeshRenderer>().enabled = false;
                 hidden = true;

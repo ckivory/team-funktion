@@ -174,7 +174,7 @@ public class PDPlayerController : MonoBehaviour
     {
         // Play particle effect for taking damage
         vfx.transform.GetChild(1).GetComponent<ParticleSystem>().Play();
-        cam.SendMessage("beginRumble");
+        cam.GetComponent<PDOverShoulderCameraController>().beginRumble();
 
         // Debug.Log("Taking " + damageToDeal + " damage");
         if (shield == -1)
@@ -221,7 +221,7 @@ public class PDPlayerController : MonoBehaviour
             {
                 int propNum = col.gameObject.GetComponent<ObjectAttributes>().propNum;
                 addToInventory(propNum);
-                col.gameObject.SendMessage("ReturnToPool");
+                col.gameObject.GetComponent<PD_DespawnObject>().ReturnToPool();
             }
             if (col.gameObject.CompareTag("Fired"))
             {
