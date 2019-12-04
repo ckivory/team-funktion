@@ -16,7 +16,7 @@ public class PD_DeathZoneController : MonoBehaviour
     public List<float> waveTimes;
     
     private float timer;
-    private int waveNum;
+    public int waveNum;
 
     private bool hidden;
     

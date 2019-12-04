@@ -45,9 +45,9 @@ public class PD_UICanvasControl : MonoBehaviour
             {
                 ImageLoc.Add(Images[i].transform.position);
             }
-            catch (System.Exception)
+            catch (System.Exception e)
             {
-                Debug.Log("Error in PD UI Canvas Control");
+                //Debug.Log("Error in PD UI Canvas Control");
             }
         }
 

@@ -64,6 +64,18 @@ public class PD_ItemSpawnController : MonoBehaviour
         }
     }
 
+    public List<bool> activeWaves;
+    private PD_DeathZoneController deathZone;
+    private int currentWave;
+
+    private void checkWave()
+    {
+        if(deathZone != null)
+        {
+            currentWave = deathZone.waveNum;
+        }
+    }
+
     private void Start()
     {
         timers = new List<float>();
@@ -76,23 +88,29 @@ public class PD_ItemSpawnController : MonoBehaviour
             
             numItems.Add(0);
         }
-    }
 
-    // Update is called once per frame
+        deathZone = GameObject.FindGameObjectWithTag("DeathZone").GetComponent<PD_DeathZoneController>();
+        currentWave = 0;
+    }
+    
     void Update()
     {
-        for(int i = 0; i < spawnedItems.Count; i++)
+        checkWave();
+        if(activeWaves[currentWave])
         {
-            timers[i] -= Time.deltaTime;
-            if(timers[i] <= 0)
+            for (int i = 0; i < spawnedItems.Count; i++)
             {
-                if (numItems[i] < maxItems[i])
+                timers[i] -= Time.deltaTime;
+                if (timers[i] <= 0)
                 {
-                    spawnItem(i);
-                    numItems[i]++;
+                    if (numItems[i] < maxItems[i])
+                    {
+                        spawnItem(i);
+                        numItems[i]++;
+                    }
+
+                    timers[i] = Random.Range(minTimes[i], maxTimes[i]);
                 }
-                
-                timers[i] = Random.Range(minTimes[i], maxTimes[i]);
             }
         }
     }
