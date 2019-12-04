@@ -173,6 +173,7 @@ public class PDPlayerController : MonoBehaviour
     {
         // Play particle effect for taking damage
         vfx.transform.GetChild(1).GetComponent<ParticleSystem>().Play();
+        cam.SendMessage("beginRumble");
 
         // Debug.Log("Taking " + damageToDeal + " damage");
         if (shield == -1)
@@ -198,11 +199,14 @@ public class PDPlayerController : MonoBehaviour
                 GetComponent<PD_DiskController>().RemoveFromDisk(shield);  //added by Lin
                 newShield();
                 updateMass();
-
-                // This gives the player one last chance to get new cover when their last shield breaks. Large objects can break the rest of your shield, but they can't kill you in one shot unless your inventory is empty.
+                
                 if (shield == -1)
                 {
-                    return;
+                    if(damageToDeal > 0)
+                    {
+                        playerDeath();
+                        return;
+                    }
                 }
             }
         }
@@ -216,8 +220,6 @@ public class PDPlayerController : MonoBehaviour
             {
                 int propNum = col.gameObject.GetComponent<ObjectAttributes>().propNum;
                 addToInventory(propNum);
-                // string invString = string.Join(",", inventory.ToArray());
-                // Debug.Log(invString);
                 Destroy(col.gameObject);
             }
             if (col.gameObject.CompareTag("Fired"))
@@ -240,7 +242,7 @@ public class PDPlayerController : MonoBehaviour
             if(col.gameObject.CompareTag("Explosion"))          // For some reason this gets activated twice for each explosion?
             {
                 // Debug.Log("Player " + controllerNum + " entering explosion!");
-                takeDamage(ObjectAttributes.getDamage(MINE_PROPNUM));
+                takeDamage(ObjectAttributes.getDamage(MINE_PROPNUM) / 2);           // Duct tape solution to keep damage from being disproportional.
             }
         }
     }

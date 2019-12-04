@@ -37,6 +37,11 @@ public class PDOverShoulderCameraController : MonoBehaviour
     private float omegaX;
     private float omegaY;
 
+    public float rumbleAmount = 0.2f;
+    public float rumbleDuration = 1f;
+    private float rumbleTimer;
+    private Vector3 rumbleOffset;
+
     private void Start()
     {
         camTransform = this.transform;
@@ -47,6 +52,9 @@ public class PDOverShoulderCameraController : MonoBehaviour
         cam = GetComponent<Camera>();
 
         zoomAmount = 1f;
+
+        rumbleTimer = 0f;
+        rumbleOffset = Vector3.zero;
     }
 
     private void updateInput()
@@ -74,6 +82,24 @@ public class PDOverShoulderCameraController : MonoBehaviour
         zoomAmount = (zoomAmount * (1 - timedLerp)) + (newZoomAmount * timedLerp);
     }
 
+    public void beginRumble()
+    {
+        rumbleTimer = rumbleDuration;
+    }
+
+    private void updateRumble()
+    {
+        if(rumbleTimer > 0f)
+        {
+            rumbleOffset = rumbleAmount * Random.insideUnitSphere * (rumbleTimer / rumbleDuration);
+            rumbleTimer -= Time.deltaTime;
+        }
+        else
+        {
+            rumbleOffset = Vector3.zero;
+        }
+    }
+
     private void updatePosition()
     {
         updateZoom();
@@ -92,5 +118,7 @@ public class PDOverShoulderCameraController : MonoBehaviour
         updatePosition();
         this.transform.LookAt(player.transform.position);
         camTransform.position += new Vector3(0f, upOffset, 0f);
+        updateRumble();
+        camTransform.position += rumbleOffset;
     }
 }
