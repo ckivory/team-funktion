@@ -353,6 +353,7 @@ public class PD_UICanvasControl : MonoBehaviour
         }
 
     }
+
     void lose()
     {
         WinLose.text = "GAME OVER";

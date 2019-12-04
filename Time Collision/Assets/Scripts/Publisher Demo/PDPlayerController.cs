@@ -77,6 +77,7 @@ public class PDPlayerController : MonoBehaviour
     public int selectedCount;   //made public by Lin
     private Rigidbody rb;
 
+    [HideInInspector]
     public bool alive; //made public by Lin
 
     private void getJoystickMovement()
@@ -349,7 +350,7 @@ public class PDPlayerController : MonoBehaviour
             instantiateProj(spread(shotCount));
         }
     }
-
+    
     private Vector3 spread(int shotCount)
     {
         float spread;
@@ -762,10 +763,13 @@ public class PDPlayerController : MonoBehaviour
         if(alive)
         {
             updateMovement();
+            updateRotation();
             updateAim();
             handleFiring();
+            updateSelected();
+            updateSelectedCount();
 
-            if(!insideZone)
+            if (!insideZone)
             {
                 //Debug.Log("Outside Zone!");
                 damageTimer += Time.deltaTime;
@@ -776,10 +780,8 @@ public class PDPlayerController : MonoBehaviour
                 }
             }
         }
-        updateRotation();
+        
         updateSpin();
-        updateSelected();
-        updateSelectedCount();
         updateScale();
     }
 }

@@ -16,17 +16,14 @@ public class PD_UIIconControl : MonoBehaviour
     public int Type;
     List<int> Inventory;
     bool selected;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
+    /*
     void Update()
     {
         //UpdateGUI();
     }
+    */
 
     void UpdateGUI()
     {
