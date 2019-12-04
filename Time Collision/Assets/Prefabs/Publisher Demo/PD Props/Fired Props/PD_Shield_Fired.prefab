@@ -475,6 +475,7 @@ GameObject:
   - component: {fileID: -8816993483350215817}
   - component: {fileID: 3439995932747518248}
   - component: {fileID: 777278987703972016}
+  - component: {fileID: 1069263325176435432}
   m_Layer: 12
   m_Name: PD_Shield_Fired
   m_TagString: Fired
@@ -561,6 +562,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   whoFired: {fileID: 0}
+--- !u!114 &1069263325176435432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7287095493153802058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c6e448db903d5f46b7e18f721d7ca24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particle: {fileID: 2241723574760857876, guid: 6da64dcca65643d4381e49b86e98bb76,
+    type: 3}
 --- !u!1 &8221570347580508537
 GameObject:
   m_ObjectHideFlags: 0
