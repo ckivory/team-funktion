@@ -13,6 +13,7 @@ TagManager:
   - Ground
   - Mine
   - Explosion
+  - SoundManager
   layers:
   - Default
   - TransparentFX

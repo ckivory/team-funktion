@@ -14,9 +14,17 @@ public class PD_ExplosionController : MonoBehaviour
     public float explosionForce = 100f;
 
     public float chainRadius = 15f;
+
+    public GameObject SoundManager;
+    private PD_SoundManager sm;
     
     void Start()
     {
+        SoundManager = GameObject.FindGameObjectWithTag("SoundManager");
+        sm = SoundManager.GetComponent<PD_SoundManager>();
+
+        sm.playSound(3);
+
         size = 0f;
         timer = 0f;
 

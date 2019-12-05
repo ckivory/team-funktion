@@ -759,6 +759,8 @@ public class PDPlayerController : MonoBehaviour
     void Start()
     {
         rb = this.GetComponent<Rigidbody>();
+
+        SoundManager = GameObject.FindGameObjectWithTag("SoundManager");
         sm = SoundManager.GetComponent<PD_SoundManager>();
 
         inventory = new List<int>();

@@ -6,8 +6,8 @@ public class PD_SoundManager : MonoBehaviour
 {
     public List<AudioSource> sources;
 
-    private List<float> startTimes = new List<float>() { 0f, 0f, 0f };
-    private List<float> stopTimes = new List<float>() { 1f, 1f, -1f };
+    private List<float> startTimes = new List<float>() { 0f, 0f, 0f, 0f };
+    private List<float> stopTimes = new List<float>() { 1f, 1f, -1f, -1f };
 
     public void playSound(int whichSound)
     {

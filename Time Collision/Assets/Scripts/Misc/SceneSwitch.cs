@@ -22,7 +22,7 @@ public class SceneSwitch : MonoBehaviour
     
     void StartGame()
     {
-        buttonText.GetComponent<Text>().fontSize = 60;
+        buttonText.GetComponent<Text>().fontSize = 40;
         buttonText.GetComponent<Text>().text = "Loading...";
         SceneManager.LoadScene("Publisher Demo");
     }
