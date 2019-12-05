@@ -12,5 +12,9 @@ public class PDProjectileController : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        if (other.gameObject.CompareTag("Mine"))
+        {
+            other.gameObject.GetComponent<PD_MineController>().tryExplode();
+        }
     }
 }

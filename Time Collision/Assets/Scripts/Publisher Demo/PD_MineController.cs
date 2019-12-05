@@ -23,13 +23,13 @@ public class PD_MineController : MonoBehaviour
 
     private void OnTriggerStay(Collider col)
     {
-        if (col.CompareTag("Player"))
+        if (col.CompareTag("Player") || col.CompareTag("Fired"))
         {
             tryExplode();
         }
     }
 
-    private void tryExplode()
+    public void tryExplode()
     {
         if (armed)
         {
@@ -41,7 +41,6 @@ public class PD_MineController : MonoBehaviour
     {
         Instantiate(explosionPrefab, transform.position, Quaternion.identity);
         Destroy(gameObject);
-        
     }
 
     private void Update()
