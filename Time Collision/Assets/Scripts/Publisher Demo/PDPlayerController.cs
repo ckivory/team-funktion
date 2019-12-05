@@ -175,6 +175,7 @@ public class PDPlayerController : MonoBehaviour
         // Code for changing the player's avatar to represent the fact that they are dead.
         arrow.SetActive(false);     // A suggestion
         vfx.SetActive(false);
+        ShowControl = false;
     }
 
     private void takeDamage(float damageToDeal)
@@ -682,6 +683,24 @@ public class PDPlayerController : MonoBehaviour
         transform.position = new Vector3(transform.position.x, baseHeight + scale - 1, transform.position.z);
     }
 
+    private void updateShowControls()
+    {
+        if(usingController)
+        {
+            if (Input.GetButtonDown("J" + controllerNum + "Start"))
+            {
+                ShowControl = !ShowControl;
+            }
+        }
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.Tab))
+            {
+                ShowControl = !ShowControl;
+            }
+        }
+    }
+
     private void newShield()
     {
         shield = -1;
@@ -782,6 +801,7 @@ public class PDPlayerController : MonoBehaviour
             handleFiring();
             updateSelected();
             updateSelectedCount();
+            updateShowControls();
 
             if (!insideZone)
             {
