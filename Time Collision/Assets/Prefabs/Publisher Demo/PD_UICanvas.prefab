@@ -328,6 +328,7 @@ MonoBehaviour:
   WinLose: {fileID: 4507725626238384389}
   RedOverlay: {fileID: 4659543862145016830}
   ControlScheme: {fileID: 185144495498569269}
+  controlAlpha: 0.8
 --- !u!1 &324307974527177418
 GameObject:
   m_ObjectHideFlags: 0

@@ -34,6 +34,7 @@ public class PD_UICanvasControl : MonoBehaviour
     float winTimer;
     float hitTimer;
     bool winning;       // Added by Carson to fix bug with ties.
+    public float controlAlpha;
 
     // Start is called before the first frame update
     void Start()
@@ -168,6 +169,7 @@ public class PD_UICanvasControl : MonoBehaviour
         if (Controller.ShowControl)
         {
             ControlScheme.enabled = true;
+            ControlScheme.CrossFadeAlpha(controlAlpha, 0f, false);
         }
         else
         {
