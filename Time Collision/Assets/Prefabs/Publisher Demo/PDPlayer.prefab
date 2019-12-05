@@ -5460,6 +5460,8 @@ MonoBehaviour:
   selectedProp: 0
   selectedCount: 0
   alive: 0
+  hit: 0
+  ShowControl: 0
 --- !u!1 &1237174200105411008
 GameObject:
   m_ObjectHideFlags: 0
@@ -10333,7 +10335,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 524087
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -10566,7 +10568,7 @@ GameObject:
   - component: {fileID: 3551627239357161514}
   - component: {fileID: 6209471640015219517}
   - component: {fileID: 5737180755338631977}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10653,11 +10655,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1237174199205564350}
     m_Modifications:
-    - target: {fileID: 8656211722471231141, guid: 59f63039fe815e4439a6f2a4c42e8678,
-        type: 3}
-      propertyPath: m_Name
-      value: PD_Disk_Spiral1
-      objectReference: {fileID: 0}
     - target: {fileID: 8656211722471231140, guid: 59f63039fe815e4439a6f2a4c42e8678,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10713,6 +10710,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8656211722471231141, guid: 59f63039fe815e4439a6f2a4c42e8678,
+        type: 3}
+      propertyPath: m_Name
+      value: PD_Disk_Spiral1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59f63039fe815e4439a6f2a4c42e8678, type: 3}
 --- !u!4 &3755344214243611119 stripped
@@ -10728,11 +10730,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1237174199205564350}
     m_Modifications:
-    - target: {fileID: 6770379891418414524, guid: 02964ecac5e827a4e8be6bd0867836df,
-        type: 3}
-      propertyPath: m_Name
-      value: PD_Disk_Spiral2
-      objectReference: {fileID: 0}
     - target: {fileID: 6770379891418414499, guid: 02964ecac5e827a4e8be6bd0867836df,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10787,6 +10784,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6770379891418414524, guid: 02964ecac5e827a4e8be6bd0867836df,
+        type: 3}
+      propertyPath: m_Name
+      value: PD_Disk_Spiral2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02964ecac5e827a4e8be6bd0867836df, type: 3}
