@@ -6,7 +6,9 @@ using UnityEngine.UI;
 
 public class SceneSwitch : MonoBehaviour
 {
+    [HideInInspector]
     public Button btnStartGame;
+    public GameObject buttonText;
 
     void OnEnable()
     {
@@ -20,6 +22,8 @@ public class SceneSwitch : MonoBehaviour
     
     void StartGame()
     {
+        buttonText.GetComponent<Text>().fontSize = 60;
+        buttonText.GetComponent<Text>().text = "Loading...";
         SceneManager.LoadScene("Publisher Demo");
     }
 
