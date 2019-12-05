@@ -5,6 +5,8 @@ using UnityEngine;
 public class PDPlayerController : MonoBehaviour
 {
     public Camera cam;
+    public GameObject SoundManager;
+    private PD_SoundManager sm;
     public GameObject arrow;
     public GameObject target;
     public bool predictPath;
@@ -171,6 +173,7 @@ public class PDPlayerController : MonoBehaviour
 
     private void playerDeath()
     {
+        sm.playSound(2);
         alive = false;
         // Code for changing the player's avatar to represent the fact that they are dead.
         arrow.SetActive(false);     // A suggestion
@@ -180,9 +183,10 @@ public class PDPlayerController : MonoBehaviour
 
     private void takeDamage(float damageToDeal)
     {
-        // Play particle effect for taking damage
+        // Play particle and sound effects for taking damage
         vfx.transform.GetChild(1).GetComponent<ParticleSystem>().Play();
         cam.GetComponent<PDOverShoulderCameraController>().beginRumble();
+        sm.playSound(1);
 
         // Debug.Log("Taking " + damageToDeal + " damage");
         if (shield == -1)
@@ -438,15 +442,11 @@ public class PDPlayerController : MonoBehaviour
         }
         if(inventory[selectedProp] > 0)
         {
-            // Debug.Log("Firing " + selectedProp + "s. ");            
+            sm.playSound(0);    // Shooting sound  
             initializeProjectiles(numProjectiles());
             inventory[selectedProp] -= numProjectiles();
             updateMass();
             coolDown = coolDownDuration;
-        }
-        else
-        {
-            // Debug.Log("Nothing to fire!");
         }
         if(inventory[selectedProp] < 1)
         {
@@ -759,6 +759,7 @@ public class PDPlayerController : MonoBehaviour
     void Start()
     {
         rb = this.GetComponent<Rigidbody>();
+        sm = SoundManager.GetComponent<PD_SoundManager>();
 
         inventory = new List<int>();
         for (int i = 0; i < collectedPropPrefabs.Count; i++)
