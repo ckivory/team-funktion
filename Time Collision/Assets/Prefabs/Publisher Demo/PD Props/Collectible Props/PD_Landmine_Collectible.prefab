@@ -398,6 +398,7 @@ GameObject:
   - component: {fileID: 4963569279813321702}
   - component: {fileID: 2712108484573947724}
   - component: {fileID: 7611429695583617495}
+  - component: {fileID: 4132242821362909117}
   m_Layer: 10
   m_Name: PD_Landmine_Collectible
   m_TagString: Collectible
@@ -497,6 +498,22 @@ MonoBehaviour:
   DespawnTimer: 35
   parentSpawner: {fileID: 0}
   DespawnParticle: {fileID: 2241723574760857876, guid: 6da64dcca65643d4381e49b86e98bb76,
+    type: 3}
+--- !u!114 &4132242821362909117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4018282755487714531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81d188512ea2cc44ba7b16423aeab9c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fired: 0
+  armTime: 2
+  explosionPrefab: {fileID: 8240743559096560125, guid: 7d8258c6679081e44afa93c129895be1,
     type: 3}
 --- !u!1 &4139944524124075527
 GameObject:

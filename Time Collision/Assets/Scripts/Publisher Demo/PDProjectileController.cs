@@ -8,7 +8,7 @@ public class PDProjectileController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(!other.gameObject.CompareTag("Player") && !other.gameObject.CompareTag("DeathZone"))
+        if (!other.gameObject.CompareTag("Player") && !other.gameObject.CompareTag("DeathZone") && !other.gameObject.CompareTag("Mine"))
         {
             Destroy(gameObject);
         }

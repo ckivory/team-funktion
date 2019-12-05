@@ -4,21 +4,19 @@ using UnityEngine;
 
 public class PD_MineController : MonoBehaviour
 {
+    public bool fired;
+
     public float armTime = 2f;
     private float timer;
 
     private bool armed;
-
-    public GameObject targetObj;
-    private Collider target;
-
+    
     public GameObject explosionPrefab;
 
     private void Start()
     {
         armed = false;
         timer = armTime;
-        target = targetObj.GetComponent<Collider>();
     }
 
     private void OnTriggerStay(Collider col)
@@ -31,10 +29,15 @@ public class PD_MineController : MonoBehaviour
 
     public void tryExplode()
     {
-        if (armed)
+        if (armed && fired)
         {
             explode();
         }
+    }
+
+    public void forceExplode()
+    {
+        explode();
     }
 
     private void explode()
@@ -45,7 +48,7 @@ public class PD_MineController : MonoBehaviour
 
     private void Update()
     {
-        if(!armed)
+        if(!armed && fired)
         {
             timer -= Time.deltaTime;
             if (timer <= 0)

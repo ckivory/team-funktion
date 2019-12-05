@@ -91,7 +91,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.25
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2643623404594228394
 MonoBehaviour:
@@ -106,9 +106,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endSize: 60
-  duration: 1
+  duration: 0.75
   forceRadius: 50
   explosionForce: 50000
+  chainRadius: 15
 --- !u!1001 &7724119723945788585
 PrefabInstance:
   m_ObjectHideFlags: 0

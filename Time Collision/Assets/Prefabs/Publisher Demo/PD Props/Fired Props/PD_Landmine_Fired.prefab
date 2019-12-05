@@ -433,6 +433,7 @@ Transform:
   - {fileID: 4963569280020953688}
   - {fileID: 4963569279391947121}
   - {fileID: 4963569279977489681}
+  - {fileID: 540184141398171774}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -492,8 +493,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81d188512ea2cc44ba7b16423aeab9c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fired: 1
   armTime: 2
-  targetObj: {fileID: 0}
   explosionPrefab: {fileID: 8240743559096560125, guid: 7d8258c6679081e44afa93c129895be1,
     type: 3}
 --- !u!1 &4139944524124075527
@@ -727,6 +728,73 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!1 &4754579120672942906
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 540184141398171774}
+  - component: {fileID: 5329268917044954407}
+  - component: {fileID: 5927267274146235068}
+  - component: {fileID: 3172075790145954089}
+  m_Layer: 22
+  m_Name: SphereTrigger
+  m_TagString: Mine
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &540184141398171774
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4754579120672942906}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 15, y: 15, z: 15}
+  m_Children: []
+  m_Father: {fileID: 115008060366962416}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &5329268917044954407
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4754579120672942906}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!135 &5927267274146235068
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4754579120672942906}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3172075790145954089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4754579120672942906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87a32f5b7ffcc37458170dd52c9af534, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mine: {fileID: 4018282755487714531}
 --- !u!1 &4963569279391947124
 GameObject:
   m_ObjectHideFlags: 0
