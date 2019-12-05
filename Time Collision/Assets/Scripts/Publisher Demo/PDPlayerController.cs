@@ -83,6 +83,8 @@ public class PDPlayerController : MonoBehaviour
 
     [HideInInspector]
     public bool hit; //Added by Lin
+    [HideInInspector]
+    public bool ShowControl; //Added by Lin. If true, the control will be shown
 
     private void getJoystickMovement()
     {
@@ -194,6 +196,7 @@ public class PDPlayerController : MonoBehaviour
             if (shieldRemaining > damageToDeal)
             {
                 shieldRemaining -= damageToDeal;
+                hit = true;
                 updateMass();
                 //damageToDeal = 0;
                 return;
@@ -233,7 +236,7 @@ public class PDPlayerController : MonoBehaviour
                 if (!(gameObject.GetInstanceID() == col.GetComponent<ObjectAttributes>().whoFired.GetInstanceID()))
                 {
                     StartCoroutine(gameObject.GetComponent<FlashOnHit>().FlashObject()); //trigger flash on hit
-                    hit = true; //added by Lin
+                    hit = true;
                     if (shield == -1)
                     {
                         playerDeath();
@@ -766,6 +769,7 @@ public class PDPlayerController : MonoBehaviour
         insideZone = true;
         alive = true;
         hit = false;
+        ShowControl = false;
     }
 
     void Update()

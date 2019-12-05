@@ -23,6 +23,7 @@ public class PD_UICanvasControl : MonoBehaviour
     public Text CPS;
     public Text WinLose;
     public Image RedOverlay;
+    public Image ControlScheme;
 
     List<Vector3> ImageLoc;
     List<int> Inventory;
@@ -45,6 +46,7 @@ public class PD_UICanvasControl : MonoBehaviour
         UIalarm = 2.0f;
         Controller = Player.GetComponent<PDPlayerController>();
         RedOverlay.enabled = false;
+
 
         for (int i = 0; i < Images.Count; i++)
         {
@@ -162,9 +164,16 @@ public class PD_UICanvasControl : MonoBehaviour
             Controller.hit = false;
             hitTimer = 0f;
         }
+
+        if (Controller.ShowControl)
+        {
+            ControlScheme.enabled = true;
+        }
+        else
+        {
+            ControlScheme.enabled = false;
+        }
     }
-
-
 
     void updateImage()
     {
