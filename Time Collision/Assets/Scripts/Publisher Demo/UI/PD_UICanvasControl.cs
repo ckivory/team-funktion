@@ -22,23 +22,30 @@ public class PD_UICanvasControl : MonoBehaviour
     public Text CM;
     public Text CPS;
     public Text WinLose;
+    public Image RedOverlay;
 
     List<Vector3> ImageLoc;
     List<int> Inventory;
+    PDPlayerController Controller;
     int selectedType;
     float UIalarm;
     int preType;
     float winTimer;
+    float hitTimer;
     bool winning;       // Added by Carson to fix bug with ties.
 
     // Start is called before the first frame update
     void Start()
     {
         winTimer = 5f;
+        hitTimer = 0f;
         winning = false;
         WinLose.enabled = false;
         preType = 0;
         UIalarm = 2.0f;
+        Controller = Player.GetComponent<PDPlayerController>();
+        RedOverlay.enabled = false;
+
         for (int i = 0; i < Images.Count; i++)
         {
             try
@@ -142,7 +149,22 @@ public class PD_UICanvasControl : MonoBehaviour
             UIalarm -= Time.deltaTime;
             Fade();
         }
+
+        if (Controller.hit)
+        {
+            RedOverlay.enabled = true;
+            hitTimer += Time.deltaTime;
+            RedOverlay.CrossFadeAlpha(0, 1f, false);
+        }
+
+        if (hitTimer == 1f)
+        {
+            Controller.hit = false;
+            hitTimer = 0f;
+        }
     }
+
+
 
     void updateImage()
     {
@@ -151,24 +173,6 @@ public class PD_UICanvasControl : MonoBehaviour
         int l2 = LeftFind(l1);
         int r1 = RightFind(selectedType);
         int r2 = RightFind(r1);
-
-        //if (l1 < 0)
-        //{
-        //    l1 = Sprites.Count + l1;
-        //}
-        //if (l2 < 0)
-        //{
-        //    l2 = Sprites.Count + l2;
-        //}
-        //if (r1 > Sprites.Count - 1)
-        //{
-        //    r1 = r1 - Sprites.Count;
-        //}
-        //if (r2 > Sprites.Count - 1)
-        //{
-        //    r2 = r2 - Sprites.Count;
-        //}
-
 
         Images[2].sprite = Sprites[selectedType];
         Images[1].sprite = Sprites[l1];
@@ -341,7 +345,6 @@ public class PD_UICanvasControl : MonoBehaviour
         if (winTimer <= 0)
         {
             SceneManager.LoadScene("Title Screen");
-            //SceneManager.LoadScene("Publisher Demo");
         }
         foreach (Image icon in Images)
         {
@@ -392,7 +395,6 @@ public class PD_UICanvasControl : MonoBehaviour
         if (winTimer <= 0)
         {
             SceneManager.LoadScene("Title Screen");
-            //SceneManager.LoadScene("Publisher Demo");
         }
         foreach (Image icon in Images)
         {

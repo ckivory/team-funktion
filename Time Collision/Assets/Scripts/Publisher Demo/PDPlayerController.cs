@@ -81,6 +81,9 @@ public class PDPlayerController : MonoBehaviour
     [HideInInspector]
     public bool alive; //made public by Lin
 
+    [HideInInspector]
+    public bool hit; //Added by Lin
+
     private void getJoystickMovement()
     {
         movementInput = Vector3.zero;
@@ -230,6 +233,7 @@ public class PDPlayerController : MonoBehaviour
                 if (!(gameObject.GetInstanceID() == col.GetComponent<ObjectAttributes>().whoFired.GetInstanceID()))
                 {
                     StartCoroutine(gameObject.GetComponent<FlashOnHit>().FlashObject()); //trigger flash on hit
+                    hit = true; //added by Lin
                     if (shield == -1)
                     {
                         playerDeath();
@@ -761,6 +765,7 @@ public class PDPlayerController : MonoBehaviour
         coolDown = 0f;
         insideZone = true;
         alive = true;
+        hit = false;
     }
 
     void Update()
