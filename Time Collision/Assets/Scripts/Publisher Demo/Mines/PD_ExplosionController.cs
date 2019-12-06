@@ -10,11 +10,10 @@ public class PD_ExplosionController : MonoBehaviour
     public float duration = 0.2f;
     private float timer;
 
-    public float forceRadius = 50f;
+    public float forceRadius = 30f;
     public float explosionForce = 100f;
 
-    public float chainRadius = 15f;
-
+    [HideInInspector]
     public GameObject SoundManager;
     private PD_SoundManager sm;
     
@@ -27,23 +26,6 @@ public class PD_ExplosionController : MonoBehaviour
 
         size = 0f;
         timer = 0f;
-
-        foreach (Collider col in Physics.OverlapSphere(transform.position, chainRadius))
-        {
-            Debug.Log(col.gameObject.tag);
-            PD_MineController mc = col.gameObject.GetComponent<PD_MineController>();
-            if (mc != null)
-            {
-                mc.forceExplode();
-            }
-            else
-            {
-                if(col.gameObject.CompareTag("Fired"))
-                {
-                    Destroy(col.gameObject);
-                }
-            }
-        }
 
         foreach (Collider col in Physics.OverlapSphere(transform.position, forceRadius))
         {

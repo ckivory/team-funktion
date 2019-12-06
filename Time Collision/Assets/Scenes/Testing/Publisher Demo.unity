@@ -22307,6 +22307,27 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8782336271062756716, guid: 3db163dd40a4a4a468e9307eb7cd085f,
+        type: 3}
+      propertyPath: spawnedItems.Array.data[0]
+      value: 
+      objectReference: {fileID: 4018282755487714531, guid: da1f79bc02c7b0c4cb6252d526e46ded,
+        type: 3}
+    - target: {fileID: 8782336271062756716, guid: 3db163dd40a4a4a468e9307eb7cd085f,
+        type: 3}
+      propertyPath: minTimes.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8782336271062756716, guid: 3db163dd40a4a4a468e9307eb7cd085f,
+        type: 3}
+      propertyPath: maxTimes.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8782336271062756716, guid: 3db163dd40a4a4a468e9307eb7cd085f,
+        type: 3}
+      propertyPath: maxItems.Array.data[0]
+      value: 50
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3db163dd40a4a4a468e9307eb7cd085f, type: 3}
 --- !u!1001 &967219419
@@ -49740,10 +49761,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a0a6801a2e402dc43b16576301d5ed4f, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 1fd31868d68903d4f9e2c4a3b7ef98f3, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
-  m_Pitch: 1
+  m_Pitch: 2
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -49838,7 +49859,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 550899e893f2de54db412799359f9253, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.75
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -49934,7 +49955,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 46543f7851008b346b4fcc11834096ff, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.75
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -50030,7 +50051,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 131b6cf9e7cf0dd4aafd00d5a7079a6d, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.75
   m_Pitch: 1
   Loop: 0
   Mute: 0

@@ -12,6 +12,11 @@ public class PD_MineTrigger : MonoBehaviour
         mc = mine.GetComponent<PD_MineController>();
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        mc.tryExplode();
+    }
+
     private void OnTriggerStay(Collider other)
     {
         mc.tryExplode();
