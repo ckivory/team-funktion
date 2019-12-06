@@ -24,6 +24,7 @@ public class PD_UICanvasControl : MonoBehaviour
     public Text WinLose;
     public Image RedOverlay;
     public Image ControlScheme;
+    public Text Hint;
 
     List<Vector3> ImageLoc;
     List<int> Inventory;
@@ -47,7 +48,6 @@ public class PD_UICanvasControl : MonoBehaviour
         UIalarm = 2.0f;
         Controller = Player.GetComponent<PDPlayerController>();
         RedOverlay.enabled = false;
-
 
         for (int i = 0; i < Images.Count; i++)
         {
@@ -101,16 +101,7 @@ public class PD_UICanvasControl : MonoBehaviour
 
         if (winning)
         {
-            if(!Player.GetComponent<PDPlayerController>().alive)
-            {
-                winning = false;
-                winTimer = 5f;
-                tie();
-            }
-            else
-            {
-                Win();
-            }
+            Win();
         }
         else
         {
@@ -120,10 +111,6 @@ public class PD_UICanvasControl : MonoBehaviour
                 {
                     lose();
                 }
-                else
-                {
-                    tie();
-                }
             }
             else
             {
@@ -131,6 +118,7 @@ public class PD_UICanvasControl : MonoBehaviour
                 {
                     winning = true;
                     Win();
+                    StartCoroutine(WinSequence());
                 }
             }
             Inventory = Player.GetComponent<PDPlayerController>().inventory;
@@ -156,24 +144,32 @@ public class PD_UICanvasControl : MonoBehaviour
         if (Controller.hit)
         {
             RedOverlay.enabled = true;
+            RedOverlay.CrossFadeAlpha(0f, 1f, false);
             hitTimer += Time.deltaTime;
-            RedOverlay.CrossFadeAlpha(0, 1f, false);
         }
 
-        if (hitTimer == 1f)
+        if (hitTimer >= 1f)
         {
+            RedOverlay.CrossFadeAlpha(0f, 0f, false);
+            RedOverlay.enabled = false;
             Controller.hit = false;
             hitTimer = 0f;
         }
+        
 
         if (Controller.ShowControl)
         {
             ControlScheme.enabled = true;
             ControlScheme.CrossFadeAlpha(controlAlpha, 0f, false);
+
+            Hint.enabled = true;
+            Hint.CrossFadeAlpha(1f, 0f, false);
         }
         else
         {
             ControlScheme.enabled = false;
+
+            Hint.enabled = false;
         }
     }
 
@@ -339,6 +335,20 @@ public class PD_UICanvasControl : MonoBehaviour
         }
     }
 
+    private IEnumerator WinSequence()
+    {
+        float changeSpeed = 0.25f;
+        while (winTimer>0f)
+        {
+            WinLose.color = Color.red;
+            yield return new WaitForSeconds(changeSpeed);
+            WinLose.color = Color.green;
+            yield return new WaitForSeconds(changeSpeed);
+            WinLose.color = Color.blue;
+            yield return new WaitForSeconds(changeSpeed);
+        }
+    }
+
     void Win()
     {
         WinLose.text = "YOU WIN!";
@@ -351,12 +361,6 @@ public class PD_UICanvasControl : MonoBehaviour
         CM.enabled = false;
         CPS.enabled = false;
 
-        winTimer -= Time.deltaTime;
-
-        if (winTimer <= 0)
-        {
-            SceneManager.LoadScene("Title Screen");
-        }
         foreach (Image icon in Images)
         {
             icon.enabled = false;
@@ -366,6 +370,12 @@ public class PD_UICanvasControl : MonoBehaviour
             amount.enabled = false;
         }
 
+        winTimer -= Time.deltaTime;
+
+        if (winTimer <= 0f)
+        {
+            SceneManager.LoadScene("Title Screen");
+        }
     }
 
     void lose()
