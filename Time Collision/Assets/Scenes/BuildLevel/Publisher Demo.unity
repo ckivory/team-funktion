@@ -26886,7 +26886,7 @@ PrefabInstance:
     - target: {fileID: 7587840009133854684, guid: 6a30c0a3692fd0548898ccb4ee1e1d77,
         type: 3}
       propertyPath: usingController
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1237174200682086006, guid: 6a30c0a3692fd0548898ccb4ee1e1d77,
         type: 3}
@@ -29892,6 +29892,11 @@ PrefabInstance:
       propertyPath: OtherPlayers.Array.data[2]
       value: 
       objectReference: {fileID: 1163741147}
+    - target: {fileID: 3274144952240503224, guid: 92fcda67f07ff0f408178287488c70b0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8866744822384644988, guid: 92fcda67f07ff0f408178287488c70b0,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -29917,11 +29922,6 @@ PrefabInstance:
       propertyPath: Player
       value: 
       objectReference: {fileID: 2097722921}
-    - target: {fileID: 3274144952240503224, guid: 92fcda67f07ff0f408178287488c70b0,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92fcda67f07ff0f408178287488c70b0, type: 3}
 --- !u!224 &1316278999 stripped

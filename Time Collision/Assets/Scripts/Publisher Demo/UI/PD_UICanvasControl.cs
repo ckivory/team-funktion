@@ -24,7 +24,7 @@ public class PD_UICanvasControl : MonoBehaviour
     public Text WinLose;
     public Image RedOverlay;
     public Image ControlScheme;
-    public Text Hint;
+    //public Text Hint;
 
     List<Vector3> ImageLoc;
     List<int> Inventory;
@@ -162,14 +162,14 @@ public class PD_UICanvasControl : MonoBehaviour
             ControlScheme.enabled = true;
             ControlScheme.CrossFadeAlpha(controlAlpha, 0f, false);
 
-            Hint.enabled = true;
-            Hint.CrossFadeAlpha(1f, 0f, false);
+            //Hint.enabled = true;
+            //Hint.CrossFadeAlpha(1f, 0f, false);
         }
         else
         {
             ControlScheme.enabled = false;
 
-            Hint.enabled = false;
+            //Hint.enabled = false;
         }
     }
 
