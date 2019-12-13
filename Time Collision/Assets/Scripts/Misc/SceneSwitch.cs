@@ -13,9 +13,14 @@ public class SceneSwitch : MonoBehaviour
     public List<GameObject> main = new List<GameObject>();
 
     public Button btnReturn;
+    public GameObject creditRoll;
     public List<GameObject> credit = new List<GameObject>();
     //public GameObject readyCount;
     //private bool[] playerReady=new bool[4];
+
+    public Vector3 startPos;
+    public float scrollSpeed;
+    public float endPoint;
 
     void OnEnable()
     {
@@ -70,6 +75,8 @@ public class SceneSwitch : MonoBehaviour
                 item.SetActive(false);
             }
         }
+
+        creditRoll.transform.position = startPos;
     }
 
     void ShowMain()
@@ -138,5 +145,14 @@ public class SceneSwitch : MonoBehaviour
         //}
         //readyCount.GetComponent<Text>().text = "Player Ready: " + readyTotal;
         //if (readyTotal >= 4) StartGame();
+
+        if (creditRoll.active)
+        {
+            creditRoll.transform.position += new Vector3(0, scrollSpeed, 0);
+            if (creditRoll.transform.position.y>endPoint)
+            {
+                creditRoll.transform.position = startPos;
+            }
+        }
     }
 }

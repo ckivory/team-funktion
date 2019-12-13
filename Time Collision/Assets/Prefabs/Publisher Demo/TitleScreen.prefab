@@ -256,7 +256,11 @@ MonoBehaviour:
   btnQuit: {fileID: 0}
   main: []
   btnReturn: {fileID: 0}
+  creditRoll: {fileID: 0}
   credit: []
+  startPos: {x: 150, y: -2000, z: 0}
+  scrollSpeed: 20
+  endPoint: 0
 --- !u!114 &6907240079236152526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -331,101 +335,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!1 &2940728254178985090
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1455557748527551213}
-  - component: {fileID: 2526701326845139596}
-  - component: {fileID: 5571735412303818411}
-  - component: {fileID: 8523126806552139347}
-  m_Layer: 5
-  m_Name: CreditRole
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1455557748527551213
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2940728254178985090}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 8491910564826001873}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 159}
-  m_SizeDelta: {x: 2000, y: 500}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &2526701326845139596
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2940728254178985090}
-  m_CullTransparentMesh: 0
---- !u!114 &5571735412303818411
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2940728254178985090}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.4764151, g: 0.82398236, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: a3ef197794766d44282cdd3206997fd2, type: 3}
-    m_FontSize: 100
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 1
-    m_MaxSize: 300
-    m_Alignment: 1
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Placeholder Role
---- !u!114 &8523126806552139347
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2940728254178985090}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
-  m_EffectDistance: {x: 5, y: 5}
-  m_UseGraphicAlpha: 0
 --- !u!1 &4188886153205517873
 GameObject:
   m_ObjectHideFlags: 0
@@ -459,11 +368,11 @@ RectTransform:
   m_Children:
   - {fileID: 7598400167458900983}
   m_Father: {fileID: 8491910564826001873}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -7, y: -351}
+  m_AnchoredPosition: {x: 638, y: -351}
   m_SizeDelta: {x: 400, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2394043982739466177
@@ -492,7 +401,11 @@ MonoBehaviour:
   btnQuit: {fileID: 0}
   main: []
   btnReturn: {fileID: 0}
+  creditRoll: {fileID: 0}
   credit: []
+  startPos: {x: 150, y: -2000, z: 0}
+  scrollSpeed: 20
+  endPoint: 0
 --- !u!114 &2938578055125922074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -728,7 +641,11 @@ MonoBehaviour:
   btnQuit: {fileID: 0}
   main: []
   btnReturn: {fileID: 0}
+  creditRoll: {fileID: 0}
   credit: []
+  startPos: {x: 150, y: -2000, z: 0}
+  scrollSpeed: 20
+  endPoint: 0
 --- !u!114 &2390363594646632907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -816,7 +733,7 @@ GameObject:
   - component: {fileID: 2928370262196291140}
   - component: {fileID: 8807121892283843226}
   m_Layer: 5
-  m_Name: CreditName
+  m_Name: CreditRoll
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -829,17 +746,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6120254472285168914}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8491910564826001873}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 52.999973}
-  m_SizeDelta: {x: 2000, y: 500}
+  m_AnchoredPosition: {x: -150, y: -2000}
+  m_SizeDelta: {x: 2000, y: 3000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1903955273962206801
 CanvasRenderer:
@@ -871,7 +788,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: a3ef197794766d44282cdd3206997fd2, type: 3}
-    m_FontSize: 85
+    m_FontSize: 100
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -882,7 +799,44 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Placeholder Name
+  m_Text: '<color=#79D2FF><size=100>Created by</size></color>
+
+    <color=#B7ECE2><size=85>   Team Funktion</size>></color>
+
+
+    <color=#79D2FF><size=100>Placeholder Name</size></color>
+
+    <color=#B7ECE2><size=85>Role - </size><size=70>(xxx, xxx, xxx,)</size></color>
+
+
+    <color=#79D2FF><size=100>Placeholder Name</size></color>
+
+    <color=#B7ECE2><size=85>Role - </size><size=70>(xxx, xxx, xxx,)</size></color>
+
+
+    <color=#79D2FF><size=100>Placeholder Name</size></color>
+
+    <color=#B7ECE2><size=85>Role - </size><size=70>(xxx, xxx, xxx,)</size></color>
+
+
+    <color=#79D2FF><size=100>Placeholder Name</size></color>
+
+    <color=#B7ECE2><size=85>Role - </size><size=70>(xxx, xxx, xxx,)</size></color>
+
+
+    <color=#79D2FF><size=100>Placeholder Name</size></color>
+
+    <color=#B7ECE2><size=85>Role - </size><size=70>(xxx, xxx, xxx,)</size></color>
+
+
+    <color=#79D2FF><size=100>Placeholder Name</size></color>
+
+    <color=#B7ECE2><size=85>Role - </size><size=70>(xxx, xxx, xxx,)</size></color>
+
+
+    <color=#79D2FF><size=100>Fall 2019</size></color>
+
+    <color=#B7ECE2><size=85>University of Utah</size></color>'
 --- !u!114 &8807121892283843226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1219,9 +1173,8 @@ RectTransform:
   - {fileID: 8491910565454066825}
   - {fileID: 6335972674497047319}
   - {fileID: 346453653634577143}
-  - {fileID: 1168361042647176943}
-  - {fileID: 1455557748527551213}
   - {fileID: 3372442548255811546}
+  - {fileID: 1168361042647176943}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1312,10 +1265,13 @@ MonoBehaviour:
   - {fileID: 2448880712012670403}
   - {fileID: 4403641507747765685}
   btnReturn: {fileID: 353957229083576215}
+  creditRoll: {fileID: 6120254472285168914}
   credit:
   - {fileID: 4188886153205517873}
-  - {fileID: 2940728254178985090}
   - {fileID: 6120254472285168914}
+  startPos: {x: 700, y: -1800, z: 0}
+  scrollSpeed: 5
+  endPoint: 2000
 --- !u!1 &8491910565454066824
 GameObject:
   m_ObjectHideFlags: 0
@@ -1382,7 +1338,11 @@ MonoBehaviour:
   btnQuit: {fileID: 0}
   main: []
   btnReturn: {fileID: 0}
+  creditRoll: {fileID: 0}
   credit: []
+  startPos: {x: 150, y: -2000, z: 0}
+  scrollSpeed: 20
+  endPoint: 0
 --- !u!114 &8491910565454066831
 MonoBehaviour:
   m_ObjectHideFlags: 0
