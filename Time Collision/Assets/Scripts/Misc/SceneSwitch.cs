@@ -148,7 +148,7 @@ public class SceneSwitch : MonoBehaviour
 
         if (creditRoll.active)
         {
-            creditRoll.transform.position += new Vector3(0, scrollSpeed, 0);
+            creditRoll.transform.position += new Vector3(0, scrollSpeed*Time.deltaTime, 0);
             if (creditRoll.transform.position.y>endPoint)
             {
                 creditRoll.transform.position = startPos;

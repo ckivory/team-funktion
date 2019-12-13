@@ -1270,8 +1270,8 @@ MonoBehaviour:
   - {fileID: 4188886153205517873}
   - {fileID: 6120254472285168914}
   startPos: {x: 700, y: -1800, z: 0}
-  scrollSpeed: 5
-  endPoint: 2000
+  scrollSpeed: 90
+  endPoint: 3000
 --- !u!1 &8491910565454066824
 GameObject:
   m_ObjectHideFlags: 0
