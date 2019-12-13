@@ -359,6 +359,7 @@ public class PD_UICanvasControl : MonoBehaviour
         mineAmount.enabled = false;
         CM.enabled = false;
         CPS.enabled = false;
+        Hint.enabled = false;
 
         foreach (Image icon in Images)
         {
@@ -388,6 +389,8 @@ public class PD_UICanvasControl : MonoBehaviour
         mineAmount.enabled = false;
         CM.enabled = false;
         CPS.enabled = false;
+        Hint.enabled = false;
+
         foreach (Image icon in Images)
         {
             icon.enabled = false;
