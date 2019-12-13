@@ -755,8 +755,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -150, y: -2000}
-  m_SizeDelta: {x: 2000, y: 3000}
+  m_AnchoredPosition: {x: -150, y: -3000}
+  m_SizeDelta: {x: 2000, y: 5000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1903955273962206801
 CanvasRenderer:
@@ -804,34 +804,60 @@ MonoBehaviour:
     <color=#B7ECE2><size=85>   Team Funktion</size>></color>
 
 
-    <color=#79D2FF><size=100>Placeholder Name</size></color>
+    <color=#79D2FF><size=100>Jacob Grahmann</size></color>
 
-    <color=#B7ECE2><size=85>Role - </size><size=70>(xxx, xxx, xxx,)</size></color>
+    <color=#B7ECE2><size=90>- Artist - </size></color>
 
+    <size=70>Modeling, Texturing, VFX,</size>
 
-    <color=#79D2FF><size=100>Placeholder Name</size></color>
-
-    <color=#B7ECE2><size=85>Role - </size><size=70>(xxx, xxx, xxx,)</size></color>
-
-
-    <color=#79D2FF><size=100>Placeholder Name</size></color>
-
-    <color=#B7ECE2><size=85>Role - </size><size=70>(xxx, xxx, xxx,)</size></color>
+    <size=70>Environment Art, Lighting</size>
 
 
-    <color=#79D2FF><size=100>Placeholder Name</size></color>
+    <color=#79D2FF><size=100>Mitchell Henrie</size></color>
 
-    <color=#B7ECE2><size=85>Role - </size><size=70>(xxx, xxx, xxx,)</size></color>
+    <color=#B7ECE2><size=90>- Artist - </size></color>
+
+    <size=70>Modeling, Texturing</size>
+
+    <size=70>   Rigging, Animation, UI</size>=
 
 
-    <color=#79D2FF><size=100>Placeholder Name</size></color>
+    <color=#79D2FF><size=100>Carson Ivory</size></color>
 
-    <color=#B7ECE2><size=85>Role - </size><size=70>(xxx, xxx, xxx,)</size></color>
+    <color=#B7ECE2><size=90>- Programmer - </size></color>
+
+    <size=70>Gameplay, System, Tools</size>
+
+    <size=70>Optimization, Audio</size>
 
 
-    <color=#79D2FF><size=100>Placeholder Name</size></color>
+    <color=#79D2FF><size=100>Lin Pan</size></color>
 
-    <color=#B7ECE2><size=85>Role - </size><size=70>(xxx, xxx, xxx,)</size></color>
+    <color=#B7ECE2><size=90>- Programmer - </size></color>
+
+    <size=70>Graphics, UI,</size>
+
+    <size=70>VFX, System</size>
+
+
+    <color=#79D2FF><size=100>James Baggett</size></color>
+
+    <color=#B7ECE2><size=90>- Designer - </size></color>
+
+    <size=70>Level, Balance, QA</size>
+
+
+    <color=#79D2FF><size=100>Victor Liu</size></color>
+
+    <color=#B7ECE2><size=90>- Producer/Designer - </size></color>
+
+    <size=70>Gameplay, Combat, UI,</size>
+
+    <size=70>Balance, Level, QA</size>
+
+    <color=#B7ECE2><size=60>- Additional Programming - </size><size=50>VFX, UI</size></color>
+
+    <color=#B7ECE2><size=60>- Additional Art - </size><size=50>Texture</size></color>
 
 
     <color=#79D2FF><size=100>Fall 2019</size></color>
@@ -1269,9 +1295,9 @@ MonoBehaviour:
   credit:
   - {fileID: 4188886153205517873}
   - {fileID: 6120254472285168914}
-  startPos: {x: 700, y: -1800, z: 0}
+  startPos: {x: 700, y: -3000, z: 0}
   scrollSpeed: 90
-  endPoint: 3000
+  endPoint: 4000
 --- !u!1 &8491910565454066824
 GameObject:
   m_ObjectHideFlags: 0
