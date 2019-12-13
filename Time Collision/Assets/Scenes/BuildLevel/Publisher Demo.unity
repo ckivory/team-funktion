@@ -12987,6 +12987,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 255.16003
       objectReference: {fileID: 0}
+    - target: {fileID: 1011120037405583372, guid: 92fcda67f07ff0f408178287488c70b0,
+        type: 3}
+      propertyPath: m_Text
+      value: Press Tab for control
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92fcda67f07ff0f408178287488c70b0, type: 3}
 --- !u!224 &591572866 stripped
@@ -29892,11 +29897,6 @@ PrefabInstance:
       propertyPath: OtherPlayers.Array.data[2]
       value: 
       objectReference: {fileID: 1163741147}
-    - target: {fileID: 3274144952240503224, guid: 92fcda67f07ff0f408178287488c70b0,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8866744822384644988, guid: 92fcda67f07ff0f408178287488c70b0,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -29916,6 +29916,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 255.16003
+      objectReference: {fileID: 0}
+    - target: {fileID: 3274144952240503224, guid: 92fcda67f07ff0f408178287488c70b0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4439228346853506304, guid: 92fcda67f07ff0f408178287488c70b0,
         type: 3}

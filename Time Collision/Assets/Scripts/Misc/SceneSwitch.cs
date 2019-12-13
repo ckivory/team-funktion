@@ -8,7 +8,12 @@ public class SceneSwitch : MonoBehaviour
 {
     public Button btnStartGame;
     public GameObject buttonText;
+    public Button btnCredit;
+    public Button btnQuit;
+    public List<GameObject> main = new List<GameObject>();
 
+    public Button btnReturn;
+    public List<GameObject> credit = new List<GameObject>();
     //public GameObject readyCount;
     //private bool[] playerReady=new bool[4];
 
@@ -16,12 +21,23 @@ public class SceneSwitch : MonoBehaviour
     {
         Cursor.visible = true;  // Added by Carson. This keeps the cursor from being invisible on the start screen.
         //btnStartGame = gameObject.GetComponent<Button>();
-        if(btnStartGame != null)
+        if (btnStartGame != null)
         {
             btnStartGame.onClick.AddListener(StartGame);
         }
-
-
+        if (btnCredit!=null)
+        {
+            btnCredit.onClick.AddListener(ShowCredit);
+        }
+        if (btnCredit != null)
+        {
+            btnQuit.onClick.AddListener(QuitGame);
+        }
+        if (btnReturn!=null)
+        {
+            btnReturn.onClick.AddListener(ShowMain);
+        }
+        ShowMain();
         //for (int i=0;i<playerReady.Length;i++)
         //{
         //    playerReady[i] = false;
@@ -38,6 +54,47 @@ public class SceneSwitch : MonoBehaviour
         SceneManager.LoadScene("Publisher Demo");
     }
 
+    void ShowCredit()
+    {
+        foreach (GameObject item in credit)
+        {
+            if (item != null)
+            {
+                item.SetActive(true);
+            }
+        }
+        foreach (GameObject item in main)
+        {
+            if (item != null)
+            {
+                item.SetActive(false);
+            }
+        }
+    }
+
+    void ShowMain()
+    {
+        foreach (GameObject item in main)
+        {
+            if (item != null)
+            {
+                item.SetActive(true);
+            }
+        }
+        foreach (GameObject item in credit)
+        {
+            if (item != null)
+            {
+                item.SetActive(false);
+            }
+        }
+    }
+
+    void QuitGame()
+    {
+        Application.Quit();
+    }
+
     // Added by Carson. This way we can start the game in a variety of ways.
     private void Update()
     {
@@ -51,7 +108,10 @@ public class SceneSwitch : MonoBehaviour
         {
             if(Input.GetKeyDown(c))
             {
-                StartGame();
+                if (btnStartGame.IsActive())
+                {
+                    StartGame();
+                }
             }
         }
 
@@ -59,7 +119,10 @@ public class SceneSwitch : MonoBehaviour
         {
             if (Input.GetButtonDown("J" + i + "Start"))
             {
-                StartGame();
+                if (btnStartGame.IsActive())
+                {
+                    StartGame();
+                }
             }
         }
 
